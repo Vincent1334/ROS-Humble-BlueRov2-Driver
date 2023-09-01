@@ -20,7 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            "controller = bluerov2_controller.controller:main"
+            "controller = bluerov2_controller.controller:main",
+            "depth_controller = bluerov2_controller.depth_controller:main"
         ],
     },
 )
