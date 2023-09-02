@@ -1,0 +1,35 @@
+[0.721s] Invoking command in '/home/ubuntu/ROS-Humble-BlueRov2-Driver/src/bluerov2_controller': PYTHONPATH=/home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_controller/prefix_override:/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/bluerov2_controller build --build-base /home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_controller/build install --record /home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_controller/install.log --single-version-externally-managed
+[0.828s] running egg_info
+[0.835s] writing ../../build/bluerov2_controller/bluerov2_controller.egg-info/PKG-INFO
+[0.835s] writing dependency_links to ../../build/bluerov2_controller/bluerov2_controller.egg-info/dependency_links.txt
+[0.836s] writing entry points to ../../build/bluerov2_controller/bluerov2_controller.egg-info/entry_points.txt
+[0.836s] writing requirements to ../../build/bluerov2_controller/bluerov2_controller.egg-info/requires.txt
+[0.836s] writing top-level names to ../../build/bluerov2_controller/bluerov2_controller.egg-info/top_level.txt
+[0.849s] reading manifest file '../../build/bluerov2_controller/bluerov2_controller.egg-info/SOURCES.txt'
+[0.851s] writing manifest file '../../build/bluerov2_controller/bluerov2_controller.egg-info/SOURCES.txt'
+[0.851s] running build
+[0.851s] running build_py
+[0.852s] running install
+[0.853s] /home/ubuntu/.local/lib/python3.10/site-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.
+[0.853s] !!
+[0.853s] 
+[0.853s]         ********************************************************************************
+[0.853s]         Please avoid running ``setup.py`` directly.
+[0.853s]         Instead, use pypa/build, pypa/installer or other
+[0.853s]         standards-based tools.
+[0.853s] 
+[0.853s]         See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.
+[0.853s]         ********************************************************************************
+[0.853s] 
+[0.853s] !!
+[0.853s]   self.initialize_options()
+[0.856s] running install_lib
+[0.866s] running install_data
+[0.878s] running install_egg_info
+[0.885s] removing '/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/lib/python3.10/site-packages/bluerov2_controller-0.0.0-py3.10.egg-info' (and everything under it)
+[0.886s] Copying ../../build/bluerov2_controller/bluerov2_controller.egg-info to /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/lib/python3.10/site-packages/bluerov2_controller-0.0.0-py3.10.egg-info
+[0.886s] running install_scripts
+[0.955s] Installing controller script to /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/lib/bluerov2_controller
+[0.957s] Installing depth_controller script to /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/lib/bluerov2_controller
+[0.957s] writing list of installed files to '/home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_controller/install.log'
+[0.971s] Invoked command in '/home/ubuntu/ROS-Humble-BlueRov2-Driver/src/bluerov2_controller' returned '0': PYTHONPATH=/home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_controller/prefix_override:/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/bluerov2_controller build --build-base /home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_controller/build install --record /home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_controller/install.log --single-version-externally-managed

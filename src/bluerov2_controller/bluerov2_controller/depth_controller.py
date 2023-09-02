@@ -2,9 +2,9 @@
 import rclpy
 from rclpy.node import Node
 
-from bluerov2_controller.msg import Bar30
-from bluerov2_controller.msg import Set_depth
-from bluerov2_controller.msg import Set_target
+from bluerov2_msgs.msg import Bar30
+from bluerov2_msgs.msg import SetDepth
+from bluerov2_msgs.msg import SetTarget
 from std_msgs.msg import UInt16
 
 class Controller(Node):
@@ -14,7 +14,7 @@ class Controller(Node):
     rho = 1000      # kg/m^3  water density
     
     def __init__(self):
-        super().__init__("depth controller")       
+        super().__init__("depth_controller")       
 
         self.depth_desired  = 0             # Desired depth setpoint
         self.bar30_data     = [0, 0, 0, 0]  # List to store Bar30 sensor data: [time_boot_ms, press_abs, press_diff, temperature]
@@ -30,8 +30,8 @@ class Controller(Node):
 
         # Create subscriber
         self.bar30_sub      = self.create_subscription(Bar30, "/bluerov2/bar30", self.callback_bar30, 10) 
-        self.setDepth_sub   = self.create_subscription(Set_depth, "/settings/set_depth", self.callback_set_depth, 10)
-        self.setTarget_sub  = self.create_subscription(Set_target, "/settings/set_target", self.callback_set_target, 10) 
+        self.setDepth_sub   = self.create_subscription(SetDepth, "/settings/set_depth", self.callback_set_depth, 10)
+        self.setTarget_sub  = self.create_subscription(SetTarget, "/settings/set_target", self.callback_set_target, 10) 
 
         # Create publisher
         self.throttle_pub   = self.create_publisher(UInt16, "/bluerov2/rc/throttle", 10)  
@@ -69,9 +69,9 @@ class Controller(Node):
             self.pwm_max = 1500
         else:
             self.pwm_max = msg.pwm_max
-        self.KI = msg.KI 
-        self.KP = msg.KP 
-        self.KD = msg.KD 
+        self.KI = msg.ki
+        self.KP = msg.kp 
+        self.KD = msg.kd 
 
     def callback_set_target(self, msg):
         """Read data from '/Settings/set_target'
@@ -98,7 +98,7 @@ class Controller(Node):
         command calculated to reach the depth desired
 
         """
-        depth       = -(self.p-self.p0)/(self.rho*self.g)
+        depth       = -(p-self.p0)/(self.rho*self.g)
         delta_depth = depth - self.depth
         self.depth  = depth #current depth
         delta_t     = (self.bar30_data[0] - self.time)/1000.
@@ -136,7 +136,10 @@ class Controller(Node):
         u = self.control_pid(mesured_pressure)
         pwm = 1500 + u
         pwm = self.saturation(pwm)
-        self.throttle_pub.publish(pwm)
+
+        msg = UInt16()
+        msg.data = pwm
+        self.throttle_pub.publish(msg)
 
 def main(args=None):
     rclpy.init(args=args)    

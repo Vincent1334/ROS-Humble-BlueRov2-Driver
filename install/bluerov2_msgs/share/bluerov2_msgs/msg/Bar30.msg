@@ -1,0 +1,4 @@
+uint32 time_boot_ms
+float64 press_abs
+float64 press_diff
+int16 temperature

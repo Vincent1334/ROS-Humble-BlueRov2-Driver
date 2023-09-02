@@ -1,0 +1,57 @@
+[0.000000] (-) TimerEvent: {}
+[0.000206] (-) JobUnselected: {'identifier': 'bluerov2_controller'}
+[0.000275] (bluerov2_msgs) JobQueued: {'identifier': 'bluerov2_msgs', 'dependencies': OrderedDict()}
+[0.001266] (bluerov2_msgs) JobStarted: {'identifier': 'bluerov2_msgs'}
+[0.005614] (bluerov2_msgs) JobProgress: {'identifier': 'bluerov2_msgs', 'progress': 'cmake'}
+[0.007230] (bluerov2_msgs) JobProgress: {'identifier': 'bluerov2_msgs', 'progress': 'build'}
+[0.007254] (bluerov2_msgs) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_msgs', '--', '-j2', '-l2'], 'cwd': '/home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_msgs', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'ubuntu'), ('SSH_AGENT_PID', '1693'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/ubuntu'), ('OLDPWD', '/home/ubuntu/ROS-Humble-BlueRov2-Driver/src'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '853'), ('SYSTEMD_EXEC_PID', '1845'), ('XRDP_PULSE_SOURCE_SOCKET', 'xrdp_chansrv_audio_in_socket_10'), ('XRDP_PULSE_SINK_SOCKET', 'xrdp_chansrv_audio_out_socket_10'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator2bcb3aa092f2b6032576f3fd56ad9afe9'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '2301'), ('PULSE_SCRIPT', '/etc/xrdp/pulse/default.pa'), ('COLCON_PREFIX_PATH', '/home/ubuntu/ROS-Humble-BlueRov2-Driver/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'ubuntu'), ('JOURNAL_STREAM', '8:22702'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/usr/lib/ccache:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/ubuntu/ardupilot/Tools/autotest'), ('SESSION_MANAGER', 'local/primary:@/tmp/.ICE-unix/1799,unix/primary:/tmp/.ICE-unix/1799'), ('INVOCATION_ID', 'ecb1f02d28ea4f36ba4cbaf8024415b9'), ('XDG_MENU_PREFIX', 'gnome-'), ('XRDP_SOCKET_PATH', '/run/xrdp/sockdir'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':10.0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'C.UTF-8'), ('XDG_CURRENT_DESKTOP', 'GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('XMODIFIERS', '@im=ibus'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/opt/ros/humble'), ('UID', '1000'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:b2951f60-5ab9-43d9-a91d-383128add979'), ('QT_ACCESSIBILITY', '1'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('XRDP_SESSION', '1'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_msgs'), ('CLUTTER_IM_MODULE', 'ibus'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/opt/ros/humble')]), 'shell': False}
+[0.029093] (bluerov2_msgs) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.5 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.099212] (-) TimerEvent: {}
+[0.133753] (bluerov2_msgs) StdoutLine: {'line': b'-- Found std_msgs: 4.2.3 (/opt/ros/humble/share/std_msgs/cmake)\n'}
+[0.152618] (bluerov2_msgs) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.154240] (bluerov2_msgs) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.169146] (bluerov2_msgs) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.176740] (bluerov2_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.187410] (bluerov2_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.199263] (-) TimerEvent: {}
+[0.228391] (bluerov2_msgs) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)\n'}
+[0.308364] (-) TimerEvent: {}
+[0.413351] (-) TimerEvent: {}
+[0.414274] (bluerov2_msgs) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)\n'}
+[0.513450] (-) TimerEvent: {}
+[0.620358] (-) TimerEvent: {}
+[0.643988] (bluerov2_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.717867] (bluerov2_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.720414] (-) TimerEvent: {}
+[0.732937] (bluerov2_msgs) StdoutLine: {'line': b'-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)\n'}
+[0.748441] (bluerov2_msgs) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[0.748832] (bluerov2_msgs) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10\n'}
+[0.749058] (bluerov2_msgs) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/aarch64-linux-gnu/libpython3.10.so\n'}
+[0.777370] (bluerov2_msgs) StdoutLine: {'line': b'-- Configuring done\n'}
+[0.802529] (bluerov2_msgs) StdoutLine: {'line': b'-- Generating done\n'}
+[0.806777] (bluerov2_msgs) StdoutLine: {'line': b'-- Build files have been written to: /home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_msgs\n'}
+[0.820520] (-) TimerEvent: {}
+[0.834000] (bluerov2_msgs) StdoutLine: {'line': b'[  2%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[0.835163] (bluerov2_msgs) StdoutLine: {'line': b'[  4%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[0.928338] (-) TimerEvent: {}
+[1.028567] (-) TimerEvent: {}
+[1.136351] (-) TimerEvent: {}
+[1.223084] (bluerov2_msgs) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target bluerov2_msgs__rosidl_generator_c\x1b[0m\n'}
+[1.238676] (-) TimerEvent: {}
+[1.244788] (bluerov2_msgs) StdoutLine: {'line': b'[  6%] \x1b[32mBuilding C object CMakeFiles/bluerov2_msgs__rosidl_generator_c.dir/rosidl_generator_c/bluerov2_msgs/msg/detail/bar30__functions.c.o\x1b[0m\n'}
+[1.294707] (bluerov2_msgs) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_msgs/rosidl_generator_c/bluerov2_msgs/msg/detail/bar30__functions.h:19\x1b[m\x1b[K,\n'}
+[1.294857] (bluerov2_msgs) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_msgs/rosidl_generator_c/bluerov2_msgs/msg/detail/bar30__functions.c:4\x1b[m\x1b[K:\n'}
+[1.294904] (bluerov2_msgs) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_msgs/rosidl_generator_c/bluerov2_msgs/msg/detail/bar30__struct.h:22:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kfatal error: \x1b[m\x1b[Kstd_msgs/msg/detail/header__struct.h: No such file or directory\n'}
+[1.294937] (bluerov2_msgs) StderrLine: {'line': b'   22 | #include \x1b[01;31m\x1b[K"std_msgs/msg/detail/header__struct.h"\x1b[m\x1b[K\n'}
+[1.294965] (bluerov2_msgs) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.302320] (bluerov2_msgs) StdoutLine: {'line': b'[  6%] Built target bluerov2_msgs__cpp\n'}
+[1.304449] (bluerov2_msgs) StderrLine: {'line': b'compilation terminated.\n'}
+[1.309086] (bluerov2_msgs) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/bluerov2_msgs__rosidl_generator_c.dir/build.make:137: CMakeFiles/bluerov2_msgs__rosidl_generator_c.dir/rosidl_generator_c/bluerov2_msgs/msg/detail/bar30__functions.c.o] Error 1\n'}
+[1.309179] (bluerov2_msgs) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:213: CMakeFiles/bluerov2_msgs__rosidl_generator_c.dir/all] Error 2\n'}
+[1.309210] (bluerov2_msgs) StderrLine: {'line': b'gmake[1]: *** Waiting for unfinished jobs....\n'}
+[1.324834] (bluerov2_msgs) StdoutLine: {'line': b'[  6%] Built target ament_cmake_python_copy_bluerov2_msgs\n'}
+[1.328342] (bluerov2_msgs) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[1.331814] (bluerov2_msgs) CommandEnded: {'returncode': 2}
+[1.338741] (-) TimerEvent: {}
+[1.414807] (bluerov2_msgs) JobEnded: {'identifier': 'bluerov2_msgs', 'rc': 2}
+[1.415633] (-) EventReactorShutdown: {}

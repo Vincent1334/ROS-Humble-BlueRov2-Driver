@@ -1,0 +1,56 @@
+[0.008s] Invoking command in '/home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_msgs': CMAKE_PREFIX_PATH=/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/opt/ros/humble /usr/bin/cmake --build /home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_msgs -- -j2 -l2
+[0.027s] -- Found ament_cmake: 1.3.5 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.108s] -- Found std_msgs: 4.2.3 (/opt/ros/humble/share/std_msgs/cmake)
+[0.127s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.128s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.133s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.141s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.152s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.191s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[0.312s] [31mCMake Error at /opt/ros/humble/share/rosidl_adapter/cmake/rosidl_adapt_interfaces.cmake:59 (message):
+[0.312s]   execute_process(/usr/bin/python3.10 -m rosidl_adapter --package-name
+[0.312s]   bluerov2_msgs --arguments-file
+[0.312s]   /home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_msgs/rosidl_adapter__arguments__bluerov2_msgs.json
+[0.312s]   --output-dir
+[0.312s]   /home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_msgs/rosidl_adapter/bluerov2_msgs
+[0.312s]   --output-file
+[0.312s]   /home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_msgs/rosidl_adapter/bluerov2_msgs.idls)
+[0.312s]   returned error code 1:
+[0.312s] 
+[0.312s]   Error processing 'std_msgs/header header' of 'bluerov2_msgs/Bar30':
+[0.312s]   ''header' is an invalid message name.  It should have the pattern
+[0.313s]   '^[A-Z][A-Za-z0-9]*$''
+[0.313s] 
+[0.313s]   Traceback (most recent call last):
+[0.313s] 
+[0.313s]     File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+[0.313s]       return _run_code(code, main_globals, None,
+[0.313s]     File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+[0.313s]       exec(code, run_globals)
+[0.313s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/__main__.py", line 19, in <module>
+[0.313s]       sys.exit(main())
+[0.313s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/main.py", line 53, in main
+[0.313s]       abs_idl_file = convert_to_idl(
+[0.313s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/__init__.py", line 19, in convert_to_idl
+[0.313s]       return convert_msg_to_idl(
+[0.313s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/msg/__init__.py", line 28, in convert_msg_to_idl
+[0.313s]       msg = parse_message_string(package_name, input_file.stem, content)
+[0.313s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/parser.py", line 520, in parse_message_string
+[0.313s]       Type(type_string, context_package_name=pkg_name),
+[0.313s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/parser.py", line 277, in __init__
+[0.313s]       super(Type, self).__init__(
+[0.313s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/parser.py", line 205, in __init__
+[0.313s]       raise InvalidResourceName(
+[0.313s] 
+[0.313s]   rosidl_adapter.parser.InvalidResourceName: 'header' is an invalid message
+[0.313s]   name.  It should have the pattern '^[A-Z][A-Za-z0-9]*$'
+[0.313s] 
+[0.313s] Call Stack (most recent call first):
+[0.313s]   /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:130 (rosidl_adapt_interfaces)
+[0.313s]   CMakeLists.txt:19 (rosidl_generate_interfaces)
+[0.313s] 
+[0.313s] [0m
+[0.324s] -- Configuring incomplete, errors occurred!
+[0.324s] See also "/home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_msgs/CMakeFiles/CMakeOutput.log".
+[0.324s] gmake: *** [Makefile:1179: cmake_check_build_system] Error 1
+[0.331s] Invoked command in '/home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_msgs' returned '2': CMAKE_PREFIX_PATH=/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/opt/ros/humble /usr/bin/cmake --build /home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_msgs -- -j2 -l2

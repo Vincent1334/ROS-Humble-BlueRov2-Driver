@@ -1,0 +1,26 @@
+[0.875s] Invoking command in '/home/ubuntu/ROS-Humble-BlueRov2-Driver/src/bluerov2_controller': AMENT_PREFIX_PATH=/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_msgs LD_LIBRARY_PATH=/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_controller/prefix_override:/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/lib/python3.10/site-packages:/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/bluerov2_controller build --build-base /home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_controller/build install --record /home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_controller/install.log --single-version-externally-managed
+[1.074s] running egg_info
+[1.075s] writing ../../build/bluerov2_controller/bluerov2_controller.egg-info/PKG-INFO
+[1.075s] writing dependency_links to ../../build/bluerov2_controller/bluerov2_controller.egg-info/dependency_links.txt
+[1.076s] writing entry points to ../../build/bluerov2_controller/bluerov2_controller.egg-info/entry_points.txt
+[1.077s] writing requirements to ../../build/bluerov2_controller/bluerov2_controller.egg-info/requires.txt
+[1.077s] writing top-level names to ../../build/bluerov2_controller/bluerov2_controller.egg-info/top_level.txt
+[1.078s] reading manifest file '../../build/bluerov2_controller/bluerov2_controller.egg-info/SOURCES.txt'
+[1.079s] writing manifest file '../../build/bluerov2_controller/bluerov2_controller.egg-info/SOURCES.txt'
+[1.080s] running build
+[1.080s] running build_py
+[1.080s] copying bluerov2_controller/depth_controller.py -> /home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_controller/build/lib/bluerov2_controller
+[1.081s] running install
+[1.081s] running install_lib
+[1.082s] copying /home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_controller/build/lib/bluerov2_controller/depth_controller.py -> /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/lib/python3.10/site-packages/bluerov2_controller
+[1.083s] byte-compiling /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/lib/python3.10/site-packages/bluerov2_controller/depth_controller.py to depth_controller.cpython-310.pyc
+[1.084s] running install_data
+[1.085s] copying package.xml -> /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/share/bluerov2_controller
+[1.085s] running install_egg_info
+[1.086s] removing '/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/lib/python3.10/site-packages/bluerov2_controller-0.0.0-py3.10.egg-info' (and everything under it)
+[1.097s] Copying ../../build/bluerov2_controller/bluerov2_controller.egg-info to /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/lib/python3.10/site-packages/bluerov2_controller-0.0.0-py3.10.egg-info
+[1.099s] running install_scripts
+[1.111s] Installing controller script to /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/lib/bluerov2_controller
+[1.112s] Installing depth_controller script to /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/lib/bluerov2_controller
+[1.112s] writing list of installed files to '/home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_controller/install.log'
+[1.128s] Invoked command in '/home/ubuntu/ROS-Humble-BlueRov2-Driver/src/bluerov2_controller' returned '0': AMENT_PREFIX_PATH=/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_msgs LD_LIBRARY_PATH=/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_controller/prefix_override:/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/lib/python3.10/site-packages:/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/bluerov2_controller build --build-base /home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_controller/build install --record /home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_controller/install.log --single-version-externally-managed

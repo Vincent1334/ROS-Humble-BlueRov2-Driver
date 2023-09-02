@@ -48,18 +48,18 @@ class Controller(Node):
         self.arm_pub            = self.create_publisher(Bool, "/bluerov2/arm_status", 10)         
         
         # Setup connection parameters
-        self.declare_parameter("bluerov_ip", "192.168.2.2")
-        self.declare_parameter("bluerov_port", 14550)
+        self.declare_parameter("ip", "192.168.2.2") 
+        self.declare_parameter("port", 14550)
         self.declare_parameter("baudrate", 115200)         
 
-        self.bluerov_ip = self.get_parameter("bluerov_ip").value
-        self.bluerov_port = self.get_parameter("bluerov_port").value  
+        self.bluerov_ip = self.get_parameter("ip").value
+        self.bluerov_port = self.get_parameter("port").value  
         self.bluerov_baudrate = self.get_parameter("baudrate").value
 
         self.get_logger().info("Controller for bluerov2 was started successfully!")
 
         # Create the connection to the bluerov2
-        self.connection = mavutil.mavlink_connection("udpin:" + self.bluerov_ip + ":" + str(self.bluerov_port), baudrate=self.bluerov_baudrate)
+        self.connection = mavutil.mavlink_connection("udpin:" + self.bluerov_ip + ":" + str(self.bluerov_port), baudrate=self.bluerov_baudrate)        
         
         self.get_logger().info("Connecting to BlueRov2...")
         self.connection.wait_heartbeat()
