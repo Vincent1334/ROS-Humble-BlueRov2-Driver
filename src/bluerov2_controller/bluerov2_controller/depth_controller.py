@@ -2,9 +2,9 @@
 import rclpy
 from rclpy.node import Node
 
-from bluerov2_msgs.msg import Bar30
-from bluerov2_msgs.msg import SetDepth
-from bluerov2_msgs.msg import SetTarget
+from bluerov2_interfaces.msg import Bar30
+from bluerov2_interfaces.msg import SetDepth
+from bluerov2_interfaces.msg import SetTarget
 from std_msgs.msg import UInt16
 
 class Controller(Node):
@@ -139,7 +139,7 @@ class Controller(Node):
 
         msg = UInt16()
         msg.data = pwm
-        self.throttle_pub.publish(msg)
+        self.throttle_pub.publish(msg)        
 
 def main(args=None):
     rclpy.init(args=args)    

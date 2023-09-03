@@ -1,0 +1,5 @@
+  File "/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/lib/python3.10/site-packages/bluerov2_controller/depth_controller.py", line 144
+    self.get_logger().info("Desired depth: " + self.depth_desired + " Depth: " self.depth)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+
