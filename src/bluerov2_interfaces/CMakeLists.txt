@@ -17,7 +17,9 @@ find_package(rosidl_default_generators REQUIRED)
 rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/Bar30.msg"
   "msg/SetDepth.msg"
+  "msg/SetRoll.msg"
   "msg/SetTarget.msg"
+  "msg/Attitude.msg"
  )
 
 ament_export_dependencies(rosidl_default_runtime)

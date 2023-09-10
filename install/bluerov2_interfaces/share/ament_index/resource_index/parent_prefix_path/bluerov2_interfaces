@@ -1,1 +1,1 @@
-/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_msgs:/opt/ros/humble
+/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_msgs:/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces:/opt/ros/humble

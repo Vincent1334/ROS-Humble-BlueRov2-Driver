@@ -6,6 +6,8 @@ import pymavlink.dialects.v20.ardupilotmega as mavlink
 
 from std_msgs.msg import UInt16
 from std_msgs.msg import Bool
+from bluerov2_interfaces.msg import Attitude
+from bluerov2_interfaces.msg import Bar30
 
 
 class Controller(Node):
@@ -29,6 +31,8 @@ class Controller(Node):
         self.camera_pan         = 1500                              # The Camera Pan channel (RC7) controls the horizontal panning movement of the camera.
         self.camera_tilt        = 1500                              # The Camera Tilt channel (RC8) controls the vertical tilt movement of the camera.
         self.lights             = 1500                              # The Lights Level channel (RC9) controls the intensity or brightness of the light source.
+
+        self.data               = {}                                # Dictionary that stores all sensor data
         
         # Create subscriber
         self.rc_pitch_sub       = self.create_subscription(UInt16, "/bluerov2/rc/pitch", self.rc1_callback, 10)
@@ -45,10 +49,12 @@ class Controller(Node):
         
         # Create publischer
         #self.battery_pub        = self.create_publisher(MSG, "/bluerov2/battery", 10)
-        self.arm_pub            = self.create_publisher(Bool, "/bluerov2/arm_status", 10)         
+        self.arm_pub            = self.create_publisher(Bool, "/bluerov2/arm_status", 10)  
+        self.attitude_pub       = self.create_publisher(Attitude, "/bluerov2/attitude", 10)   
+        self.bar30_pub          = self.create_publisher(Bar30, "/bluerov2/bar30", 10)     
         
         # Setup connection parameters
-        self.declare_parameter("ip", "192.168.2.2") 
+        self.declare_parameter("ip", "0.0.0.0") 
         self.declare_parameter("port", 14550)
         self.declare_parameter("baudrate", 115200)         
 
@@ -70,6 +76,9 @@ class Controller(Node):
         self.recv_match = self.connection.recv_match
         self.target     = (self.connection.target_system,
                            self.connection.target_component)
+        
+        self.get_logger().info("Request data stream...") 
+        self.mav.request_data_stream_send(self.conn.target_system, self.conn.target_component, mavutil.mavlink.MAV_DATA_STREAM_ALL,4, 1)
         
         # Now we are ready to dive :)     
         self.arm()
@@ -102,7 +111,54 @@ class Controller(Node):
 
         self.mav.rc_channels_override_send(*self.target, *rc_channel_values)
 
-        # Get Sensor data
+        # Request all sensor data
+        msgs = []
+        while True:
+            msg = self.recv_match()
+            if msg != None:
+                msgs.append(msg)
+            else:
+                break
+
+        for msg in msgs:
+            self.data[msg.get_type()] = msg.to_dict()
+
+        # Publish ATTITUDE Data
+        if 'ATTITUDE' not in self.get_data():
+            raise Exception('no ATTITUDE data')
+        else :
+            pass
+        
+        attitude_data = self.get_data()['ATTITUDE']
+        orientation = [attitude_data[i] for i in ['roll', 'pitch', 'yaw']]
+        orientation_speed = [attitude_data[i] for i in ['rollspeed', 'pitchspeed', 'yawspeed']]
+        
+        msg = Attitude()        
+        msg.time_boot_ms = attitude_data['time_boot_ms']
+        msg.roll = orientation[0]
+        msg.pitch = orientation[1]
+        msg.yaw = orientation[2]
+        msg.rollspeed = orientation_speed[0]
+        msg.pitchspeed = orientation_speed[1]
+        msg.yawspeed = orientation_speed[2]
+
+        self.attitude_pub.publish(msg)
+
+        # Publish Pressure Data
+        if 'SCALED_PRESSURE2' not in self.get_data():
+            raise Exception('no SCALE_PRESSURE2 data')
+        else :
+            pass
+
+        bar30_data = self.get_data()['SCALED_PRESSURE2']
+        msg = Bar30()        
+        msg.time_boot_ms = bar30_data['time_boot_ms']
+        msg.press_abs    = bar30_data['press_abs']
+        msg.press_diff   = bar30_data['press_diff']
+        msg.temperature  = bar30_data['temperature']
+
+        self.bar30_pub.publish(msg)
+
         
        
 

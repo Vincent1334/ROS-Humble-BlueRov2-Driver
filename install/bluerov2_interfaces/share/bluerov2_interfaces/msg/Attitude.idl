@@ -1,0 +1,24 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from bluerov2_interfaces/msg/Attitude.msg
+// generated code does not contain a copyright notice
+
+
+module bluerov2_interfaces {
+  module msg {
+    struct Attitude {
+      uint32 time_boot_ms;
+
+      double roll;
+
+      double pitch;
+
+      double yaw;
+
+      double rollspeed;
+
+      double pitchspeed;
+
+      double yawspeed;
+    };
+  };
+};

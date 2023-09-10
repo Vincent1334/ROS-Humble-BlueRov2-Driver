@@ -9,6 +9,7 @@
 
   <depend>rclpy</depend>
   <depend>pymavlink</depend>
+  <depend>numpy</depend>
 
   <depend>bluerov2_interfaces</depend>
 

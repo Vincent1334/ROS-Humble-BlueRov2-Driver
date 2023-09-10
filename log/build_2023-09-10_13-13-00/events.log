@@ -1,0 +1,563 @@
+[0.000000] (-) TimerEvent: {}
+[0.000092] (bluerov2_interfaces) JobQueued: {'identifier': 'bluerov2_interfaces', 'dependencies': OrderedDict()}
+[0.000159] (bluerov2_controller) JobQueued: {'identifier': 'bluerov2_controller', 'dependencies': OrderedDict([('bluerov2_interfaces', '/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces')])}
+[0.000173] (bluerov2_interfaces) JobStarted: {'identifier': 'bluerov2_interfaces'}
+[0.012206] (bluerov2_interfaces) JobProgress: {'identifier': 'bluerov2_interfaces', 'progress': 'cmake'}
+[0.013607] (bluerov2_interfaces) JobProgress: {'identifier': 'bluerov2_interfaces', 'progress': 'build'}
+[0.014147] (bluerov2_interfaces) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_interfaces', '--', '-j2', '-l2'], 'cwd': '/home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_interfaces', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'ubuntu'), ('SSH_AGENT_PID', '1732'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_msgs/lib:/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/ubuntu'), ('OLDPWD', '/home/ubuntu/ROS-Humble-BlueRov2-Driver/src'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '873'), ('SYSTEMD_EXEC_PID', '1879'), ('XRDP_PULSE_SOURCE_SOCKET', 'xrdp_chansrv_audio_in_socket_10'), ('XRDP_PULSE_SINK_SOCKET', 'xrdp_chansrv_audio_out_socket_10'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator2bcb3aa092f2b6032576f3fd56ad9afe9'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '2767'), ('PULSE_SCRIPT', '/etc/xrdp/pulse/default.pa'), ('COLCON_PREFIX_PATH', '/home/ubuntu/ROS-Humble-BlueRov2-Driver/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'ubuntu'), ('JOURNAL_STREAM', '8:22911'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/usr/lib/ccache:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/ubuntu/ardupilot/Tools/autotest'), ('SESSION_MANAGER', 'local/primary:@/tmp/.ICE-unix/1844,unix/primary:/tmp/.ICE-unix/1844'), ('INVOCATION_ID', '8081fd7887e34400bd81b0c6e3cd3128'), ('XDG_MENU_PREFIX', 'gnome-'), ('XRDP_SOCKET_PATH', '/run/xrdp/sockdir'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':10.0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'C.UTF-8'), ('XDG_CURRENT_DESKTOP', 'GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('XMODIFIERS', '@im=ibus'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_msgs:/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces:/opt/ros/humble'), ('UID', '1000'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:b32ae659-5340-4ab9-bc84-dfde429f2f68'), ('QT_ACCESSIBILITY', '1'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('XRDP_SESSION', '1'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_interfaces'), ('CLUTTER_IM_MODULE', 'ibus'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_msgs/local/lib/python3.10/dist-packages:/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/lib/python3.10/site-packages:/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_msgs:/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces:/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/opt/ros/humble')]), 'shell': False}
+[0.102554] (-) TimerEvent: {}
+[0.102947] (bluerov2_interfaces) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.5 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.202785] (-) TimerEvent: {}
+[0.268133] (bluerov2_interfaces) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)\n'}
+[0.271384] (bluerov2_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.275712] (bluerov2_interfaces) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.303142] (-) TimerEvent: {}
+[0.335274] (bluerov2_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.403182] (-) TimerEvent: {}
+[0.503387] (-) TimerEvent: {}
+[0.603595] (-) TimerEvent: {}
+[0.646824] (bluerov2_interfaces) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)\n'}
+[0.703691] (-) TimerEvent: {}
+[0.808503] (-) TimerEvent: {}
+[0.836953] (bluerov2_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.908601] (-) TimerEvent: {}
+[1.008939] (-) TimerEvent: {}
+[1.109309] (-) TimerEvent: {}
+[1.177503] (bluerov2_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.207054] (bluerov2_interfaces) StdoutLine: {'line': b'-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)\n'}
+[1.209370] (-) TimerEvent: {}
+[1.224088] (bluerov2_interfaces) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[1.224483] (bluerov2_interfaces) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10\n'}
+[1.224715] (bluerov2_interfaces) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/aarch64-linux-gnu/libpython3.10.so\n'}
+[1.268432] (bluerov2_interfaces) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.309481] (-) TimerEvent: {}
+[1.339556] (bluerov2_interfaces) StdoutLine: {'line': b'-- Generating done\n'}
+[1.347715] (bluerov2_interfaces) StdoutLine: {'line': b'-- Build files have been written to: /home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_interfaces\n'}
+[1.374489] (bluerov2_interfaces) StdoutLine: {'line': b'[  1%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[1.409606] (-) TimerEvent: {}
+[1.415743] (bluerov2_interfaces) StdoutLine: {'line': b'[  3%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[1.509690] (-) TimerEvent: {}
+[1.610024] (-) TimerEvent: {}
+[1.710360] (-) TimerEvent: {}
+[1.810665] (-) TimerEvent: {}
+[1.910910] (-) TimerEvent: {}
+[2.011250] (-) TimerEvent: {}
+[2.111606] (-) TimerEvent: {}
+[2.210106] (bluerov2_interfaces) StdoutLine: {'line': b'[  3%] Built target bluerov2_interfaces__cpp\n'}
+[2.211669] (-) TimerEvent: {}
+[2.311975] (-) TimerEvent: {}
+[2.350387] (bluerov2_interfaces) StdoutLine: {'line': b'[  3%] Built target ament_cmake_python_copy_bluerov2_interfaces\n'}
+[2.412069] (-) TimerEvent: {}
+[2.512450] (-) TimerEvent: {}
+[2.546443] (bluerov2_interfaces) StdoutLine: {'line': b'[  4%] \x1b[34m\x1b[1mGenerating C++ type support for eProsima Fast-RTPS\x1b[0m\n'}
+[2.559387] (bluerov2_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target bluerov2_interfaces__rosidl_generator_c\x1b[0m\n'}
+[2.612532] (-) TimerEvent: {}
+[2.624491] (bluerov2_interfaces) StdoutLine: {'line': b'[  6%] \x1b[32mBuilding C object CMakeFiles/bluerov2_interfaces__rosidl_generator_c.dir/rosidl_generator_c/bluerov2_interfaces/msg/detail/bar30__functions.c.o\x1b[0m\n'}
+[2.712622] (-) TimerEvent: {}
+[2.739312] (bluerov2_interfaces) StdoutLine: {'line': b'[  7%] \x1b[32mBuilding C object CMakeFiles/bluerov2_interfaces__rosidl_generator_c.dir/rosidl_generator_c/bluerov2_interfaces/msg/detail/set_depth__functions.c.o\x1b[0m\n'}
+[2.812705] (-) TimerEvent: {}
+[2.854508] (bluerov2_interfaces) StdoutLine: {'line': b'[  9%] \x1b[32mBuilding C object CMakeFiles/bluerov2_interfaces__rosidl_generator_c.dir/rosidl_generator_c/bluerov2_interfaces/msg/detail/set_roll__functions.c.o\x1b[0m\n'}
+[2.912797] (-) TimerEvent: {}
+[3.013019] (-) TimerEvent: {}
+[3.113359] (-) TimerEvent: {}
+[3.204518] (bluerov2_interfaces) StdoutLine: {'line': b'[ 11%] \x1b[32mBuilding C object CMakeFiles/bluerov2_interfaces__rosidl_generator_c.dir/rosidl_generator_c/bluerov2_interfaces/msg/detail/set_target__functions.c.o\x1b[0m\n'}
+[3.213446] (-) TimerEvent: {}
+[3.259773] (bluerov2_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target bluerov2_interfaces__rosidl_typesupport_fastrtps_cpp\x1b[0m\n'}
+[3.307843] (bluerov2_interfaces) StdoutLine: {'line': b'[ 12%] \x1b[32mBuilding CXX object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/bluerov2_interfaces/msg/detail/dds_fastrtps/bar30__type_support.cpp.o\x1b[0m\n'}
+[3.310435] (bluerov2_interfaces) StdoutLine: {'line': b'[ 14%] \x1b[32mBuilding C object CMakeFiles/bluerov2_interfaces__rosidl_generator_c.dir/rosidl_generator_c/bluerov2_interfaces/msg/detail/attitude__functions.c.o\x1b[0m\n'}
+[3.313516] (-) TimerEvent: {}
+[3.413707] (-) TimerEvent: {}
+[3.513955] (-) TimerEvent: {}
+[3.541441] (bluerov2_interfaces) StdoutLine: {'line': b'[ 15%] \x1b[32m\x1b[1mLinking C shared library libbluerov2_interfaces__rosidl_generator_c.so\x1b[0m\n'}
+[3.577437] (bluerov2_interfaces) StdoutLine: {'line': b'[ 17%] \x1b[32mBuilding CXX object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/bluerov2_interfaces/msg/detail/dds_fastrtps/set_depth__type_support.cpp.o\x1b[0m\n'}
+[3.614115] (-) TimerEvent: {}
+[3.641901] (bluerov2_interfaces) StdoutLine: {'line': b'[ 19%] \x1b[32mBuilding CXX object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/bluerov2_interfaces/msg/detail/dds_fastrtps/set_roll__type_support.cpp.o\x1b[0m\n'}
+[3.660963] (bluerov2_interfaces) StdoutLine: {'line': b'[ 19%] Built target bluerov2_interfaces__rosidl_generator_c\n'}
+[3.688563] (bluerov2_interfaces) StdoutLine: {'line': b'[ 20%] \x1b[34m\x1b[1mGenerating C++ introspection for ROS interfaces\x1b[0m\n'}
+[3.714201] (-) TimerEvent: {}
+[3.814431] (-) TimerEvent: {}
+[3.914665] (-) TimerEvent: {}
+[4.014978] (-) TimerEvent: {}
+[4.115360] (-) TimerEvent: {}
+[4.215598] (-) TimerEvent: {}
+[4.315998] (-) TimerEvent: {}
+[4.416314] (-) TimerEvent: {}
+[4.516551] (-) TimerEvent: {}
+[4.563706] (bluerov2_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target bluerov2_interfaces__rosidl_typesupport_introspection_cpp\x1b[0m\n'}
+[4.616656] (-) TimerEvent: {}
+[4.618146] (bluerov2_interfaces) StdoutLine: {'line': b'[ 22%] \x1b[32mBuilding CXX object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/bluerov2_interfaces/msg/detail/bar30__type_support.cpp.o\x1b[0m\n'}
+[4.716753] (-) TimerEvent: {}
+[4.718265] (bluerov2_interfaces) StdoutLine: {'line': b'[ 23%] \x1b[32mBuilding CXX object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/bluerov2_interfaces/msg/detail/dds_fastrtps/set_target__type_support.cpp.o\x1b[0m\n'}
+[4.749282] (bluerov2_interfaces) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding CXX object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/bluerov2_interfaces/msg/detail/dds_fastrtps/attitude__type_support.cpp.o\x1b[0m\n'}
+[4.816854] (-) TimerEvent: {}
+[4.838332] (bluerov2_interfaces) StdoutLine: {'line': b'[ 26%] \x1b[32mBuilding CXX object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/bluerov2_interfaces/msg/detail/set_depth__type_support.cpp.o\x1b[0m\n'}
+[4.886331] (bluerov2_interfaces) StdoutLine: {'line': b'[ 28%] \x1b[32mBuilding CXX object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/bluerov2_interfaces/msg/detail/set_roll__type_support.cpp.o\x1b[0m\n'}
+[4.916949] (-) TimerEvent: {}
+[5.017195] (-) TimerEvent: {}
+[5.117415] (-) TimerEvent: {}
+[5.217649] (-) TimerEvent: {}
+[5.317926] (-) TimerEvent: {}
+[5.418330] (-) TimerEvent: {}
+[5.518740] (-) TimerEvent: {}
+[5.619050] (-) TimerEvent: {}
+[5.643149] (bluerov2_interfaces) StdoutLine: {'line': b'[ 30%] \x1b[32m\x1b[1mLinking CXX shared library libbluerov2_interfaces__rosidl_typesupport_fastrtps_cpp.so\x1b[0m\n'}
+[5.674608] (bluerov2_interfaces) StdoutLine: {'line': b'[ 31%] \x1b[32mBuilding CXX object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/bluerov2_interfaces/msg/detail/set_target__type_support.cpp.o\x1b[0m\n'}
+[5.722348] (-) TimerEvent: {}
+[5.762512] (bluerov2_interfaces) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/bluerov2_interfaces/msg/detail/attitude__type_support.cpp.o\x1b[0m\n'}
+[5.834293] (-) TimerEvent: {}
+[5.834476] (bluerov2_interfaces) StdoutLine: {'line': b'[ 33%] Built target bluerov2_interfaces__rosidl_typesupport_fastrtps_cpp\n'}
+[5.871487] (bluerov2_interfaces) StdoutLine: {'line': b'[ 34%] \x1b[34m\x1b[1mGenerating C++ type support dispatch for ROS interfaces\x1b[0m\n'}
+[5.934394] (-) TimerEvent: {}
+[6.034780] (-) TimerEvent: {}
+[6.135116] (-) TimerEvent: {}
+[6.235480] (-) TimerEvent: {}
+[6.335974] (-) TimerEvent: {}
+[6.436264] (-) TimerEvent: {}
+[6.536616] (-) TimerEvent: {}
+[6.574367] (bluerov2_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target bluerov2_interfaces__rosidl_typesupport_cpp\x1b[0m\n'}
+[6.621492] (bluerov2_interfaces) StdoutLine: {'line': b'[ 36%] \x1b[32mBuilding CXX object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/bluerov2_interfaces/msg/bar30__type_support.cpp.o\x1b[0m\n'}
+[6.636719] (-) TimerEvent: {}
+[6.708388] (bluerov2_interfaces) StdoutLine: {'line': b'[ 38%] \x1b[32m\x1b[1mLinking CXX shared library libbluerov2_interfaces__rosidl_typesupport_introspection_cpp.so\x1b[0m\n'}
+[6.711073] (bluerov2_interfaces) StdoutLine: {'line': b'[ 39%] \x1b[32mBuilding CXX object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/bluerov2_interfaces/msg/set_depth__type_support.cpp.o\x1b[0m\n'}
+[6.736818] (-) TimerEvent: {}
+[6.791362] (bluerov2_interfaces) StdoutLine: {'line': b'[ 41%] \x1b[32mBuilding CXX object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/bluerov2_interfaces/msg/set_roll__type_support.cpp.o\x1b[0m\n'}
+[6.836950] (-) TimerEvent: {}
+[6.871865] (bluerov2_interfaces) StdoutLine: {'line': b'[ 41%] Built target bluerov2_interfaces__rosidl_typesupport_introspection_cpp\n'}
+[6.909335] (bluerov2_interfaces) StdoutLine: {'line': b'[ 42%] \x1b[34m\x1b[1mGenerating C type support for eProsima Fast-RTPS\x1b[0m\n'}
+[6.937041] (-) TimerEvent: {}
+[7.037405] (-) TimerEvent: {}
+[7.137751] (-) TimerEvent: {}
+[7.238078] (-) TimerEvent: {}
+[7.338395] (-) TimerEvent: {}
+[7.434313] (bluerov2_interfaces) StdoutLine: {'line': b'[ 44%] \x1b[32mBuilding CXX object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/bluerov2_interfaces/msg/set_target__type_support.cpp.o\x1b[0m\n'}
+[7.438512] (-) TimerEvent: {}
+[7.530464] (bluerov2_interfaces) StdoutLine: {'line': b'[ 46%] \x1b[32mBuilding CXX object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/bluerov2_interfaces/msg/attitude__type_support.cpp.o\x1b[0m\n'}
+[7.538595] (-) TimerEvent: {}
+[7.638794] (-) TimerEvent: {}
+[7.739134] (-) TimerEvent: {}
+[7.823914] (bluerov2_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target bluerov2_interfaces__rosidl_typesupport_fastrtps_c\x1b[0m\n'}
+[7.839230] (-) TimerEvent: {}
+[7.874389] (bluerov2_interfaces) StdoutLine: {'line': b'[ 47%] \x1b[32mBuilding CXX object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/bluerov2_interfaces/msg/detail/bar30__type_support_c.cpp.o\x1b[0m\n'}
+[7.939332] (-) TimerEvent: {}
+[8.039662] (-) TimerEvent: {}
+[8.139989] (-) TimerEvent: {}
+[8.150763] (bluerov2_interfaces) StdoutLine: {'line': b'[ 49%] \x1b[32mBuilding CXX object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/bluerov2_interfaces/msg/detail/set_depth__type_support_c.cpp.o\x1b[0m\n'}
+[8.166440] (bluerov2_interfaces) StdoutLine: {'line': b'[ 50%] \x1b[32m\x1b[1mLinking CXX shared library libbluerov2_interfaces__rosidl_typesupport_cpp.so\x1b[0m\n'}
+[8.240086] (-) TimerEvent: {}
+[8.315901] (bluerov2_interfaces) StdoutLine: {'line': b'[ 50%] Built target bluerov2_interfaces__rosidl_typesupport_cpp\n'}
+[8.340192] (-) TimerEvent: {}
+[8.345193] (bluerov2_interfaces) StdoutLine: {'line': b'[ 52%] \x1b[32mBuilding CXX object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/bluerov2_interfaces/msg/detail/set_roll__type_support_c.cpp.o\x1b[0m\n'}
+[8.440274] (-) TimerEvent: {}
+[8.540495] (-) TimerEvent: {}
+[8.640720] (-) TimerEvent: {}
+[8.740927] (-) TimerEvent: {}
+[8.841251] (-) TimerEvent: {}
+[8.877217] (bluerov2_interfaces) StdoutLine: {'line': b'running egg_info\n'}
+[8.878029] (bluerov2_interfaces) StdoutLine: {'line': b'writing bluerov2_interfaces.egg-info/PKG-INFO\n'}
+[8.878607] (bluerov2_interfaces) StdoutLine: {'line': b'writing dependency_links to bluerov2_interfaces.egg-info/dependency_links.txt\n'}
+[8.879111] (bluerov2_interfaces) StdoutLine: {'line': b'writing top-level names to bluerov2_interfaces.egg-info/top_level.txt\n'}
+[8.881901] (bluerov2_interfaces) StdoutLine: {'line': b"reading manifest file 'bluerov2_interfaces.egg-info/SOURCES.txt'\n"}
+[8.882915] (bluerov2_interfaces) StdoutLine: {'line': b"writing manifest file 'bluerov2_interfaces.egg-info/SOURCES.txt'\n"}
+[8.939595] (bluerov2_interfaces) StdoutLine: {'line': b'[ 53%] \x1b[32mBuilding CXX object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/bluerov2_interfaces/msg/detail/set_target__type_support_c.cpp.o\x1b[0m\n'}
+[8.946073] (-) TimerEvent: {}
+[8.947173] (bluerov2_interfaces) StdoutLine: {'line': b'[ 53%] Built target ament_cmake_python_build_bluerov2_interfaces_egg\n'}
+[9.034322] (bluerov2_interfaces) StdoutLine: {'line': b'[ 55%] \x1b[32mBuilding CXX object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/bluerov2_interfaces/msg/detail/attitude__type_support_c.cpp.o\x1b[0m\n'}
+[9.046152] (-) TimerEvent: {}
+[9.150298] (-) TimerEvent: {}
+[9.254327] (-) TimerEvent: {}
+[9.358299] (-) TimerEvent: {}
+[9.466302] (-) TimerEvent: {}
+[9.570272] (-) TimerEvent: {}
+[9.682301] (-) TimerEvent: {}
+[9.782394] (bluerov2_interfaces) StdoutLine: {'line': b'[ 57%] \x1b[32m\x1b[1mLinking CXX shared library libbluerov2_interfaces__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[9.782505] (-) TimerEvent: {}
+[9.882933] (-) TimerEvent: {}
+[9.939138] (bluerov2_interfaces) StdoutLine: {'line': b'[ 57%] Built target bluerov2_interfaces__rosidl_typesupport_fastrtps_c\n'}
+[9.948949] (bluerov2_interfaces) StdoutLine: {'line': b'[ 58%] \x1b[34m\x1b[1mGenerating C introspection for ROS interfaces\x1b[0m\n'}
+[9.983011] (-) TimerEvent: {}
+[10.083277] (-) TimerEvent: {}
+[10.183535] (-) TimerEvent: {}
+[10.293548] (-) TimerEvent: {}
+[10.398553] (-) TimerEvent: {}
+[10.470360] (bluerov2_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target bluerov2_interfaces__rosidl_typesupport_introspection_c\x1b[0m\n'}
+[10.495515] (bluerov2_interfaces) StdoutLine: {'line': b'[ 60%] \x1b[32mBuilding C object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/bluerov2_interfaces/msg/detail/bar30__type_support.c.o\x1b[0m\n'}
+[10.498615] (-) TimerEvent: {}
+[10.551966] (bluerov2_interfaces) StdoutLine: {'line': b'[ 61%] \x1b[32mBuilding C object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/bluerov2_interfaces/msg/detail/set_depth__type_support.c.o\x1b[0m\n'}
+[10.598722] (-) TimerEvent: {}
+[10.634199] (bluerov2_interfaces) StdoutLine: {'line': b'[ 63%] \x1b[32mBuilding C object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/bluerov2_interfaces/msg/detail/set_roll__type_support.c.o\x1b[0m\n'}
+[10.698848] (-) TimerEvent: {}
+[10.738852] (bluerov2_interfaces) StdoutLine: {'line': b'[ 65%] \x1b[32mBuilding C object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/bluerov2_interfaces/msg/detail/set_target__type_support.c.o\x1b[0m\n'}
+[10.783247] (bluerov2_interfaces) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding C object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/bluerov2_interfaces/msg/detail/attitude__type_support.c.o\x1b[0m\n'}
+[10.798961] (-) TimerEvent: {}
+[10.906310] (-) TimerEvent: {}
+[10.950368] (bluerov2_interfaces) StdoutLine: {'line': b'[ 68%] \x1b[32m\x1b[1mLinking C shared library libbluerov2_interfaces__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[11.006406] (-) TimerEvent: {}
+[11.071172] (bluerov2_interfaces) StdoutLine: {'line': b'[ 68%] Built target bluerov2_interfaces__rosidl_typesupport_introspection_c\n'}
+[11.106500] (-) TimerEvent: {}
+[11.133013] (bluerov2_interfaces) StdoutLine: {'line': b'[ 69%] \x1b[34m\x1b[1mGenerating C type support dispatch for ROS interfaces\x1b[0m\n'}
+[11.206600] (-) TimerEvent: {}
+[11.306935] (-) TimerEvent: {}
+[11.407260] (-) TimerEvent: {}
+[11.507577] (-) TimerEvent: {}
+[11.603452] (bluerov2_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target bluerov2_interfaces__rosidl_typesupport_c\x1b[0m\n'}
+[11.607668] (-) TimerEvent: {}
+[11.633873] (bluerov2_interfaces) StdoutLine: {'line': b'[ 71%] \x1b[32mBuilding CXX object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/bluerov2_interfaces/msg/bar30__type_support.cpp.o\x1b[0m\n'}
+[11.688084] (bluerov2_interfaces) StdoutLine: {'line': b'[ 73%] \x1b[32mBuilding CXX object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/bluerov2_interfaces/msg/set_depth__type_support.cpp.o\x1b[0m\n'}
+[11.707771] (-) TimerEvent: {}
+[11.758303] (bluerov2_interfaces) StdoutLine: {'line': b'[ 74%] \x1b[32mBuilding CXX object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/bluerov2_interfaces/msg/set_roll__type_support.cpp.o\x1b[0m\n'}
+[11.807864] (-) TimerEvent: {}
+[11.889219] (bluerov2_interfaces) StdoutLine: {'line': b'[ 76%] \x1b[32mBuilding CXX object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/bluerov2_interfaces/msg/set_target__type_support.cpp.o\x1b[0m\n'}
+[11.907960] (-) TimerEvent: {}
+[11.923511] (bluerov2_interfaces) StdoutLine: {'line': b'[ 77%] \x1b[32mBuilding CXX object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/bluerov2_interfaces/msg/attitude__type_support.cpp.o\x1b[0m\n'}
+[12.008062] (-) TimerEvent: {}
+[12.028630] (bluerov2_interfaces) StdoutLine: {'line': b'[ 79%] \x1b[32m\x1b[1mLinking CXX shared library libbluerov2_interfaces__rosidl_typesupport_c.so\x1b[0m\n'}
+[12.108159] (-) TimerEvent: {}
+[12.134868] (bluerov2_interfaces) StdoutLine: {'line': b'[ 79%] Built target bluerov2_interfaces__rosidl_typesupport_c\n'}
+[12.208258] (-) TimerEvent: {}
+[12.277184] (bluerov2_interfaces) StdoutLine: {'line': b'[ 79%] Built target bluerov2_interfaces\n'}
+[12.308373] (-) TimerEvent: {}
+[12.348229] (bluerov2_interfaces) StdoutLine: {'line': b'[ 80%] \x1b[34m\x1b[1mGenerating Python code for ROS interfaces\x1b[0m\n'}
+[12.408512] (-) TimerEvent: {}
+[12.508845] (-) TimerEvent: {}
+[12.609154] (-) TimerEvent: {}
+[12.709446] (-) TimerEvent: {}
+[12.809737] (-) TimerEvent: {}
+[12.910023] (-) TimerEvent: {}
+[13.010294] (-) TimerEvent: {}
+[13.110548] (-) TimerEvent: {}
+[13.210822] (-) TimerEvent: {}
+[13.311182] (-) TimerEvent: {}
+[13.411492] (-) TimerEvent: {}
+[13.508023] (bluerov2_interfaces) StdoutLine: {'line': b'[ 80%] Built target bluerov2_interfaces__py\n'}
+[13.511551] (-) TimerEvent: {}
+[13.602538] (bluerov2_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target bluerov2_interfaces__rosidl_generator_py\x1b[0m\n'}
+[13.611674] (-) TimerEvent: {}
+[13.669408] (bluerov2_interfaces) StdoutLine: {'line': b'[ 82%] \x1b[32mBuilding C object CMakeFiles/bluerov2_interfaces__rosidl_generator_py.dir/rosidl_generator_py/bluerov2_interfaces/msg/_bar30_s.c.o\x1b[0m\n'}
+[13.711779] (-) TimerEvent: {}
+[13.752426] (bluerov2_interfaces) StdoutLine: {'line': b'[ 84%] \x1b[32mBuilding C object CMakeFiles/bluerov2_interfaces__rosidl_generator_py.dir/rosidl_generator_py/bluerov2_interfaces/msg/_set_depth_s.c.o\x1b[0m\n'}
+[13.803048] (bluerov2_interfaces) StdoutLine: {'line': b'[ 85%] \x1b[32mBuilding C object CMakeFiles/bluerov2_interfaces__rosidl_generator_py.dir/rosidl_generator_py/bluerov2_interfaces/msg/_set_roll_s.c.o\x1b[0m\n'}
+[13.811881] (-) TimerEvent: {}
+[13.912249] (-) TimerEvent: {}
+[14.012606] (-) TimerEvent: {}
+[14.112954] (-) TimerEvent: {}
+[14.213294] (-) TimerEvent: {}
+[14.313636] (-) TimerEvent: {}
+[14.398964] (bluerov2_interfaces) StdoutLine: {'line': b'[ 87%] \x1b[32mBuilding C object CMakeFiles/bluerov2_interfaces__rosidl_generator_py.dir/rosidl_generator_py/bluerov2_interfaces/msg/_set_target_s.c.o\x1b[0m\n'}
+[14.414411] (-) TimerEvent: {}
+[14.515028] (-) TimerEvent: {}
+[14.522492] (bluerov2_interfaces) StdoutLine: {'line': b'[ 88%] \x1b[32mBuilding C object CMakeFiles/bluerov2_interfaces__rosidl_generator_py.dir/rosidl_generator_py/bluerov2_interfaces/msg/_attitude_s.c.o\x1b[0m\n'}
+[14.615139] (-) TimerEvent: {}
+[14.715525] (-) TimerEvent: {}
+[14.815876] (-) TimerEvent: {}
+[14.917483] (-) TimerEvent: {}
+[14.946344] (bluerov2_interfaces) StdoutLine: {'line': b'[ 90%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/bluerov2_interfaces/libbluerov2_interfaces__rosidl_generator_py.so\x1b[0m\n'}
+[15.017582] (-) TimerEvent: {}
+[15.117836] (-) TimerEvent: {}
+[15.123240] (bluerov2_interfaces) StdoutLine: {'line': b'[ 90%] Built target bluerov2_interfaces__rosidl_generator_py\n'}
+[15.178495] (bluerov2_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target bluerov2_interfaces__rosidl_typesupport_fastrtps_c__pyext\x1b[0m\n'}
+[15.223650] (-) TimerEvent: {}
+[15.242509] (bluerov2_interfaces) StdoutLine: {'line': b'[ 92%] \x1b[32mBuilding C object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/bluerov2_interfaces/_bluerov2_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[15.332951] (-) TimerEvent: {}
+[15.433249] (-) TimerEvent: {}
+[15.534215] (-) TimerEvent: {}
+[15.634650] (-) TimerEvent: {}
+[15.727041] (bluerov2_interfaces) StdoutLine: {'line': b'[ 93%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/bluerov2_interfaces/bluerov2_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\x1b[0m\n'}
+[15.734754] (-) TimerEvent: {}
+[15.834998] (-) TimerEvent: {}
+[15.862939] (bluerov2_interfaces) StdoutLine: {'line': b'[ 93%] Built target bluerov2_interfaces__rosidl_typesupport_fastrtps_c__pyext\n'}
+[15.913782] (bluerov2_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target bluerov2_interfaces__rosidl_typesupport_introspection_c__pyext\x1b[0m\n'}
+[15.935108] (-) TimerEvent: {}
+[15.982653] (bluerov2_interfaces) StdoutLine: {'line': b'[ 95%] \x1b[32mBuilding C object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/bluerov2_interfaces/_bluerov2_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[16.046336] (-) TimerEvent: {}
+[16.146567] (-) TimerEvent: {}
+[16.246818] (-) TimerEvent: {}
+[16.285897] (bluerov2_interfaces) StdoutLine: {'line': b'[ 96%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/bluerov2_interfaces/bluerov2_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\x1b[0m\n'}
+[16.346920] (-) TimerEvent: {}
+[16.409252] (bluerov2_interfaces) StdoutLine: {'line': b'[ 96%] Built target bluerov2_interfaces__rosidl_typesupport_introspection_c__pyext\n'}
+[16.442574] (bluerov2_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target bluerov2_interfaces__rosidl_typesupport_c__pyext\x1b[0m\n'}
+[16.446994] (-) TimerEvent: {}
+[16.482638] (bluerov2_interfaces) StdoutLine: {'line': b'[ 98%] \x1b[32mBuilding C object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/bluerov2_interfaces/_bluerov2_interfaces_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[16.547214] (-) TimerEvent: {}
+[16.647696] (-) TimerEvent: {}
+[16.748043] (-) TimerEvent: {}
+[16.850535] (bluerov2_interfaces) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/bluerov2_interfaces/bluerov2_interfaces_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\x1b[0m\n'}
+[16.850696] (-) TimerEvent: {}
+[16.951578] (-) TimerEvent: {}
+[17.006192] (bluerov2_interfaces) StdoutLine: {'line': b'[100%] Built target bluerov2_interfaces__rosidl_typesupport_c__pyext\n'}
+[17.061654] (bluerov2_interfaces) CommandEnded: {'returncode': 0}
+[17.062174] (-) TimerEvent: {}
+[17.162877] (-) TimerEvent: {}
+[17.263224] (-) TimerEvent: {}
+[17.363594] (-) TimerEvent: {}
+[17.463921] (-) TimerEvent: {}
+[17.564238] (-) TimerEvent: {}
+[17.665892] (-) TimerEvent: {}
+[17.766262] (-) TimerEvent: {}
+[17.832145] (bluerov2_interfaces) JobProgress: {'identifier': 'bluerov2_interfaces', 'progress': 'install'}
+[17.839206] (bluerov2_interfaces) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_interfaces'], 'cwd': '/home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_interfaces', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'ubuntu'), ('SSH_AGENT_PID', '1732'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_msgs/lib:/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/ubuntu'), ('OLDPWD', '/home/ubuntu/ROS-Humble-BlueRov2-Driver/src'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '873'), ('SYSTEMD_EXEC_PID', '1879'), ('XRDP_PULSE_SOURCE_SOCKET', 'xrdp_chansrv_audio_in_socket_10'), ('XRDP_PULSE_SINK_SOCKET', 'xrdp_chansrv_audio_out_socket_10'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator2bcb3aa092f2b6032576f3fd56ad9afe9'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '2767'), ('PULSE_SCRIPT', '/etc/xrdp/pulse/default.pa'), ('COLCON_PREFIX_PATH', '/home/ubuntu/ROS-Humble-BlueRov2-Driver/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'ubuntu'), ('JOURNAL_STREAM', '8:22911'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/usr/lib/ccache:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/ubuntu/ardupilot/Tools/autotest'), ('SESSION_MANAGER', 'local/primary:@/tmp/.ICE-unix/1844,unix/primary:/tmp/.ICE-unix/1844'), ('INVOCATION_ID', '8081fd7887e34400bd81b0c6e3cd3128'), ('XDG_MENU_PREFIX', 'gnome-'), ('XRDP_SOCKET_PATH', '/run/xrdp/sockdir'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':10.0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'C.UTF-8'), ('XDG_CURRENT_DESKTOP', 'GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('XMODIFIERS', '@im=ibus'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_msgs:/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces:/opt/ros/humble'), ('UID', '1000'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:b32ae659-5340-4ab9-bc84-dfde429f2f68'), ('QT_ACCESSIBILITY', '1'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('XRDP_SESSION', '1'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_interfaces'), ('CLUTTER_IM_MODULE', 'ibus'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_msgs/local/lib/python3.10/dist-packages:/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/lib/python3.10/site-packages:/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_msgs:/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces:/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/opt/ros/humble')]), 'shell': False}
+[17.846645] (bluerov2_interfaces) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[17.846739] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/ament_index/resource_index/rosidl_interfaces/bluerov2_interfaces\n'}
+[17.846783] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces\n'}
+[17.846814] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg\n'}
+[17.846844] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/set_depth.h\n'}
+[17.846872] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/set_target.h\n'}
+[17.846902] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail\n'}
+[17.846930] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/bar30__functions.h\n'}
+[17.846958] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/set_target__functions.c\n'}
+[17.846986] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/attitude__type_support.h\n'}
+[17.847079] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/set_target__type_support.h\n'}
+[17.847235] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/attitude__functions.c\n'}
+[17.847342] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/set_roll__functions.h\n'}
+[17.847477] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/set_roll__functions.c\n'}
+[17.847583] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/set_roll__type_support.h\n'}
+[17.847685] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/set_target__struct.h\n'}
+[17.847842] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/bar30__type_support.h\n'}
+[17.847978] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/set_target__functions.h\n'}
+[17.848130] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/attitude__functions.h\n'}
+[17.848239] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/attitude__struct.h\n'}
+[17.848381] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/set_depth__functions.c\n'}
+[17.848528] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/set_roll__struct.h\n'}
+[17.848637] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/bar30__struct.h\n'}
+[17.848773] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/set_depth__type_support.h\n'}
+[17.848913] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/set_depth__struct.h\n'}
+[17.849072] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/set_depth__functions.h\n'}
+[17.849234] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/bar30__functions.c\n'}
+[17.849432] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/attitude.h\n'}
+[17.849556] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/bar30.h\n'}
+[17.849693] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/rosidl_generator_c__visibility_control.h\n'}
+[17.849763] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/set_roll.h\n'}
+[17.849885] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/environment/library_path.sh\n'}
+[17.849978] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/environment/library_path.dsv\n'}
+[17.852839] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib/libbluerov2_interfaces__rosidl_generator_c.so\n'}
+[17.853038] (bluerov2_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib/libbluerov2_interfaces__rosidl_generator_c.so" to ""\n'}
+[17.853130] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces\n'}
+[17.853178] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg\n'}
+[17.853221] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[17.853270] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail\n'}
+[17.853323] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/set_roll__rosidl_typesupport_fastrtps_c.h\n'}
+[17.853367] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/attitude__rosidl_typesupport_fastrtps_c.h\n'}
+[17.853405] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/set_depth__rosidl_typesupport_fastrtps_c.h\n'}
+[17.853458] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/bar30__rosidl_typesupport_fastrtps_c.h\n'}
+[17.853495] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/set_target__rosidl_typesupport_fastrtps_c.h\n'}
+[17.856780] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib/libbluerov2_interfaces__rosidl_typesupport_fastrtps_c.so\n'}
+[17.856956] (bluerov2_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib/libbluerov2_interfaces__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[17.857045] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces\n'}
+[17.857088] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg\n'}
+[17.857126] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[17.857165] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail\n'}
+[17.857231] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/attitude__type_support.c\n'}
+[17.857286] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/bar30__type_support.c\n'}
+[17.857322] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/set_target__rosidl_typesupport_introspection_c.h\n'}
+[17.857368] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/set_roll__type_support.c\n'}
+[17.857414] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/set_roll__rosidl_typesupport_introspection_c.h\n'}
+[17.857470] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/set_target__type_support.c\n'}
+[17.857545] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/set_depth__type_support.c\n'}
+[17.857602] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/set_depth__rosidl_typesupport_introspection_c.h\n'}
+[17.857675] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/bar30__rosidl_typesupport_introspection_c.h\n'}
+[17.857813] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/attitude__rosidl_typesupport_introspection_c.h\n'}
+[17.860134] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib/libbluerov2_interfaces__rosidl_typesupport_introspection_c.so\n'}
+[17.860295] (bluerov2_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib/libbluerov2_interfaces__rosidl_typesupport_introspection_c.so" to ""\n'}
+[17.862446] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib/libbluerov2_interfaces__rosidl_typesupport_c.so\n'}
+[17.862635] (bluerov2_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib/libbluerov2_interfaces__rosidl_typesupport_c.so" to ""\n'}
+[17.862694] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces\n'}
+[17.862736] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg\n'}
+[17.862796] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/set_roll.hpp\n'}
+[17.862844] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail\n'}
+[17.862894] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/set_depth__struct.hpp\n'}
+[17.862938] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/set_target__builder.hpp\n'}
+[17.862990] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/attitude__builder.hpp\n'}
+[17.863040] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/set_roll__traits.hpp\n'}
+[17.863088] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/attitude__struct.hpp\n'}
+[17.863136] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/set_roll__struct.hpp\n'}
+[17.863176] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/set_depth__builder.hpp\n'}
+[17.863262] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/attitude__traits.hpp\n'}
+[17.863316] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/set_depth__traits.hpp\n'}
+[17.863386] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/bar30__traits.hpp\n'}
+[17.863460] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/bar30__builder.hpp\n'}
+[17.863516] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/set_roll__builder.hpp\n'}
+[17.863567] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/bar30__struct.hpp\n'}
+[17.863659] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/set_target__traits.hpp\n'}
+[17.863735] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/set_target__struct.hpp\n'}
+[17.863797] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/bar30.hpp\n'}
+[17.863864] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/set_depth.hpp\n'}
+[17.863954] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/attitude.hpp\n'}
+[17.864001] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/set_target.hpp\n'}
+[17.864073] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces\n'}
+[17.864150] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg\n'}
+[17.864183] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[17.864222] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail\n'}
+[17.864271] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/set_roll__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[17.864322] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/bar30__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[17.864362] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/dds_fastrtps\n'}
+[17.864415] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/set_target__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[17.864458] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/attitude__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[17.864494] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/set_depth__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[17.866264] (-) TimerEvent: {}
+[17.874039] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib/libbluerov2_interfaces__rosidl_typesupport_fastrtps_cpp.so\n'}
+[17.874264] (bluerov2_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib/libbluerov2_interfaces__rosidl_typesupport_fastrtps_cpp.so" to ""\n'}
+[17.874351] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces\n'}
+[17.874431] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg\n'}
+[17.874487] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail\n'}
+[17.874538] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/set_target__rosidl_typesupport_introspection_cpp.hpp\n'}
+[17.874595] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/bar30__rosidl_typesupport_introspection_cpp.hpp\n'}
+[17.874639] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/set_roll__type_support.cpp\n'}
+[17.874675] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/attitude__type_support.cpp\n'}
+[17.874714] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/set_target__type_support.cpp\n'}
+[17.874774] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/attitude__rosidl_typesupport_introspection_cpp.hpp\n'}
+[17.874821] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/set_depth__rosidl_typesupport_introspection_cpp.hpp\n'}
+[17.874875] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/bar30__type_support.cpp\n'}
+[17.874954] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/set_depth__type_support.cpp\n'}
+[17.875035] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/set_roll__rosidl_typesupport_introspection_cpp.hpp\n'}
+[17.879346] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib/libbluerov2_interfaces__rosidl_typesupport_introspection_cpp.so\n'}
+[17.879411] (bluerov2_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib/libbluerov2_interfaces__rosidl_typesupport_introspection_cpp.so" to ""\n'}
+[17.879442] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib/libbluerov2_interfaces__rosidl_typesupport_cpp.so\n'}
+[17.879502] (bluerov2_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib/libbluerov2_interfaces__rosidl_typesupport_cpp.so" to ""\n'}
+[17.879556] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/environment/pythonpath.sh\n'}
+[17.879760] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/environment/pythonpath.dsv\n'}
+[17.879801] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces-0.0.0-py3.10.egg-info\n'}
+[17.879929] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces-0.0.0-py3.10.egg-info/dependency_links.txt\n'}
+[17.879965] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces-0.0.0-py3.10.egg-info/top_level.txt\n'}
+[17.880382] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces-0.0.0-py3.10.egg-info/PKG-INFO\n'}
+[17.880764] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces-0.0.0-py3.10.egg-info/SOURCES.txt\n'}
+[17.880813] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces\n'}
+[17.880998] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/bluerov2_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\n'}
+[17.881296] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/__init__.py\n'}
+[17.881567] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/bluerov2_interfaces_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\n'}
+[17.881613] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/_bluerov2_interfaces_s.ep.rosidl_typesupport_c.c\n'}
+[17.881643] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/bluerov2_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\n'}
+[17.881682] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/libbluerov2_interfaces__rosidl_generator_py.so\n'}
+[17.881713] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/_bluerov2_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[17.881741] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/msg\n'}
+[17.881768] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/msg/_set_target.py\n'}
+[17.881795] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/msg/_set_target_s.c\n'}
+[17.881823] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/msg/_set_roll.py\n'}
+[17.881850] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/msg/_set_depth.py\n'}
+[17.881877] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/msg/_attitude_s.c\n'}
+[17.881904] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/msg/__init__.py\n'}
+[17.881930] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/msg/_bar30.py\n'}
+[17.881957] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/msg/_set_roll_s.c\n'}
+[17.881984] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/msg/_set_depth_s.c\n'}
+[17.882011] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/msg/_bar30_s.c\n'}
+[17.882074] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/msg/_attitude.py\n'}
+[17.882105] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/_bluerov2_interfaces_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[17.966362] (-) TimerEvent: {}
+[18.009088] (bluerov2_interfaces) StdoutLine: {'line': b"Listing '/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces'...\n"}
+[18.009251] (bluerov2_interfaces) StdoutLine: {'line': b"Compiling '/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/__init__.py'...\n"}
+[18.009291] (bluerov2_interfaces) StdoutLine: {'line': b"Listing '/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/msg'...\n"}
+[18.009397] (bluerov2_interfaces) StdoutLine: {'line': b"Compiling '/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/msg/__init__.py'...\n"}
+[18.009432] (bluerov2_interfaces) StdoutLine: {'line': b"Compiling '/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/msg/_attitude.py'...\n"}
+[18.009461] (bluerov2_interfaces) StdoutLine: {'line': b"Compiling '/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/msg/_bar30.py'...\n"}
+[18.009489] (bluerov2_interfaces) StdoutLine: {'line': b"Compiling '/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/msg/_set_depth.py'...\n"}
+[18.009516] (bluerov2_interfaces) StdoutLine: {'line': b"Compiling '/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/msg/_set_roll.py'...\n"}
+[18.009544] (bluerov2_interfaces) StdoutLine: {'line': b"Compiling '/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/msg/_set_target.py'...\n"}
+[18.044622] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/bluerov2_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\n'}
+[18.044960] (bluerov2_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/bluerov2_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so" to ""\n'}
+[18.045132] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/bluerov2_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\n'}
+[18.045360] (bluerov2_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/bluerov2_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so" to ""\n'}
+[18.045515] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/bluerov2_interfaces_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\n'}
+[18.045735] (bluerov2_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/bluerov2_interfaces_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so" to ""\n'}
+[18.047038] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib/libbluerov2_interfaces__rosidl_generator_py.so\n'}
+[18.047331] (bluerov2_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib/libbluerov2_interfaces__rosidl_generator_py.so" to ""\n'}
+[18.047446] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/msg/Bar30.idl\n'}
+[18.047537] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/msg/SetDepth.idl\n'}
+[18.047634] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/msg/SetRoll.idl\n'}
+[18.047778] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/msg/SetTarget.idl\n'}
+[18.047860] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/msg/Attitude.idl\n'}
+[18.047970] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/msg/Bar30.msg\n'}
+[18.048052] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/msg/SetDepth.msg\n'}
+[18.048124] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/msg/SetRoll.msg\n'}
+[18.048260] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/msg/SetTarget.msg\n'}
+[18.048339] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/msg/Attitude.msg\n'}
+[18.048460] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/ament_index/resource_index/package_run_dependencies/bluerov2_interfaces\n'}
+[18.048540] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/ament_index/resource_index/parent_prefix_path/bluerov2_interfaces\n'}
+[18.048682] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/environment/ament_prefix_path.sh\n'}
+[18.048766] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/environment/ament_prefix_path.dsv\n'}
+[18.048903] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/environment/path.sh\n'}
+[18.048985] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/environment/path.dsv\n'}
+[18.049128] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/local_setup.bash\n'}
+[18.049204] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/local_setup.sh\n'}
+[18.049274] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/local_setup.zsh\n'}
+[18.049362] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/local_setup.dsv\n'}
+[18.049508] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/package.dsv\n'}
+[18.049670] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/ament_index/resource_index/packages/bluerov2_interfaces\n'}
+[18.049789] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/export_bluerov2_interfaces__rosidl_generator_cExport.cmake\n'}
+[18.049866] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/export_bluerov2_interfaces__rosidl_generator_cExport-noconfig.cmake\n'}
+[18.049987] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/export_bluerov2_interfaces__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[18.050068] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/export_bluerov2_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[18.050192] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/bluerov2_interfaces__rosidl_typesupport_introspection_cExport.cmake\n'}
+[18.050305] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/bluerov2_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[18.051147] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/bluerov2_interfaces__rosidl_typesupport_cExport.cmake\n'}
+[18.051235] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/bluerov2_interfaces__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[18.051336] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/export_bluerov2_interfaces__rosidl_generator_cppExport.cmake\n'}
+[18.051455] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/export_bluerov2_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[18.051547] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/export_bluerov2_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[18.051675] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/bluerov2_interfaces__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[18.051762] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/bluerov2_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[18.051903] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/bluerov2_interfaces__rosidl_typesupport_cppExport.cmake\n'}
+[18.052004] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/bluerov2_interfaces__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[18.052119] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/export_bluerov2_interfaces__rosidl_generator_pyExport.cmake\n'}
+[18.052193] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/export_bluerov2_interfaces__rosidl_generator_pyExport-noconfig.cmake\n'}
+[18.052266] (bluerov2_interfaces) StdoutLine: {'line': b'-- Installing: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/rosidl_cmake-extras.cmake\n'}
+[18.052409] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[18.052488] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[18.052561] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[18.052633] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[18.052705] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[18.052777] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[18.052862] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/bluerov2_interfacesConfig.cmake\n'}
+[18.052927] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/bluerov2_interfacesConfig-version.cmake\n'}
+[18.053008] (bluerov2_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/package.xml\n'}
+[18.054856] (bluerov2_interfaces) CommandEnded: {'returncode': 0}
+[18.066456] (-) TimerEvent: {}
+[18.166930] (-) TimerEvent: {}
+[18.267212] (-) TimerEvent: {}
+[18.370297] (-) TimerEvent: {}
+[18.470649] (-) TimerEvent: {}
+[18.571521] (-) TimerEvent: {}
+[18.672141] (-) TimerEvent: {}
+[18.772467] (-) TimerEvent: {}
+[18.788337] (bluerov2_interfaces) JobEnded: {'identifier': 'bluerov2_interfaces', 'rc': 0}
+[18.788919] (bluerov2_controller) JobStarted: {'identifier': 'bluerov2_controller'}
+[18.874341] (-) TimerEvent: {}
+[18.974666] (-) TimerEvent: {}
+[19.074887] (-) TimerEvent: {}
+[19.175275] (-) TimerEvent: {}
+[19.275559] (-) TimerEvent: {}
+[19.375902] (-) TimerEvent: {}
+[19.476254] (-) TimerEvent: {}
+[19.576576] (-) TimerEvent: {}
+[19.676943] (-) TimerEvent: {}
+[19.777316] (-) TimerEvent: {}
+[19.878368] (-) TimerEvent: {}
+[19.941475] (bluerov2_controller) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../../build/bluerov2_controller', 'build', '--build-base', '/home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_controller/build', 'install', '--record', '/home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_controller/install.log', '--single-version-externally-managed'], 'cwd': '/home/ubuntu/ROS-Humble-BlueRov2-Driver/src/bluerov2_controller', 'env': {'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'ubuntu', 'SSH_AGENT_PID': '1732', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib:/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/ubuntu', 'OLDPWD': '/home/ubuntu/ROS-Humble-BlueRov2-Driver/src', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/terminator.desktop', 'ROS_PYTHON_VERSION': '3', 'GTK_MODULES': 'gail:atk-bridge', 'MANAGERPID': '873', 'SYSTEMD_EXEC_PID': '1879', 'XRDP_PULSE_SOURCE_SOCKET': 'xrdp_chansrv_audio_in_socket_10', 'XRDP_PULSE_SINK_SOCKET': 'xrdp_chansrv_audio_out_socket_10', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator2bcb3aa092f2b6032576f3fd56ad9afe9', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '2767', 'PULSE_SCRIPT': '/etc/xrdp/pulse/default.pa', 'COLCON_PREFIX_PATH': '/home/ubuntu/ROS-Humble-BlueRov2-Driver/install', 'ROS_DISTRO': 'humble', 'GTK_IM_MODULE': 'ibus', 'LOGNAME': 'ubuntu', 'JOURNAL_STREAM': '8:22911', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/usr/lib/ccache:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/ubuntu/ardupilot/Tools/autotest', 'SESSION_MANAGER': 'local/primary:@/tmp/.ICE-unix/1844,unix/primary:/tmp/.ICE-unix/1844', 'INVOCATION_ID': '8081fd7887e34400bd81b0c6e3cd3128', 'XDG_MENU_PREFIX': 'gnome-', 'XRDP_SOCKET_PATH': '/run/xrdp/sockdir', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':10.0', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'C.UTF-8', 'XDG_CURRENT_DESKTOP': 'GNOME', 'IBUS_DISABLE_SNOOPER': '1', 'XMODIFIERS': '@im=ibus', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_msgs:/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces:/opt/ros/humble', 'UID': '1000', 'SHELL': '/bin/bash', 'TERMINATOR_UUID': 'urn:uuid:b32ae659-5340-4ab9-bc84-dfde429f2f68', 'QT_ACCESSIBILITY': '1', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'XRDP_SESSION': '1', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GJS_DEBUG_OUTPUT': 'stderr', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_controller', 'CLUTTER_IM_MODULE': 'ibus', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_controller/prefix_override:/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/lib/python3.10/site-packages:/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_msgs/local/lib/python3.10/dist-packages:/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/lib/python3.10/site-packages:/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'VTE_VERSION': '6800', 'CMAKE_PREFIX_PATH': '/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces:/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_msgs'}, 'shell': False}
+[19.978452] (-) TimerEvent: {}
+[20.078777] (-) TimerEvent: {}
+[20.179138] (-) TimerEvent: {}
+[20.239440] (bluerov2_controller) StdoutLine: {'line': b'running egg_info\n'}
+[20.239860] (bluerov2_controller) StdoutLine: {'line': b'writing ../../build/bluerov2_controller/bluerov2_controller.egg-info/PKG-INFO\n'}
+[20.240069] (bluerov2_controller) StdoutLine: {'line': b'writing dependency_links to ../../build/bluerov2_controller/bluerov2_controller.egg-info/dependency_links.txt\n'}
+[20.240365] (bluerov2_controller) StdoutLine: {'line': b'writing entry points to ../../build/bluerov2_controller/bluerov2_controller.egg-info/entry_points.txt\n'}
+[20.240631] (bluerov2_controller) StdoutLine: {'line': b'writing requirements to ../../build/bluerov2_controller/bluerov2_controller.egg-info/requires.txt\n'}
+[20.240667] (bluerov2_controller) StdoutLine: {'line': b'writing top-level names to ../../build/bluerov2_controller/bluerov2_controller.egg-info/top_level.txt\n'}
+[20.241733] (bluerov2_controller) StdoutLine: {'line': b"reading manifest file '../../build/bluerov2_controller/bluerov2_controller.egg-info/SOURCES.txt'\n"}
+[20.242702] (bluerov2_controller) StdoutLine: {'line': b"writing manifest file '../../build/bluerov2_controller/bluerov2_controller.egg-info/SOURCES.txt'\n"}
+[20.243010] (bluerov2_controller) StdoutLine: {'line': b'running build\n'}
+[20.243066] (bluerov2_controller) StdoutLine: {'line': b'running build_py\n'}
+[20.243623] (bluerov2_controller) StdoutLine: {'line': b'copying bluerov2_controller/roll_controller.py -> /home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_controller/build/lib/bluerov2_controller\n'}
+[20.243657] (bluerov2_controller) StdoutLine: {'line': b'running install\n'}
+[20.243684] (bluerov2_controller) StdoutLine: {'line': b'running install_lib\n'}
+[20.244420] (bluerov2_controller) StdoutLine: {'line': b'copying /home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_controller/build/lib/bluerov2_controller/roll_controller.py -> /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/lib/python3.10/site-packages/bluerov2_controller\n'}
+[20.244459] (bluerov2_controller) StdoutLine: {'line': b'byte-compiling /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/lib/python3.10/site-packages/bluerov2_controller/roll_controller.py to roll_controller.cpython-310.pyc\n'}
+[20.244651] (bluerov2_controller) StdoutLine: {'line': b'running install_data\n'}
+[20.246272] (bluerov2_controller) StdoutLine: {'line': b'copying package.xml -> /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/share/bluerov2_controller\n'}
+[20.246396] (bluerov2_controller) StdoutLine: {'line': b'running install_egg_info\n'}
+[20.247169] (bluerov2_controller) StdoutLine: {'line': b"removing '/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/lib/python3.10/site-packages/bluerov2_controller-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[20.254357] (bluerov2_controller) StdoutLine: {'line': b'Copying ../../build/bluerov2_controller/bluerov2_controller.egg-info to /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/lib/python3.10/site-packages/bluerov2_controller-0.0.0-py3.10.egg-info\n'}
+[20.258475] (bluerov2_controller) StdoutLine: {'line': b'running install_scripts\n'}
+[20.275567] (bluerov2_controller) StdoutLine: {'line': b'Installing controller script to /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/lib/bluerov2_controller\n'}
+[20.275915] (bluerov2_controller) StdoutLine: {'line': b'Installing depth_controller script to /home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/lib/bluerov2_controller\n'}
+[20.276105] (bluerov2_controller) StdoutLine: {'line': b"writing list of installed files to '/home/ubuntu/ROS-Humble-BlueRov2-Driver/build/bluerov2_controller/install.log'\n"}
+[20.279208] (-) TimerEvent: {}
+[20.330563] (bluerov2_controller) CommandEnded: {'returncode': 0}
+[20.335238] (bluerov2_controller) JobEnded: {'identifier': 'bluerov2_controller', 'rc': 0}
+[20.336269] (-) EventReactorShutdown: {}

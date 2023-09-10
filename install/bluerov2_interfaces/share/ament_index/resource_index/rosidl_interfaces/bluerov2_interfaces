@@ -1,6 +1,10 @@
+msg/Attitude.idl
+msg/Attitude.msg
 msg/Bar30.idl
 msg/Bar30.msg
 msg/SetDepth.idl
 msg/SetDepth.msg
+msg/SetRoll.idl
+msg/SetRoll.msg
 msg/SetTarget.idl
 msg/SetTarget.msg
