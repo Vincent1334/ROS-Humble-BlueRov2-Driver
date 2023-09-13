@@ -28,6 +28,8 @@ class Controller(Node):
         self.depth          = 0
         self.I_depth        = 0
 
+        self.enable         = True
+
         # Create subscriber
         self.bar30_sub      = self.create_subscription(Bar30, "/bluerov2/bar30", self.callback_bar30, 10) 
         self.setDepth_sub   = self.create_subscription(SetDepth, "/settings/set_depth", self.callback_set_depth, 10)
@@ -72,6 +74,8 @@ class Controller(Node):
         self.KI = msg.ki
         self.KP = msg.kp 
         self.KD = msg.kd 
+
+        self.enable = msg.enable_depth_ctrl
 
     def callback_set_target(self, msg):
         """Read data from '/Settings/set_target'
@@ -132,13 +136,18 @@ class Controller(Node):
         return int(pwm)
 
     def calculate_pwm(self):  
-        mesured_pressure = self.bar30_data[1]*100 #to convert pressure from hPa to Pa
-        u = self.control_pid(mesured_pressure)
-        pwm = 1500 + u
-        pwm = self.saturation(pwm)
-
         msg = UInt16()
-        msg.data = pwm
+
+        if self.enable:
+            mesured_pressure = self.bar30_data[1]*100 #to convert pressure from hPa to Pa
+            u = self.control_pid(mesured_pressure)
+            pwm = 1500 + u
+            pwm = self.saturation(pwm)
+            
+            msg.data = pwm
+        else:
+            msg.data = self.pwm_neutral
+            
         self.throttle_pub.publish(msg)        
 
 def main(args=None):

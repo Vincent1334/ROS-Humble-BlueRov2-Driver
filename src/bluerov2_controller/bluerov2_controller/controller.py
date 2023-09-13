@@ -6,6 +6,7 @@ import pymavlink.dialects.v20.ardupilotmega as mavlink
 
 from std_msgs.msg import UInt16
 from std_msgs.msg import Bool
+from sensor_msgs import BatteryState
 from bluerov2_interfaces.msg import Attitude
 from bluerov2_interfaces.msg import Bar30
 
@@ -48,7 +49,7 @@ class Controller(Node):
         self.arm_sub            = self.create_subscription(Bool, "/bluerov2/arm", self.arm_callback, 10)
         
         # Create publischer
-        #self.battery_pub        = self.create_publisher(MSG, "/bluerov2/battery", 10)
+        self.battery_pub        = self.create_publisher(BatteryState, "/bluerov2/battery", 10)
         self.arm_pub            = self.create_publisher(Bool, "/bluerov2/arm_status", 10)  
         self.attitude_pub       = self.create_publisher(Attitude, "/bluerov2/attitude", 10)   
         self.bar30_pub          = self.create_publisher(Bar30, "/bluerov2/bar30", 10)     
@@ -77,6 +78,7 @@ class Controller(Node):
         self.target     = (self.connection.target_system,
                            self.connection.target_component)
         
+        # Request data stream
         self.get_logger().info("Request data stream...") 
         self.mav.request_data_stream_send(self.conn.target_system, self.conn.target_component, mavutil.mavlink.MAV_DATA_STREAM_ALL,4, 1)
         
@@ -111,7 +113,13 @@ class Controller(Node):
 
         self.mav.rc_channels_override_send(*self.target, *rc_channel_values)
 
-        # Request all sensor data
+        # Request sensor data
+        self.read_param()
+
+        # Publisch sensor data
+        self.decode_param()             
+
+    def read_param(self):        
         msgs = []
         while True:
             msg = self.recv_match()
@@ -123,7 +131,8 @@ class Controller(Node):
         for msg in msgs:
             self.data[msg.get_type()] = msg.to_dict()
 
-        # Publish ATTITUDE Data
+    def decode_param(self):
+        # Publish ATTITUDE data
         if 'ATTITUDE' not in self.get_data():
             raise Exception('no ATTITUDE data')
         else :
@@ -144,7 +153,7 @@ class Controller(Node):
 
         self.attitude_pub.publish(msg)
 
-        # Publish Pressure Data
+        # Publish PRESSURE data
         if 'SCALED_PRESSURE2' not in self.get_data():
             raise Exception('no SCALE_PRESSURE2 data')
         else :
@@ -157,19 +166,22 @@ class Controller(Node):
         msg.press_diff   = bar30_data['press_diff']
         msg.temperature  = bar30_data['temperature']
 
-        self.bar30_pub.publish(msg)
+        self.bar30_pub.publish(msg) 
 
+        # Publisch BATTERY data
+        if 'SYS_STATUS' not in self.get_data():
+            raise Exception('no SYS_STATUS data')
+
+        if 'BATTERY_STATUS' not in self.get_data():
+            raise Exception('no BATTERY_STATUS data')
+
+        bat = BatteryState()
+
+        bat.voltage = self.get_data()['SYS_STATUS']['voltage_battery']/1000
+        bat.current = self.get_data()['SYS_STATUS']['current_battery']/100
+        bat.percentage = self.get_data()['BATTERY_STATUS']['battery_remaining']/100
         
-       
-
-    def read_param(self, name: str, index: int=-1, timeout: float=None):
-        self.mav.param_request_read_send(
-            *self.target,
-            name.encode('utf8'),
-            index
-        )
-        self.get_logger().info(f'read_param({name=}, {index=}, {timeout=})')
-        return self.recv_match(type='PARAM_VALUE', blocking=True, timeout=timeout)      
+        self.battery_pub.publish(bat)        
     
     def arm(self):
         self.connection.arducopter_arm()

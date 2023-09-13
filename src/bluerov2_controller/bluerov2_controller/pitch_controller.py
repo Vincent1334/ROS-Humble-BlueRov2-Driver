@@ -4,7 +4,7 @@ import numpy as np
 from rclpy.node import Node
 
 from bluerov2_interfaces.msg import Attitude
-from bluerov2_interfaces.msg import SetRoll
+from bluerov2_interfaces.msg import SetPitch
 from bluerov2_interfaces.msg import SetTarget
 
 from std_msgs.msg import UInt16
@@ -12,7 +12,7 @@ from std_msgs.msg import UInt16
 class Controller(Node):
 
     def __init__(self):
-        super().__init__("roll controller")
+        super().__init__("pitch controller")
 
         self.attitude           = [0, 0, 0, 0, 0, 0] #[ROLL, PITCH, YAW, ROLLSPEED, PITCHSPEED, YAWSPEED]
         self.pwm_max            = 1900
@@ -20,16 +20,16 @@ class Controller(Node):
         self.roll_desired       = 0
         self.KP                 = 35
         self.KD                 = 25
-
+        
         self.enable             = True
 
         # Create subscriber
         self.attitude_sub       = self.create_subscription(Attitude, "/bluerov2/attitude", self.callback_att, 10) 
-        self.setRoll_sub        = self.create_subscription(SetRoll, "/settings/set_roll", self.callback_set_roll, 10)
+        self.setRoll_sub        = self.create_subscription(SetPitch, "/settings/set_pitch", self.callback_set_pitch, 10)
         self.setTarget_sub      = self.create_subscription(SetTarget, "/settings/set_target", self.callback_set_target, 10) 
 
         # Create publisher
-        self.roll_pub           = self.create_publisher(UInt16, "/bluerov2/rc/roll", 10)
+        self.pitch_pub           = self.create_publisher(UInt16, "/bluerov2/rc/pitch", 10)
 
         # Start update loop
         self.create_timer(0.04, self.calculate_pwm)    
@@ -42,7 +42,7 @@ class Controller(Node):
                          msg.pitchspeed,
                          msg.yawspeed]
 
-    def callback_set_roll(self, msg):       
+    def callback_set_pitch(self, msg):       
         if msg.pwm_max < 1500:
             self.pwm_max = 1500
         else:
@@ -50,10 +50,10 @@ class Controller(Node):
         self.KP = msg.kp 
         self.KD = msg.kd
 
-        self.enable = msg.enable_roll_ctrl
+        self.enable = msg.enable_pitch_ctrl           
 
     def callback_set_target(self, msg):       
-        self.roll_desired = self.deg2rad(msg.roll_desired)
+        self.pitch_desired = self.deg2rad(msg.pitch_desired)
 
     def deg2rad(self,deg):       
         if deg in range(0,181):
@@ -61,8 +61,8 @@ class Controller(Node):
         if deg in range(181,361):
             return ((deg - 360) * np.pi) / 180
 
-    def control(self, roll, rollspeed):        
-        return self.KP*self.sawtooth(roll-self.roll_desired) + self.KD*rollspeed
+    def control(self, pitch, pitchspeed):        
+        return self.KP*self.sawtooth(pitch-self.pitch_desired) + self.KD*pitchspeed
     
     def saturation(self, pwm):        
         pwm_min = self.pwm_neutral - (self.pwm_max - self.pwm_neutral)
@@ -85,17 +85,17 @@ class Controller(Node):
         msg = UInt16()
 
         if self.enable:
-            roll = self.attitude[0]
-            rollspeed = self.attitude[3]
-            u = self.control(roll, rollspeed)
+            pitch = self.attitude[1]
+            pitchspeed = self.attitude[4]
+            u = self.control(pitch, pitchspeed)
             pwm = self.pwm_neutral - u
             pwm = self.saturation(pwm)
             
             msg.data = pwm
         else:
             msg.data = self.pwm_neutral
-            
-        self.roll_pub.publish(msg)
+
+        self.pitch_pub.publish(msg)
 
 def main(args=None):
     rclpy.init(args=args)    
