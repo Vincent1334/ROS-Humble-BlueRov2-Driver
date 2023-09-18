@@ -14,18 +14,25 @@ class Controller(Node):
     def __init__(self):
         super().__init__("pitch controller")
 
-        self.attitude           = [0, 0, 0, 0, 0, 0] #[ROLL, PITCH, YAW, ROLLSPEED, PITCHSPEED, YAWSPEED]
-        self.pwm_max            = 1900
-        self.pwm_neutral        = 1500
-        self.roll_desired       = 0
-        self.KP                 = 35
-        self.KD                 = 25
+        # Setup default parameters
+        self.declare_parameter("pitch_desired", 0) 
+        self.declare_parameter("pwm_max", 1900)            
+        self.declare_parameter("kp", 35)    
+        self.declare_parameter("kd", 25)    
+        self.declare_parameter("enable", True)  
+
+        self.attitude           = [0, 0, 0, 0, 0, 0]                            # [ROLL, PITCH, YAW, ROLLSPEED, PITCHSPEED, YAWSPEED]
+        self.pwm_max            = self.get_parameter("pwm_max").value           # Maximum PWM value
+        self.pwm_neutral        = 1500                                          # Neutral PWM value
+        self.pitch_desired      = self.get_parameter("pitch_desired").value     # Desired pitch setpoint
+        self.KP                 = self.get_parameter("kp").value                # Proportional gain constant        
+        self.KD                 = self.get_parameter("kd").value                # Derivative gain constant
         
-        self.enable             = True
+        self.enable             = self.get_parameter("enable").value   
 
         # Create subscriber
         self.attitude_sub       = self.create_subscription(Attitude, "/bluerov2/attitude", self.callback_att, 10) 
-        self.setRoll_sub        = self.create_subscription(SetPitch, "/settings/set_pitch", self.callback_set_pitch, 10)
+        self.setPitch_sub       = self.create_subscription(SetPitch, "/settings/set_pitch", self.callback_set_pitch, 10)
         self.setTarget_sub      = self.create_subscription(SetTarget, "/settings/set_target", self.callback_set_target, 10) 
 
         # Create publisher

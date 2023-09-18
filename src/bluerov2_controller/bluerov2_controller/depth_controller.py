@@ -14,21 +14,29 @@ class Controller(Node):
     rho = 1000      # kg/m^3  water density
     
     def __init__(self):
-        super().__init__("depth_controller")       
+        super().__init__("depth_controller")    
 
-        self.depth_desired  = 0             # Desired depth setpoint
-        self.bar30_data     = [0, 0, 0, 0]  # List to store Bar30 sensor data: [time_boot_ms, press_abs, press_diff, temperature]
-        self.pwm_max        = 1900          # Maximum PWM value
-        self.pwm_neutral    = 1500          # Neutral PWM value
-        self.KI             = 100           # Integral gain constant
-        self.KP             = 600           # Proportional gain constant
-        self.KD             = 50            # Derivative gain constant
+        # Setup default parameters
+        self.declare_parameter("depth_desired", 0) 
+        self.declare_parameter("pwm_max", 1900)
+        self.declare_parameter("ki", 100)      
+        self.declare_parameter("kp", 600)    
+        self.declare_parameter("kd", 50)    
+        self.declare_parameter("enable", True)        
+
+        self.depth_desired  = self.get_parameter("depth_desired").value     # Desired depth setpoint
+        self.bar30_data     = [0, 0, 0, 0]                                  # List to store Bar30 sensor data: [time_boot_ms, press_abs, press_diff, temperature]
+        self.pwm_max        = self.get_parameter("pwm_max").value           # Maximum PWM value
+        self.pwm_neutral    = 1500                                          # Neutral PWM value
+        self.KI             = self.get_parameter("ki").value                # Integral gain constant
+        self.KP             = self.get_parameter("kp").value                # Proportional gain constant
+        self.KD             = self.get_parameter("kd").value                # Derivative gain constant
 
         self.time           = 0
         self.depth          = 0
         self.I_depth        = 0
 
-        self.enable         = True
+        self.enable         = self.get_parameter("enable").value
 
         # Create subscriber
         self.bar30_sub      = self.create_subscription(Bar30, "/bluerov2/bar30", self.callback_bar30, 10) 

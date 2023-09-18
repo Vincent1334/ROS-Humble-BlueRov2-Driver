@@ -14,14 +14,21 @@ class Controller(Node):
     def __init__(self):
         super().__init__("roll controller")
 
-        self.attitude           = [0, 0, 0, 0, 0, 0] #[ROLL, PITCH, YAW, ROLLSPEED, PITCHSPEED, YAWSPEED]
-        self.pwm_max            = 1900
-        self.pwm_neutral        = 1500
-        self.roll_desired       = 0
-        self.KP                 = 35
-        self.KD                 = 25
+        # Setup default parameters
+        self.declare_parameter("roll_desired", 0) 
+        self.declare_parameter("pwm_max", 1900)            
+        self.declare_parameter("kp", 35)    
+        self.declare_parameter("kd", 25)    
+        self.declare_parameter("enable", True)  
 
-        self.enable             = True
+        self.attitude           = [0, 0, 0, 0, 0, 0]                            #[ROLL, PITCH, YAW, ROLLSPEED, PITCHSPEED, YAWSPEED]
+        self.pwm_max            = self.get_parameter("pwm_max").value           # Maximum PWM value
+        self.pwm_neutral        = 1500                                          # Neutral PWM value
+        self.roll_desired       = self.get_parameter("roll_desired").value      # Desired pitch setpoint
+        self.KP                 = self.get_parameter("kp").value                # Proportional gain constant        
+        self.KD                 = self.get_parameter("kd").value                # Derivative gain constant
+
+        self.enable             = self.get_parameter("enable").value   
 
         # Create subscriber
         self.attitude_sub       = self.create_subscription(Attitude, "/bluerov2/attitude", self.callback_att, 10) 
