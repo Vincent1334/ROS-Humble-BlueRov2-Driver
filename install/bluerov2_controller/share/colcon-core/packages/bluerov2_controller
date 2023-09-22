@@ -1,1 +1,1 @@
-bluerov2_interfaces:numpy:pymavlink:rclpy
+bluerov2_interfaces:numpy:pygame:pymavlink:rclpy:sensor_msgs

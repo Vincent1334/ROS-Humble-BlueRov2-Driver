@@ -21,7 +21,10 @@ setup(
     entry_points={
         'console_scripts': [
             "controller = bluerov2_controller.controller:main",
-            "depth_controller = bluerov2_controller.depth_controller:main"
+            "depth_controller = bluerov2_controller.depth_controller:main",
+            "pitch_controller = bluerov2_controller.pitch_controller:main",
+            "roll_controller = bluerov2_controller.roll_controller:main",
+            "input_controller = bluerov2_controller.input_controller:main"
         ],
     },
 )

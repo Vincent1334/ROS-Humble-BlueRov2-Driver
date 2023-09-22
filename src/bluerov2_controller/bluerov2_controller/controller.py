@@ -6,9 +6,10 @@ import pymavlink.dialects.v20.ardupilotmega as mavlink
 
 from std_msgs.msg import UInt16
 from std_msgs.msg import Bool
-from sensor_msgs import BatteryState
+from sensor_msgs.msg import BatteryState
 from bluerov2_interfaces.msg import Attitude
 from bluerov2_interfaces.msg import Bar30
+from bluerov2_interfaces.msg import Status
 
 
 class Controller(Node):
@@ -31,7 +32,7 @@ class Controller(Node):
         self.lateral            = 1500                              # The lateral channel (RC6) concerns the lateral movement of the BlueRov2.
         self.camera_pan         = 1500                              # The Camera Pan channel (RC7) controls the horizontal panning movement of the camera.
         self.camera_tilt        = 1500                              # The Camera Tilt channel (RC8) controls the vertical tilt movement of the camera.
-        self.lights             = 1500                              # The Lights Level channel (RC9) controls the intensity or brightness of the light source.
+        self.lights             = 1100                              # The Lights Level channel (RC9) controls the intensity or brightness of the light source.
 
         self.data               = {}                                # Dictionary that stores all sensor data
         
@@ -53,6 +54,7 @@ class Controller(Node):
         self.arm_pub            = self.create_publisher(Bool, "/bluerov2/arm_status", 10)  
         self.attitude_pub       = self.create_publisher(Attitude, "/bluerov2/attitude", 10)   
         self.bar30_pub          = self.create_publisher(Bar30, "/bluerov2/bar30", 10)     
+        self.bluerov_pub        = self.create_publisher(Status, "/bluerov2/status", 10)
         
         # Setup connection parameters
         self.declare_parameter("ip", "0.0.0.0") 
@@ -80,7 +82,7 @@ class Controller(Node):
         
         # Request data stream
         self.get_logger().info("Request data stream...") 
-        self.mav.request_data_stream_send(self.conn.target_system, self.conn.target_component, mavutil.mavlink.MAV_DATA_STREAM_ALL,4, 1)
+        self.mav.request_data_stream_send(self.connection.target_system, self.connection.target_component, mavutil.mavlink.MAV_DATA_STREAM_ALL,4, 1)
         
         # Now we are ready to dive :)     
         self.arm()
@@ -117,7 +119,20 @@ class Controller(Node):
         self.read_param()
 
         # Publisch sensor data
-        self.decode_param()             
+        self.decode_param()        
+
+        # Publish status
+        status = Status()
+        status.pitch        = self.pitch
+        status.roll         = self.roll
+        status.throttle     = self.throttle
+        status.yaw          = self.yaw
+        status.forward      = self.forward
+        status.lateral      = self.lateral
+        status.camera_pan   = self.camera_pan
+        status.camera_tilt  = self.camera_tilt
+        status.lights       = self.lights
+        self.bluerov_pub.publish(status)
 
     def read_param(self):        
         msgs = []
@@ -129,59 +144,55 @@ class Controller(Node):
                 break
 
         for msg in msgs:
-            self.data[msg.get_type()] = msg.to_dict()
+            self.data[msg.get_type()] = msg.to_dict()        
 
     def decode_param(self):
         # Publish ATTITUDE data
-        if 'ATTITUDE' not in self.get_data():
-            raise Exception('no ATTITUDE data')
-        else :
-            pass
-        
-        attitude_data = self.get_data()['ATTITUDE']
-        orientation = [attitude_data[i] for i in ['roll', 'pitch', 'yaw']]
-        orientation_speed = [attitude_data[i] for i in ['rollspeed', 'pitchspeed', 'yawspeed']]
-        
-        msg = Attitude()        
-        msg.time_boot_ms = attitude_data['time_boot_ms']
-        msg.roll = orientation[0]
-        msg.pitch = orientation[1]
-        msg.yaw = orientation[2]
-        msg.rollspeed = orientation_speed[0]
-        msg.pitchspeed = orientation_speed[1]
-        msg.yawspeed = orientation_speed[2]
+        if 'ATTITUDE' not in self.data:
+            self.get_logger().info('no ATTITUDE data')            
+        else :       
+            attitude_data = self.data['ATTITUDE']
+            orientation = [attitude_data[i] for i in ['roll', 'pitch', 'yaw']]
+            orientation_speed = [attitude_data[i] for i in ['rollspeed', 'pitchspeed', 'yawspeed']]
+            
+            msg = Attitude()        
+            msg.time_boot_ms = attitude_data['time_boot_ms']
+            msg.roll = orientation[0]
+            msg.pitch = orientation[1]
+            msg.yaw = orientation[2]
+            msg.rollspeed = orientation_speed[0]
+            msg.pitchspeed = orientation_speed[1]
+            msg.yawspeed = orientation_speed[2]
 
-        self.attitude_pub.publish(msg)
+            self.attitude_pub.publish(msg)
 
         # Publish PRESSURE data
-        if 'SCALED_PRESSURE2' not in self.get_data():
-            raise Exception('no SCALE_PRESSURE2 data')
+        if 'SCALED_PRESSURE2' not in self.data:
+            self.get_logger().info('no SCALE_PRESSURE2 data')            
         else :
-            pass
+            bar30_data = self.data['SCALED_PRESSURE2']
+            msg = Bar30()        
+            msg.time_boot_ms = bar30_data['time_boot_ms']
+            msg.press_abs    = bar30_data['press_abs']
+            msg.press_diff   = bar30_data['press_diff']
+            msg.temperature  = bar30_data['temperature']
 
-        bar30_data = self.get_data()['SCALED_PRESSURE2']
-        msg = Bar30()        
-        msg.time_boot_ms = bar30_data['time_boot_ms']
-        msg.press_abs    = bar30_data['press_abs']
-        msg.press_diff   = bar30_data['press_diff']
-        msg.temperature  = bar30_data['temperature']
-
-        self.bar30_pub.publish(msg) 
+            self.bar30_pub.publish(msg) 
 
         # Publisch BATTERY data
-        if 'SYS_STATUS' not in self.get_data():
-            raise Exception('no SYS_STATUS data')
+        if 'SYS_STATUS' not in self.data:
+            self.get_logger().info('no SYS_STATUS data')            
 
-        if 'BATTERY_STATUS' not in self.get_data():
-            raise Exception('no BATTERY_STATUS data')
+        if 'BATTERY_STATUS' not in self.data:
+            self.get_logger().info('no BATTERY_STATUS data')
+        else:
+            bat = BatteryState()
 
-        bat = BatteryState()
-
-        bat.voltage = self.get_data()['SYS_STATUS']['voltage_battery']/1000
-        bat.current = self.get_data()['SYS_STATUS']['current_battery']/100
-        bat.percentage = self.get_data()['BATTERY_STATUS']['battery_remaining']/100
-        
-        self.battery_pub.publish(bat)        
+            bat.voltage = self.data['SYS_STATUS']['voltage_battery']/1000
+            bat.current = self.data['SYS_STATUS']['current_battery']/100
+            bat.percentage = self.data['BATTERY_STATUS']['battery_remaining']/100
+            
+            self.battery_pub.publish(bat)        
     
     def arm(self):
         self.connection.arducopter_arm()
@@ -208,7 +219,18 @@ class Controller(Node):
         self.camera_pan         = 1500
         self.camera_tilt        = 1500
 
-        self.send_rc(*[1500]*8)
+        rc_channel_values = (self.pitch,
+                             self.roll,
+                             self.throttle,
+                             self.yaw,
+                             self.forward,
+                             self.lateral,
+                             self.camera_pan,
+                             self.camera_tilt,
+                             self.lights,
+                             65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535) # Unused RC channels are ignored        
+
+        self.mav.rc_channels_override_send(*self.target, *rc_channel_values)        
 
     def rc1_callback(self, msg):
         self.pitch = msg.data

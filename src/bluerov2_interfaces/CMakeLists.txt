@@ -21,6 +21,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/SetPitch.msg"
   "msg/SetTarget.msg"
   "msg/Attitude.msg"
+  "msg/Status.msg"
  )
 
 ament_export_dependencies(rosidl_default_runtime)
