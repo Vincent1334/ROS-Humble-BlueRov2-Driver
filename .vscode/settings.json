@@ -8,5 +8,6 @@
         "/home/ubuntu/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/lib/python3.10/site-packages",
         "/opt/ros/humble/lib/python3.10/site-packages",
         "/opt/ros/humble/local/lib/python3.10/dist-packages"
-    ]
+    ],
+    "cmake.sourceDirectory": "/Volumes/Data/ROS-Humble-BlueRov2-Driver/src/bluerov2_interfaces"
 }

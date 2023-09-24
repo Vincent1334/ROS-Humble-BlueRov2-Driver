@@ -19,6 +19,7 @@ class Controller(Node):
         # Setup default parameters
         self.declare_parameter("depth_desired", 0) 
         self.declare_parameter("pwm_max", 1900)
+        self.declare_parameter("pwm_neutral", 1500)
         self.declare_parameter("ki", 100)      
         self.declare_parameter("kp", 600)    
         self.declare_parameter("kd", 50)    
@@ -27,7 +28,7 @@ class Controller(Node):
         self.depth_desired  = self.get_parameter("depth_desired").value     # Desired depth setpoint
         self.bar30_data     = [0, 0, 0, 0]                                  # List to store Bar30 sensor data: [time_boot_ms, press_abs, press_diff, temperature]
         self.pwm_max        = self.get_parameter("pwm_max").value           # Maximum PWM value
-        self.pwm_neutral    = 1500                                          # Neutral PWM value
+        self.pwm_neutral    = self.get_parameter("pwm_neutral").value       # Neutral PWM value
         self.KI             = self.get_parameter("ki").value                # Integral gain constant
         self.KP             = self.get_parameter("kp").value                # Proportional gain constant
         self.KD             = self.get_parameter("kd").value                # Derivative gain constant
@@ -149,7 +150,7 @@ class Controller(Node):
         if self.enable:
             mesured_pressure = self.bar30_data[1]*100 #to convert pressure from hPa to Pa
             u = self.control_pid(mesured_pressure)
-            pwm = 1500 + u
+            pwm = self.pwm_neutral + u
             pwm = self.saturation(pwm)
             
             msg.data = pwm

@@ -16,14 +16,15 @@ class Controller(Node):
 
         # Setup default parameters
         self.declare_parameter("roll_desired", 0) 
-        self.declare_parameter("pwm_max", 1900)            
+        self.declare_parameter("pwm_max", 1900) 
+        self.declare_parameter("pwm_neutral", 1500)            
         self.declare_parameter("kp", 35)    
         self.declare_parameter("kd", 25)    
         self.declare_parameter("enable", True)  
 
         self.attitude           = [0, 0, 0, 0, 0, 0]                            #[ROLL, PITCH, YAW, ROLLSPEED, PITCHSPEED, YAWSPEED]
         self.pwm_max            = self.get_parameter("pwm_max").value           # Maximum PWM value
-        self.pwm_neutral        = 1500                                          # Neutral PWM value
+        self.pwm_neutral        = self.get_parameter("pwm_neutral").value       # Neutral PWM value
         self.roll_desired       = self.get_parameter("roll_desired").value      # Desired pitch setpoint
         self.KP                 = self.get_parameter("kp").value                # Proportional gain constant        
         self.KD                 = self.get_parameter("kd").value                # Derivative gain constant

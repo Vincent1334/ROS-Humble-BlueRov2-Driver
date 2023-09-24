@@ -4,8 +4,9 @@ import pygame
 from pygame.locals import *
 from rclpy.node import Node
 
-from bluerov2_interfaces.msg import Status
 from std_msgs.msg import UInt16
+from std_msgs.msg import Bool
+from bluerov2_interfaces.msg import SetTarget
 
 class Controller(Node):    
     
@@ -15,30 +16,48 @@ class Controller(Node):
         # Setup default parameters        
         self.declare_parameter("pwm_max", 1900)
         self.declare_parameter("pwm_min", 1100)
+        self.declare_parameter("pwm_neutral", 1500)
+        self.declare_parameter("pwm_neutral_lights", 1100)
         self.declare_parameter("gain_pwm_cam", 400)     
         self.declare_parameter("gain_pwm_lights", 50)
+        self.declare_parameter("gain_depth", 0.2)
+        self.declare_parameter("arm_status", True)
 
-        self.pwm_max                = self.get_parameter("pwm_max").value 
         self.pwm_min                = self.get_parameter("pwm_min").value 
+        self.pwm_max                = self.get_parameter("pwm_max").value
+        self.pwm_neutral            = self.get_parameter("pwm_neutral").value
+        self.pwm_neutral_lights     = self.get_parameter("pwm_neutral_lights").value    
+        self.gain_depth             = self.get_parameter("gain_depth").value       
+        
         self.gain_pwm_cam           = self.get_parameter("gain_pwm_cam").value 
         self.gain_pwm_lights        = self.get_parameter("gain_pwm_lights").value 
 
+        self.lights_value           = self.get_parameter("pwm_neutral_lights").value 
+        self.arm                    = self.get_parameter("arm_status").value 
+        self.target_depth           = 0        
+        
+
         # Create subscriber
-        self.status_sub             = self.create_subscription(Status, "/bluerov2/status", self.callback_status, 10) 
+        self.arm_status_sub         = self.create_subscription(Bool, "/bluerov2/arm_status", self.arm_callback, 10)
 
         # Create publisher
         self.lights_pub             = self.create_publisher(UInt16, "/bluerov2/rc/lights", 10)
-        self.camera_tilt_pub             = self.create_publisher(UInt16, "/bluerov2/rc/camera_tilt", 10)
+        self.camera_tilt_pub        = self.create_publisher(UInt16, "/bluerov2/rc/camera_tilt", 10)
+        self.arm_pub                = self.create_publisher(Bool, "/bluerov2/arm", 10)
+        self.depth_pub              = self.create_publisher(SetTarget, "/settings/set_target", 10)
 
-        self.pitch              = 1500                              # The pitch channel (RC1) refers to the upward or downward tilt of the BlueRov2.            
-        self.roll               = 1500                              # The roll channel (RC2) is responsible for the horizontal rotation of the BlueRov2 nose around its longitudinal axis.
-        self.throttle           = 1500                              # The Throttle channel (RC3) controls the motor power for the diving characteristics of the BlueRov2.
-        self.yaw                = 1500                              # The Yaw channel (RC4) is responsible for the rotation of the BlueRov2 nose around the vertical axis.
-        self.forward            = 1500                              # The Forward channel (RC5) is responsible for the forward movement of the BlueRov2.
-        self.lateral            = 1500                              # The lateral channel (RC6) concerns the lateral movement of the BlueRov2.
-        self.camera_pan         = 1500                              # The Camera Pan channel (RC7) controls the horizontal panning movement of the camera.
-        self.camera_tilt        = 1500                              # The Camera Tilt channel (RC8) controls the vertical tilt movement of the camera.
-        self.lights             = 1100                              # The Lights Level channel (RC9) controls the intensity or brightness of the light source.
+        # Clear BlueRov status
+        lights = UInt16()
+        lights.data = self.pwm_neutral_lights
+        self.lights_pub.publish(lights)
+
+        arm_msg = Bool()
+        arm_msg.data = self.arm
+        self.arm_pub.publish(arm_msg)
+
+        cam_pwm = UInt16()
+        cam_pwm.data = self.pwm_neutral
+        self.camera_tilt_pub.publish(cam_pwm)        
 
         # Init Gamepad
         pygame.init()        
@@ -57,14 +76,19 @@ class Controller(Node):
         
 
     def update_input(self):
-        for event in pygame.event.get():
-            # The 0 button is the 'a' button, 1 is the 'b' button, 2 is the 'x' button, 3 is the 'y' button
+        for event in pygame.event.get():            
             if event.type == JOYBUTTONDOWN:
                 print(event.button)
-                if event.button == 4:   #LB
+                if event.button == 4:       #LB
                     self.lights_down()
-                if event.button == 5:   #RB
-                    self.lights_up()      
+                if event.button == 5:       #RB
+                    self.lights_up()   
+                if event.button == 0:       #TODO START
+                    self.arm_disarm()
+                if event.button == 0        #TODO Y
+                    self.dive_up()
+                if event.button == 0        #TODO A
+                    self.dive_down()
 
             if event.type == JOYAXISMOTION:
                 if event.axis == 1:     #DPad Up-Down
@@ -74,18 +98,18 @@ class Controller(Node):
 
     def lights_down(self):        
         msg = UInt16()
-        if self.lights - self.gain_pwm_lights > 1100:
+        if self.lights - self.gain_pwm_lights > self.pwm_neutral_lights:
             msg.data = self.lights - self.gain_pwm_lights
         else:
-            msg.data = 1100
+            msg.data = self.pwm_neutral_lights
         self.lights_pub.publish(msg)
 
     def lights_up(self):       
         msg = UInt16()
-        if self.lights + self.gain_pwm_lights < 1900:
+        if self.lights + self.gain_pwm_lights < self.pwm_max:
             msg.data = self.lights + self.gain_pwm_lights
         else:
-            msg.data = 1900
+            msg.data = self.pwm_max
         self.lights_pub.publish(msg)
 
     def camera_tilt_event(self, value):
@@ -97,24 +121,36 @@ class Controller(Node):
         elif val == 1:
             msg.data = self.pwm_min
         elif val == 0:
-            msg.data = 1500
-
-        print(msg.data)
-        self.camera_tilt_pub.publish(msg)
-
+            msg.data = self.pwm_neutral
         
+        self.camera_tilt_pub.publish(msg)    
 
-    def callback_status(self, msg):
-        self.pitch              = msg.pitch                              
-        self.roll               = msg.roll                              
-        self.throttle           = msg.throttle                       
-        self.yaw                = msg.yaw                             
-        self.forward            = msg.forward                            
-        self.lateral            = msg.lateral                             
-        self.camera_pan         = msg.camera_pan                              
-        self.camera_tilt        = msg.camera_tilt                              
-        self.lights             = msg.lights
+    def arm_disarm(self):
+        self.arm = not self.arm
+        msg = Bool()
+        msg.data = self.arm
+        self.arm_pub.publish(msg)
+        if self.arm:
+            self.get_logger().info("The ROV ist now armed!")
+        else:
+            self.get_logger().info("The ROV ist now disarmed!")
 
+    def dive_up(self):
+        if self.target_depth + self.gain_depth <= 0:
+            self.target_depth += self.gain_depth
+            msg = SetTarget()
+            msg.depth_desired = self.target_depth
+            self.depth_pub.publish(msg)
+            self.get_logger().info(f"Desired depth is now {self.target_depth}")
+
+    def dive_down(self):
+        if self.target_depth - self.gain_depth > 200:
+            self.target_depth -= self.gain_depth
+            msg = SetTarget()
+            msg.depth_desired = self.target_depth
+            self.depth_pub.publish(msg)
+            self.get_logger().info(f"Desired depth is now {self.target_depth}")
+            
 def main(args=None):
     rclpy.init(args=args)    
     node = Controller()

@@ -9,8 +9,6 @@ from std_msgs.msg import Bool
 from sensor_msgs.msg import BatteryState
 from bluerov2_interfaces.msg import Attitude
 from bluerov2_interfaces.msg import Bar30
-from bluerov2_interfaces.msg import Status
-
 
 class Controller(Node):
     
@@ -53,8 +51,7 @@ class Controller(Node):
         self.battery_pub        = self.create_publisher(BatteryState, "/bluerov2/battery", 10)
         self.arm_pub            = self.create_publisher(Bool, "/bluerov2/arm_status", 10)  
         self.attitude_pub       = self.create_publisher(Attitude, "/bluerov2/attitude", 10)   
-        self.bar30_pub          = self.create_publisher(Bar30, "/bluerov2/bar30", 10)     
-        self.bluerov_pub        = self.create_publisher(Status, "/bluerov2/status", 10)
+        self.bar30_pub          = self.create_publisher(Bar30, "/bluerov2/bar30", 10)             
         
         # Setup connection parameters
         self.declare_parameter("ip", "0.0.0.0") 
@@ -118,21 +115,13 @@ class Controller(Node):
         # Request sensor data
         self.read_param()
 
-        # Publisch sensor data
-        self.decode_param()        
+        # Publish sensor data
+        if len(self.data) != 0:
+            self.decode_param()    
 
-        # Publish status
-        status = Status()
-        status.pitch        = self.pitch
-        status.roll         = self.roll
-        status.throttle     = self.throttle
-        status.yaw          = self.yaw
-        status.forward      = self.forward
-        status.lateral      = self.lateral
-        status.camera_pan   = self.camera_pan
-        status.camera_tilt  = self.camera_tilt
-        status.lights       = self.lights
-        self.bluerov_pub.publish(status)
+        # Publish arm status
+        msg = Bool()
+           
 
     def read_param(self):        
         msgs = []
@@ -201,7 +190,7 @@ class Controller(Node):
         self.get_logger().info('Thrusters armed!')
 
     def disarm(self):
-        self.master.arducopter_disarm()
+        self.connection.arducopter_disarm()
         self.get_logger().info('disarm requested, waiting...')
         self.connection.motors_disarmed_wait()
         self.get_logger().info('Thrusters disarmed')    
