@@ -45,6 +45,9 @@ class Controller(Node):
         self.camera_tilt_pub        = self.create_publisher(UInt16, "/bluerov2/rc/camera_tilt", 10)
         self.arm_pub                = self.create_publisher(Bool, "/bluerov2/arm", 10)
         self.depth_pub              = self.create_publisher(SetTarget, "/settings/set_target", 10)
+        self.yaw_pub                = self.create_publisher(SetTarget, "/bluerov2/rc/yaw", 10)
+        self.forward_pub            = self.create_publisher(SetTarget, "/bluerov2/rc/forward", 10)
+        self.lateral_pub            = self.create_publisher(SetTarget, "/bluerov2/rc/lateral", 10)
 
         # Clear BlueRov status
         lights = UInt16()
@@ -93,6 +96,12 @@ class Controller(Node):
             if event.type == JOYAXISMOTION:
                 if event.axis == 1:     #DPad Up-Down
                     self.camera_tilt_event(event.value)
+                if event.axis == 3:     #TODO Right Joystick
+                    self.rotation_event(event.value)
+                if event.axis == 3:     #TODO Left Joystick
+                    self.forward_event(event.value)
+                if event.axis == 3:     #TODO Left Joystick
+                    self.lateral_event(event.value)
 
     
 
@@ -125,6 +134,29 @@ class Controller(Node):
         
         self.camera_tilt_pub.publish(msg)    
 
+    def rotation_event(self, value):
+        msg = UInt16()        
+        msg.data = self.calculate_pwm(value)     
+        self.yaw_pub.publish(msg) 
+
+    def forward_event(self, value):
+        msg = UInt16()        
+        msg.data = self.calculate_pwm(value)     
+        self.forward_pub.publish(msg) 
+
+    def lateral_event(self, value):
+        msg = UInt16()        
+        msg.data = self.calculate_pwm(value)     
+        self.lateral_pub.publish(msg) 
+
+    def calculate_pwm(self, value):   
+        gain = self.pwm_max-self.pwm_neutral
+        if value < 0.01 and value > -0.01:
+            value = 0
+        if value > 1 or value < -1:
+            value = round(value)
+        return self.pwm_neutral + value * gain
+    
     def arm_disarm(self):
         self.arm = not self.arm
         msg = Bool()
