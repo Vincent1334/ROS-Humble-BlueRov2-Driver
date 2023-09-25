@@ -10,6 +10,11 @@ def generate_launch_description():
         executable="controller",
     )
 
+    video_node = Node(
+        package="bluerov2_controller",
+        executable="video",
+    )
+
     input_node = Node(
         package="bluerov2_controller",
         executable="input_controller",
@@ -31,6 +36,7 @@ def generate_launch_description():
     )
 
     ld.add_action(controller_node)
+    ld.add_action(video_node)
     ld.add_action(input_node)
     ld.add_action(depth_node)
     ld.add_action(pitch_node)

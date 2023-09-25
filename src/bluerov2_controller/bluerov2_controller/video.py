@@ -5,6 +5,10 @@ import cv2
 import gi
 import numpy as np
 
+from sensor_msgs.msg import BatteryState
+from bluerov2_interfaces.msg import SetTarget
+from bluerov2_interfaces.msg import Bar30
+
 gi.require_version('Gst', '1.0')
 from gi.repository import Gst
 
@@ -21,6 +25,10 @@ class Controller(Node):
         video_source (string): Udp source ip and port
     """
 
+    g   = 9.81      # m.s^-2 gravitational acceleration 
+    p0  = 103425    # Surface pressure in Pascal
+    rho = 1000      # kg/m^3  water density
+
     def __init__(self):
         super().__init__("video")
 
@@ -33,8 +41,20 @@ class Controller(Node):
         self.video_decode       = '! decodebin ! videoconvert ! video/x-raw,format=(string)BGR ! videoconvert'
         self.video_sink_conf    = '! appsink emit-signals=true sync=false max-buffers=2 drop=true'
 
-        self.video_pipe = None
-        self.video_sink = None
+        self.video_pipe         = None
+        self.video_sink         = None
+
+        self.voltage            = 0.0
+        self.depth              = 0.0
+        self.target_depth       = 0.0
+
+        # font
+        self.font               = cv2.FONT_HERSHEY_PLAIN
+
+        # create subscriber
+        self.battery_sub        = self.create_subscription(BatteryState, "/bluerov2/battery", self.battery_callback, 10) 
+        self.target_depth_sub   = self.create_subscription(SetTarget, "/settings/set_target", self.target_callback, 10)  
+        self.bar30_sub          = self.create_subscription(Bar30, "/bluerov2/bar30", self.callback_bar30, 10)       
 
         Gst.init() 
 
@@ -128,19 +148,48 @@ class Controller(Node):
 
         return Gst.FlowReturn.OK
     
+    def battery_callback(self, msg):
+        self.voltage = round(msg.voltage, 2)
+
+    def target_callback(self, msg):
+        self.target_depth = abs(msg.depth_desired)
+
+    def callback_bar30(self, msg):
+        self.bar30_data = [ msg.time_boot_ms,
+                            msg.press_abs,
+                            msg.press_diff,
+                            msg.temperature ]
+        
+        
+        self.depth = round((self.bar30_data[1]*100-self.p0)/(self.rho*self.g), 2)
+    
     def update(self):        
         if not self.frame_available():
             return
 
         frame = self.frame()
-        width = int(1920/2)
-        height = int(1080/2)
+        width = int(1920/1.5)
+        height = int(1080/1.5)
         dim = (width, height)
-        img = cv2.resize(frame, dim, interpolation = cv2.INTER_AREA)
+        img = cv2.resize(frame, dim, interpolation = cv2.INTER_AREA)   
+
+        self.draw_gui(img, width, height)
+        
+
         cv2.imshow('BlueROV2 Camera', img)
         if cv2.waitKey(1) & 0xFF == ord('q'):
             self.destroy_node()
 
+    def draw_gui(self, img, width, height):        
+        img = cv2.rectangle(img,(0, height-100),(300,height),(0,0,0),-1)
+        
+        img = cv2.putText(img, 'Voltage:', (10, height-70), self.font, 1.6, (255, 255, 250), 1, cv2.LINE_AA)
+        img = cv2.putText(img, 'Depth:', (10, height-45), self.font, 1.6, (255, 255, 250), 1, cv2.LINE_AA)
+        img = cv2.putText(img, 'Target depth:', (10, height-20), self.font, 1.6, (255, 255, 250), 1, cv2.LINE_AA)
+
+        img = cv2.putText(img, f'{self.voltage}V', (205, height-70), self.font, 1.6, (255, 255, 250), 1, cv2.LINE_AA)
+        img = cv2.putText(img, f'{self.depth}m', (205, height-45), self.font, 1.6, (255, 255, 250), 1, cv2.LINE_AA)
+        img = cv2.putText(img, f'{self.target_depth}m', (205, height-20), self.font, 1.6, (255, 255, 250), 1, cv2.LINE_AA)
 
 def main(args=None):
     rclpy.init(args=args)    

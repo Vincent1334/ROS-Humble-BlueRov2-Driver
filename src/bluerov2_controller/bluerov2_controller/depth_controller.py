@@ -10,7 +10,7 @@ from std_msgs.msg import UInt16
 class Controller(Node):
 
     g   = 9.81      # m.s^-2 gravitational acceleration 
-    p0  = 101325    # Surface pressure in Pascal
+    p0  = 103425    # Surface pressure in Pascal
     rho = 1000      # kg/m^3  water density
     
     def __init__(self):
