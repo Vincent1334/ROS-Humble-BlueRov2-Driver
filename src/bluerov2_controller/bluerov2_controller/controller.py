@@ -136,52 +136,44 @@ class Controller(Node):
             self.data[msg.get_type()] = msg.to_dict()        
 
     def decode_param(self):
-        # Publish ATTITUDE data
-        if 'ATTITUDE' not in self.data:
-            self.get_logger().info('no ATTITUDE data')            
-        else :       
-            attitude_data = self.data['ATTITUDE']
-            orientation = [attitude_data[i] for i in ['roll', 'pitch', 'yaw']]
-            orientation_speed = [attitude_data[i] for i in ['rollspeed', 'pitchspeed', 'yawspeed']]
-            
-            msg = Attitude()        
-            msg.time_boot_ms = attitude_data['time_boot_ms']
-            msg.roll = orientation[0]
-            msg.pitch = orientation[1]
-            msg.yaw = orientation[2]
-            msg.rollspeed = orientation_speed[0]
-            msg.pitchspeed = orientation_speed[1]
-            msg.yawspeed = orientation_speed[2]
+        def get_data(key):
+            if key not in self.data:
+                self.get_logger().info(f'no {key} data')
+                return None
+            return self.data[key]
 
-            self.attitude_pub.publish(msg)
+        def publish_attitude():
+            attitude_data = get_data('ATTITUDE')
+            if attitude_data is not None:
+                msg = Attitude()
+                msg.time_boot_ms = attitude_data['time_boot_ms']
+                msg.roll, msg.pitch, msg.yaw = attitude_data['roll'], attitude_data['pitch'], attitude_data['yaw']
+                msg.rollspeed, msg.pitchspeed, msg.yawspeed = attitude_data['rollspeed'], attitude_data['pitchspeed'], attitude_data['yawspeed']
+                self.attitude_pub.publish(msg)
 
-        # Publish PRESSURE data
-        if 'SCALED_PRESSURE2' not in self.data:
-            self.get_logger().info('no SCALE_PRESSURE2 data')            
-        else :
-            bar30_data = self.data['SCALED_PRESSURE2']
-            msg = Bar30()        
-            msg.time_boot_ms = bar30_data['time_boot_ms']
-            msg.press_abs    = bar30_data['press_abs']
-            msg.press_diff   = bar30_data['press_diff']
-            msg.temperature  = bar30_data['temperature']
+        def publish_bar30():
+            bar30_data = get_data('SCALED_PRESSURE2')
+            if bar30_data is not None:
+                msg = Bar30()
+                msg.time_boot_ms = bar30_data['time_boot_ms']
+                msg.press_abs, msg.press_diff, msg.temperature = bar30_data['press_abs'], bar30_data['press_diff'], bar30_data['temperature']
+                self.bar30_pub.publish(msg)
 
-            self.bar30_pub.publish(msg) 
+        def publish_battery():
+            sys_status = get_data('SYS_STATUS')
+            battery_status = get_data('BATTERY_STATUS')
 
-        # Publisch BATTERY data
-        if 'SYS_STATUS' not in self.data:
-            self.get_logger().info('no SYS_STATUS data')            
+            if sys_status is not None and battery_status is not None:
+                bat = BatteryState()
+                bat.voltage = sys_status['voltage_battery'] / 1000
+                bat.current = sys_status['current_battery'] / 100
+                bat.percentage = battery_status['battery_remaining'] / 100
+                self.battery_pub.publish(bat)
 
-        if 'BATTERY_STATUS' not in self.data:
-            self.get_logger().info('no BATTERY_STATUS data')
-        else:
-            bat = BatteryState()
+        publish_attitude()
+        publish_bar30()
+        publish_battery()
 
-            bat.voltage = self.data['SYS_STATUS']['voltage_battery']/1000
-            bat.current = self.data['SYS_STATUS']['current_battery']/100
-            bat.percentage = self.data['BATTERY_STATUS']['battery_remaining']/100
-            
-            self.battery_pub.publish(bat)        
     
     def arm(self):
         self.connection.arducopter_arm()

@@ -83,64 +83,57 @@ class Controller(Node):
         
 
     def update_input(self):
-        for event in pygame.event.get():                   
-            if event.type == JOYBUTTONDOWN:                
-                if event.button == 4:       #LB
-                    self.lights_down()
-                if event.button == 5:       #RB
-                    self.lights_up()   
-                if event.button == 7:       #START
-                    self.arm_disarm()
-                if event.button == 3:        #Y
-                    self.dive_up()
-                if event.button == 0:        #A
-                    self.dive_down()
+        for event in pygame.event.get():
+            # Check if a joystick button was pressed
+            if event.type == JOYBUTTONDOWN:
+                if event.button == 4:       # Left Bumper (LB)
+                    self.adjust_lights("down")  
+                elif event.button == 5:     # Right Bumper (RB)
+                    self.adjust_lights("up")  
+                elif event.button == 7:     # Start Button
+                    self.arm_disarm()   
+                elif event.button == 3:     # Y Button
+                    self.dive_up()  
+                elif event.button == 0:     # A Button
+                    self.dive_down()  
 
-            if event.type == JOYAXISMOTION:                
-                if event.axis == 1:     #DPad Up-Down
-                    self.camera_tilt_event(event.value)
-                    pass
-                if event.axis == 3:     # Right Joystick horizontal
-                    self.rotation_event(event.value)
-                    pass               
+            # Check if a joystick axis motion event occurs
+            elif event.type == JOYAXISMOTION:
+                if event.axis == 1:                         # D-Pad Up-Down motion
+                    self.camera_tilt_event(event.value)  
+                elif event.axis == 3:                       # Right Joystick horizontal motion
+                    self.rotation_event(event.value)  
 
-            if event.type == JOYHATMOTION:
-                self.move_event(event.value)
+            # Check if a joystick hat motion event occurs
+            elif event.type == JOYHATMOTION:
+                self.move_event(event.value)  
 
     
 
-    def lights_down(self):        
+    def adjust_lights(self, direction):
         msg = UInt16()
-        if self.lights_value - self.gain_pwm_lights > self.pwm_lights_min:
-            msg.data = self.lights_value - self.gain_pwm_lights
-        else:
-            msg.data = self.pwm_lights_min
-
+        
+        if direction == "down":
+            target_value = self.lights_value - self.gain_pwm_lights
+            msg.data = max(target_value, self.pwm_lights_min)
+        elif direction == "up":
+            target_value = self.lights_value + self.gain_pwm_lights
+            msg.data = min(target_value, self.pwm_lights_max)            
+        
         self.lights_value = msg.data
-        self.lights_pub.publish(msg)
-
-    def lights_up(self):       
-        msg = UInt16()        
-        if self.lights_value + self.gain_pwm_lights < self.pwm_lights_max:
-            msg.data = self.lights_value + self.gain_pwm_lights
-        else:
-            msg.data = self.pwm_lights_max
-
-        self.lights_value = msg.data
-        self.lights_pub.publish(msg)        
+        self.lights_pub.publish(msg)    
 
     def camera_tilt_event(self, value):
         msg = UInt16()
-        val = round(value)
 
-        if val == -1:
+        if value == -1:
             msg.data = int(self.pwm_camera_max)
-        elif val == 1:
+        elif value == 1:
             msg.data = int(self.pwm_camera_min)
-        elif val == 0:
+        else:
             msg.data = int(self.pwm_neutral)
         
-        self.camera_tilt_pub.publish(msg)    
+        self.camera_tilt_pub.publish(msg)
 
     def rotation_event(self, value):
         msg = UInt16()        
@@ -148,34 +141,31 @@ class Controller(Node):
         self.yaw_pub.publish(msg) 
 
     def move_event(self, value):
-        forward_msg = UInt16() 
-        lateral_msg = UInt16() 
+        forward, lateral = value[1], value[0]
 
-        forward = value[1]
-        lateral = value[0]  
-    
-        forward_msg.data = self.calculate_pwm_move(forward)     
-        lateral_msg.data = self.calculate_pwm_move(lateral) 
+        forward_msg = UInt16(data=self.calculate_pwm_move(forward))
+        lateral_msg = UInt16(data=self.calculate_pwm_move(lateral))
 
-        self.forward_pub.publish(forward_msg) 
-        self.lateral_pub.publish(lateral_msg)     
+        self.forward_pub.publish(forward_msg)
+        self.lateral_pub.publish(lateral_msg)
 
-    def calculate_pwm(self, value):   
-        gain = self.pwm_max-self.pwm_neutral
-        if value < 0.01 and value > -0.01:
+    def calculate_pwm(self, value):
+        gain = self.pwm_max - self.pwm_neutral
+        if -0.01 < value < 0.01:
             value = 0
-        if value > 1 or value < -1:
-            value = round(value)
+        elif value > 1:
+            value = 1
+        elif value < -1:
+            value = -1
         return int(self.pwm_neutral + value * gain)
     
     def calculate_pwm_move(self, value):
-        if value == 0:
-            return self.pwm_neutral
-        if value == 1:
-            return self.pwm_max
-        if value == -1:
-            return self.pwm_min
-        return self.pwm_neutral        
+        pwm_mapping = {
+            0: self.pwm_neutral,
+            1: self.pwm_max,
+            -1: self.pwm_min
+        }
+        return pwm_mapping.get(value, self.pwm_neutral)
     
     def arm_disarm(self):
         self.arm = not self.arm
@@ -187,21 +177,27 @@ class Controller(Node):
         else:
             self.get_logger().info("The ROV ist now disarmed!")
 
-    def dive_up(self):        
-        if self.target_depth + self.gain_depth <= 0:
-            self.target_depth = round(self.target_depth + self.gain_depth, 2)
+    def dive_up(self):
+        new_depth = round(self.target_depth + self.gain_depth, 2)
+        
+        if new_depth <= 0:
+            self.target_depth = new_depth
             msg = SetTarget()
             msg.depth_desired = self.target_depth
             self.depth_pub.publish(msg)
             self.get_logger().info(f"Desired depth is now {self.target_depth}")
 
+
     def dive_down(self):
-        if self.target_depth - self.gain_depth > -200:
-            self.target_depth = round(self.target_depth - self.gain_depth, 2)          
-            msg = SetTarget()            
+        new_depth = round(self.target_depth - self.gain_depth, 2)
+        
+        if new_depth > -200:
+            self.target_depth = new_depth
+            msg = SetTarget()
             msg.depth_desired = self.target_depth
             self.depth_pub.publish(msg)
             self.get_logger().info(f"Desired depth is now {self.target_depth}")
+
             
 def main(args=None):
     rclpy.init(args=args)    

@@ -173,8 +173,7 @@ class Controller(Node):
         dim = (width, height)
         img = cv2.resize(frame, dim, interpolation = cv2.INTER_AREA)   
 
-        self.draw_gui(img, width, height)
-        
+        self.draw_gui(img, width, height)        
 
         cv2.imshow('BlueROV2 Camera', img)
         if cv2.waitKey(1) & 0xFF == ord('q'):
