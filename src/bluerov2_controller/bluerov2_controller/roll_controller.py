@@ -12,7 +12,7 @@ from std_msgs.msg import UInt16
 class Controller(Node):
 
     def __init__(self):
-        super().__init__("roll controller")
+        super().__init__("roll_controller")
 
         # Setup default parameters
         self.declare_parameter("roll_desired", 0) 

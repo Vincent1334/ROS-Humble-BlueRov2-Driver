@@ -1,3 +1,0 @@
-float64 depth_desired
-float64 roll_desired
-float64 pitch_desired

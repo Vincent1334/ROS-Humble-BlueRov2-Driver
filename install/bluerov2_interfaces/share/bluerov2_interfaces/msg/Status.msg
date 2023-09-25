@@ -1,9 +1,0 @@
-uint16 pitch
-uint16 roll
-uint16 throttle
-uint16 yaw
-uint16 forward
-uint16 lateral
-uint16 camera_pan
-uint16 camera_tilt
-uint16 lights

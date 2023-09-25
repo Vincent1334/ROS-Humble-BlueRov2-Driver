@@ -36,6 +36,9 @@ class Controller(Node):
         self.video_pipe = None
         self.video_sink = None
 
+        Gst.init() 
+
+
         self.run()
 
         # Start update loop
@@ -130,8 +133,8 @@ class Controller(Node):
             return
 
         frame = self.frame()
-        width = 1920/2
-        height = 1080/2
+        width = int(1920/2)
+        height = int(1080/2)
         dim = (width, height)
         img = cv2.resize(frame, dim, interpolation = cv2.INTER_AREA)
         cv2.imshow('BlueROV2 Camera', img)

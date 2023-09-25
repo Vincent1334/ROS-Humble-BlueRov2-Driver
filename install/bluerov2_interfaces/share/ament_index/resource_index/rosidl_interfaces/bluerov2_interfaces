@@ -10,5 +10,3 @@ msg/SetRoll.idl
 msg/SetRoll.msg
 msg/SetTarget.idl
 msg/SetTarget.msg
-msg/Status.idl
-msg/Status.msg

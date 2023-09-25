@@ -12,7 +12,7 @@ from std_msgs.msg import UInt16
 class Controller(Node):
 
     def __init__(self):
-        super().__init__("pitch controller")
+        super().__init__("pitch_controller")
 
         # Setup default parameters
         self.declare_parameter("pitch_desired", 0) 

@@ -13,7 +13,7 @@ from bluerov2_interfaces.msg import Bar30
 class Controller(Node):
     
     def __init__(self):
-        super().__init__("Controller")              
+        super().__init__("controller")              
 
         self.type               = mavlink.MAV_TYPE_GCS              # Operator control unit / ground control station.
         self.autopilot          = mavlink.MAV_AUTOPILOT_INVALID     # No valid autopilot, e.g. a GCS or other MAVLink component.

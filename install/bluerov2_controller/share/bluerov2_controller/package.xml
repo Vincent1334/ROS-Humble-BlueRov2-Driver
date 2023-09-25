@@ -11,6 +11,8 @@
   <depend>pymavlink</depend>
   <depend>numpy</depend>
   <depend>pygame</depend>
+  <depend>cv2</depend>
+  <depend>gi</depend>
 
   <depend>bluerov2_interfaces</depend>
   <depend>sensor_msgs</depend>
