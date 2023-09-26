@@ -8,6 +8,7 @@ import numpy as np
 from sensor_msgs.msg import BatteryState
 from bluerov2_interfaces.msg import SetTarget
 from bluerov2_interfaces.msg import Bar30
+from bluerov2_interfaces.msg import Attitude
 
 gi.require_version('Gst', '1.0')
 from gi.repository import Gst
@@ -47,6 +48,9 @@ class Controller(Node):
         self.voltage            = 0.0
         self.depth              = 0.0
         self.target_depth       = 0.0
+        self.pitch              = 0.0
+        self.yaw                = 0.0
+        self.roll               = 0.0
 
         # font
         self.font               = cv2.FONT_HERSHEY_PLAIN
@@ -54,7 +58,8 @@ class Controller(Node):
         # create subscriber
         self.battery_sub        = self.create_subscription(BatteryState, "/bluerov2/battery", self.battery_callback, 10) 
         self.target_depth_sub   = self.create_subscription(SetTarget, "/settings/set_target", self.target_callback, 10)  
-        self.bar30_sub          = self.create_subscription(Bar30, "/bluerov2/bar30", self.callback_bar30, 10)       
+        self.bar30_sub          = self.create_subscription(Bar30, "/bluerov2/bar30", self.callback_bar30, 10)    
+        self.attitude_sub       = self.create_subscription(Attitude, "/bluerov2/attitude", self.callback_att, 10) 
 
         Gst.init() 
 
@@ -162,6 +167,11 @@ class Controller(Node):
         
         
         self.depth = round((self.bar30_data[1]*100-self.p0)/(self.rho*self.g), 2)
+
+    def callback_att(self, msg):         
+        self.roll   = round(msg.roll, 3)
+        self.pitch  = round(msg.pitch, 3)
+        self.yaw    = round(msg.yaw, 3)
     
     def update(self):        
         if not self.frame_available():
@@ -180,7 +190,7 @@ class Controller(Node):
             self.destroy_node()
 
     def draw_gui(self, img, width, height):        
-        img = cv2.rectangle(img,(0, height-100),(300,height),(0,0,0),-1)
+        img = cv2.rectangle(img,(0, height-100),(520,height),(0,0,0),-1)
         
         img = cv2.putText(img, 'Voltage:', (10, height-70), self.font, 1.6, (255, 255, 250), 1, cv2.LINE_AA)
         img = cv2.putText(img, 'Depth:', (10, height-45), self.font, 1.6, (255, 255, 250), 1, cv2.LINE_AA)
@@ -189,6 +199,14 @@ class Controller(Node):
         img = cv2.putText(img, f'{self.voltage}V', (205, height-70), self.font, 1.6, (255, 255, 250), 1, cv2.LINE_AA)
         img = cv2.putText(img, f'{self.depth}m', (205, height-45), self.font, 1.6, (255, 255, 250), 1, cv2.LINE_AA)
         img = cv2.putText(img, f'{self.target_depth}m', (205, height-20), self.font, 1.6, (255, 255, 250), 1, cv2.LINE_AA)
+
+        img = cv2.putText(img, 'Pitch:', (320, height-70), self.font, 1.6, (255, 255, 250), 1, cv2.LINE_AA)
+        img = cv2.putText(img, 'Roll:', (320, height-45), self.font, 1.6, (255, 255, 250), 1, cv2.LINE_AA)
+        img = cv2.putText(img, 'Yaw:', (320, height-20), self.font, 1.6, (255, 255, 250), 1, cv2.LINE_AA)
+
+        img = cv2.putText(img, f'{self.pitch}', (430, height-70), self.font, 1.6, (255, 255, 250), 1, cv2.LINE_AA)
+        img = cv2.putText(img, f'{self.roll}', (430, height-45), self.font, 1.6, (255, 255, 250), 1, cv2.LINE_AA)
+        img = cv2.putText(img, f'{self.yaw}', (430, height-20), self.font, 1.6, (255, 255, 250), 1, cv2.LINE_AA)
 
 def main(args=None):
     rclpy.init(args=args)    

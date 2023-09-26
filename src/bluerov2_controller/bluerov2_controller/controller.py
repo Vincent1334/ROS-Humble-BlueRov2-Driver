@@ -22,7 +22,7 @@ class Controller(Node):
         self.mavlink_version    = 0                                 # MAVLink version, not writable by user, gets added by protocol because of magic data type: uint8_t_mavlink_version.
         self.heartbeat_period   = 0.02                              # Interval in s, in which a heartbeat message is to be sent.
 
-        self.pitch              = 1500                              # The pitch channel (RC1) refers to the upward or downward tilt of the BlueRov2.            
+        self.pitch              = 1500                              # The pitch channel (RC1) refers to the upward or downward tilt of the BlueRov2 HEAVY.            
         self.roll               = 1500                              # The roll channel (RC2) is responsible for the horizontal rotation of the BlueRov2 nose around its longitudinal axis.
         self.throttle           = 1500                              # The Throttle channel (RC3) controls the motor power for the diving characteristics of the BlueRov2.
         self.yaw                = 1500                              # The Yaw channel (RC4) is responsible for the rotation of the BlueRov2 nose around the vertical axis.
@@ -83,7 +83,7 @@ class Controller(Node):
         
         # Now we are ready to dive :)     
         self.arm()
-        self.clear_motion()
+        #self.clear_motion()
 
         # Start update loop for bluerov2 commands. Update frequency are 2Hz
         self.get_logger().info("Start sending heartbeat messages...")

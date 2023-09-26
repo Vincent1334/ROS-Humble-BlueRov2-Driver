@@ -11,6 +11,8 @@ module bluerov2_interfaces {
       double roll_desired;
 
       double pitch_desired;
+
+      double yaw_desired;
     };
   };
 };

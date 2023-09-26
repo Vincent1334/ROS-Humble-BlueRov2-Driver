@@ -37,7 +37,7 @@ void SetTarget_fini_function(void * message_memory)
   typed_message->~SetTarget();
 }
 
-static const ::rosidl_typesupport_introspection_cpp::MessageMember SetTarget_message_member_array[3] = {
+static const ::rosidl_typesupport_introspection_cpp::MessageMember SetTarget_message_member_array[4] = {
   {
     "depth_desired",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_DOUBLE,  // type
@@ -88,13 +88,30 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember SetTarget_mes
     nullptr,  // fetch(index, &value) function pointer
     nullptr,  // assign(index, value) function pointer
     nullptr  // resize(index) function pointer
+  },
+  {
+    "yaw_desired",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_DOUBLE,  // type
+    0,  // upper bound of string
+    nullptr,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(bluerov2_interfaces::msg::SetTarget, yaw_desired),  // bytes offset in struct
+    nullptr,  // default value
+    nullptr,  // size() function pointer
+    nullptr,  // get_const(index) function pointer
+    nullptr,  // get(index) function pointer
+    nullptr,  // fetch(index, &value) function pointer
+    nullptr,  // assign(index, value) function pointer
+    nullptr  // resize(index) function pointer
   }
 };
 
 static const ::rosidl_typesupport_introspection_cpp::MessageMembers SetTarget_message_members = {
   "bluerov2_interfaces::msg",  // message namespace
   "SetTarget",  // message name
-  3,  // number of fields
+  4,  // number of fields
   sizeof(bluerov2_interfaces::msg::SetTarget),
   SetTarget_message_member_array,  // message members
   SetTarget_init_function,  // function to initialize message memory (memory has to be allocated)

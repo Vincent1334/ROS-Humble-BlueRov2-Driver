@@ -1,3 +1,4 @@
 float64 depth_desired
 float64 roll_desired
 float64 pitch_desired
+float64 yaw_desired

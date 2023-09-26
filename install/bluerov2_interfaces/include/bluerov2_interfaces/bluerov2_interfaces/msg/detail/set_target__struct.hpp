@@ -41,6 +41,7 @@ struct SetTarget_
       this->depth_desired = 0.0;
       this->roll_desired = 0.0;
       this->pitch_desired = 0.0;
+      this->yaw_desired = 0.0;
     }
   }
 
@@ -53,6 +54,7 @@ struct SetTarget_
       this->depth_desired = 0.0;
       this->roll_desired = 0.0;
       this->pitch_desired = 0.0;
+      this->yaw_desired = 0.0;
     }
   }
 
@@ -66,6 +68,9 @@ struct SetTarget_
   using _pitch_desired_type =
     double;
   _pitch_desired_type pitch_desired;
+  using _yaw_desired_type =
+    double;
+  _yaw_desired_type yaw_desired;
 
   // setters for named parameter idiom
   Type & set__depth_desired(
@@ -84,6 +89,12 @@ struct SetTarget_
     const double & _arg)
   {
     this->pitch_desired = _arg;
+    return *this;
+  }
+  Type & set__yaw_desired(
+    const double & _arg)
+  {
+    this->yaw_desired = _arg;
     return *this;
   }
 
@@ -136,6 +147,9 @@ struct SetTarget_
       return false;
     }
     if (this->pitch_desired != other.pitch_desired) {
+      return false;
+    }
+    if (this->yaw_desired != other.yaw_desired) {
       return false;
     }
     return true;

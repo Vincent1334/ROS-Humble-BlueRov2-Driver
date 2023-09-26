@@ -18,8 +18,8 @@ class Controller(Node):
         self.declare_parameter("pitch_desired", 0) 
         self.declare_parameter("pwm_max", 1900)
         self.declare_parameter("pwm_neutral", 1500)            
-        self.declare_parameter("kp", 35)    
-        self.declare_parameter("kd", 25)    
+        self.declare_parameter("kp", 600)    #35
+        self.declare_parameter("kd", 50)    #25  
         self.declare_parameter("enable", True)  
 
         self.attitude           = [0, 0, 0, 0, 0, 0]                            # [ROLL, PITCH, YAW, ROLLSPEED, PITCHSPEED, YAWSPEED]
@@ -96,13 +96,14 @@ class Controller(Node):
             pitch = self.attitude[1]
             pitchspeed = self.attitude[4]
             u = self.control(pitch, pitchspeed)
-            pwm = self.pwm_neutral - u
+            pwm = round(self.pwm_neutral - 30 * u)
             pwm = self.saturation(pwm)
             
             msg.data = pwm
         else:
             msg.data = self.pwm_neutral
 
+        msg.data = 1750
         self.pitch_pub.publish(msg)
 
 def main(args=None):

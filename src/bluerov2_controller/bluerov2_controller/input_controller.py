@@ -5,9 +5,9 @@ from pygame.locals import *
 from rclpy.node import Node
 
 from std_msgs.msg import UInt16
-from std_msgs.msg import Float64
 from std_msgs.msg import Bool
 from bluerov2_interfaces.msg import SetTarget
+from bluerov2_interfaces.msg import Attitude
 
 class Controller(Node):    
     
@@ -43,6 +43,8 @@ class Controller(Node):
         self.arm                    = self.get_parameter("arm_status").value 
         self.target_depth           = 0             
 
+        self.attitude               = [0, 0, 0, 0, 0, 0] #[ROLL, PITCH, YAW, ROLLSPEED, PITCHSPEED, YAWSPEED]
+
         # Create publisher
         self.lights_pub             = self.create_publisher(UInt16, "/bluerov2/rc/lights", 10)
         self.camera_tilt_pub        = self.create_publisher(UInt16, "/bluerov2/rc/camera_tilt", 10)
@@ -51,6 +53,9 @@ class Controller(Node):
         self.yaw_pub                = self.create_publisher(UInt16, "/bluerov2/rc/yaw", 10) 
         self.arm_pub                = self.create_publisher(Bool, "/bluerov2/arm", 10)
         self.depth_pub              = self.create_publisher(SetTarget, "/settings/set_target", 10)
+
+        # Create subsciber
+        self.attitude_sub           = self.create_subscription(Attitude, "/bluerov2/attitude", self.callback_att, 10) 
                
 
         # Clear BlueRov status
@@ -84,6 +89,7 @@ class Controller(Node):
 
     def update_input(self):
         for event in pygame.event.get():
+            print(event)
             # Check if a joystick button was pressed
             if event.type == JOYBUTTONDOWN:
                 if event.button == 4:       # Left Bumper (LB)
@@ -98,15 +104,15 @@ class Controller(Node):
                     self.dive_down()  
 
             # Check if a joystick axis motion event occurs
-            elif event.type == JOYAXISMOTION:
-                if event.axis == 1:                         # D-Pad Up-Down motion
-                    self.camera_tilt_event(event.value)  
-                elif event.axis == 3:                       # Right Joystick horizontal motion
+            elif event.type == JOYAXISMOTION:                
+                if event.axis == 3:                         # Right Joystick horizontal motion
                     self.rotation_event(event.value)  
+                elif event.axis == 0 or event.axis == 1:    # Left Joystick motion
+                    self.move_event(event)  
 
             # Check if a joystick hat motion event occurs
             elif event.type == JOYHATMOTION:
-                self.move_event(event.value)  
+                self.camera_tilt_event(event.value)         # D-Pad Up-Down motion
 
     
 
@@ -125,10 +131,11 @@ class Controller(Node):
 
     def camera_tilt_event(self, value):
         msg = UInt16()
+        value = value[1]
 
-        if value == -1:
+        if value == 1:
             msg.data = int(self.pwm_camera_max)
-        elif value == 1:
+        elif value == -1:
             msg.data = int(self.pwm_camera_min)
         else:
             msg.data = int(self.pwm_neutral)
@@ -140,14 +147,14 @@ class Controller(Node):
         msg.data = self.calculate_pwm(value)     
         self.yaw_pub.publish(msg) 
 
-    def move_event(self, value):
-        forward, lateral = value[1], value[0]
+    def move_event(self, event):
+        u = event.value
+        pwm = UInt16(data=self.calculate_pwm(u))
 
-        forward_msg = UInt16(data=self.calculate_pwm_move(forward))
-        lateral_msg = UInt16(data=self.calculate_pwm_move(lateral))
-
-        self.forward_pub.publish(forward_msg)
-        self.lateral_pub.publish(lateral_msg)
+        if event.axis == 0:
+            self.forward_pub.publish(pwm)
+        else:
+           self.lateral_pub.publish(pwm)        
 
     def calculate_pwm(self, value):
         gain = self.pwm_max - self.pwm_neutral
@@ -157,15 +164,7 @@ class Controller(Node):
             value = 1
         elif value < -1:
             value = -1
-        return int(self.pwm_neutral + value * gain)
-    
-    def calculate_pwm_move(self, value):
-        pwm_mapping = {
-            0: self.pwm_neutral,
-            1: self.pwm_max,
-            -1: self.pwm_min
-        }
-        return pwm_mapping.get(value, self.pwm_neutral)
+        return int(self.pwm_neutral + value * gain)    
     
     def arm_disarm(self):
         self.arm = not self.arm
@@ -197,6 +196,14 @@ class Controller(Node):
             msg.depth_desired = self.target_depth
             self.depth_pub.publish(msg)
             self.get_logger().info(f"Desired depth is now {self.target_depth}")
+
+    def callback_att(self, msg):       
+        self.attitude = [msg.roll,
+                         msg.pitch,
+                         msg.yaw,
+                         msg.rollspeed,
+                         msg.pitchspeed,
+                         msg.yawspeed]
 
             
 def main(args=None):

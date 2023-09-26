@@ -21,16 +21,32 @@ namespace msg
 namespace builder
 {
 
+class Init_SetTarget_yaw_desired
+{
+public:
+  explicit Init_SetTarget_yaw_desired(::bluerov2_interfaces::msg::SetTarget & msg)
+  : msg_(msg)
+  {}
+  ::bluerov2_interfaces::msg::SetTarget yaw_desired(::bluerov2_interfaces::msg::SetTarget::_yaw_desired_type arg)
+  {
+    msg_.yaw_desired = std::move(arg);
+    return std::move(msg_);
+  }
+
+private:
+  ::bluerov2_interfaces::msg::SetTarget msg_;
+};
+
 class Init_SetTarget_pitch_desired
 {
 public:
   explicit Init_SetTarget_pitch_desired(::bluerov2_interfaces::msg::SetTarget & msg)
   : msg_(msg)
   {}
-  ::bluerov2_interfaces::msg::SetTarget pitch_desired(::bluerov2_interfaces::msg::SetTarget::_pitch_desired_type arg)
+  Init_SetTarget_yaw_desired pitch_desired(::bluerov2_interfaces::msg::SetTarget::_pitch_desired_type arg)
   {
     msg_.pitch_desired = std::move(arg);
-    return std::move(msg_);
+    return Init_SetTarget_yaw_desired(msg_);
   }
 
 private:

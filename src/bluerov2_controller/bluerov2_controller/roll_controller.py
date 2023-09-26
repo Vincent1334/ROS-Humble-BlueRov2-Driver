@@ -16,10 +16,10 @@ class Controller(Node):
 
         # Setup default parameters
         self.declare_parameter("roll_desired", 0) 
-        self.declare_parameter("pwm_max", 1900) 
+        self.declare_parameter("pwm_max", 1750) 
         self.declare_parameter("pwm_neutral", 1500)            
-        self.declare_parameter("kp", 35)    
-        self.declare_parameter("kd", 25)    
+        self.declare_parameter("kp", 550)    
+        self.declare_parameter("kd", 50)    
         self.declare_parameter("enable", True)  
 
         self.attitude           = [0, 0, 0, 0, 0, 0]                            #[ROLL, PITCH, YAW, ROLLSPEED, PITCHSPEED, YAWSPEED]
@@ -102,7 +102,7 @@ class Controller(Node):
             msg.data = pwm
         else:
             msg.data = self.pwm_neutral
-            
+        
         self.roll_pub.publish(msg)
 
 def main(args=None):

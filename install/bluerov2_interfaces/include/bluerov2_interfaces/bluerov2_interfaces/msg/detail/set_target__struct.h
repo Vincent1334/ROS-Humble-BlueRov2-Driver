@@ -23,6 +23,7 @@ typedef struct bluerov2_interfaces__msg__SetTarget
   double depth_desired;
   double roll_desired;
   double pitch_desired;
+  double yaw_desired;
 } bluerov2_interfaces__msg__SetTarget;
 
 // Struct for a sequence of bluerov2_interfaces__msg__SetTarget.
