@@ -6,12 +6,16 @@
 module bluerov2_interfaces {
   module msg {
     struct SetPitch {
+      @default (value=FALSE)
       boolean enable_pitch_ctrl;
 
+      @default (value=1900)
       uint16 pwm_max;
 
+      @default (value=600)
       uint32 kp;
 
+      @default (value=50)
       uint32 kd;
     };
   };

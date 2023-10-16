@@ -35,11 +35,17 @@ def generate_launch_description():
         executable="roll_controller",
     )
 
+    yaw_node = Node(
+        package="bluerov2_controller",
+        executable="yaw_controller",       
+    )
+
     ld.add_action(controller_node)
     ld.add_action(video_node)
     ld.add_action(input_node)
     ld.add_action(depth_node)
     ld.add_action(pitch_node)
     ld.add_action(roll_node)
+    ld.add_action(yaw_node)
 
     return ld

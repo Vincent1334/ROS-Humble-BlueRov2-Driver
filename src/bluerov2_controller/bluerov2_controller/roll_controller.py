@@ -5,9 +5,8 @@ from rclpy.node import Node
 
 from bluerov2_interfaces.msg import Attitude
 from bluerov2_interfaces.msg import SetRoll
-from bluerov2_interfaces.msg import SetTarget
 
-from std_msgs.msg import UInt16
+from std_msgs.msg import UInt16, Float64
 
 class Controller(Node):
 
@@ -33,8 +32,8 @@ class Controller(Node):
 
         # Create subscriber
         self.attitude_sub       = self.create_subscription(Attitude, "/bluerov2/attitude", self.callback_att, 10) 
-        self.setRoll_sub        = self.create_subscription(SetRoll, "/settings/set_roll", self.callback_set_roll, 10)
-        self.setTarget_sub      = self.create_subscription(SetTarget, "/settings/set_target", self.callback_set_target, 10) 
+        self.setRoll_sub        = self.create_subscription(SetRoll, "/settings/roll/set_roll", self.callback_set_roll, 10)
+        self.setTarget_sub      = self.create_subscription(Float64, "/settings/roll/set_target", self.callback_set_target, 10) 
 
         # Create publisher
         self.roll_pub           = self.create_publisher(UInt16, "/bluerov2/rc/roll", 10)
@@ -61,7 +60,7 @@ class Controller(Node):
         self.enable = msg.enable_roll_ctrl
 
     def callback_set_target(self, msg):       
-        self.roll_desired = self.deg2rad(msg.roll_desired)
+        self.roll_desired = self.deg2rad(msg.data)
 
     def deg2rad(self,deg):       
         if deg in range(0,181):

@@ -18,9 +18,13 @@ bluerov2_interfaces__msg__SetPitch__init(bluerov2_interfaces__msg__SetPitch * ms
     return false;
   }
   // enable_pitch_ctrl
+  msg->enable_pitch_ctrl = false;
   // pwm_max
+  msg->pwm_max = 1900;
   // kp
+  msg->kp = 600ul;
   // kd
+  msg->kd = 50ul;
   return true;
 }
 

@@ -4,10 +4,9 @@ import pygame
 from pygame.locals import *
 from rclpy.node import Node
 
-from std_msgs.msg import UInt16
+from std_msgs.msg import UInt16, Float64
 from std_msgs.msg import Bool
-from bluerov2_interfaces.msg import SetTarget
-from bluerov2_interfaces.msg import Attitude
+from bluerov2_interfaces.msg import Attitude, SetYaw
 
 class Controller(Node):    
     
@@ -41,7 +40,8 @@ class Controller(Node):
 
         self.lights_value           = self.get_parameter("pwm_lights_min").value
         self.arm                    = self.get_parameter("arm_status").value 
-        self.target_depth           = 0             
+        self.target_depth           = 0    
+        self.yaw_enable             = True         
 
         self.attitude               = [0, 0, 0, 0, 0, 0] #[ROLL, PITCH, YAW, ROLLSPEED, PITCHSPEED, YAWSPEED]
 
@@ -52,7 +52,9 @@ class Controller(Node):
         self.lateral_pub            = self.create_publisher(UInt16, "/bluerov2/rc/lateral", 10)
         self.yaw_pub                = self.create_publisher(UInt16, "/bluerov2/rc/yaw", 10) 
         self.arm_pub                = self.create_publisher(Bool, "/bluerov2/arm", 10)
-        self.depth_pub              = self.create_publisher(SetTarget, "/settings/set_target", 10)
+        self.depth_pub              = self.create_publisher(Float64, "/settings/depth/set_target", 10)
+        self.yaw_pub                = self.create_publisher(Float64, "/settings/yaw/set_target", 10)
+        self.yaw_conf_pub           = self.create_publisher(SetYaw, "/settings/yaw/set_yaw", 10)
 
         # Create subsciber
         self.attitude_sub           = self.create_subscription(Attitude, "/bluerov2/attitude", self.callback_att, 10) 
@@ -143,6 +145,17 @@ class Controller(Node):
         self.camera_tilt_pub.publish(msg)
 
     def rotation_event(self, value):
+        if self.calculate_pwm(value) == 0:
+            self.yaw_enable = True
+            yaw_target = Float64()
+            yaw_target.data = self.attitude[2]
+            self.yaw_pub.publish(yaw_target)
+
+            enable_controller = SetYaw()
+            enable_controller.enable_yaw_ctrl = True
+            self.yaw_conf_pub.publish(enable_controller)
+        else:
+            self.yaw_enable = False
         msg = UInt16()        
         msg.data = self.calculate_pwm(value)     
         self.yaw_pub.publish(msg) 
@@ -150,6 +163,15 @@ class Controller(Node):
     def move_event(self, event):
         u = event.value
         pwm = UInt16(data=self.calculate_pwm(u))
+
+        if self.yaw_enable:
+            yaw_target = Float64()
+            yaw_target.data = self.attitude[2]
+            self.yaw_pub.publish(yaw_target)
+
+            enable_controller = SetYaw()
+            enable_controller.enable_yaw_ctrl = True
+            self.yaw_conf_pub.publish(enable_controller)
 
         if event.axis == 0:
             self.forward_pub.publish(pwm)
@@ -181,8 +203,8 @@ class Controller(Node):
         
         if new_depth <= 0:
             self.target_depth = new_depth
-            msg = SetTarget()
-            msg.depth_desired = self.target_depth
+            msg = Float64()
+            msg.data = self.target_depth
             self.depth_pub.publish(msg)
             self.get_logger().info(f"Desired depth is now {self.target_depth}")
 
@@ -192,8 +214,8 @@ class Controller(Node):
         
         if new_depth > -200:
             self.target_depth = new_depth
-            msg = SetTarget()
-            msg.depth_desired = self.target_depth
+            msg = Float64()
+            msg.data = self.target_depth
             self.depth_pub.publish(msg)
             self.get_logger().info(f"Desired depth is now {self.target_depth}")
 

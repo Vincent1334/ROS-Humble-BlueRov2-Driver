@@ -5,9 +5,8 @@ from rclpy.node import Node
 
 from bluerov2_interfaces.msg import Attitude
 from bluerov2_interfaces.msg import SetYaw
-from bluerov2_interfaces.msg import SetTarget
 
-from std_msgs.msg import UInt16
+from std_msgs.msg import UInt16, Float64
 
 class Contyawer(Node):
 
@@ -16,7 +15,7 @@ class Contyawer(Node):
 
         # Setup default parameters
         self.declare_parameter("yaw_desired", 0) 
-        self.declare_parameter("pwm_max", 1700) 
+        self.declare_parameter("pwm_max", 1750) 
         self.declare_parameter("pwm_neutral", 1500)            
         self.declare_parameter("kp", 550)    
         self.declare_parameter("kd", 50)    
@@ -33,8 +32,8 @@ class Contyawer(Node):
 
         # Create subscriber
         self.attitude_sub       = self.create_subscription(Attitude, "/bluerov2/attitude", self.callback_att, 10) 
-        self.setyaw_sub        = self.create_subscription(SetYaw, "/settings/set_yaw", self.callback_set_yaw, 10)
-        self.setTarget_sub      = self.create_subscription(SetTarget, "/settings/set_target", self.callback_set_target, 10) 
+        self.setyaw_sub        = self.create_subscription(SetYaw, "/settings/yaw/set_yaw", self.callback_set_yaw, 10)
+        self.setTarget_sub      = self.create_subscription(Float64, "/settings/yaw/set_target", self.callback_set_target, 10) 
 
         # Create publisher
         self.yaw_pub           = self.create_publisher(UInt16, "/bluerov2/rc/yaw", 10)
@@ -61,7 +60,7 @@ class Contyawer(Node):
         self.enable = msg.enable_yaw_ctrl
 
     def callback_set_target(self, msg):       
-        self.yaw_desired = self.deg2rad(msg.yaw_desired)
+        self.yaw_desired = self.deg2rad(msg.data)
 
     def deg2rad(self,deg):       
         if deg in range(0,181):

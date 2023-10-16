@@ -1,4 +1,4 @@
-bool enable_pitch_ctrl
-uint16 pwm_max
-uint32 kp
-uint32 kd
+bool enable_pitch_ctrl False
+uint16 pwm_max 1900
+uint32 kp 600
+uint32 kd 50

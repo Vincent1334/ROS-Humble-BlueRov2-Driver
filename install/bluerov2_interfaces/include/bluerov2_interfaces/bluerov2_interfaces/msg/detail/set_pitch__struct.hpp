@@ -36,8 +36,13 @@ struct SetPitch_
   explicit SetPitch_(rosidl_runtime_cpp::MessageInitialization _init = rosidl_runtime_cpp::MessageInitialization::ALL)
   {
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
-      rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
+      rosidl_runtime_cpp::MessageInitialization::DEFAULTS_ONLY == _init)
     {
+      this->enable_pitch_ctrl = false;
+      this->pwm_max = 1900;
+      this->kp = 600ul;
+      this->kd = 50ul;
+    } else if (rosidl_runtime_cpp::MessageInitialization::ZERO == _init) {
       this->enable_pitch_ctrl = false;
       this->pwm_max = 0;
       this->kp = 0ul;
@@ -49,8 +54,13 @@ struct SetPitch_
   {
     (void)_alloc;
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
-      rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
+      rosidl_runtime_cpp::MessageInitialization::DEFAULTS_ONLY == _init)
     {
+      this->enable_pitch_ctrl = false;
+      this->pwm_max = 1900;
+      this->kp = 600ul;
+      this->kd = 50ul;
+    } else if (rosidl_runtime_cpp::MessageInitialization::ZERO == _init) {
       this->enable_pitch_ctrl = false;
       this->pwm_max = 0;
       this->kp = 0ul;

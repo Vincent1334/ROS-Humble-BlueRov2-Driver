@@ -19,8 +19,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/SetDepth.msg"
   "msg/SetRoll.msg"
   "msg/SetPitch.msg"
-  "msg/SetYaw.msg"
-  "msg/SetTarget.msg"
+  "msg/SetYaw.msg"  
   "msg/Attitude.msg"  
  )
 

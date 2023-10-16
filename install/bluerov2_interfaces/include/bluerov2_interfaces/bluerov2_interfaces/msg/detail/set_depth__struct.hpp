@@ -36,8 +36,14 @@ struct SetDepth_
   explicit SetDepth_(rosidl_runtime_cpp::MessageInitialization _init = rosidl_runtime_cpp::MessageInitialization::ALL)
   {
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
-      rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
+      rosidl_runtime_cpp::MessageInitialization::DEFAULTS_ONLY == _init)
     {
+      this->enable_depth_ctrl = false;
+      this->pwm_max = 1900;
+      this->ki = 100ul;
+      this->kp = 600ul;
+      this->kd = 50ul;
+    } else if (rosidl_runtime_cpp::MessageInitialization::ZERO == _init) {
       this->enable_depth_ctrl = false;
       this->pwm_max = 0;
       this->ki = 0ul;
@@ -50,8 +56,14 @@ struct SetDepth_
   {
     (void)_alloc;
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
-      rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
+      rosidl_runtime_cpp::MessageInitialization::DEFAULTS_ONLY == _init)
     {
+      this->enable_depth_ctrl = false;
+      this->pwm_max = 1900;
+      this->ki = 100ul;
+      this->kp = 600ul;
+      this->kd = 50ul;
+    } else if (rosidl_runtime_cpp::MessageInitialization::ZERO == _init) {
       this->enable_depth_ctrl = false;
       this->pwm_max = 0;
       this->ki = 0ul;

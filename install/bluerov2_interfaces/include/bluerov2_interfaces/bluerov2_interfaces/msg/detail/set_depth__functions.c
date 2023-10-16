@@ -18,10 +18,15 @@ bluerov2_interfaces__msg__SetDepth__init(bluerov2_interfaces__msg__SetDepth * ms
     return false;
   }
   // enable_depth_ctrl
+  msg->enable_depth_ctrl = false;
   // pwm_max
+  msg->pwm_max = 1900;
   // ki
+  msg->ki = 100ul;
   // kp
+  msg->kp = 600ul;
   // kd
+  msg->kd = 50ul;
   return true;
 }
 

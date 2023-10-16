@@ -6,14 +6,19 @@
 module bluerov2_interfaces {
   module msg {
     struct SetDepth {
+      @default (value=FALSE)
       boolean enable_depth_ctrl;
 
+      @default (value=1900)
       uint16 pwm_max;
 
+      @default (value=100)
       uint32 ki;
 
+      @default (value=600)
       uint32 kp;
 
+      @default (value=50)
       uint32 kd;
     };
   };

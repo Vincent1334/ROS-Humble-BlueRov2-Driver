@@ -8,7 +8,5 @@ msg/SetPitch.idl
 msg/SetPitch.msg
 msg/SetRoll.idl
 msg/SetRoll.msg
-msg/SetTarget.idl
-msg/SetTarget.msg
 msg/SetYaw.idl
 msg/SetYaw.msg

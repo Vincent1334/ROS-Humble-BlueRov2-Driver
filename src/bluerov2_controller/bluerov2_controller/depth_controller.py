@@ -4,8 +4,7 @@ from rclpy.node import Node
 
 from bluerov2_interfaces.msg import Bar30
 from bluerov2_interfaces.msg import SetDepth
-from bluerov2_interfaces.msg import SetTarget
-from std_msgs.msg import UInt16
+from std_msgs.msg import UInt16, Float64
 
 class Controller(Node):
 
@@ -41,8 +40,8 @@ class Controller(Node):
 
         # Create subscriber
         self.bar30_sub      = self.create_subscription(Bar30, "/bluerov2/bar30", self.callback_bar30, 10) 
-        self.setDepth_sub   = self.create_subscription(SetDepth, "/settings/set_depth", self.callback_set_depth, 10)
-        self.setTarget_sub  = self.create_subscription(SetTarget, "/settings/set_target", self.callback_set_target, 10) 
+        self.setDepth_sub   = self.create_subscription(SetDepth, "/settings/depth/set_depth", self.callback_set_depth, 10)
+        self.setTarget_sub  = self.create_subscription(Float64, "/settings/depth/set_target", self.callback_set_target, 10) 
 
         # Create publisher
         self.throttle_pub   = self.create_publisher(UInt16, "/bluerov2/rc/throttle", 10)  
@@ -86,16 +85,8 @@ class Controller(Node):
 
         self.enable = msg.enable_depth_ctrl
 
-    def callback_set_target(self, msg):
-        """Read data from '/Settings/set_target'
-
-        ROS message:
-        -------------
-        float64 depth_desired
-        float64 heading_desired
-        float64 velocity_desired
-        """
-        self.depth_desired = msg.depth_desired
+    def callback_set_target(self, msg):        
+        self.depth_desired = msg.data
 
     def control_pid(self, p):
         """PID controller

@@ -36,8 +36,13 @@ struct SetRoll_
   explicit SetRoll_(rosidl_runtime_cpp::MessageInitialization _init = rosidl_runtime_cpp::MessageInitialization::ALL)
   {
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
-      rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
+      rosidl_runtime_cpp::MessageInitialization::DEFAULTS_ONLY == _init)
     {
+      this->enable_roll_ctrl = false;
+      this->pwm_max = 1750;
+      this->kp = 550ul;
+      this->kd = 50ul;
+    } else if (rosidl_runtime_cpp::MessageInitialization::ZERO == _init) {
       this->enable_roll_ctrl = false;
       this->pwm_max = 0;
       this->kp = 0ul;
@@ -49,8 +54,13 @@ struct SetRoll_
   {
     (void)_alloc;
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
-      rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
+      rosidl_runtime_cpp::MessageInitialization::DEFAULTS_ONLY == _init)
     {
+      this->enable_roll_ctrl = false;
+      this->pwm_max = 1750;
+      this->kp = 550ul;
+      this->kd = 50ul;
+    } else if (rosidl_runtime_cpp::MessageInitialization::ZERO == _init) {
       this->enable_roll_ctrl = false;
       this->pwm_max = 0;
       this->kp = 0ul;

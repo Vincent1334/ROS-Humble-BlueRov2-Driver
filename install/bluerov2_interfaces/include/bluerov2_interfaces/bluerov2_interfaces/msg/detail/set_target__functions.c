@@ -20,7 +20,6 @@ bluerov2_interfaces__msg__SetTarget__init(bluerov2_interfaces__msg__SetTarget * 
   // depth_desired
   // roll_desired
   // pitch_desired
-  // yaw_desired
   return true;
 }
 
@@ -33,7 +32,6 @@ bluerov2_interfaces__msg__SetTarget__fini(bluerov2_interfaces__msg__SetTarget * 
   // depth_desired
   // roll_desired
   // pitch_desired
-  // yaw_desired
 }
 
 bool
@@ -54,10 +52,6 @@ bluerov2_interfaces__msg__SetTarget__are_equal(const bluerov2_interfaces__msg__S
   if (lhs->pitch_desired != rhs->pitch_desired) {
     return false;
   }
-  // yaw_desired
-  if (lhs->yaw_desired != rhs->yaw_desired) {
-    return false;
-  }
   return true;
 }
 
@@ -75,8 +69,6 @@ bluerov2_interfaces__msg__SetTarget__copy(
   output->roll_desired = input->roll_desired;
   // pitch_desired
   output->pitch_desired = input->pitch_desired;
-  // yaw_desired
-  output->yaw_desired = input->yaw_desired;
   return true;
 }
 

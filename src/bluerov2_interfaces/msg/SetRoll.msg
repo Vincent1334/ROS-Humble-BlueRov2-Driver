@@ -1,4 +1,4 @@
-bool enable_roll_ctrl
-uint16 pwm_max
-uint32 kp
-uint32 kd
+bool enable_roll_ctrl False
+uint16 pwm_max 1750
+uint32 kp 550
+uint32 kd 50

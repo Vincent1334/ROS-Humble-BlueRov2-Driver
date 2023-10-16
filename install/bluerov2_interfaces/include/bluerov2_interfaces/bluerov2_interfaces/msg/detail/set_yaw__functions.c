@@ -18,9 +18,13 @@ bluerov2_interfaces__msg__SetYaw__init(bluerov2_interfaces__msg__SetYaw * msg)
     return false;
   }
   // enable_yaw_ctrl
+  msg->enable_yaw_ctrl = false;
   // pwm_max
+  msg->pwm_max = 1750;
   // kp
+  msg->kp = 550ul;
   // kd
+  msg->kd = 50ul;
   return true;
 }
 
