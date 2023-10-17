@@ -1,0 +1,6 @@
+source;share/tritech_micron/hook/pythonpath.ps1
+source;share/tritech_micron/hook/pythonpath.dsv
+source;share/tritech_micron/hook/pythonpath.sh
+source;share/tritech_micron/hook/ament_prefix_path.ps1
+source;share/tritech_micron/hook/ament_prefix_path.dsv
+source;share/tritech_micron/hook/ament_prefix_path.sh

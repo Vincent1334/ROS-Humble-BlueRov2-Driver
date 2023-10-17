@@ -1,0 +1,57 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from tritech_micron_interfaces/msg/TritechMicronConfig.msg
+// generated code does not contain a copyright notice
+
+
+module tritech_micron_interfaces {
+  module msg {
+    @verbatim (language="comment", text=
+      "Tritech Micron configuration parameters.")
+    struct TritechMicronConfig {
+      @verbatim (language="comment", text=
+        "Whether the sonar head is facing upwards.")
+      boolean inverted;
+
+      @verbatim (language="comment", text=
+        "Whether the scan is continuous or in sector scan mode.")
+      boolean continuous;
+
+      @verbatim (language="comment", text=
+        "Whether the scan is clockwise.")
+      boolean scanright;
+
+      @verbatim (language="comment", text=
+        "Whether the scan intensity is an 8-bit or 4-bit number.")
+      boolean adc8on;
+
+      @verbatim (language="comment", text=
+        "Initial gain of the sonar pulse. Ranges between 0 and 1.")
+      double gain;
+
+      @verbatim (language="comment", text=
+        "Mapping of intensity to dB. Ranges from 0 to 80 dB.")
+      double ad_low;
+
+      double ad_high;
+
+      @verbatim (language="comment", text=
+        "Right and left limit of scan if in sector scan mode. Values are in radians" "\n"
+        "and range from 0 to 2 pi.")
+      double left_limit;
+
+      double right_limit;
+
+      @verbatim (language="comment", text=
+        "Range of scan in meters.")
+      double range;
+
+      @verbatim (language="comment", text=
+        "Number of bins per scan slice.")
+      int16 nbins;
+
+      @verbatim (language="comment", text=
+        "Motor step size in radians.")
+      double step;
+    };
+  };
+};

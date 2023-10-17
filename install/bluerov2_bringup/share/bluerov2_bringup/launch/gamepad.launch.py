@@ -37,10 +37,7 @@ def generate_launch_description():
 
     yaw_node = Node(
         package="bluerov2_controller",
-        executable="yaw_controller",
-        parameters=[             
-            {"enable": False} 
-        ],
+        executable="yaw_controller",       
     )
 
     ld.add_action(controller_node)
