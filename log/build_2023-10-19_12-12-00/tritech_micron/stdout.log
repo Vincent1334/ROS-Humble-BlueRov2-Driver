@@ -1,0 +1,21 @@
+running egg_info
+writing ../../build/tritech_micron/tritech_micron.egg-info/PKG-INFO
+writing dependency_links to ../../build/tritech_micron/tritech_micron.egg-info/dependency_links.txt
+writing entry points to ../../build/tritech_micron/tritech_micron.egg-info/entry_points.txt
+writing requirements to ../../build/tritech_micron/tritech_micron.egg-info/requires.txt
+writing top-level names to ../../build/tritech_micron/tritech_micron.egg-info/top_level.txt
+reading manifest file '../../build/tritech_micron/tritech_micron.egg-info/SOURCES.txt'
+writing manifest file '../../build/tritech_micron/tritech_micron.egg-info/SOURCES.txt'
+running build
+running build_py
+copying tritech_micron/scan.py -> /home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron/build/lib/tritech_micron
+running install
+running install_lib
+copying /home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron/build/lib/tritech_micron/scan.py -> /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron/lib/python3.10/site-packages/tritech_micron
+byte-compiling /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron/lib/python3.10/site-packages/tritech_micron/scan.py to scan.cpython-310.pyc
+running install_data
+running install_egg_info
+removing '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron/lib/python3.10/site-packages/tritech_micron-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/tritech_micron/tritech_micron.egg-info to /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron/lib/python3.10/site-packages/tritech_micron-0.0.0-py3.10.egg-info
+running install_scripts
+writing list of installed files to '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron/install.log'

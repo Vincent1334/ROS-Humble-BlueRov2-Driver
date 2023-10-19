@@ -12,6 +12,12 @@
 #include "tritech_micron_interfaces/msg/detail/tritech_micron_config__struct.h"
 
 
+// Include directives for member types
+// Member `header`
+#include "std_msgs/msg/header.h"
+// Member `header`
+#include "std_msgs/msg/detail/header__rosidl_typesupport_introspection_c.h"
+
 #ifdef __cplusplus
 extern "C"
 {
@@ -31,7 +37,24 @@ void tritech_micron_interfaces__msg__TritechMicronConfig__rosidl_typesupport_int
   tritech_micron_interfaces__msg__TritechMicronConfig__fini(message_memory);
 }
 
-static rosidl_typesupport_introspection_c__MessageMember tritech_micron_interfaces__msg__TritechMicronConfig__rosidl_typesupport_introspection_c__TritechMicronConfig_message_member_array[12] = {
+static rosidl_typesupport_introspection_c__MessageMember tritech_micron_interfaces__msg__TritechMicronConfig__rosidl_typesupport_introspection_c__TritechMicronConfig_message_member_array[13] = {
+  {
+    "header",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_MESSAGE,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message (initialized later)
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(tritech_micron_interfaces__msg__TritechMicronConfig, header),  // bytes offset in struct
+    NULL,  // default value
+    NULL,  // size() function pointer
+    NULL,  // get_const(index) function pointer
+    NULL,  // get(index) function pointer
+    NULL,  // fetch(index, &value) function pointer
+    NULL,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
+  },
   {
     "inverted",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
@@ -241,7 +264,7 @@ static rosidl_typesupport_introspection_c__MessageMember tritech_micron_interfac
 static const rosidl_typesupport_introspection_c__MessageMembers tritech_micron_interfaces__msg__TritechMicronConfig__rosidl_typesupport_introspection_c__TritechMicronConfig_message_members = {
   "tritech_micron_interfaces__msg",  // message namespace
   "TritechMicronConfig",  // message name
-  12,  // number of fields
+  13,  // number of fields
   sizeof(tritech_micron_interfaces__msg__TritechMicronConfig),
   tritech_micron_interfaces__msg__TritechMicronConfig__rosidl_typesupport_introspection_c__TritechMicronConfig_message_member_array,  // message members
   tritech_micron_interfaces__msg__TritechMicronConfig__rosidl_typesupport_introspection_c__TritechMicronConfig_init_function,  // function to initialize message memory (memory has to be allocated)
@@ -259,6 +282,8 @@ static rosidl_message_type_support_t tritech_micron_interfaces__msg__TritechMicr
 ROSIDL_TYPESUPPORT_INTROSPECTION_C_EXPORT_tritech_micron_interfaces
 const rosidl_message_type_support_t *
 ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_introspection_c, tritech_micron_interfaces, msg, TritechMicronConfig)() {
+  tritech_micron_interfaces__msg__TritechMicronConfig__rosidl_typesupport_introspection_c__TritechMicronConfig_message_member_array[0].members_ =
+    ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_introspection_c, std_msgs, msg, Header)();
   if (!tritech_micron_interfaces__msg__TritechMicronConfig__rosidl_typesupport_introspection_c__TritechMicronConfig_message_type_support_handle.typesupport_identifier) {
     tritech_micron_interfaces__msg__TritechMicronConfig__rosidl_typesupport_introspection_c__TritechMicronConfig_message_type_support_handle.typesupport_identifier =
       rosidl_typesupport_introspection_c__identifier;

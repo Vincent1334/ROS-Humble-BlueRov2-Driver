@@ -1,0 +1,397 @@
+[0.451s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.451s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=4, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7f52d85a7bb0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7f52d853dcf0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7f52d853dcf0>>)
+[0.478s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.478s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.478s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.479s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.479s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.479s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.479s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/bluerov/ROS-Humble-BlueRov2-Driver'
+[0.479s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.479s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.479s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.479s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.479s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.479s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.479s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.479s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.479s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.492s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.492s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.492s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.492s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.492s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.492s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.492s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.493s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.493s] Level 1:colcon.colcon_core.package_identification:_identify(img) by extensions ['ignore', 'ignore_ament_install']
+[0.493s] Level 1:colcon.colcon_core.package_identification:_identify(img) by extension 'ignore'
+[0.493s] Level 1:colcon.colcon_core.package_identification:_identify(img) by extension 'ignore_ament_install'
+[0.493s] Level 1:colcon.colcon_core.package_identification:_identify(img) by extensions ['colcon_pkg']
+[0.493s] Level 1:colcon.colcon_core.package_identification:_identify(img) by extension 'colcon_pkg'
+[0.493s] Level 1:colcon.colcon_core.package_identification:_identify(img) by extensions ['colcon_meta']
+[0.493s] Level 1:colcon.colcon_core.package_identification:_identify(img) by extension 'colcon_meta'
+[0.493s] Level 1:colcon.colcon_core.package_identification:_identify(img) by extensions ['ros']
+[0.493s] Level 1:colcon.colcon_core.package_identification:_identify(img) by extension 'ros'
+[0.493s] Level 1:colcon.colcon_core.package_identification:_identify(img) by extensions ['cmake', 'python']
+[0.493s] Level 1:colcon.colcon_core.package_identification:_identify(img) by extension 'cmake'
+[0.493s] Level 1:colcon.colcon_core.package_identification:_identify(img) by extension 'python'
+[0.494s] Level 1:colcon.colcon_core.package_identification:_identify(img) by extensions ['python_setup_py']
+[0.494s] Level 1:colcon.colcon_core.package_identification:_identify(img) by extension 'python_setup_py'
+[0.494s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.494s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.494s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.494s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.494s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.494s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.494s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.494s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.495s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.495s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.495s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.495s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.495s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.495s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.495s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.495s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.495s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.495s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.495s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.495s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.495s] Level 1:colcon.colcon_core.package_identification:_identify(src/bluerov2_bringup) by extensions ['ignore', 'ignore_ament_install']
+[0.495s] Level 1:colcon.colcon_core.package_identification:_identify(src/bluerov2_bringup) by extension 'ignore'
+[0.495s] Level 1:colcon.colcon_core.package_identification:_identify(src/bluerov2_bringup) by extension 'ignore_ament_install'
+[0.496s] Level 1:colcon.colcon_core.package_identification:_identify(src/bluerov2_bringup) by extensions ['colcon_pkg']
+[0.496s] Level 1:colcon.colcon_core.package_identification:_identify(src/bluerov2_bringup) by extension 'colcon_pkg'
+[0.496s] Level 1:colcon.colcon_core.package_identification:_identify(src/bluerov2_bringup) by extensions ['colcon_meta']
+[0.496s] Level 1:colcon.colcon_core.package_identification:_identify(src/bluerov2_bringup) by extension 'colcon_meta'
+[0.496s] Level 1:colcon.colcon_core.package_identification:_identify(src/bluerov2_bringup) by extensions ['ros']
+[0.496s] Level 1:colcon.colcon_core.package_identification:_identify(src/bluerov2_bringup) by extension 'ros'
+[0.499s] DEBUG:colcon.colcon_core.package_identification:Package 'src/bluerov2_bringup' with type 'ros.ament_cmake' and name 'bluerov2_bringup'
+[0.500s] Level 1:colcon.colcon_core.package_identification:_identify(src/bluerov2_controller) by extensions ['ignore', 'ignore_ament_install']
+[0.500s] Level 1:colcon.colcon_core.package_identification:_identify(src/bluerov2_controller) by extension 'ignore'
+[0.500s] Level 1:colcon.colcon_core.package_identification:_identify(src/bluerov2_controller) by extension 'ignore_ament_install'
+[0.500s] Level 1:colcon.colcon_core.package_identification:_identify(src/bluerov2_controller) by extensions ['colcon_pkg']
+[0.500s] Level 1:colcon.colcon_core.package_identification:_identify(src/bluerov2_controller) by extension 'colcon_pkg'
+[0.500s] Level 1:colcon.colcon_core.package_identification:_identify(src/bluerov2_controller) by extensions ['colcon_meta']
+[0.500s] Level 1:colcon.colcon_core.package_identification:_identify(src/bluerov2_controller) by extension 'colcon_meta'
+[0.500s] Level 1:colcon.colcon_core.package_identification:_identify(src/bluerov2_controller) by extensions ['ros']
+[0.500s] Level 1:colcon.colcon_core.package_identification:_identify(src/bluerov2_controller) by extension 'ros'
+[0.502s] DEBUG:colcon.colcon_core.package_identification:Package 'src/bluerov2_controller' with type 'ros.ament_python' and name 'bluerov2_controller'
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(src/bluerov2_interfaces) by extensions ['ignore', 'ignore_ament_install']
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(src/bluerov2_interfaces) by extension 'ignore'
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(src/bluerov2_interfaces) by extension 'ignore_ament_install'
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(src/bluerov2_interfaces) by extensions ['colcon_pkg']
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(src/bluerov2_interfaces) by extension 'colcon_pkg'
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(src/bluerov2_interfaces) by extensions ['colcon_meta']
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(src/bluerov2_interfaces) by extension 'colcon_meta'
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(src/bluerov2_interfaces) by extensions ['ros']
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(src/bluerov2_interfaces) by extension 'ros'
+[0.503s] DEBUG:colcon.colcon_core.package_identification:Package 'src/bluerov2_interfaces' with type 'ros.ament_cmake' and name 'bluerov2_interfaces'
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(src/tritech_micron) by extensions ['ignore', 'ignore_ament_install']
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(src/tritech_micron) by extension 'ignore'
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(src/tritech_micron) by extension 'ignore_ament_install'
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(src/tritech_micron) by extensions ['colcon_pkg']
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(src/tritech_micron) by extension 'colcon_pkg'
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(src/tritech_micron) by extensions ['colcon_meta']
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(src/tritech_micron) by extension 'colcon_meta'
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(src/tritech_micron) by extensions ['ros']
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(src/tritech_micron) by extension 'ros'
+[0.505s] DEBUG:colcon.colcon_core.package_identification:Package 'src/tritech_micron' with type 'ros.ament_python' and name 'tritech_micron'
+[0.505s] Level 1:colcon.colcon_core.package_identification:_identify(src/tritech_micron_interfaces) by extensions ['ignore', 'ignore_ament_install']
+[0.505s] Level 1:colcon.colcon_core.package_identification:_identify(src/tritech_micron_interfaces) by extension 'ignore'
+[0.505s] Level 1:colcon.colcon_core.package_identification:_identify(src/tritech_micron_interfaces) by extension 'ignore_ament_install'
+[0.505s] Level 1:colcon.colcon_core.package_identification:_identify(src/tritech_micron_interfaces) by extensions ['colcon_pkg']
+[0.505s] Level 1:colcon.colcon_core.package_identification:_identify(src/tritech_micron_interfaces) by extension 'colcon_pkg'
+[0.505s] Level 1:colcon.colcon_core.package_identification:_identify(src/tritech_micron_interfaces) by extensions ['colcon_meta']
+[0.505s] Level 1:colcon.colcon_core.package_identification:_identify(src/tritech_micron_interfaces) by extension 'colcon_meta'
+[0.505s] Level 1:colcon.colcon_core.package_identification:_identify(src/tritech_micron_interfaces) by extensions ['ros']
+[0.505s] Level 1:colcon.colcon_core.package_identification:_identify(src/tritech_micron_interfaces) by extension 'ros'
+[0.506s] DEBUG:colcon.colcon_core.package_identification:Package 'src/tritech_micron_interfaces' with type 'ros.ament_cmake' and name 'tritech_micron_interfaces'
+[0.506s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.506s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.506s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.506s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.506s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.535s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.535s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.538s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 5 installed packages in /home/bluerov/ROS-Humble-BlueRov2-Driver/install
+[0.540s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 270 installed packages in /opt/ros/humble
+[0.542s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.616s] Level 5:colcon.colcon_core.verb:set package 'bluerov2_interfaces' build argument 'cmake_args' from command line to 'None'
+[0.616s] Level 5:colcon.colcon_core.verb:set package 'bluerov2_interfaces' build argument 'cmake_target' from command line to 'None'
+[0.616s] Level 5:colcon.colcon_core.verb:set package 'bluerov2_interfaces' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.616s] Level 5:colcon.colcon_core.verb:set package 'bluerov2_interfaces' build argument 'cmake_clean_cache' from command line to 'False'
+[0.616s] Level 5:colcon.colcon_core.verb:set package 'bluerov2_interfaces' build argument 'cmake_clean_first' from command line to 'False'
+[0.616s] Level 5:colcon.colcon_core.verb:set package 'bluerov2_interfaces' build argument 'cmake_force_configure' from command line to 'False'
+[0.616s] Level 5:colcon.colcon_core.verb:set package 'bluerov2_interfaces' build argument 'ament_cmake_args' from command line to 'None'
+[0.616s] Level 5:colcon.colcon_core.verb:set package 'bluerov2_interfaces' build argument 'catkin_cmake_args' from command line to 'None'
+[0.616s] Level 5:colcon.colcon_core.verb:set package 'bluerov2_interfaces' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.616s] DEBUG:colcon.colcon_core.verb:Building package 'bluerov2_interfaces' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_interfaces', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces', 'merge_install': False, 'path': '/home/bluerov/ROS-Humble-BlueRov2-Driver/src/bluerov2_interfaces', 'symlink_install': False, 'test_result_base': None}
+[0.617s] Level 5:colcon.colcon_core.verb:set package 'tritech_micron_interfaces' build argument 'cmake_args' from command line to 'None'
+[0.617s] Level 5:colcon.colcon_core.verb:set package 'tritech_micron_interfaces' build argument 'cmake_target' from command line to 'None'
+[0.617s] Level 5:colcon.colcon_core.verb:set package 'tritech_micron_interfaces' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.618s] Level 5:colcon.colcon_core.verb:set package 'tritech_micron_interfaces' build argument 'cmake_clean_cache' from command line to 'False'
+[0.618s] Level 5:colcon.colcon_core.verb:set package 'tritech_micron_interfaces' build argument 'cmake_clean_first' from command line to 'False'
+[0.618s] Level 5:colcon.colcon_core.verb:set package 'tritech_micron_interfaces' build argument 'cmake_force_configure' from command line to 'False'
+[0.618s] Level 5:colcon.colcon_core.verb:set package 'tritech_micron_interfaces' build argument 'ament_cmake_args' from command line to 'None'
+[0.618s] Level 5:colcon.colcon_core.verb:set package 'tritech_micron_interfaces' build argument 'catkin_cmake_args' from command line to 'None'
+[0.618s] Level 5:colcon.colcon_core.verb:set package 'tritech_micron_interfaces' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.618s] DEBUG:colcon.colcon_core.verb:Building package 'tritech_micron_interfaces' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron_interfaces', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces', 'merge_install': False, 'path': '/home/bluerov/ROS-Humble-BlueRov2-Driver/src/tritech_micron_interfaces', 'symlink_install': False, 'test_result_base': None}
+[0.619s] Level 5:colcon.colcon_core.verb:set package 'bluerov2_controller' build argument 'cmake_args' from command line to 'None'
+[0.619s] Level 5:colcon.colcon_core.verb:set package 'bluerov2_controller' build argument 'cmake_target' from command line to 'None'
+[0.619s] Level 5:colcon.colcon_core.verb:set package 'bluerov2_controller' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.619s] Level 5:colcon.colcon_core.verb:set package 'bluerov2_controller' build argument 'cmake_clean_cache' from command line to 'False'
+[0.619s] Level 5:colcon.colcon_core.verb:set package 'bluerov2_controller' build argument 'cmake_clean_first' from command line to 'False'
+[0.619s] Level 5:colcon.colcon_core.verb:set package 'bluerov2_controller' build argument 'cmake_force_configure' from command line to 'False'
+[0.619s] Level 5:colcon.colcon_core.verb:set package 'bluerov2_controller' build argument 'ament_cmake_args' from command line to 'None'
+[0.619s] Level 5:colcon.colcon_core.verb:set package 'bluerov2_controller' build argument 'catkin_cmake_args' from command line to 'None'
+[0.619s] Level 5:colcon.colcon_core.verb:set package 'bluerov2_controller' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.619s] DEBUG:colcon.colcon_core.verb:Building package 'bluerov2_controller' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_controller', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller', 'merge_install': False, 'path': '/home/bluerov/ROS-Humble-BlueRov2-Driver/src/bluerov2_controller', 'symlink_install': False, 'test_result_base': None}
+[0.621s] Level 5:colcon.colcon_core.verb:set package 'tritech_micron' build argument 'cmake_args' from command line to 'None'
+[0.621s] Level 5:colcon.colcon_core.verb:set package 'tritech_micron' build argument 'cmake_target' from command line to 'None'
+[0.621s] Level 5:colcon.colcon_core.verb:set package 'tritech_micron' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.621s] Level 5:colcon.colcon_core.verb:set package 'tritech_micron' build argument 'cmake_clean_cache' from command line to 'False'
+[0.621s] Level 5:colcon.colcon_core.verb:set package 'tritech_micron' build argument 'cmake_clean_first' from command line to 'False'
+[0.621s] Level 5:colcon.colcon_core.verb:set package 'tritech_micron' build argument 'cmake_force_configure' from command line to 'False'
+[0.621s] Level 5:colcon.colcon_core.verb:set package 'tritech_micron' build argument 'ament_cmake_args' from command line to 'None'
+[0.621s] Level 5:colcon.colcon_core.verb:set package 'tritech_micron' build argument 'catkin_cmake_args' from command line to 'None'
+[0.621s] Level 5:colcon.colcon_core.verb:set package 'tritech_micron' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.621s] DEBUG:colcon.colcon_core.verb:Building package 'tritech_micron' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron', 'merge_install': False, 'path': '/home/bluerov/ROS-Humble-BlueRov2-Driver/src/tritech_micron', 'symlink_install': False, 'test_result_base': None}
+[0.622s] Level 5:colcon.colcon_core.verb:set package 'bluerov2_bringup' build argument 'cmake_args' from command line to 'None'
+[0.622s] Level 5:colcon.colcon_core.verb:set package 'bluerov2_bringup' build argument 'cmake_target' from command line to 'None'
+[0.622s] Level 5:colcon.colcon_core.verb:set package 'bluerov2_bringup' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.622s] Level 5:colcon.colcon_core.verb:set package 'bluerov2_bringup' build argument 'cmake_clean_cache' from command line to 'False'
+[0.622s] Level 5:colcon.colcon_core.verb:set package 'bluerov2_bringup' build argument 'cmake_clean_first' from command line to 'False'
+[0.622s] Level 5:colcon.colcon_core.verb:set package 'bluerov2_bringup' build argument 'cmake_force_configure' from command line to 'False'
+[0.623s] Level 5:colcon.colcon_core.verb:set package 'bluerov2_bringup' build argument 'ament_cmake_args' from command line to 'None'
+[0.623s] Level 5:colcon.colcon_core.verb:set package 'bluerov2_bringup' build argument 'catkin_cmake_args' from command line to 'None'
+[0.623s] Level 5:colcon.colcon_core.verb:set package 'bluerov2_bringup' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.623s] DEBUG:colcon.colcon_core.verb:Building package 'bluerov2_bringup' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_bringup', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup', 'merge_install': False, 'path': '/home/bluerov/ROS-Humble-BlueRov2-Driver/src/bluerov2_bringup', 'symlink_install': False, 'test_result_base': None}
+[0.623s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.628s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.628s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/bluerov/ROS-Humble-BlueRov2-Driver/src/bluerov2_interfaces' with build type 'ament_cmake'
+[0.628s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/bluerov/ROS-Humble-BlueRov2-Driver/src/bluerov2_interfaces'
+[0.634s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.635s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.635s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.640s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/bluerov/ROS-Humble-BlueRov2-Driver/src/tritech_micron_interfaces' with build type 'ament_cmake'
+[0.641s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/bluerov/ROS-Humble-BlueRov2-Driver/src/tritech_micron_interfaces'
+[0.643s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.644s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.655s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/opt/ros/humble /usr/bin/cmake --build /home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_interfaces -- -j4 -l4
+[0.667s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/opt/ros/humble /usr/bin/cmake --build /home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron_interfaces -- -j4 -l4
+[1.630s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/opt/ros/humble /usr/bin/cmake --build /home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_interfaces -- -j4 -l4
+[1.778s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/opt/ros/humble /usr/bin/cmake --build /home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron_interfaces -- -j4 -l4
+[1.860s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/opt/ros/humble /usr/bin/cmake --install /home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_interfaces
+[1.942s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/opt/ros/humble /usr/bin/cmake --install /home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron_interfaces
+[2.057s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(bluerov2_interfaces)
+[2.072s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces' for CMake module files
+[2.081s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces' for CMake config files
+[2.082s] Level 1:colcon.colcon_core.shell:create_environment_hook('bluerov2_interfaces', 'cmake_prefix_path')
+[2.085s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/hook/cmake_prefix_path.ps1'
+[2.087s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/hook/cmake_prefix_path.dsv'
+[2.091s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/opt/ros/humble /usr/bin/cmake --install /home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_interfaces
+[2.099s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/hook/cmake_prefix_path.sh'
+[2.100s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib'
+[2.100s] Level 1:colcon.colcon_core.shell:create_environment_hook('bluerov2_interfaces', 'ld_library_path_lib')
+[2.103s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/hook/ld_library_path_lib.ps1'
+[2.104s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/hook/ld_library_path_lib.dsv'
+[2.105s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/hook/ld_library_path_lib.sh'
+[2.105s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/bin'
+[2.105s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib/pkgconfig/bluerov2_interfaces.pc'
+[2.106s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib/python3.10/site-packages'
+[2.106s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/bin'
+[2.109s] INFO:colcon.colcon_core.shell:Creating package script '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/package.ps1'
+[2.111s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/package.dsv'
+[2.112s] INFO:colcon.colcon_core.shell:Creating package script '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/package.sh'
+[2.114s] INFO:colcon.colcon_core.shell:Creating package script '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/package.bash'
+[2.115s] INFO:colcon.colcon_core.shell:Creating package script '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/package.zsh'
+[2.116s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/colcon-core/packages/bluerov2_interfaces)
+[2.127s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(tritech_micron_interfaces)
+[2.132s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces' for CMake module files
+[2.133s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces' for CMake config files
+[2.134s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/opt/ros/humble /usr/bin/cmake --install /home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron_interfaces
+[2.136s] Level 1:colcon.colcon_core.shell:create_environment_hook('tritech_micron_interfaces', 'cmake_prefix_path')
+[2.139s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/hook/cmake_prefix_path.ps1'
+[2.143s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/hook/cmake_prefix_path.dsv'
+[2.144s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/hook/cmake_prefix_path.sh'
+[2.145s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/lib'
+[2.145s] Level 1:colcon.colcon_core.shell:create_environment_hook('tritech_micron_interfaces', 'ld_library_path_lib')
+[2.148s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/hook/ld_library_path_lib.ps1'
+[2.149s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/hook/ld_library_path_lib.dsv'
+[2.150s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/hook/ld_library_path_lib.sh'
+[2.150s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/bin'
+[2.151s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/lib/pkgconfig/tritech_micron_interfaces.pc'
+[2.151s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/lib/python3.10/site-packages'
+[2.151s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/bin'
+[2.155s] INFO:colcon.colcon_core.shell:Creating package script '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/package.ps1'
+[2.156s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/package.dsv'
+[2.157s] INFO:colcon.colcon_core.shell:Creating package script '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/package.sh'
+[2.158s] INFO:colcon.colcon_core.shell:Creating package script '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/package.bash'
+[2.158s] INFO:colcon.colcon_core.shell:Creating package script '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/package.zsh'
+[2.159s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/colcon-core/packages/tritech_micron_interfaces)
+[2.260s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(tritech_micron_interfaces)
+[2.263s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces' for CMake module files
+[2.264s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces' for CMake config files
+[2.265s] Level 1:colcon.colcon_core.shell:create_environment_hook('tritech_micron_interfaces', 'cmake_prefix_path')
+[2.267s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/hook/cmake_prefix_path.ps1'
+[2.268s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/hook/cmake_prefix_path.dsv'
+[2.268s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/hook/cmake_prefix_path.sh'
+[2.269s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/lib'
+[2.270s] Level 1:colcon.colcon_core.shell:create_environment_hook('tritech_micron_interfaces', 'ld_library_path_lib')
+[2.272s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/hook/ld_library_path_lib.ps1'
+[2.273s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/hook/ld_library_path_lib.dsv'
+[2.273s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/hook/ld_library_path_lib.sh'
+[2.274s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/bin'
+[2.274s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/lib/pkgconfig/tritech_micron_interfaces.pc'
+[2.275s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/lib/python3.10/site-packages'
+[2.275s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/bin'
+[2.278s] INFO:colcon.colcon_core.shell:Creating package script '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/package.ps1'
+[2.279s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/package.dsv'
+[2.280s] INFO:colcon.colcon_core.shell:Creating package script '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/package.sh'
+[2.281s] INFO:colcon.colcon_core.shell:Creating package script '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/package.bash'
+[2.282s] INFO:colcon.colcon_core.shell:Creating package script '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/package.zsh'
+[2.283s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/colcon-core/packages/tritech_micron_interfaces)
+[2.287s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/bluerov/ROS-Humble-BlueRov2-Driver/src/tritech_micron' with build type 'ament_python'
+[2.287s] Level 1:colcon.colcon_core.shell:create_environment_hook('tritech_micron', 'ament_prefix_path')
+[2.291s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron/share/tritech_micron/hook/ament_prefix_path.ps1'
+[2.295s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron/share/tritech_micron/hook/ament_prefix_path.dsv'
+[2.297s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron/share/tritech_micron/hook/ament_prefix_path.sh'
+[2.301s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.302s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.728s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/bluerov/ROS-Humble-BlueRov2-Driver/src/tritech_micron'
+[2.731s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.731s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.744s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(bluerov2_interfaces)
+[2.749s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces' for CMake module files
+[2.750s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces' for CMake config files
+[2.752s] Level 1:colcon.colcon_core.shell:create_environment_hook('bluerov2_interfaces', 'cmake_prefix_path')
+[2.755s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/hook/cmake_prefix_path.ps1'
+[2.755s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/hook/cmake_prefix_path.dsv'
+[2.756s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/hook/cmake_prefix_path.sh'
+[2.757s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib'
+[2.757s] Level 1:colcon.colcon_core.shell:create_environment_hook('bluerov2_interfaces', 'ld_library_path_lib')
+[2.760s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/hook/ld_library_path_lib.ps1'
+[2.761s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/hook/ld_library_path_lib.dsv'
+[2.761s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/hook/ld_library_path_lib.sh'
+[2.762s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/bin'
+[2.762s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib/pkgconfig/bluerov2_interfaces.pc'
+[2.763s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib/python3.10/site-packages'
+[2.763s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/bin'
+[2.766s] INFO:colcon.colcon_core.shell:Creating package script '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/package.ps1'
+[2.767s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/package.dsv'
+[2.768s] INFO:colcon.colcon_core.shell:Creating package script '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/package.sh'
+[2.769s] INFO:colcon.colcon_core.shell:Creating package script '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/package.bash'
+[2.770s] INFO:colcon.colcon_core.shell:Creating package script '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/package.zsh'
+[2.771s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/colcon-core/packages/bluerov2_interfaces)
+[2.772s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/bluerov/ROS-Humble-BlueRov2-Driver/src/bluerov2_controller' with build type 'ament_python'
+[2.772s] Level 1:colcon.colcon_core.shell:create_environment_hook('bluerov2_controller', 'ament_prefix_path')
+[2.775s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/share/bluerov2_controller/hook/ament_prefix_path.ps1'
+[2.776s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/share/bluerov2_controller/hook/ament_prefix_path.dsv'
+[2.777s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/share/bluerov2_controller/hook/ament_prefix_path.sh'
+[2.780s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.780s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.455s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/bluerov/ROS-Humble-BlueRov2-Driver/src/bluerov2_controller'
+[3.458s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.458s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.527s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/src/tritech_micron': PYTHONPATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron/prefix_override:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/tritech_micron build --build-base /home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron/build install --record /home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron/install.log --single-version-externally-managed
+[4.223s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron' for CMake module files
+[4.225s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/src/tritech_micron' returned '0': PYTHONPATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron/prefix_override:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/tritech_micron build --build-base /home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron/build install --record /home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron/install.log --single-version-externally-managed
+[4.225s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron' for CMake config files
+[4.227s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron/lib'
+[4.227s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron/bin'
+[4.227s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron/lib/pkgconfig/tritech_micron.pc'
+[4.228s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron/lib/python3.10/site-packages'
+[4.228s] Level 1:colcon.colcon_core.shell:create_environment_hook('tritech_micron', 'pythonpath')
+[4.230s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron/share/tritech_micron/hook/pythonpath.ps1'
+[4.231s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron/share/tritech_micron/hook/pythonpath.dsv'
+[4.231s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron/share/tritech_micron/hook/pythonpath.sh'
+[4.232s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron/bin'
+[4.232s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(tritech_micron)
+[4.234s] INFO:colcon.colcon_core.shell:Creating package script '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron/share/tritech_micron/package.ps1'
+[4.235s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron/share/tritech_micron/package.dsv'
+[4.235s] INFO:colcon.colcon_core.shell:Creating package script '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron/share/tritech_micron/package.sh'
+[4.236s] INFO:colcon.colcon_core.shell:Creating package script '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron/share/tritech_micron/package.bash'
+[4.236s] INFO:colcon.colcon_core.shell:Creating package script '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron/share/tritech_micron/package.zsh'
+[4.236s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron/share/colcon-core/packages/tritech_micron)
+[4.241s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/src/bluerov2_controller': CMAKE_PREFIX_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup LD_LIBRARY_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib PYTHONPATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_controller/prefix_override:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/bluerov2_controller build --build-base /home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_controller/build install --record /home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_controller/install.log --single-version-externally-managed
+[4.799s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller' for CMake module files
+[4.799s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/src/bluerov2_controller' returned '0': CMAKE_PREFIX_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup LD_LIBRARY_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib PYTHONPATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_controller/prefix_override:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/bluerov2_controller build --build-base /home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_controller/build install --record /home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_controller/install.log --single-version-externally-managed
+[4.801s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller' for CMake config files
+[4.802s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/lib'
+[4.802s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/bin'
+[4.802s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/lib/pkgconfig/bluerov2_controller.pc'
+[4.803s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/lib/python3.10/site-packages'
+[4.803s] Level 1:colcon.colcon_core.shell:create_environment_hook('bluerov2_controller', 'pythonpath')
+[4.806s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/share/bluerov2_controller/hook/pythonpath.ps1'
+[4.807s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/share/bluerov2_controller/hook/pythonpath.dsv'
+[4.808s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/share/bluerov2_controller/hook/pythonpath.sh'
+[4.809s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/bin'
+[4.809s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(bluerov2_controller)
+[4.813s] INFO:colcon.colcon_core.shell:Creating package script '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/share/bluerov2_controller/package.ps1'
+[4.814s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/share/bluerov2_controller/package.dsv'
+[4.815s] INFO:colcon.colcon_core.shell:Creating package script '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/share/bluerov2_controller/package.sh'
+[4.816s] INFO:colcon.colcon_core.shell:Creating package script '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/share/bluerov2_controller/package.bash'
+[4.816s] INFO:colcon.colcon_core.shell:Creating package script '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/share/bluerov2_controller/package.zsh'
+[4.817s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/share/colcon-core/packages/bluerov2_controller)
+[4.819s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/bluerov/ROS-Humble-BlueRov2-Driver/src/bluerov2_bringup' with build type 'ament_cmake'
+[4.819s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/bluerov/ROS-Humble-BlueRov2-Driver/src/bluerov2_bringup'
+[4.821s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[4.821s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[4.836s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_bringup': AMENT_PREFIX_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces:/opt/ros/humble CMAKE_PREFIX_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/opt/ros/humble LD_LIBRARY_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib PYTHONPATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/lib/python3.10/site-packages:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron/lib/python3.10/site-packages:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/local/lib/python3.10/dist-packages:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages /usr/bin/cmake --build /home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_bringup -- -j4 -l4
+[4.912s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_bringup' returned '0': AMENT_PREFIX_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces:/opt/ros/humble CMAKE_PREFIX_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/opt/ros/humble LD_LIBRARY_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib PYTHONPATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/lib/python3.10/site-packages:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron/lib/python3.10/site-packages:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/local/lib/python3.10/dist-packages:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages /usr/bin/cmake --build /home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_bringup -- -j4 -l4
+[4.960s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_bringup': AMENT_PREFIX_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces:/opt/ros/humble CMAKE_PREFIX_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/opt/ros/humble LD_LIBRARY_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib PYTHONPATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/lib/python3.10/site-packages:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron/lib/python3.10/site-packages:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/local/lib/python3.10/dist-packages:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages /usr/bin/cmake --install /home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_bringup
+[4.982s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(bluerov2_bringup)
+[4.986s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup' for CMake module files
+[4.987s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup' for CMake config files
+[4.988s] Level 1:colcon.colcon_core.shell:create_environment_hook('bluerov2_bringup', 'cmake_prefix_path')
+[4.992s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/hook/cmake_prefix_path.ps1'
+[4.993s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_bringup' returned '0': AMENT_PREFIX_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces:/opt/ros/humble CMAKE_PREFIX_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/opt/ros/humble LD_LIBRARY_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib PYTHONPATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/lib/python3.10/site-packages:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron/lib/python3.10/site-packages:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/local/lib/python3.10/dist-packages:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages /usr/bin/cmake --install /home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_bringup
+[4.994s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/hook/cmake_prefix_path.dsv'
+[4.995s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/hook/cmake_prefix_path.sh'
+[4.996s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/bin'
+[4.996s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/lib/pkgconfig/bluerov2_bringup.pc'
+[4.996s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/lib/python3.10/site-packages'
+[4.997s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/bin'
+[5.000s] INFO:colcon.colcon_core.shell:Creating package script '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/package.ps1'
+[5.000s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/package.dsv'
+[5.001s] INFO:colcon.colcon_core.shell:Creating package script '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/package.sh'
+[5.002s] INFO:colcon.colcon_core.shell:Creating package script '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/package.bash'
+[5.002s] INFO:colcon.colcon_core.shell:Creating package script '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/package.zsh'
+[5.003s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/colcon-core/packages/bluerov2_bringup)
+[5.047s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(bluerov2_bringup)
+[5.052s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup' for CMake module files
+[5.054s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup' for CMake config files
+[5.055s] Level 1:colcon.colcon_core.shell:create_environment_hook('bluerov2_bringup', 'cmake_prefix_path')
+[5.058s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/hook/cmake_prefix_path.ps1'
+[5.059s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/hook/cmake_prefix_path.dsv'
+[5.059s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/hook/cmake_prefix_path.sh'
+[5.060s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/bin'
+[5.060s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/lib/pkgconfig/bluerov2_bringup.pc'
+[5.061s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/lib/python3.10/site-packages'
+[5.061s] Level 1:colcon.colcon_core.environment:checking '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/bin'
+[5.064s] INFO:colcon.colcon_core.shell:Creating package script '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/package.ps1'
+[5.065s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/package.dsv'
+[5.066s] INFO:colcon.colcon_core.shell:Creating package script '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/package.sh'
+[5.067s] INFO:colcon.colcon_core.shell:Creating package script '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/package.bash'
+[5.068s] INFO:colcon.colcon_core.shell:Creating package script '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/package.zsh'
+[5.069s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/colcon-core/packages/bluerov2_bringup)
+[5.069s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[5.073s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[5.074s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[5.074s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[5.088s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[5.088s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[5.088s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[5.114s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[5.117s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/local_setup.ps1'
+[5.120s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/_local_setup_util_ps1.py'
+[5.124s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/setup.ps1'
+[5.131s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/local_setup.sh'
+[5.132s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/_local_setup_util_sh.py'
+[5.133s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/setup.sh'
+[5.138s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/local_setup.bash'
+[5.140s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/setup.bash'
+[5.143s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/local_setup.zsh'
+[5.145s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/setup.zsh'

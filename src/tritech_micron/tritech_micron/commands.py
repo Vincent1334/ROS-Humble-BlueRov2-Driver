@@ -27,7 +27,7 @@ class Command(object):
         Returns:
             String representation of data.
         """
-        hex_size = bytearray("{:04X}".format(self.size))
+        hex_size = bytearray("{:04x}".format(self.size))
         values = {
             "id": self.id,
             "hex": hex_size,

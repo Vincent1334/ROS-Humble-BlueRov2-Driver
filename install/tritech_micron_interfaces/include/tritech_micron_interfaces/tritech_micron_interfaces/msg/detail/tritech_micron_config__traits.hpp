@@ -14,6 +14,10 @@
 #include "tritech_micron_interfaces/msg/detail/tritech_micron_config__struct.hpp"
 #include "rosidl_runtime_cpp/traits.hpp"
 
+// Include directives for member types
+// Member 'header'
+#include "std_msgs/msg/detail/header__traits.hpp"
+
 namespace tritech_micron_interfaces
 {
 
@@ -25,6 +29,13 @@ inline void to_flow_style_yaml(
   std::ostream & out)
 {
   out << "{";
+  // member: header
+  {
+    out << "header: ";
+    to_flow_style_yaml(msg.header, out);
+    out << ", ";
+  }
+
   // member: inverted
   {
     out << "inverted: ";
@@ -114,6 +125,15 @@ inline void to_block_style_yaml(
   const TritechMicronConfig & msg,
   std::ostream & out, size_t indentation = 0)
 {
+  // member: header
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "header:\n";
+    to_block_style_yaml(msg.header, out, indentation + 2);
+  }
+
   // member: inverted
   {
     if (indentation > 0) {
@@ -281,11 +301,11 @@ inline const char * name<tritech_micron_interfaces::msg::TritechMicronConfig>()
 
 template<>
 struct has_fixed_size<tritech_micron_interfaces::msg::TritechMicronConfig>
-  : std::integral_constant<bool, true> {};
+  : std::integral_constant<bool, has_fixed_size<std_msgs::msg::Header>::value> {};
 
 template<>
 struct has_bounded_size<tritech_micron_interfaces::msg::TritechMicronConfig>
-  : std::integral_constant<bool, true> {};
+  : std::integral_constant<bool, has_bounded_size<std_msgs::msg::Header>::value> {};
 
 template<>
 struct is_message<tritech_micron_interfaces::msg::TritechMicronConfig>

@@ -1,0 +1,8 @@
+[31mCMake Error at /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:162 (message):
+  rosidl_generate_interfaces() the passed dependency 'builtin_interfaces' has
+  not been found before using find_package()
+Call Stack (most recent call first):
+  CMakeLists.txt:17 (rosidl_generate_interfaces)
+
+[0m
+gmake: *** [Makefile:747: cmake_check_build_system] Error 1

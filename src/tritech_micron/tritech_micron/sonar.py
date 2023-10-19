@@ -5,10 +5,10 @@ from rclpy.node import Node
 import serial
 import datetime
 import bitstring
-import exceptions
-from socket import Socket
-from messages import Message
-from tools import ScanSlice, to_radians, to_sonar_angles
+import tritech_micron.exceptions
+from tritech_micron.socket import Socket
+from tritech_micron.messages import Message
+from tritech_micron.tools import ScanSlice, to_radians, to_sonar_angles
 
 __author__ = "Anass Al-Wohoush"
 
@@ -128,10 +128,10 @@ class TritechMicron(object):
             try:
                 self.conn = Socket(self.port)
             except OSError as e:
-                raise exceptions.SonarNotFound(self.port, e)
+                raise tritech_micron.exceptions.SonarNotFound(self.port, e)
 
         # Update properties.
-        self.node.get_logger().info("Initializing sonar on %s", self.port)
+        self.node.get_logger().info(f"Initializing sonar on {self.port}")
         self.initialized = True
 
         # Reboot to make sure the sonar is clean.
@@ -143,9 +143,7 @@ class TritechMicron(object):
 
         # Wait for settings to go through.
         while not self.has_cfg or self.no_params:
-            self.node.get_logger().info(
-                "Waiting for configuration: (HAS CFG: %s, NO PARAMS: %s)",
-                self.has_cfg, self.no_params)
+            self.node.get_logger().info(f"Waiting for configuration: (HAS CFG: {self.has_cfg}, NO PARAMS: {self.no_params})")
             self.update()
 
         self.node.get_logger().info("Sonar is ready for use")
@@ -175,12 +173,12 @@ class TritechMicron(object):
         """
         # Verify sonar is initialized.
         if not self.initialized:
-            raise exceptions.SonarNotInitialized()
+            raise tritech_micron.exceptions.SonarNotInitialized()
 
         expected_name = None
         if message:
             expected_name = Message.to_string(message)
-            self.node.get_logger().debug("Waiting for %s message", expected_name)
+            self.node.get_logger().debug(f"Waiting for {expected_name} message")
 
         # Determine end time.
         end = datetime.datetime.now() + datetime.timedelta(seconds=wait)
@@ -201,17 +199,17 @@ class TritechMicron(object):
 
                 # Otherwise, verify reply ID.
                 if reply.id == message:
-                    self.node.get_logger().debug("Found %s message", expected_name)
+                    self.node.get_logger().debug(f"Found {expected_name} message")
                     return reply
                 elif reply.id != Message.ALIVE:
-                    self.node.get_logger().warning("Received unexpected %s message", reply.name)
-            except exceptions.PacketCorrupted:
+                    self.node.get_logger().warning(f"Received unexpected {reply.name} message")
+            except tritech_micron.exceptions.PacketCorrupted:
                 # Keep trying.
                 continue
 
         # Timeout.
-        self.node.get_logger().error("Timed out before receiving message: %s", expected_name)
-        raise exceptions.TimeoutError()
+        self.node.get_logger().error(f"Timed out before receiving message: {expected_name}")
+        raise tritech_micron.exceptions.TimeoutError()
 
     def send(self, command, payload=None):
         """Sends command and returns reply.
@@ -223,7 +221,7 @@ class TritechMicron(object):
             SonarNotInitialized: Attempt sending command without opening port.
         """
         if not self.initialized:
-            raise exceptions.SonarNotInitialized(command, payload)
+            raise tritech_micron.exceptions.SonarNotInitialized(command, payload)
 
         self.conn.send(command, payload)
 
@@ -271,7 +269,7 @@ class TritechMicron(object):
             SonarNotInitialized: Sonar is not initialized.
         """
         if not self.initialized:
-            raise exceptions.SonarNotInitialized()
+            raise tritech_micron.exceptions.SonarNotInitialized()
 
         self.__set_parameters(
             adc8on=adc8on,
@@ -327,20 +325,20 @@ class TritechMicron(object):
             return self.reverse()
 
         # Log properties.
-        self.node.get_logger().info("CONTINUOUS:  %s", self.continuous)
-        self.node.get_logger().info("LEFT LIMIT:  %s rad", self.left_limit)
-        self.node.get_logger().info("RIGHT LIMIT: %s rad", self.right_limit)
-        self.node.get_logger().info("STEP SIZE:   %s rad", self.step)
-        self.node.get_logger().info("N BINS:      %s", self.nbins)
-        self.node.get_logger().info("RANGE:       %s m", self.range)
-        self.node.get_logger().info("INVERTED:    %s", self.inverted)
-        self.node.get_logger().info("AD HIGH:     %s dB", self.ad_high)
-        self.node.get_logger().info("AD LOW:      %s dB", self.ad_low)
-        self.node.get_logger().info("ADC 8 ON:    %s", self.adc8on)
-        self.node.get_logger().info("GAIN:        %s%%", self.gain * 100)
-        self.node.get_logger().info("MOTOR TIME:  %s us", self.mo_time)
-        self.node.get_logger().info("CLOCKWISE:   %s", self.scanright)
-        self.node.get_logger().info("SPEED:       %s m/s", self.speed)
+        self.node.get_logger().info(f"CONTINUOUS:  {self.continuous}")
+        self.node.get_logger().info(f"LEFT LIMIT:  {self.left_limit} rad")
+        self.node.get_logger().info(f"RIGHT LIMIT: {self.right_limit} rad")
+        self.node.get_logger().info(f"STEP SIZE:   {self.step} rad")
+        self.node.get_logger().info(f"N BINS:      {self.nbins}")
+        self.node.get_logger().info(f"RANGE:       {self.range} m")
+        self.node.get_logger().info(f"INVERTED:    {self.inverted}")
+        self.node.get_logger().info(f"AD HIGH:     {self.ad_high} dB")
+        self.node.get_logger().info(f"AD LOW:      {self.ad_low} dB")
+        self.node.get_logger().info(f"ADC 8 ON:    {self.adc8on}")
+        self.node.get_logger().info(f"GAIN:        {self.gain * 100}%%")
+        self.node.get_logger().info(f"MOTOR TIME:  {self.mo_time} us")
+        self.node.get_logger().info(f"CLOCKWISE:   {self.scanright}")
+        self.node.get_logger().info(f"SPEED:       {self.speed} m/s")
 
         # This device is not Dual Channel so skip the “V3B” Gain Parameter
         # block: 0x01 for normal, 0x1D for extended V3B Gain Parameters.
@@ -493,7 +491,7 @@ class TritechMicron(object):
         try:
             # Get the total number of bytes.
             count = data.read(16).uintle
-            self.node.get_logger().debug("Byte count is %d", count)
+            self.node.get_logger().debug(f"Byte count is {count}")
 
             # The device type should be 0x11 for a DST Sonar.
             device_type = data.read(8)
@@ -512,7 +510,7 @@ class TritechMicron(object):
             #   Bit 6:  RESERVED (ignore).
             #   Bit 7:  Message appended after last packet data reply.
             _head_status = data.read(8)
-            self.node.get_logger().debug("Head status byte is %s", _head_status)
+            self.node.get_logger().debug(f"Head status byte is {_head_status}")
             if _head_status[-1]:
                 self.node.get_logger().error("Head power loss detected")
             if _head_status[-2]:
@@ -527,7 +525,7 @@ class TritechMicron(object):
             #   4: RESERVED (ignore)
             #   5: Scan at center position.
             sweep = data.read(8).uint
-            self.node.get_logger().debug("Sweep code is %d", sweep)
+            self.node.get_logger().debug(f"Sweep code is {sweep}")
             if sweep == 1:
                 self.node.get_logger().info("Reached left limit")
             elif sweep == 2:
@@ -555,10 +553,10 @@ class TritechMicron(object):
             hd_ctrl.byteswap()  # Little endian please.
             self.inverted, self.scanright, self.continuous, self.adc8on = (
                 hd_ctrl.unpack("pad:12, bool, bool, bool, bool"))
-            self.node.get_logger().debug("Head control bytes are %s", hd_ctrl.bin)
-            self.node.get_logger().debug("ADC8 mode %s", self.adc8on)
-            self.node.get_logger().debug("Continuous mode %s", self.continuous)
-            self.node.get_logger().debug("Scanning right %s", self.scanright)
+            self.node.get_logger().debug(f"Head control bytes are {hd_ctrl.bin}")
+            self.node.get_logger().debug(f"ADC8 mode {self.adc8on}")
+            self.node.get_logger().debug(f"Continuous mode {self.continuous}")
+            self.node.get_logger().debug(f"Scanning right {self.scanright}")
 
             # Range scale.
             # The lower 14 bits are the range scale * 10 units and the higher 2
@@ -570,14 +568,14 @@ class TritechMicron(object):
             # Only the metric system is implemented for now, because it is
             # better.
             self.range = data.read(16).uintle / 10.0
-            self.node.get_logger().debug("Range scale is %f", self.range)
+            self.node.get_logger().debug(f"Range scale is {self.range}")
 
             # TX/RX transmitter constants: N/A to DST.
             data.read(32)
 
             # The gain ranges from 0 to 210.
             self.gain = data.read(8).uintle / 210.0
-            self.node.get_logger().debug("Gain is %f", self.gain)
+            self.node.get_logger().debug(f"Gain is {self.gain}")
 
             # Slope setting is N/A to DST.
             data.read(16)
@@ -594,30 +592,29 @@ class TritechMicron(object):
             self.ad_low = ad_low * 80.0 / MAX_SIZE
             span_intensity = ad_span * 80.0 / MAX_SIZE
             self.ad_high = self.ad_low + span_intensity
-            self.node.get_logger().debug("AD range is %f to %f", self.ad_low, self.ad_high)
+            self.node.get_logger().debug(f"AD range is {self.ad_low} to {self.ad_high}")
 
             # Heading offset is ignored.
             heading_offset = to_radians(data.read(16).uint)
-            self.node.get_logger().debug("Heading offset is %f", heading_offset)
+            self.node.get_logger().debug(f"Heading offset is {heading_offset}")
 
             # ADInterval defines the sampling interval of each bin and is in
             # units of 640 nanoseconds.
             ad_interval = data.read(16).uintle
-            self.node.get_logger().debug("AD interval is %d", ad_interval)
+            self.node.get_logger().debug(f"AD interval is {ad_interval}")
 
             # Left/right angles limits are in 1/16th of a gradian.
             self.left_limit = to_radians(data.read(16).uintle)
             self.right_limit = to_radians(data.read(16).uintle)
-            self.node.get_logger().debug("Limits are %f to %f", self.left_limit,
-                           self.right_limit)
+            self.node.get_logger().debug(f"Limits are {self.left_limit} to {self.right_limit}")
 
             # Step angle size.
             self.step = to_radians(data.read(8).uint)
-            self.node.get_logger().debug("Step size is %f", self.step)
+            self.node.get_logger().debug(f"Step size is {self.step}")
 
             # Heading is in units of 1/16th of a gradian.
             self.heading = to_radians(data.read(16).uintle)
-            self.node.get_logger().info("Heading is now %f", self.heading)
+            self.node.get_logger().info(f"Heading is now {self.heading}")
 
             # Dbytes is the number of bytes with data to follow.
             dbytes = data.read(16).uintle
@@ -627,7 +624,7 @@ class TritechMicron(object):
             else:
                 self.nbins = dbytes * 2
                 bin_size = 4
-            self.node.get_logger().debug("DBytes is %d", dbytes)
+            self.node.get_logger().debug(f"DBytes is {dbytes}")
 
             # Get bins.
             bins = [data.read(bin_size).uint for i in range(self.nbins)]
@@ -662,7 +659,7 @@ class TritechMicron(object):
         # Verify sonar is ready to scan.
         self.update()
         if self.no_params or not self.has_cfg:
-            raise exceptions.SonarNotConfigured(self.no_params, self.has_cfg)
+            raise tritech_micron.exceptions.SonarNotConfigured(self.no_params, self.has_cfg)
 
         # Timeout count to keep track of how many failures in a row occured.
         # This will then try to recover by resetting the sonar parameters.
@@ -684,9 +681,9 @@ class TritechMicron(object):
             try:
                 data = self.get(Message.HEAD_DATA, wait=1).payload
                 timeout_count = 0
-            except exceptions.TimeoutError:
+            except tritech_micron.exceptions.TimeoutError:
                 timeout_count += 1
-                self.node.get_logger().debug("Timeout count: %d", timeout_count)
+                self.node.get_logger().debug(f"Timeout count: {timeout_count}")
                 if timeout_count >= MAX_TIMEOUT_COUNT:
                     # Try to resend parameters.
                     self.set(force=True)
@@ -698,7 +695,7 @@ class TritechMicron(object):
                 bins = self.__parse_head_data(data)
             except ValueError as e:
                 # Try again.
-                self.node.get_logger().error("Failed to parse head data: %r", e)
+                self.node.get_logger().error(f"Failed to parse head data: {e}")
                 continue
 
             # Generate configuration.
@@ -741,7 +738,7 @@ class TritechMicron(object):
             try:
                 self.get(Message.ALIVE)
                 return
-            except exceptions.TimeoutError:
+            except tritech_micron.exceptions.TimeoutError:
                 continue
 
     def __update_state(self, alive):
@@ -774,15 +771,15 @@ class TritechMicron(object):
         self.no_params = head_inf[6]
         self.has_cfg = head_inf[7]
 
-        self.node.get_logger().info("UP TIME:     %s", self.up_time)
-        self.node.get_logger().debug("RECENTERING: %s", self.recentering)
-        self.node.get_logger().debug("CENTRED:     %s", self.centred)
-        self.node.get_logger().debug("MOTORING:    %s", self.motoring)
-        self.node.get_logger().debug("MOTOR ON:    %s", self.motor_on)
-        self.node.get_logger().debug("CLOCKWISE:   %s", self.scanright)
-        self.node.get_logger().debug("SCANNING:    %s", self.scanning)
-        self.node.get_logger().debug("NO PARAMS:   %s", self.no_params)
-        self.node.get_logger().debug("HAS CFG:     %s", self.has_cfg)
+        self.node.get_logger().info(f"UP TIME:     {self.up_time}")
+        self.node.get_logger().debug(f"RECENTERING: {self.recentering}")
+        self.node.get_logger().debug(f"CENTRED:     {self.centred}")
+        self.node.get_logger().debug(f"MOTORING:    {self.motoring}")
+        self.node.get_logger().debug(f"MOTOR ON:    {self.motor_on}")
+        self.node.get_logger().debug(f"CLOCKWISE:   {self.scanright}")
+        self.node.get_logger().debug(f"SCANNING:    {self.scanning}")
+        self.node.get_logger().debug(f"NO PARAMS:   {self.no_params}")
+        self.node.get_logger().debug(f"HAS CFG:     {self.has_cfg}")
 
 
 class Resolution(object):

@@ -2,12 +2,17 @@
 // with input from tritech_micron_interfaces/msg/TritechMicronConfig.msg
 // generated code does not contain a copyright notice
 
+#include "std_msgs/msg/Header.idl"
 
 module tritech_micron_interfaces {
   module msg {
     @verbatim (language="comment", text=
       "Tritech Micron configuration parameters.")
     struct TritechMicronConfig {
+      @verbatim (language="comment", text=
+        "Header message.")
+      std_msgs::msg::Header header;
+
       @verbatim (language="comment", text=
         "Whether the sonar head is facing upwards.")
       boolean inverted;

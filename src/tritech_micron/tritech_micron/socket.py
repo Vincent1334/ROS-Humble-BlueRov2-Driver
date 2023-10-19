@@ -6,10 +6,10 @@ import errno
 import serial
 import select
 import bitstring
-from replies import Reply
-from messages import Message
-from commands import Command
-from exceptions import PacketIncomplete
+from tritech_micron.replies import Reply
+from tritech_micron.messages import Message
+from tritech_micron.commands import Command
+from tritech_micron.exceptions import PacketIncomplete
 
 __author__ = "Anass Al-Wohoush, Jana Pavlasek, Malcolm Watt"
 
@@ -80,7 +80,7 @@ class Socket(object):
                     continue
             
             return reply
-        except:
+        except select.error as code:
             # Set SIGINT as KeyboardInterrupt correctly, because pyserial has
             # problems.
             if code == errno.EINTR:

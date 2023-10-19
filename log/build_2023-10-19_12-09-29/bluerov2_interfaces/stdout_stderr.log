@@ -1,0 +1,22 @@
+[  1%] Built target bluerov2_interfaces__cpp
+[ 12%] Built target bluerov2_interfaces__rosidl_generator_c
+[ 12%] Built target ament_cmake_python_copy_bluerov2_interfaces
+[ 23%] Built target bluerov2_interfaces__rosidl_typesupport_fastrtps_cpp
+[ 35%] Built target bluerov2_interfaces__rosidl_typesupport_introspection_cpp
+[ 46%] Built target bluerov2_interfaces__rosidl_typesupport_cpp
+[ 57%] Built target bluerov2_interfaces__rosidl_typesupport_fastrtps_c
+[ 69%] Built target bluerov2_interfaces__rosidl_typesupport_introspection_c
+[ 80%] Built target bluerov2_interfaces__rosidl_typesupport_c
+[ 80%] Built target bluerov2_interfaces
+[ 81%] Built target bluerov2_interfaces__py
+[ 91%] Built target bluerov2_interfaces__rosidl_generator_py
+[ 94%] Built target bluerov2_interfaces__rosidl_typesupport_fastrtps_c__pyext
+[ 97%] Built target bluerov2_interfaces__rosidl_typesupport_introspection_c__pyext
+[100%] Built target bluerov2_interfaces__rosidl_typesupport_c__pyext
+running egg_info
+writing bluerov2_interfaces.egg-info/PKG-INFO
+writing dependency_links to bluerov2_interfaces.egg-info/dependency_links.txt
+writing top-level names to bluerov2_interfaces.egg-info/top_level.txt
+reading manifest file 'bluerov2_interfaces.egg-info/SOURCES.txt'
+writing manifest file 'bluerov2_interfaces.egg-info/SOURCES.txt'
+[100%] Built target ament_cmake_python_build_bluerov2_interfaces_egg

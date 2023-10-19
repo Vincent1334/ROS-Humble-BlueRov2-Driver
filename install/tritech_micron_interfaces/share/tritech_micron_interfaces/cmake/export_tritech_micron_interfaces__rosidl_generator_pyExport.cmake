@@ -54,7 +54,7 @@ endif()
 add_library(tritech_micron_interfaces::tritech_micron_interfaces__rosidl_generator_py SHARED IMPORTED)
 
 set_target_properties(tritech_micron_interfaces::tritech_micron_interfaces__rosidl_generator_py PROPERTIES
-  INTERFACE_LINK_LIBRARIES "tritech_micron_interfaces::tritech_micron_interfaces__rosidl_generator_c;/usr/lib/x86_64-linux-gnu/libpython3.10.so;tritech_micron_interfaces::tritech_micron_interfaces__rosidl_typesupport_c"
+  INTERFACE_LINK_LIBRARIES "tritech_micron_interfaces::tritech_micron_interfaces__rosidl_generator_c;/usr/lib/x86_64-linux-gnu/libpython3.10.so;tritech_micron_interfaces::tritech_micron_interfaces__rosidl_typesupport_c;builtin_interfaces::builtin_interfaces__rosidl_generator_py;std_msgs::std_msgs__rosidl_generator_py"
 )
 
 if(CMAKE_VERSION VERSION_LESS 2.8.12)

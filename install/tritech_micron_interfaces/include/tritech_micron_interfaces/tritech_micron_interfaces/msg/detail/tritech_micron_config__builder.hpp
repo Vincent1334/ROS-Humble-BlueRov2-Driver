@@ -200,13 +200,29 @@ private:
 class Init_TritechMicronConfig_inverted
 {
 public:
-  Init_TritechMicronConfig_inverted()
-  : msg_(::rosidl_runtime_cpp::MessageInitialization::SKIP)
+  explicit Init_TritechMicronConfig_inverted(::tritech_micron_interfaces::msg::TritechMicronConfig & msg)
+  : msg_(msg)
   {}
   Init_TritechMicronConfig_continuous inverted(::tritech_micron_interfaces::msg::TritechMicronConfig::_inverted_type arg)
   {
     msg_.inverted = std::move(arg);
     return Init_TritechMicronConfig_continuous(msg_);
+  }
+
+private:
+  ::tritech_micron_interfaces::msg::TritechMicronConfig msg_;
+};
+
+class Init_TritechMicronConfig_header
+{
+public:
+  Init_TritechMicronConfig_header()
+  : msg_(::rosidl_runtime_cpp::MessageInitialization::SKIP)
+  {}
+  Init_TritechMicronConfig_inverted header(::tritech_micron_interfaces::msg::TritechMicronConfig::_header_type arg)
+  {
+    msg_.header = std::move(arg);
+    return Init_TritechMicronConfig_inverted(msg_);
   }
 
 private:
@@ -224,7 +240,7 @@ template<>
 inline
 auto build<::tritech_micron_interfaces::msg::TritechMicronConfig>()
 {
-  return tritech_micron_interfaces::msg::builder::Init_TritechMicronConfig_inverted();
+  return tritech_micron_interfaces::msg::builder::Init_TritechMicronConfig_header();
 }
 
 }  // namespace tritech_micron_interfaces

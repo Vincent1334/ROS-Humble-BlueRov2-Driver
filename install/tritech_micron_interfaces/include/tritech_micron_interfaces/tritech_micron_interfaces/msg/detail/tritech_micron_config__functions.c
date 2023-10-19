@@ -11,10 +11,19 @@
 #include "rcutils/allocator.h"
 
 
+// Include directives for member types
+// Member `header`
+#include "std_msgs/msg/detail/header__functions.h"
+
 bool
 tritech_micron_interfaces__msg__TritechMicronConfig__init(tritech_micron_interfaces__msg__TritechMicronConfig * msg)
 {
   if (!msg) {
+    return false;
+  }
+  // header
+  if (!std_msgs__msg__Header__init(&msg->header)) {
+    tritech_micron_interfaces__msg__TritechMicronConfig__fini(msg);
     return false;
   }
   // inverted
@@ -38,6 +47,8 @@ tritech_micron_interfaces__msg__TritechMicronConfig__fini(tritech_micron_interfa
   if (!msg) {
     return;
   }
+  // header
+  std_msgs__msg__Header__fini(&msg->header);
   // inverted
   // continuous
   // scanright
@@ -56,6 +67,12 @@ bool
 tritech_micron_interfaces__msg__TritechMicronConfig__are_equal(const tritech_micron_interfaces__msg__TritechMicronConfig * lhs, const tritech_micron_interfaces__msg__TritechMicronConfig * rhs)
 {
   if (!lhs || !rhs) {
+    return false;
+  }
+  // header
+  if (!std_msgs__msg__Header__are_equal(
+      &(lhs->header), &(rhs->header)))
+  {
     return false;
   }
   // inverted
@@ -115,6 +132,12 @@ tritech_micron_interfaces__msg__TritechMicronConfig__copy(
   tritech_micron_interfaces__msg__TritechMicronConfig * output)
 {
   if (!input || !output) {
+    return false;
+  }
+  // header
+  if (!std_msgs__msg__Header__copy(
+      &(input->header), &(output->header)))
+  {
     return false;
   }
   // inverted

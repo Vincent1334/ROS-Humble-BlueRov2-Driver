@@ -17,12 +17,18 @@ extern "C"
 
 // Constants defined in the message
 
+// Include directives for member types
+// Member 'header'
+#include "std_msgs/msg/detail/header__struct.h"
+
 /// Struct defined in msg/TritechMicronConfig in the package tritech_micron_interfaces.
 /**
   * Tritech Micron configuration parameters.
  */
 typedef struct tritech_micron_interfaces__msg__TritechMicronConfig
 {
+  /// Header message.
+  std_msgs__msg__Header header;
   /// Whether the sonar head is facing upwards.
   bool inverted;
   /// Whether the scan is continuous or in sector scan mode.

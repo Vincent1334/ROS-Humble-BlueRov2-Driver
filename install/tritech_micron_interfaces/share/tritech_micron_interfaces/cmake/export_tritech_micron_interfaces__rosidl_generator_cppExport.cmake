@@ -55,7 +55,7 @@ add_library(tritech_micron_interfaces::tritech_micron_interfaces__rosidl_generat
 
 set_target_properties(tritech_micron_interfaces::tritech_micron_interfaces__rosidl_generator_cpp PROPERTIES
   INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include/tritech_micron_interfaces"
-  INTERFACE_LINK_LIBRARIES "rosidl_runtime_cpp::rosidl_runtime_cpp"
+  INTERFACE_LINK_LIBRARIES "builtin_interfaces::builtin_interfaces__rosidl_generator_cpp;std_msgs::std_msgs__rosidl_generator_cpp;rosidl_runtime_cpp::rosidl_runtime_cpp"
 )
 
 if(CMAKE_VERSION VERSION_LESS 3.0.0)

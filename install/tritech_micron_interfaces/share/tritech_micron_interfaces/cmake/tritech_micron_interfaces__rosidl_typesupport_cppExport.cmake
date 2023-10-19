@@ -54,7 +54,7 @@ endif()
 add_library(tritech_micron_interfaces::tritech_micron_interfaces__rosidl_typesupport_cpp SHARED IMPORTED)
 
 set_target_properties(tritech_micron_interfaces::tritech_micron_interfaces__rosidl_typesupport_cpp PROPERTIES
-  INTERFACE_LINK_LIBRARIES "tritech_micron_interfaces::tritech_micron_interfaces__rosidl_generator_cpp"
+  INTERFACE_LINK_LIBRARIES "tritech_micron_interfaces::tritech_micron_interfaces__rosidl_generator_cpp;builtin_interfaces::builtin_interfaces__rosidl_typesupport_cpp;std_msgs::std_msgs__rosidl_typesupport_cpp"
 )
 
 if(CMAKE_VERSION VERSION_LESS 2.8.12)

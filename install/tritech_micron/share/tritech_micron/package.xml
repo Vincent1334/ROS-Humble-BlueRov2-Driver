@@ -10,6 +10,7 @@
   <depend>rclpy</depend>
   <depend>pyserial</depend>
   <depend>bitstring</depend>
+  <depend>tensorflow</depend>
 
   <depend>tritech_micron_interfaces</depend>
   <depend>sensor_msgs</depend>

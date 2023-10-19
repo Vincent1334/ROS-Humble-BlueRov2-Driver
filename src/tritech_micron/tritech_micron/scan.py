@@ -10,11 +10,11 @@ that can be dynamically reconfigured.
 import rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import PointCloud
-from sonar import Sonar
+from tritech_micron.sonar import TritechMicron
 from geometry_msgs.msg import PoseStamped
 from tritech_micron_interfaces.msg import TritechMicronConfig
 
-__author__ = "Anass Al-Wohoush"
+__author__ = "Vincent Schiller"
 
 class Controller(Node):
     
@@ -22,23 +22,23 @@ class Controller(Node):
         super().__init__("tritech_micron")
 
         # Create publisher
-        self.scan_pub        = self.create_publisher(PointCloud, "tritech_micron/scan", queue_size=800)
-        self.heading_pub     = self.create_publisher(PoseStamped, "tritech_micron/heading", queue_size=800)
-        self.conf_pub        = self.create_publisher(TritechMicronConfig, "tritech_micron/config", queue_size=800)
+        self.scan_pub        = self.create_publisher(PointCloud, "tritech_micron/scan", 800)
+        self.heading_pub     = self.create_publisher(PoseStamped, "tritech_micron/heading", 800)
+        self.conf_pub        = self.create_publisher(TritechMicronConfig, "tritech_micron/config", 800)
  
         # Get frame name and port.
         self.declare_parameter("frame", "sonar") 
-        self.declare_parameter("port", "/dev/ttyUSB0")
+        self.declare_parameter("port", "/dev/pts/3")
 
         self.frame   = self.get_parameter("frame").value
         self.port    = self.get_parameter("port").value
 
-        with Sonar(port=self.port, node=self) as sonar:
+        with TritechMicron(port=self.port, node=self) as self.sonar:
             try:
                 # Scan.
-                sonar.scan(callback=self.publish)
+                self.sonar.scan(callback=self.publish)
             except KeyboardInterrupt:
-                sonar.preempt()
+                self.sonar.preempt()
 
 
     def reconfigure(self, config, level):
@@ -59,7 +59,7 @@ class Controller(Node):
             config.pop("groups")
 
         # Set parameters.
-        sonar.set(**config)
+        self.sonar.set(**config)
         return config
 
 
@@ -74,15 +74,15 @@ class Controller(Node):
 
         # Publish heading as PoseStamped.
         posestamped = slice.to_posestamped(self.frame)
-        heading_pub.publish(posestamped)
+        self.heading_pub.publish(posestamped)
 
         # Publish data as PointCloud.
-        cloud = slice.to_pointcloud(frame)
-        scan_pub.publish(cloud)
+        cloud = slice.to_pointcloud(self.frame)
+        self.scan_pub.publish(cloud)
 
         # Publish data as TritechMicronConfig.
-        config = slice.to_config(frame)
-        conf_pub.publish(config)
+        config = slice.to_config(self.frame)
+        self.conf_pub.publish(config)
 
 def main(args=None):
     rclpy.init(args=args)    

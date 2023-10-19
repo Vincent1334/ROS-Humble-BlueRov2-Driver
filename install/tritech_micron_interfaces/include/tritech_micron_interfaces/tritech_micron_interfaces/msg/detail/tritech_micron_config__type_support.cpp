@@ -37,7 +37,24 @@ void TritechMicronConfig_fini_function(void * message_memory)
   typed_message->~TritechMicronConfig();
 }
 
-static const ::rosidl_typesupport_introspection_cpp::MessageMember TritechMicronConfig_message_member_array[12] = {
+static const ::rosidl_typesupport_introspection_cpp::MessageMember TritechMicronConfig_message_member_array[13] = {
+  {
+    "header",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_MESSAGE,  // type
+    0,  // upper bound of string
+    ::rosidl_typesupport_introspection_cpp::get_message_type_support_handle<std_msgs::msg::Header>(),  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(tritech_micron_interfaces::msg::TritechMicronConfig, header),  // bytes offset in struct
+    nullptr,  // default value
+    nullptr,  // size() function pointer
+    nullptr,  // get_const(index) function pointer
+    nullptr,  // get(index) function pointer
+    nullptr,  // fetch(index, &value) function pointer
+    nullptr,  // assign(index, value) function pointer
+    nullptr  // resize(index) function pointer
+  },
   {
     "inverted",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
@@ -247,7 +264,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember TritechMicron
 static const ::rosidl_typesupport_introspection_cpp::MessageMembers TritechMicronConfig_message_members = {
   "tritech_micron_interfaces::msg",  // message namespace
   "TritechMicronConfig",  // message name
-  12,  // number of fields
+  13,  // number of fields
   sizeof(tritech_micron_interfaces::msg::TritechMicronConfig),
   TritechMicronConfig_message_member_array,  // message members
   TritechMicronConfig_init_function,  // function to initialize message memory (memory has to be allocated)

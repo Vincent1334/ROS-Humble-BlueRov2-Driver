@@ -3,7 +3,7 @@
 
 import math
 from tritech_micron_interfaces.msg import TritechMicronConfig
-from tf.transformations import quaternion_from_euler
+from tritech_micron.transformations import quaternion_from_euler
 from sensor_msgs.msg import ChannelFloat32, PointCloud
 from geometry_msgs.msg import Point32, Pose, PoseStamped, Quaternion
 
