@@ -8,10 +8,9 @@
   <license>TODO: License declaration</license>
 
   <depend>rclpy</depend>
-  <depend>pyserial</depend>
-  <depend>bitstring</depend>
-  <depend>tensorflow</depend>
-
+  <depend>python3-pyserial</depend>
+  <depend>python3-bitstring</depend>
+  
   <depend>tritech_micron_interfaces</depend>
   <depend>sensor_msgs</depend>
   <depend>geometry_msgs</depend>
