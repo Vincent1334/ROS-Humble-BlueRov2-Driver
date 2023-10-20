@@ -28,7 +28,7 @@ class Socket(object):
         Args:
             port: Serial port.
         """
-        self.conn = serial.Serial(port=port, baudrate=115200)
+        self.conn = serial.Serial(port=port, baudrate=115200)      
 
     def open(self):
         """Opens serial connection."""

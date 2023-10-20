@@ -135,13 +135,12 @@ class TritechMicron(object):
         self.initialized = True
 
         # Reboot to make sure the sonar is clean.
-        self.send(Message.REBOOT)
+        self.send(Message.REBOOT)         
+        
         self.update()
 
         # Set default properties.
-        self.set(force=True)
-
-        self.node.get_logger().info("Reboot to make sure the sonar is clean.")
+        self.set(force=True)        
 
         # Wait for settings to go through.
         while not self.has_cfg or self.no_params:
@@ -180,7 +179,7 @@ class TritechMicron(object):
         expected_name = None
         if message:
             expected_name = Message.to_string(message)
-            self.node.get_logger().debug(f"Waiting for {expected_name} message")
+            self.node.get_logger().info(f"Waiting for {expected_name} message")
 
         # Determine end time.
         end = datetime.datetime.now() + datetime.timedelta(seconds=wait)
@@ -201,7 +200,7 @@ class TritechMicron(object):
 
                 # Otherwise, verify reply ID.
                 if reply.id == message:
-                    self.node.get_logger().debug(f"Found {expected_name} message")
+                    self.node.get_logger().info(f"Found {expected_name} message")
                     return reply
                 elif reply.id != Message.ALIVE:
                     self.node.get_logger().warning(f"Received unexpected {reply.name} message")
@@ -307,7 +306,7 @@ class TritechMicron(object):
         # Set and compare sonar properties.
         necessary = not self.has_cfg or self.no_params or force
         only_reverse = not necessary
-        for key, value in kwargs.iteritems():
+        for key, value in kwargs.items():
             if value is not None:
                 if hasattr(self, key) and self.__getattribute__(key) != value:
                     self.__setattr__(key, value)
