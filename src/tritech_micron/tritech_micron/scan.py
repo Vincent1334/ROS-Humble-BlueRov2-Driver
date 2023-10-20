@@ -28,7 +28,7 @@ class Controller(Node):
  
         # Get frame name and port.
         self.declare_parameter("frame", "sonar") 
-        self.declare_parameter("port", "/dev/pts/3")
+        self.declare_parameter("port", "/dev/ttyUSB0")
 
         self.frame   = self.get_parameter("frame").value
         self.port    = self.get_parameter("port").value

@@ -141,6 +141,8 @@ class TritechMicron(object):
         # Set default properties.
         self.set(force=True)
 
+        self.node.get_logger().info("Reboot to make sure the sonar is clean.")
+
         # Wait for settings to go through.
         while not self.has_cfg or self.no_params:
             self.node.get_logger().info(f"Waiting for configuration: (HAS CFG: {self.has_cfg}, NO PARAMS: {self.no_params})")

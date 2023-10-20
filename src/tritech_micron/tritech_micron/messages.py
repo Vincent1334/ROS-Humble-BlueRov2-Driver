@@ -58,7 +58,7 @@ class Message(object):
         Returns:
             Human-readable string.
         """
-        for attr, value in cls.__dict__.iteritems():
+        for attr, value in cls.__dict__.items():
             if value == id:
                 return attr
         else:

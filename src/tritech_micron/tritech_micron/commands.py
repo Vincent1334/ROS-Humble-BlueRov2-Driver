@@ -19,7 +19,7 @@ class Command(object):
         """
         self.id = id
         self.payload = payload if payload else bitstring.BitStream()
-        self.size = (self.payload.length / 8) + 8
+        self.size = int((self.payload.length / 8) + 8)
 
     def serialize(self):
         """Constructs corresponding string of bytes to send to sonar.
@@ -27,7 +27,7 @@ class Command(object):
         Returns:
             String representation of data.
         """
-        hex_size = bytearray("{:04x}".format(self.size))
+        hex_size = bytearray("{:04x}".format(self.size), 'utf-8')
         values = {
             "id": self.id,
             "hex": hex_size,
