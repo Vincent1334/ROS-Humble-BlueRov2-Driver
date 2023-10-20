@@ -23,7 +23,9 @@ Navigate to your ROS workspace's root directory and install the ROS dependencies
 
 ```bash
 cd ~/ROS-Humble-BlueRov2-Driver
-rosdep install --from-paths src --ignore-src -r -y
+sudo rosdep init
+rosdep update
+rosdep install --from-paths src -y --ignore-src
 ```
 
 ### 5. Check Your BlueRov Configuration
