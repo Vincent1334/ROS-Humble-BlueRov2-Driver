@@ -4,6 +4,13 @@
   <img src="img/banner.jpg" />
 </p>
 
+## What is possible ?
+- 📷 Video streaming using OpenCV 
+- 📜 Reading and writing data via the MAVLink protocol with PYMAVLINK
+- 🎮 Joystick interaction 
+- 🤖 PID controller for automatic depth control and yaw, pitch, roll orientation 
+- 🌊 Controlling the [Tritech Micron](https://www.tritech.co.uk/products/micron-sonar) sonar and outputting data as a point cloud 
+
 ## Getting Started
 In this guide, we'll walk you through the process of setting up your development environment to work with ROS 2 Humble and a specific project repository on Ubuntu Jammy Jellyfish (22.04). Follow these steps to get started:
 
