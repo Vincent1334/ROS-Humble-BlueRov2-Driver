@@ -1,5 +1,9 @@
 # 🐢 ROS Humble BlueRov2 Driver 🌊
 
+<p align="center">
+  <img src="img/banner.jpg" />
+</p>
+
 ## Getting Started
 In this guide, we'll walk you through the process of setting up your development environment to work with ROS 2 Humble and a specific project repository on Ubuntu Jammy Jellyfish (22.04). Follow these steps to get started:
 
