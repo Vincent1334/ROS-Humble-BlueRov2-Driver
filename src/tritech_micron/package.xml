@@ -7,7 +7,7 @@
   <maintainer email="vincent.schiller@gmail.com">bluerov</maintainer>
   <license>TODO: License declaration</license>
 
-  <exec_depend>rclpy</exec_depend>
+  <depend>rclpy</depend>
   <exec_depend>python3-pyserial</exec_depend>
   <exec_depend>python3-bitstring</exec_depend>
   
