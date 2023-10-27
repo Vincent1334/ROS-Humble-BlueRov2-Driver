@@ -8,10 +8,10 @@
   <license>TODO: License declaration</license>
 
   <depend>rclpy</depend>
-  <exec_depend>python3-pymavlink</exec_depend>
+  <exec_depend>python-pymavlink</exec_depend>
   <exec_depend>python3-numpy</exec_depend>
   <exec_depend>python3-pygame</exec_depend>
-  <exec_depend>python3-cv2</exec_depend>
+  <exec_depend>python3-opencv</exec_depend>
   <exec_depend>python3-gi</exec_depend>
 
   <depend>bluerov2_interfaces</depend>

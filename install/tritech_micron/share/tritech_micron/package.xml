@@ -8,7 +8,7 @@
   <license>TODO: License declaration</license>
 
   <depend>rclpy</depend>
-  <exec_depend>python3-pyserial</exec_depend>
+  <exec_depend>python3-serial</exec_depend>
   <exec_depend>python3-bitstring</exec_depend>
   
   <depend>tritech_micron_interfaces</depend>

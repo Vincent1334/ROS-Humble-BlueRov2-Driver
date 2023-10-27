@@ -1,1 +1,1 @@
-geometry_msgs:python3-bitstring:python3-pyserial:rclpy:sensor_msgs:tritech_micron_interfaces
+geometry_msgs:python3-bitstring:python3-serial:rclpy:sensor_msgs:tritech_micron_interfaces

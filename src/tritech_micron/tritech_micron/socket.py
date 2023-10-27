@@ -10,6 +10,7 @@ from tritech_micron.replies import Reply
 from tritech_micron.messages import Message
 from tritech_micron.commands import Command
 from tritech_micron.exceptions import PacketIncomplete
+from tritech_micron.serial_readline import SerialReadline
 
 __author__ = "Anass Al-Wohoush, Jana Pavlasek, Malcolm Watt"
 
@@ -28,11 +29,13 @@ class Socket(object):
         Args:
             port: Serial port.
         """
-        self.conn = serial.Serial(port=port, baudrate=115200)      
+        self.conn = serial.Serial(port=port, baudrate=115200)   
+        self.readConn = SerialReadline(self.conn)         
 
     def open(self):
         """Opens serial connection."""
-        self.conn.open()
+        self.conn.open()  
+        print("Verbindung offen")      
 
     def close(self):
         """Closes serial connection."""
@@ -46,7 +49,11 @@ class Socket(object):
             payload: Additional payload to send in packet.
         """
         cmd = Command(message, payload)        
-        self.conn.write(cmd.serialize())
+        self.conn.write(cmd.serialize()) 
+        res = ''.join(format(x, '02x') for x in cmd.serialize())
+        print(f"Sende Command: {res}")
+
+
 
     def get_reply(self):
         """Waits for and returns Reply.
@@ -58,22 +65,22 @@ class Socket(object):
         Raises:
             PacketCorrupted: Packet is corrupt.
         """
-        try:
+        try:            
             # Wait for the '@' character.
-            while not self.conn.read() == "@":
+            while not self.conn.read() == bytes("@", 'utf-8'):              
                 pass
 
             # Read one line at a time until packet is complete and parsed.
             packet = bitstring.BitStream("0x40")
             while True:
                 # Read until new line.
-                current_line = self.conn.readline()
-                for char in current_line:
-                    packet.append("0x{:02X}".format(ord(char)))
+                current_line = self.readConn.readline()                
+                for char in current_line:                    
+                    packet.append("0x{:02X}".format(char))
 
                 # Try to parse.
                 try:
-                    reply = Reply(packet)
+                    reply = Reply(packet)                    
                     break
                 except PacketIncomplete:
                     # Keep looking.
@@ -88,3 +95,5 @@ class Socket(object):
 
             # Otherwise, reraise.
             raise
+
+    

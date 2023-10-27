@@ -2,7 +2,6 @@
 """Tritech Micron sonar."""
 
 from rclpy.node import Node
-import serial
 import datetime
 import bitstring
 import tritech_micron.exceptions
@@ -110,7 +109,7 @@ class TritechMicron(object):
 
         Raises:
             SonarNotFound: Sonar port could not be opened.
-        """
+        """        
         self.open()
         return self
 
@@ -136,7 +135,7 @@ class TritechMicron(object):
 
         # Reboot to make sure the sonar is clean.
         self.send(Message.REBOOT)         
-        
+        self.update()
         self.update()
 
         # Set default properties.
@@ -176,7 +175,7 @@ class TritechMicron(object):
         if not self.initialized:
             raise tritech_micron.exceptions.SonarNotInitialized()
 
-        expected_name = None
+        expected_name = None        
         if message:
             expected_name = Message.to_string(message)
             self.node.get_logger().info(f"Waiting for {expected_name} message")
@@ -185,11 +184,11 @@ class TritechMicron(object):
         end = datetime.datetime.now() + datetime.timedelta(seconds=wait)
 
         # Wait until received if a specific message ID is requested, otherwise
-        # wait forever.
+        # wait forever.       
         while message is None or datetime.datetime.now() < end:
-            try:
-                reply = self.conn.get_reply()
-
+            try:                   
+                reply = self.conn.get_reply()     
+                print(f"Reply ID is {reply.id}")                         
                 # Update state if mtAlive.
                 if reply.id == Message.ALIVE:
                     self.__update_state(reply)
@@ -210,7 +209,7 @@ class TritechMicron(object):
 
         # Timeout.
         self.node.get_logger().error(f"Timed out before receiving message: {expected_name}")
-        raise tritech_micron.exceptions.TimeoutError()
+        raise tritech_micron.exceptions.TimeoutError()    
 
     def send(self, command, payload=None):
         """Sends command and returns reply.
@@ -679,7 +678,7 @@ class TritechMicron(object):
             self._ping()
 
             # Get the scan data.
-            try:
+            try:               
                 data = self.get(Message.HEAD_DATA, wait=1).payload
                 timeout_count = 0
             except tritech_micron.exceptions.TimeoutError:
@@ -737,7 +736,7 @@ class TritechMicron(object):
         # Wait until successful no matter what.
         while True:
             try:
-                self.get(Message.ALIVE)
+                self.get(Message.ALIVE)                
                 return
             except tritech_micron.exceptions.TimeoutError:
                 continue
