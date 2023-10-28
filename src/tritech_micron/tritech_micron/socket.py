@@ -34,8 +34,7 @@ class Socket(object):
 
     def open(self):
         """Opens serial connection."""
-        self.conn.open()  
-        print("Verbindung offen")      
+        self.conn.open()            
 
     def close(self):
         """Closes serial connection."""
@@ -49,11 +48,7 @@ class Socket(object):
             payload: Additional payload to send in packet.
         """
         cmd = Command(message, payload)        
-        self.conn.write(cmd.serialize()) 
-        res = ''.join(format(x, '02x') for x in cmd.serialize())
-        print(f"Sende Command: {res}")
-
-
+        self.conn.write(cmd.serialize())         
 
     def get_reply(self):
         """Waits for and returns Reply.

@@ -135,8 +135,7 @@ class TritechMicron(object):
 
         # Reboot to make sure the sonar is clean.
         self.send(Message.REBOOT)         
-        self.update()
-        self.update()
+        self.update()        
 
         # Set default properties.
         self.set(force=True)        
@@ -734,10 +733,12 @@ class TritechMicron(object):
             SonarNotInitialized: Sonar is not initialized.
         """
         # Wait until successful no matter what.
+        attemps = 2
         while True:
             try:
-                self.get(Message.ALIVE)                
-                return
+                self.get(Message.ALIVE)  
+                attemps -= 1             
+                if attemps == 0: return
             except tritech_micron.exceptions.TimeoutError:
                 continue
 
