@@ -95,7 +95,7 @@ class Contyawer(Node):
             yaw = self.attitude[0]
             yawspeed = self.attitude[3]
             u = self.control(yaw, yawspeed)
-            pwm = self.pwm_neutral - u
+            pwm = round(self.pwm_neutral - 30 * u)
             pwm = self.saturation(pwm)
             
             msg.data = pwm
