@@ -145,17 +145,20 @@ class Controller(Node):
         self.camera_tilt_pub.publish(msg)
 
     def rotation_event(self, value):
+        enable_controller = SetYaw()
+        
         if self.calculate_pwm(value) == 0:
             self.yaw_enable = True
             yaw_target = Float64()
             yaw_target.data = self.attitude[2]
             self.yaw_pub.publish(yaw_target)
 
-            enable_controller = SetYaw()
             enable_controller.enable_yaw_ctrl = True
-            self.yaw_conf_pub.publish(enable_controller)
         else:
             self.yaw_enable = False
+            enable_controller.enable_yaw_ctrl = False
+
+        self.yaw_conf_pub.publish(enable_controller)
         msg = UInt16()        
         msg.data = self.calculate_pwm(value)     
         self.yaw_pub.publish(msg) 
