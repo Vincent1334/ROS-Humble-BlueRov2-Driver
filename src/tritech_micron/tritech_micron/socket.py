@@ -47,8 +47,16 @@ class Socket(object):
             command: Command to send.
             payload: Additional payload to send in packet.
         """
-        cmd = Command(message, payload)        
-        self.conn.write(cmd.serialize())         
+
+        if message != Message.HEAD_COMMAND:
+            cmd = Command(message, payload)        
+            self.conn.write(cmd.serialize()) 
+        else:
+            hex_string = "40303034434c00ff02471380021d8323029999990266666605a3703d06703d0a0928003c000100ff18510854545a007d0019108d005a00e803970340060100000050510908545400005a007d00000000000a"
+            self.conn.write(bytearray.fromhex(hex_string))
+        
+        readHex = " ".join(["{:02x}".format(x) for x in cmd.serialize()])
+        print(readHex)  
 
     def get_reply(self):
         """Waits for and returns Reply.
