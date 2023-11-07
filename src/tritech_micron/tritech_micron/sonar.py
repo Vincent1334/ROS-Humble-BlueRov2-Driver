@@ -724,7 +724,7 @@ class TritechMicron(object):
         self.send(Message.REBOOT)
         self.open()
 
-    def update(self):
+    def update (self):
         """Updates Sonar states from mtAlive message.
 
         Note: This is a blocking function.
@@ -740,6 +740,7 @@ class TritechMicron(object):
                 attemps -= 1             
                 if attemps == 0: return
             except tritech_micron.exceptions.TimeoutError:
+                attemps = 2
                 continue
 
     def __update_state(self, alive):
