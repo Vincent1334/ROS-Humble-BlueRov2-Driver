@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 import rclpy
+import json
 from rclpy.node import Node
 
 from bluerov2_interfaces.msg import Bar30
-from bluerov2_interfaces.msg import SetDepth
-from std_msgs.msg import UInt16, Float64
+from bluerov2_interfaces.msg import PID
+from std_msgs.msg import UInt16, Float64, Bool
+from std_srvs.srv import Trigger
 
 class Controller(Node):
 
@@ -40,11 +42,15 @@ class Controller(Node):
 
         # Create subscriber
         self.bar30_sub      = self.create_subscription(Bar30, "/bluerov2/bar30", self.callback_bar30, 10) 
-        self.setDepth_sub   = self.create_subscription(SetDepth, "/settings/depth/set_depth", self.callback_set_depth, 10)
-        self.setTarget_sub  = self.create_subscription(Float64, "/settings/depth/set_target", self.callback_set_target, 10) 
+        self.setDepth_sub   = self.create_subscription(Float64, "/settings/depth/set_depth", self.callback_set_depth, 10)
+        self.setPID_sub     = self.create_subscription(PID, "/settings/depth/set_pid", self.callback_set_pid, 10) 
+        self.setEnable_sub  = self.create_subscription(Bool, "/settings/depth/set_enable", self.callback_set_enable, 10) 
 
         # Create publisher
         self.throttle_pub   = self.create_publisher(UInt16, "/bluerov2/rc/throttle", 10)  
+
+        # Create service
+        self.status_srv = self.create_service(Trigger, '/services/depth/status', self.callback_status)
 
         # Start update loop
         self.create_timer(0.04, self.calculate_pwm)
@@ -64,29 +70,58 @@ class Controller(Node):
                             msg.press_diff,
                             msg.temperature ]
         
-    def callback_set_depth(self, msg):
-        """Read data from '/Settings/set_depth'
+    def callback_set_pid(self, msg):
+        """Read data from '/settings/depth/set_pid'
 
         ROS message:
-        ------------
-        bool enable_depth_ctrl
+        ------------        
         uint16 pwm_max 
         uint32 KI
         uint32 KP
         uint32 KD
         """
-        if msg.pwm_max < 1500:
-            self.pwm_max = 1500
-        else:
-            self.pwm_max = msg.pwm_max
-        self.KI = msg.ki
-        self.KP = msg.kp 
-        self.KD = msg.kd 
+        if msg.pwm_max != 65535:
+            if msg.pwm_max < 1500:
+                self.pwm_max = 1500
+            else:
+                self.pwm_max = msg.pwm_max
 
-        self.enable = msg.enable_depth_ctrl
+        self.KP = msg.kp if not msg.kp == 65535 else self.KP
+        self.KI = msg.ki if not msg.ki == 65535 else self.KI       
+        self.KD = msg.kd if not msg.kd == 65535 else self.KD
 
-    def callback_set_target(self, msg):        
+    def callback_set_depth(self, msg): 
+        """Read data from '/settings/depth/set_depth'
+
+        ROS message:
+        ------------        
+        float64 data
+        """       
         self.depth_desired = msg.data
+
+    def callback_set_enable(self, msg):
+        """Read data from '/settings/depth/set_enable'
+
+        ROS message:
+        ------------        
+        bool data
+        """
+        self.enable = msg.data
+
+    def callback_status(self, request, response):
+        data = {}
+        data["enable"] = self.enable
+        data["kp"] = self.KP
+        data["ki"] = self.KI
+        data["kd"] = self.KD
+        data["pwm_max"] = self.pwm_max
+        data["pwm_neutral"] = self.pwm_neutral
+        data["depth_desired"] = self.depth_desired
+
+        response.success = True
+        response.message = json.dumps(data)
+
+        return response
 
     def control_pid(self, p):
         """PID controller
