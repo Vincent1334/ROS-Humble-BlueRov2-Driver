@@ -4,8 +4,7 @@ import json
 from rclpy.node import Node
 import bluerov2_controller.pid as pid
 
-from bluerov2_interfaces.msg import Bar30
-from bluerov2_interfaces.msg import PID
+from bluerov2_interfaces.msg import Bar30, PID
 from std_msgs.msg import UInt16, Float64, Bool
 from std_srvs.srv import Trigger
 
@@ -55,6 +54,8 @@ class Controller(Node):
 
         # Start update loop
         self.create_timer(0.04, self.calculate_pwm)
+
+        self.get_logger().info('controller has been successfully configured!')
 
     def callback_bar30(self, msg):
         """Read data from '/BlueRov2/bar30'
@@ -110,6 +111,7 @@ class Controller(Node):
         self.enable = msg.data
 
     def callback_status(self, request, response):
+        request
         data = {}
         data["enable"] = self.enable
         data["kp"]              = self.KP
@@ -121,7 +123,7 @@ class Controller(Node):
 
         response.success = True
         response.message = json.dumps(data)
-
+        self.get_logger().warning("Incomming Reqzest!")
         return response
 
     def control_pid(self, p):

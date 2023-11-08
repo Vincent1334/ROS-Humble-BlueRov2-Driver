@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 import rclpy
 import pygame
+import json
 from pygame.locals import *
 from rclpy.node import Node
 
-from std_msgs.msg import UInt16, Float64
-from std_msgs.msg import Bool
-from bluerov2_interfaces.msg import Attitude, SetYaw
+from std_msgs.msg import UInt16, Float64, Bool
+from std_srvs.srv import Trigger
 
 class Controller(Node):    
     
@@ -39,11 +39,7 @@ class Controller(Node):
         self.gain_pwm_lights        = self.get_parameter("gain_pwm_lights").value 
 
         self.lights_value           = self.get_parameter("pwm_lights_min").value
-        self.arm                    = self.get_parameter("arm_status").value 
-        self.target_depth           = 0    
-        self.yaw_enable             = True         
-
-        self.attitude               = [0, 0, 0, 0, 0, 0] #[ROLL, PITCH, YAW, ROLLSPEED, PITCHSPEED, YAWSPEED]
+        self.arm                    = self.get_parameter("arm_status").value                 
 
         # Create publisher
         self.lights_pub             = self.create_publisher(UInt16, "/bluerov2/rc/lights", 10)
@@ -54,15 +50,17 @@ class Controller(Node):
         self.arm_pub                = self.create_publisher(Bool, "/bluerov2/arm", 10)
         self.depth_pub              = self.create_publisher(Float64, "/settings/depth/set_target", 10)
         self.yaw_pub                = self.create_publisher(Float64, "/settings/yaw/set_target", 10)
-        self.yaw_conf_pub           = self.create_publisher(SetYaw, "/settings/yaw/set_yaw", 10)
+        #self.yaw_conf_pub           = self.create_publisher(SetYaw, "/settings/yaw/set_yaw", 10)               
 
-        # Create subsciber
-        self.attitude_sub           = self.create_subscription(Attitude, "/bluerov2/attitude", self.callback_att, 10) 
-               
+        # Create services
+        self.depth_service          = self.create_client(Trigger, '/services/depth/status')
+
+        while not self.depth_service.wait_for_service(timeout_sec=1.0):
+            self.get_logger().warning('depth_controller service not available, waiting again...')
 
         # Clear BlueRov status
         lights = UInt16()
-        lights.data = self.pwm_camera_min
+        lights.data = self.pwm_lights_min
         self.lights_pub.publish(lights)
 
         arm_msg = Bool()
@@ -202,6 +200,9 @@ class Controller(Node):
             self.get_logger().info("The ROV ist now disarmed!")
 
     def dive_up(self):
+        status = self.get_depth_status()
+        self.get_logger().info(status)
+       
         new_depth = round(self.target_depth + self.gain_depth, 2)
         
         if new_depth <= 0:
@@ -222,18 +223,17 @@ class Controller(Node):
             self.depth_pub.publish(msg)
             self.get_logger().info(f"Desired depth is now {self.target_depth}")
 
-    def callback_att(self, msg):       
-        self.attitude = [msg.roll,
-                         msg.pitch,
-                         msg.yaw,
-                         msg.rollspeed,
-                         msg.pitchspeed,
-                         msg.yawspeed]
-
+    def get_depth_status(self):
+        self.get_logger().warning("Request!")
+        future = self.depth_service.call_async(Trigger.Request())
+        rclpy.spin_until_future_complete(self, future)
+        self.get_logger().warning("Request complete!")
+        return json.loads(future.result().message)
             
 def main(args=None):
     rclpy.init(args=args)    
     node = Controller()
+    node.get_depth_status()
     rclpy.spin(node)      
     node.destroy_node()
     rclpy.shutdown()

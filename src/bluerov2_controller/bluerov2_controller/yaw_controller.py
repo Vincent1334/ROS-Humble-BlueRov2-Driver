@@ -91,6 +91,7 @@ class Contyawer(Node):
         self.enable = msg.data        
 
     def callback_status(self, request, response):
+        request
         data = {}
         data["enable"]          = self.enable
         data["kp"]              = self.KP        
