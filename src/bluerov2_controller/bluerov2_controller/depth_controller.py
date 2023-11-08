@@ -2,6 +2,7 @@
 import rclpy
 import json
 from rclpy.node import Node
+import bluerov2_controller.pid as pid
 
 from bluerov2_interfaces.msg import Bar30
 from bluerov2_interfaces.msg import PID
@@ -111,12 +112,12 @@ class Controller(Node):
     def callback_status(self, request, response):
         data = {}
         data["enable"] = self.enable
-        data["kp"] = self.KP
-        data["ki"] = self.KI
-        data["kd"] = self.KD
-        data["pwm_max"] = self.pwm_max
-        data["pwm_neutral"] = self.pwm_neutral
-        data["depth_desired"] = self.depth_desired
+        data["kp"]              = self.KP
+        data["ki"]              = self.KI
+        data["kd"]              = self.KD
+        data["pwm_max"]         = self.pwm_max
+        data["pwm_neutral"]     = self.pwm_neutral
+        data["depth_desired"]   = self.depth_desired
 
         response.success = True
         response.message = json.dumps(data)
@@ -150,25 +151,7 @@ class Controller(Node):
 
         self.I_depth = (self.depth_desired-depth)*delta_t #integrate term
         u = self.KI*self.I_depth + self.KP*(self.depth_desired-depth) - self.KD*D_depth
-        return u
-	
-    def saturation(self, pwm):
-        """Saturate command
-        
-        Input:
-        ------
-        pwm: pwm from self.control 
-        
-        Return:
-        -------
-        pwm: int, published on '/Command/depth'
-        """
-        pwm_min = self.pwm_neutral - (self.pwm_max - self.pwm_neutral)
-        if pwm > self.pwm_max :
-                pwm = self.pwm_max
-        if pwm < pwm_min:
-                pwm = pwm_min
-        return int(pwm)
+        return u   
 
     def calculate_pwm(self):  
         msg = UInt16()
@@ -176,14 +159,12 @@ class Controller(Node):
         if self.enable:
             mesured_pressure = self.bar30_data[1]*100 #to convert pressure from hPa to Pa
             u = self.control_pid(mesured_pressure)
-            pwm = round(self.pwm_neutral + 30 * u)
-            pwm = self.saturation(pwm)
+            pwm = self.pwm_neutral + u
+            pwm = pid.saturation(pwm, self.pwm_neutral, self.pwm_max)
             
             msg.data = pwm
         else:
-            msg.data = self.pwm_neutral
-
-        self.get_logger().info(f"Tiefe ist {self.depth_desired}")
+            msg.data = self.pwm_neutral        
             
         self.throttle_pub.publish(msg)        
 

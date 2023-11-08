@@ -2,11 +2,5 @@ msg/Attitude.idl
 msg/Attitude.msg
 msg/Bar30.idl
 msg/Bar30.msg
-msg/SetDepth.idl
-msg/SetDepth.msg
-msg/SetPitch.idl
-msg/SetPitch.msg
-msg/SetRoll.idl
-msg/SetRoll.msg
-msg/SetYaw.idl
-msg/SetYaw.msg
+msg/PID.idl
+msg/PID.msg

@@ -15,11 +15,7 @@ find_package(ament_cmake REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
-  "msg/Bar30.msg"
-  "msg/SetDepth.msg"
-  "msg/SetRoll.msg"
-  "msg/SetPitch.msg"
-  "msg/SetYaw.msg"  
+  "msg/Bar30.msg" 
   "msg/Attitude.msg"  
   "msg/PID.msg"
  )

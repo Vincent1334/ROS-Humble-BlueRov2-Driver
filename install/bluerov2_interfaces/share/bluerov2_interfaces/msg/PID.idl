@@ -1,0 +1,22 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from bluerov2_interfaces/msg/PID.msg
+// generated code does not contain a copyright notice
+
+
+module bluerov2_interfaces {
+  module msg {
+    struct PID {
+      @default (value=65535)
+      uint16 pwm_max;
+
+      @default (value=65535)
+      uint16 ki;
+
+      @default (value=65535)
+      uint16 kp;
+
+      @default (value=65535)
+      uint16 kd;
+    };
+  };
+};
