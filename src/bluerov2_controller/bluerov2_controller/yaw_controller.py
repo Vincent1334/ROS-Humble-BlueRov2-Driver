@@ -21,7 +21,7 @@ class Contyawer(Node):
         self.declare_parameter("kd", 50)    
         self.declare_parameter("enable", True)  
 
-        self.attitude           = [0, 0, 0, 0, 0, 0]                            #[yaw, PITCH, YAW, yawSPEED, PITCHSPEED, YAWSPEED]
+        self.attitude           = [0, 0, 0, 0, 0, 0]                            #[ROLL, PITCH, YAW, ROLLSPEED, PITCHSPEED, YAWSPEED]
         self.pwm_max            = self.get_parameter("pwm_max").value           # Maximum PWM value
         self.pwm_neutral        = self.get_parameter("pwm_neutral").value       # Neutral PWM value
         self.yaw_desired        = self.get_parameter("yaw_desired").value       # Desired pitch setpoint
@@ -59,8 +59,8 @@ class Contyawer(Node):
 
         self.enable = msg.enable_yaw_ctrl
 
-    def callback_set_target(self, msg):       
-        self.yaw_desired = self.deg2rad(msg.data)
+    def callback_set_target(self, msg):         
+        self.yaw_desired = self.deg2rad(msg.data)     
 
     def deg2rad(self,deg):       
         if deg in range(0,181):
@@ -68,7 +68,7 @@ class Contyawer(Node):
         if deg in range(181,361):
             return ((deg - 360) * np.pi) / 180
 
-    def control(self, yaw, yawspeed):        
+    def control(self, yaw, yawspeed):               
         return self.KP*self.sawtooth(yaw-self.yaw_desired) + self.KD*yawspeed
     
     def saturation(self, pwm):        
@@ -92,10 +92,10 @@ class Contyawer(Node):
         msg = UInt16()
 
         if self.enable:
-            yaw = self.attitude[0]
-            yawspeed = self.attitude[3]
+            yaw = self.attitude[2]
+            yawspeed = self.attitude[5]
             u = self.control(yaw, yawspeed)
-            pwm = round(self.pwm_neutral - 30 * u)
+            pwm = self.pwm_neutral - u
             pwm = self.saturation(pwm)
             
             msg.data = pwm

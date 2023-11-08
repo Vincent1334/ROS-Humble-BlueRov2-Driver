@@ -95,7 +95,7 @@ class Controller(Node):
             pitch = self.attitude[1]
             pitchspeed = self.attitude[4]
             u = self.control(pitch, pitchspeed)
-            pwm = round(self.pwm_neutral - 30 * u)
+            pwm = self.pwm_neutral - u
             pwm = self.saturation(pwm)
             
             msg.data = pwm

@@ -169,7 +169,7 @@ class Controller(Node):
 
         if self.yaw_enable:
             yaw_target = Float64()
-            yaw_target.data = self.attitude[2]
+            yaw_target.data = self.attitude[2]            
             self.yaw_pub.publish(yaw_target)
 
             enable_controller = SetYaw()

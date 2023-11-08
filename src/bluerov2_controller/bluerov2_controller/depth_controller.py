@@ -16,7 +16,7 @@ class Controller(Node):
         super().__init__("depth_controller")    
 
         # Setup default parameters
-        self.declare_parameter("depth_desired", 0) 
+        self.declare_parameter("depth_desired", -2) 
         self.declare_parameter("pwm_max", 1900)
         self.declare_parameter("pwm_neutral", 1500)
         self.declare_parameter("ki", 100)      
@@ -141,12 +141,14 @@ class Controller(Node):
         if self.enable:
             mesured_pressure = self.bar30_data[1]*100 #to convert pressure from hPa to Pa
             u = self.control_pid(mesured_pressure)
-            pwm = self.pwm_neutral + u
+            pwm = round(self.pwm_neutral + 30 * u)
             pwm = self.saturation(pwm)
             
             msg.data = pwm
         else:
             msg.data = self.pwm_neutral
+
+        self.get_logger().info(f"Tiefe ist {self.depth_desired}")
             
         self.throttle_pub.publish(msg)        
 

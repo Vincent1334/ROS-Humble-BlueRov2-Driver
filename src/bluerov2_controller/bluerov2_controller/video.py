@@ -6,7 +6,7 @@ import gi
 import numpy as np
 
 from sensor_msgs.msg import BatteryState
-from bluerov2_interfaces.msg import SetTarget
+from bluerov2_interfaces.msg import SetDepth
 from bluerov2_interfaces.msg import Bar30
 from bluerov2_interfaces.msg import Attitude
 
@@ -57,7 +57,7 @@ class Controller(Node):
 
         # create subscriber
         self.battery_sub        = self.create_subscription(BatteryState, "/bluerov2/battery", self.battery_callback, 10) 
-        self.target_depth_sub   = self.create_subscription(SetTarget, "/settings/set_target", self.target_callback, 10)  
+        self.target_depth_sub   = self.create_subscription(SetDepth, "/settings/set_target", self.target_callback, 10)  
         self.bar30_sub          = self.create_subscription(Bar30, "/bluerov2/bar30", self.callback_bar30, 10)    
         self.attitude_sub       = self.create_subscription(Attitude, "/bluerov2/attitude", self.callback_att, 10) 
 
