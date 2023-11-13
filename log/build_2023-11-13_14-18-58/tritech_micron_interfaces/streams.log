@@ -1,0 +1,223 @@
+[0.135s] Invoking command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/opt/ros/humble /usr/bin/cmake /home/bluerov/ROS-Humble-BlueRov2-Driver/src/tritech_micron_interfaces -DCMAKE_INSTALL_PREFIX=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces
+[0.227s] -- The C compiler identification is GNU 11.4.0
+[0.342s] -- The CXX compiler identification is GNU 11.4.0
+[0.356s] -- Detecting C compiler ABI info
+[0.469s] -- Detecting C compiler ABI info - done
+[0.487s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.488s] -- Detecting C compile features
+[0.489s] -- Detecting C compile features - done
+[0.498s] -- Detecting CXX compiler ABI info
+[0.700s] -- Detecting CXX compiler ABI info - done
+[0.726s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.727s] -- Detecting CXX compile features
+[0.729s] -- Detecting CXX compile features - done
+[0.769s] -- Found ament_cmake: 1.3.5 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.111s] -- Found Python3: /usr/bin/python3.10 (found version "3.10.12") found components: Interpreter 
+[1.277s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[1.287s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.303s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.386s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.479s] -- Found std_msgs: 4.2.3 (/opt/ros/humble/share/std_msgs/cmake)
+[2.208s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[2.656s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[3.127s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[3.164s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+[3.167s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[3.241s] -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+[3.241s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[3.242s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[3.242s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[3.285s] -- Found PythonExtra: .so  
+[3.473s] -- Configuring done
+[3.586s] -- Generating done
+[3.594s] -- Build files have been written to: /home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron_interfaces
+[3.601s] Invoked command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/opt/ros/humble /usr/bin/cmake /home/bluerov/ROS-Humble-BlueRov2-Driver/src/tritech_micron_interfaces -DCMAKE_INSTALL_PREFIX=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces
+[3.602s] Invoking command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/opt/ros/humble /usr/bin/cmake --build /home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron_interfaces -- -j4 -l4
+[3.721s] [  3%] [34m[1mGenerating C code for ROS interfaces[0m
+[3.733s] [  6%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[3.821s] [  6%] Built target ament_cmake_python_copy_tritech_micron_interfaces
+[5.793s] running egg_info
+[5.794s] creating tritech_micron_interfaces.egg-info
+[5.796s] writing tritech_micron_interfaces.egg-info/PKG-INFO
+[5.798s] writing dependency_links to tritech_micron_interfaces.egg-info/dependency_links.txt
+[5.799s] writing top-level names to tritech_micron_interfaces.egg-info/top_level.txt
+[5.801s] writing manifest file 'tritech_micron_interfaces.egg-info/SOURCES.txt'
+[5.807s] reading manifest file 'tritech_micron_interfaces.egg-info/SOURCES.txt'
+[5.809s] writing manifest file 'tritech_micron_interfaces.egg-info/SOURCES.txt'
+[5.949s] [  6%] Built target ament_cmake_python_build_tritech_micron_interfaces_egg
+[6.041s] [  6%] Built target tritech_micron_interfaces__cpp
+[6.154s] [  9%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[6.154s] [ 12%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[6.171s] [ 16%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[6.861s] [ 19%] [32mBuilding C object CMakeFiles/tritech_micron_interfaces__rosidl_generator_c.dir/rosidl_generator_c/tritech_micron_interfaces/msg/detail/tritech_micron_config__functions.c.o[0m
+[7.139s] [ 22%] [32m[1mLinking C shared library libtritech_micron_interfaces__rosidl_generator_c.so[0m
+[7.474s] [ 22%] Built target tritech_micron_interfaces__rosidl_generator_c
+[7.594s] [ 25%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[8.523s] [ 29%] [32mBuilding CXX object CMakeFiles/tritech_micron_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/tritech_micron_interfaces/msg/tritech_micron_config__type_support.cpp.o[0m
+[9.338s] [ 32%] [32mBuilding CXX object CMakeFiles/tritech_micron_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tritech_micron_interfaces/msg/detail/dds_fastrtps/tritech_micron_config__type_support.cpp.o[0m
+[9.481s] [ 35%] [32mBuilding CXX object CMakeFiles/tritech_micron_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/tritech_micron_interfaces/msg/detail/tritech_micron_config__type_support.cpp.o[0m
+[10.322s] [ 38%] [32mBuilding CXX object CMakeFiles/tritech_micron_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/tritech_micron_interfaces/msg/detail/tritech_micron_config__type_support_c.cpp.o[0m
+[10.841s] [ 41%] [32m[1mLinking CXX shared library libtritech_micron_interfaces__rosidl_typesupport_cpp.so[0m
+[11.200s] [ 41%] Built target tritech_micron_interfaces__rosidl_typesupport_cpp
+[11.317s] [ 45%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[11.581s] [ 48%] [32m[1mLinking CXX shared library libtritech_micron_interfaces__rosidl_typesupport_introspection_cpp.so[0m
+[12.058s] [ 48%] Built target tritech_micron_interfaces__rosidl_typesupport_introspection_cpp
+[12.067s] [ 51%] [32m[1mLinking CXX shared library libtritech_micron_interfaces__rosidl_typesupport_fastrtps_cpp.so[0m
+[12.127s] [ 54%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[12.424s] [ 54%] Built target tritech_micron_interfaces__rosidl_typesupport_fastrtps_cpp
+[12.791s] [ 58%] [32m[1mLinking CXX shared library libtritech_micron_interfaces__rosidl_typesupport_fastrtps_c.so[0m
+[13.274s] [ 58%] Built target tritech_micron_interfaces__rosidl_typesupport_fastrtps_c
+[13.562s] [ 61%] [32mBuilding CXX object CMakeFiles/tritech_micron_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/tritech_micron_interfaces/msg/tritech_micron_config__type_support.cpp.o[0m
+[13.621s] [ 64%] [32m[1mLinking CXX shared library libtritech_micron_interfaces__rosidl_typesupport_c.so[0m
+[13.715s] [ 64%] Built target tritech_micron_interfaces__rosidl_typesupport_c
+[13.806s] [ 67%] [32mBuilding C object CMakeFiles/tritech_micron_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/tritech_micron_interfaces/msg/detail/tritech_micron_config__type_support.c.o[0m
+[13.991s] [ 70%] [32m[1mLinking C shared library libtritech_micron_interfaces__rosidl_typesupport_introspection_c.so[0m
+[14.146s] [ 70%] Built target tritech_micron_interfaces__rosidl_typesupport_introspection_c
+[14.273s] [ 70%] Built target tritech_micron_interfaces
+[14.401s] [ 74%] [34m[1mGenerating Python code for ROS interfaces[0m
+[16.039s] [ 74%] Built target tritech_micron_interfaces__py
+[16.086s] [ 77%] [32mBuilding C object CMakeFiles/tritech_micron_interfaces__rosidl_generator_py.dir/rosidl_generator_py/tritech_micron_interfaces/msg/_tritech_micron_config_s.c.o[0m
+[16.351s] [ 80%] [32m[1mLinking C shared library rosidl_generator_py/tritech_micron_interfaces/libtritech_micron_interfaces__rosidl_generator_py.so[0m
+[16.433s] [ 80%] Built target tritech_micron_interfaces__rosidl_generator_py
+[16.486s] [ 83%] [32mBuilding C object CMakeFiles/tritech_micron_interfaces__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/tritech_micron_interfaces/_tritech_micron_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[16.734s] [ 87%] [32m[1mLinking C shared library rosidl_generator_py/tritech_micron_interfaces/tritech_micron_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so[0m
+[16.805s] [ 87%] Built target tritech_micron_interfaces__rosidl_typesupport_fastrtps_c__pyext
+[16.847s] [ 90%] [32mBuilding C object CMakeFiles/tritech_micron_interfaces__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/tritech_micron_interfaces/_tritech_micron_interfaces_s.ep.rosidl_typesupport_c.c.o[0m
+[17.069s] [ 93%] [32m[1mLinking C shared library rosidl_generator_py/tritech_micron_interfaces/tritech_micron_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so[0m
+[17.152s] [ 93%] Built target tritech_micron_interfaces__rosidl_typesupport_c__pyext
+[17.188s] [ 96%] [32mBuilding C object CMakeFiles/tritech_micron_interfaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/tritech_micron_interfaces/_tritech_micron_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[17.402s] [100%] [32m[1mLinking C shared library rosidl_generator_py/tritech_micron_interfaces/tritech_micron_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so[0m
+[17.477s] [100%] Built target tritech_micron_interfaces__rosidl_typesupport_introspection_c__pyext
+[17.503s] Invoked command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/opt/ros/humble /usr/bin/cmake --build /home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron_interfaces -- -j4 -l4
+[17.631s] Invoking command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/opt/ros/humble /usr/bin/cmake --install /home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron_interfaces
+[17.648s] -- Install configuration: ""
+[17.648s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/ament_index/resource_index/rosidl_interfaces/tritech_micron_interfaces
+[17.649s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/include/tritech_micron_interfaces/tritech_micron_interfaces
+[17.649s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/include/tritech_micron_interfaces/tritech_micron_interfaces/msg
+[17.649s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/include/tritech_micron_interfaces/tritech_micron_interfaces/msg/tritech_micron_config.h
+[17.649s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/include/tritech_micron_interfaces/tritech_micron_interfaces/msg/detail
+[17.650s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/include/tritech_micron_interfaces/tritech_micron_interfaces/msg/detail/tritech_micron_config__functions.h
+[17.650s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/include/tritech_micron_interfaces/tritech_micron_interfaces/msg/detail/tritech_micron_config__functions.c
+[17.650s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/include/tritech_micron_interfaces/tritech_micron_interfaces/msg/detail/tritech_micron_config__struct.h
+[17.650s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/include/tritech_micron_interfaces/tritech_micron_interfaces/msg/detail/tritech_micron_config__type_support.h
+[17.650s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/include/tritech_micron_interfaces/tritech_micron_interfaces/msg/rosidl_generator_c__visibility_control.h
+[17.651s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/environment/library_path.sh
+[17.651s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/environment/library_path.dsv
+[17.651s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/lib/libtritech_micron_interfaces__rosidl_generator_c.so
+[17.658s] -- Set runtime path of "/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/lib/libtritech_micron_interfaces__rosidl_generator_c.so" to ""
+[17.658s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/include/tritech_micron_interfaces/tritech_micron_interfaces
+[17.665s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/include/tritech_micron_interfaces/tritech_micron_interfaces/msg
+[17.665s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/include/tritech_micron_interfaces/tritech_micron_interfaces/msg/detail
+[17.665s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/include/tritech_micron_interfaces/tritech_micron_interfaces/msg/detail/tritech_micron_config__rosidl_typesupport_fastrtps_c.h
+[17.666s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/include/tritech_micron_interfaces/tritech_micron_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[17.666s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/lib/libtritech_micron_interfaces__rosidl_typesupport_fastrtps_c.so
+[17.666s] -- Set runtime path of "/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/lib/libtritech_micron_interfaces__rosidl_typesupport_fastrtps_c.so" to ""
+[17.666s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/include/tritech_micron_interfaces/tritech_micron_interfaces
+[17.666s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/include/tritech_micron_interfaces/tritech_micron_interfaces/msg
+[17.666s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/include/tritech_micron_interfaces/tritech_micron_interfaces/msg/detail
+[17.667s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/include/tritech_micron_interfaces/tritech_micron_interfaces/msg/detail/tritech_micron_config__type_support.c
+[17.667s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/include/tritech_micron_interfaces/tritech_micron_interfaces/msg/detail/tritech_micron_config__rosidl_typesupport_introspection_c.h
+[17.667s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/include/tritech_micron_interfaces/tritech_micron_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[17.667s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/lib/libtritech_micron_interfaces__rosidl_typesupport_introspection_c.so
+[17.667s] -- Set runtime path of "/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/lib/libtritech_micron_interfaces__rosidl_typesupport_introspection_c.so" to ""
+[17.668s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/lib/libtritech_micron_interfaces__rosidl_typesupport_c.so
+[17.668s] -- Set runtime path of "/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/lib/libtritech_micron_interfaces__rosidl_typesupport_c.so" to ""
+[17.668s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/include/tritech_micron_interfaces/tritech_micron_interfaces
+[17.668s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/include/tritech_micron_interfaces/tritech_micron_interfaces/msg
+[17.668s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/include/tritech_micron_interfaces/tritech_micron_interfaces/msg/detail
+[17.668s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/include/tritech_micron_interfaces/tritech_micron_interfaces/msg/detail/tritech_micron_config__builder.hpp
+[17.669s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/include/tritech_micron_interfaces/tritech_micron_interfaces/msg/detail/tritech_micron_config__struct.hpp
+[17.669s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/include/tritech_micron_interfaces/tritech_micron_interfaces/msg/detail/tritech_micron_config__traits.hpp
+[17.669s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/include/tritech_micron_interfaces/tritech_micron_interfaces/msg/tritech_micron_config.hpp
+[17.669s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/include/tritech_micron_interfaces/tritech_micron_interfaces
+[17.669s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/include/tritech_micron_interfaces/tritech_micron_interfaces/msg
+[17.669s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/include/tritech_micron_interfaces/tritech_micron_interfaces/msg/detail
+[17.669s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/include/tritech_micron_interfaces/tritech_micron_interfaces/msg/detail/dds_fastrtps
+[17.670s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/include/tritech_micron_interfaces/tritech_micron_interfaces/msg/detail/tritech_micron_config__rosidl_typesupport_fastrtps_cpp.hpp
+[17.670s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/include/tritech_micron_interfaces/tritech_micron_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[17.670s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/lib/libtritech_micron_interfaces__rosidl_typesupport_fastrtps_cpp.so
+[17.670s] -- Set runtime path of "/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/lib/libtritech_micron_interfaces__rosidl_typesupport_fastrtps_cpp.so" to ""
+[17.670s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/include/tritech_micron_interfaces/tritech_micron_interfaces
+[17.671s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/include/tritech_micron_interfaces/tritech_micron_interfaces/msg
+[17.671s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/include/tritech_micron_interfaces/tritech_micron_interfaces/msg/detail
+[17.672s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/include/tritech_micron_interfaces/tritech_micron_interfaces/msg/detail/tritech_micron_config__rosidl_typesupport_introspection_cpp.hpp
+[17.673s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/include/tritech_micron_interfaces/tritech_micron_interfaces/msg/detail/tritech_micron_config__type_support.cpp
+[17.673s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/lib/libtritech_micron_interfaces__rosidl_typesupport_introspection_cpp.so
+[17.673s] -- Set runtime path of "/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/lib/libtritech_micron_interfaces__rosidl_typesupport_introspection_cpp.so" to ""
+[17.673s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/lib/libtritech_micron_interfaces__rosidl_typesupport_cpp.so
+[17.673s] -- Set runtime path of "/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/lib/libtritech_micron_interfaces__rosidl_typesupport_cpp.so" to ""
+[17.674s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/environment/pythonpath.sh
+[17.674s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/environment/pythonpath.dsv
+[17.674s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/local/lib/python3.10/dist-packages/tritech_micron_interfaces-0.0.0-py3.10.egg-info
+[17.674s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/local/lib/python3.10/dist-packages/tritech_micron_interfaces-0.0.0-py3.10.egg-info/dependency_links.txt
+[17.674s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/local/lib/python3.10/dist-packages/tritech_micron_interfaces-0.0.0-py3.10.egg-info/SOURCES.txt
+[17.674s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/local/lib/python3.10/dist-packages/tritech_micron_interfaces-0.0.0-py3.10.egg-info/PKG-INFO
+[17.675s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/local/lib/python3.10/dist-packages/tritech_micron_interfaces-0.0.0-py3.10.egg-info/top_level.txt
+[17.675s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/local/lib/python3.10/dist-packages/tritech_micron_interfaces
+[17.675s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/local/lib/python3.10/dist-packages/tritech_micron_interfaces/_tritech_micron_interfaces_s.ep.rosidl_typesupport_introspection_c.c
+[17.675s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/local/lib/python3.10/dist-packages/tritech_micron_interfaces/tritech_micron_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[17.675s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/local/lib/python3.10/dist-packages/tritech_micron_interfaces/tritech_micron_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[17.675s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/local/lib/python3.10/dist-packages/tritech_micron_interfaces/libtritech_micron_interfaces__rosidl_generator_py.so
+[17.676s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/local/lib/python3.10/dist-packages/tritech_micron_interfaces/_tritech_micron_interfaces_s.ep.rosidl_typesupport_c.c
+[17.676s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/local/lib/python3.10/dist-packages/tritech_micron_interfaces/tritech_micron_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[17.676s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/local/lib/python3.10/dist-packages/tritech_micron_interfaces/_tritech_micron_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+[17.676s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/local/lib/python3.10/dist-packages/tritech_micron_interfaces/__init__.py
+[17.676s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/local/lib/python3.10/dist-packages/tritech_micron_interfaces/msg
+[17.676s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/local/lib/python3.10/dist-packages/tritech_micron_interfaces/msg/_tritech_micron_config.py
+[17.677s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/local/lib/python3.10/dist-packages/tritech_micron_interfaces/msg/_tritech_micron_config_s.c
+[17.677s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/local/lib/python3.10/dist-packages/tritech_micron_interfaces/msg/__init__.py
+[17.754s] Listing '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/local/lib/python3.10/dist-packages/tritech_micron_interfaces'...
+[17.754s] Compiling '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/local/lib/python3.10/dist-packages/tritech_micron_interfaces/__init__.py'...
+[17.755s] Listing '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/local/lib/python3.10/dist-packages/tritech_micron_interfaces/msg'...
+[17.755s] Compiling '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/local/lib/python3.10/dist-packages/tritech_micron_interfaces/msg/__init__.py'...
+[17.755s] Compiling '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/local/lib/python3.10/dist-packages/tritech_micron_interfaces/msg/_tritech_micron_config.py'...
+[17.765s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/local/lib/python3.10/dist-packages/tritech_micron_interfaces/tritech_micron_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[17.767s] -- Set runtime path of "/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/local/lib/python3.10/dist-packages/tritech_micron_interfaces/tritech_micron_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""
+[17.768s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/local/lib/python3.10/dist-packages/tritech_micron_interfaces/tritech_micron_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[17.768s] -- Set runtime path of "/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/local/lib/python3.10/dist-packages/tritech_micron_interfaces/tritech_micron_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""
+[17.768s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/local/lib/python3.10/dist-packages/tritech_micron_interfaces/tritech_micron_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[17.768s] -- Set runtime path of "/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/local/lib/python3.10/dist-packages/tritech_micron_interfaces/tritech_micron_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""
+[17.768s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/lib/libtritech_micron_interfaces__rosidl_generator_py.so
+[17.769s] -- Set runtime path of "/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/lib/libtritech_micron_interfaces__rosidl_generator_py.so" to ""
+[17.769s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/msg/TritechMicronConfig.idl
+[17.769s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/msg/TritechMicronConfig.msg
+[17.769s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/ament_index/resource_index/package_run_dependencies/tritech_micron_interfaces
+[17.769s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/ament_index/resource_index/parent_prefix_path/tritech_micron_interfaces
+[17.769s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/environment/ament_prefix_path.sh
+[17.770s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/environment/ament_prefix_path.dsv
+[17.772s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/environment/path.sh
+[17.773s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/environment/path.dsv
+[17.773s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/local_setup.bash
+[17.777s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/local_setup.sh
+[17.777s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/local_setup.zsh
+[17.777s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/local_setup.dsv
+[17.777s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/package.dsv
+[17.778s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/ament_index/resource_index/packages/tritech_micron_interfaces
+[17.778s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/cmake/export_tritech_micron_interfaces__rosidl_generator_cExport.cmake
+[17.778s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/cmake/export_tritech_micron_interfaces__rosidl_generator_cExport-noconfig.cmake
+[17.778s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/cmake/export_tritech_micron_interfaces__rosidl_typesupport_fastrtps_cExport.cmake
+[17.778s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/cmake/export_tritech_micron_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[17.778s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/cmake/tritech_micron_interfaces__rosidl_typesupport_introspection_cExport.cmake
+[17.778s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/cmake/tritech_micron_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[17.790s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/cmake/tritech_micron_interfaces__rosidl_typesupport_cExport.cmake
+[17.791s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/cmake/tritech_micron_interfaces__rosidl_typesupport_cExport-noconfig.cmake
+[17.791s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/cmake/export_tritech_micron_interfaces__rosidl_generator_cppExport.cmake
+[17.791s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/cmake/export_tritech_micron_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake
+[17.791s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/cmake/export_tritech_micron_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[17.792s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/cmake/tritech_micron_interfaces__rosidl_typesupport_introspection_cppExport.cmake
+[17.792s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/cmake/tritech_micron_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[17.792s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/cmake/tritech_micron_interfaces__rosidl_typesupport_cppExport.cmake
+[17.792s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/cmake/tritech_micron_interfaces__rosidl_typesupport_cppExport-noconfig.cmake
+[17.792s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/cmake/export_tritech_micron_interfaces__rosidl_generator_pyExport.cmake
+[17.792s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/cmake/export_tritech_micron_interfaces__rosidl_generator_pyExport-noconfig.cmake
+[17.792s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/cmake/rosidl_cmake-extras.cmake
+[17.793s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake
+[17.793s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake
+[17.793s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/cmake/ament_cmake_export_libraries-extras.cmake
+[17.793s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/cmake/ament_cmake_export_targets-extras.cmake
+[17.793s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[17.793s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[17.793s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/cmake/tritech_micron_interfacesConfig.cmake
+[17.794s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/cmake/tritech_micron_interfacesConfig-version.cmake
+[17.794s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/share/tritech_micron_interfaces/package.xml
+[17.794s] Invoked command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/opt/ros/humble /usr/bin/cmake --install /home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron_interfaces

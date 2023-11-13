@@ -5,7 +5,7 @@ from rclpy.node import Node
 import bluerov2_controller.pid as pid
 
 from bluerov2_interfaces.msg import Bar30, PID
-from std_msgs.msg import UInt16, Float64, Bool
+from std_msgs.msg import UInt16, Float64, Bool, String
 from std_srvs.srv import Trigger
 
 class Controller(Node):
@@ -18,7 +18,7 @@ class Controller(Node):
         super().__init__("depth_controller")    
 
         # Setup default parameters
-        self.declare_parameter("depth_desired", -2) 
+        self.declare_parameter("depth_desired", 0) 
         self.declare_parameter("pwm_max", 1900)
         self.declare_parameter("pwm_neutral", 1500)
         self.declare_parameter("ki", 100)      
@@ -48,9 +48,10 @@ class Controller(Node):
 
         # Create publisher
         self.throttle_pub   = self.create_publisher(UInt16, "/bluerov2/rc/throttle", 10)  
+        self.status_pub     = self.create_publisher(String, '/settings/depth/status', 10)
 
-        # Create service
-        self.status_srv = self.create_service(Trigger, '/services/depth/status', self.callback_status)
+       
+        
 
         # Start update loop
         self.create_timer(0.04, self.calculate_pwm)
@@ -98,7 +99,8 @@ class Controller(Node):
         ROS message:
         ------------        
         float64 data
-        """       
+        """          
+        
         self.depth_desired = msg.data
 
     def callback_set_enable(self, msg):
@@ -107,24 +109,24 @@ class Controller(Node):
         ROS message:
         ------------        
         bool data
-        """
+        """             
         self.enable = msg.data
 
-    def callback_status(self, request, response):
-        request
+    def update_status(self):         
+        msg = String()
         data = {}
-        data["enable"] = self.enable
+        data["type"]            = "depth_controller"
+        data["enable"]          = self.enable
         data["kp"]              = self.KP
         data["ki"]              = self.KI
         data["kd"]              = self.KD
         data["pwm_max"]         = self.pwm_max
         data["pwm_neutral"]     = self.pwm_neutral
         data["depth_desired"]   = self.depth_desired
-
-        response.success = True
-        response.message = json.dumps(data)
-        self.get_logger().warning("Incomming Reqzest!")
-        return response
+        
+        msg.data = json.dumps(data)
+        self.status_pub.publish(msg)
+        
 
     def control_pid(self, p):
         """PID controller
@@ -168,7 +170,8 @@ class Controller(Node):
         else:
             msg.data = self.pwm_neutral        
             
-        self.throttle_pub.publish(msg)        
+        self.throttle_pub.publish(msg)     
+        self.update_status()   
 
 def main(args=None):
     rclpy.init(args=args)    

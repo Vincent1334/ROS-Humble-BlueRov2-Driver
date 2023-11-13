@@ -4,11 +4,9 @@ from rclpy.node import Node
 from pymavlink import mavutil
 import pymavlink.dialects.v20.ardupilotmega as mavlink
 
-from std_msgs.msg import UInt16
-from std_msgs.msg import Bool
+from std_msgs.msg import UInt16, Bool
 from sensor_msgs.msg import BatteryState
-from bluerov2_interfaces.msg import Attitude
-from bluerov2_interfaces.msg import Bar30
+from bluerov2_interfaces.msg import Attitude, Bar30
 
 class Controller(Node):
     
@@ -35,15 +33,15 @@ class Controller(Node):
         self.data               = {}                                # Dictionary that stores all sensor data
         
         # Create subscriber
-        self.rc_pitch_sub       = self.create_subscription(UInt16, "/bluerov2/rc/pitch", self.rc1_callback, 10)
-        self.rc_roll_sub        = self.create_subscription(UInt16, "/bluerov2/rc/roll", self.rc2_callback, 10)
-        self.rc_throttle_sub    = self.create_subscription(UInt16, "/bluerov2/rc/throttle", self.rc3_callback, 10)
-        self.rc_yaw_sub         = self.create_subscription(UInt16, "/bluerov2/rc/yaw", self.rc4_callback, 10)
-        self.rc_forward_sub     = self.create_subscription(UInt16, "/bluerov2/rc/forward", self.rc5_callback, 10)
-        self.rc_lateral_sub     = self.create_subscription(UInt16, "/bluerov2/rc/lateral", self.rc6_callback, 10)
-        self.rc_camera_pan_sub  = self.create_subscription(UInt16, "/bluerov2/rc/camera_pan", self.rc7_callback, 10)
-        self.rc_camera_tilt_sub = self.create_subscription(UInt16, "/bluerov2/rc/camera_tilt", self.rc8_callback, 10)
-        self.rc_lights_sub      = self.create_subscription(UInt16, "/bluerov2/rc/lights", self.rc9_callback, 10)
+        self.rc_pitch_sub       = self.create_subscription(UInt16, "/bluerov2/rc/pitch", self.rc_callback, 10)
+        self.rc_roll_sub        = self.create_subscription(UInt16, "/bluerov2/rc/roll", self.rc_callback, 10)
+        self.rc_throttle_sub    = self.create_subscription(UInt16, "/bluerov2/rc/throttle", self.rc_callback, 10)
+        self.rc_yaw_sub         = self.create_subscription(UInt16, "/bluerov2/rc/yaw", self.rc_callback, 10)
+        self.rc_forward_sub     = self.create_subscription(UInt16, "/bluerov2/rc/forward", self.rc_callback, 10)
+        self.rc_lateral_sub     = self.create_subscription(UInt16, "/bluerov2/rc/lateral", self.rc_callback, 10)
+        self.rc_camera_pan_sub  = self.create_subscription(UInt16, "/bluerov2/rc/camera_pan", self.rc_callback, 10)
+        self.rc_camera_tilt_sub = self.create_subscription(UInt16, "/bluerov2/rc/camera_tilt", self.rc_callback, 10)
+        self.rc_lights_sub      = self.create_subscription(UInt16, "/bluerov2/rc/lights", self.rc_callback, 10)
 
         self.arm_sub            = self.create_subscription(Bool, "/bluerov2/arm", self.arm_callback, 10)
         
@@ -213,32 +211,17 @@ class Controller(Node):
 
         self.mav.rc_channels_override_send(*self.target, *rc_channel_values)        
 
-    def rc1_callback(self, msg):
-        self.pitch = msg.data
-
-    def rc2_callback(self, msg):
-        self.roll = msg.data
-
-    def rc3_callback(self, msg):
-        self.throttle = msg.data
-
-    def rc4_callback(self, msg):
-        self.yaw = msg.data
-
-    def rc5_callback(self, msg):
-        self.forward = msg.data
-
-    def rc6_callback(self, msg):
-        self.lateral = msg.data
-
-    def rc7_callback(self, msg):
-        self.camera_pan = msg.data
-
-    def rc8_callback(self, msg):
-        self.camera_tilt = msg.data
-
-    def rc9_callback(self, msg):
-        self.lights = msg.data
+    def rc_callback(self, msg, info):
+        match info.get_rmw_message_info().publisher_gid[0].exchange:
+            case "/bluerov2/rc/pitch": self.pitch = msg.data
+            case "/bluerov2/rc/roll": self.roll = msg.data
+            case "/bluerov2/rc/throttle": self.throttle = msg.data
+            case "/bluerov2/rc/yaw": self.yaw = msg.data
+            case "/bluerov2/rc/forward": self.forward = msg.data
+            case "/bluerov2/rc/lateral": self.lateral = msg.data
+            case "/bluerov2/rc/camera_pan": self.camera_pan = msg.data
+            case "/bluerov2/rc/camera_tilt": self.camera_tilt = msg.data
+            case "/bluerov2/rc/lights": self.lights = msg.data
 
     def arm_callback(self, msg):
         if msg.data:
