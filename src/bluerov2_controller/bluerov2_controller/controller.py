@@ -33,15 +33,15 @@ class Controller(Node):
         self.data               = {}                                # Dictionary that stores all sensor data
         
         # Create subscriber
-        self.rc_pitch_sub       = self.create_subscription(UInt16, "/bluerov2/rc/pitch", self.rc_callback, 10)
-        self.rc_roll_sub        = self.create_subscription(UInt16, "/bluerov2/rc/roll", self.rc_callback, 10)
-        self.rc_throttle_sub    = self.create_subscription(UInt16, "/bluerov2/rc/throttle", self.rc_callback, 10)
-        self.rc_yaw_sub         = self.create_subscription(UInt16, "/bluerov2/rc/yaw", self.rc_callback, 10)
-        self.rc_forward_sub     = self.create_subscription(UInt16, "/bluerov2/rc/forward", self.rc_callback, 10)
-        self.rc_lateral_sub     = self.create_subscription(UInt16, "/bluerov2/rc/lateral", self.rc_callback, 10)
-        self.rc_camera_pan_sub  = self.create_subscription(UInt16, "/bluerov2/rc/camera_pan", self.rc_callback, 10)
-        self.rc_camera_tilt_sub = self.create_subscription(UInt16, "/bluerov2/rc/camera_tilt", self.rc_callback, 10)
-        self.rc_lights_sub      = self.create_subscription(UInt16, "/bluerov2/rc/lights", self.rc_callback, 10)
+        self.rc_pitch_sub       = self.create_subscription(UInt16, "/bluerov2/rc/pitch", lambda msg: self.rc_callback(msg, 1), 10)
+        self.rc_roll_sub        = self.create_subscription(UInt16, "/bluerov2/rc/roll", lambda msg: self.rc_callback(msg, 2), 10)
+        self.rc_throttle_sub    = self.create_subscription(UInt16, "/bluerov2/rc/throttle", lambda msg:  self.rc_callback(msg, 3), 10)
+        self.rc_yaw_sub         = self.create_subscription(UInt16, "/bluerov2/rc/yaw", lambda msg: self.rc_callback(msg, 4), 10)
+        self.rc_forward_sub     = self.create_subscription(UInt16, "/bluerov2/rc/forward", lambda msg: self.rc_callback(msg, 5), 10)
+        self.rc_lateral_sub     = self.create_subscription(UInt16, "/bluerov2/rc/lateral", lambda msg: self.rc_callback(msg, 6), 10)
+        self.rc_camera_pan_sub  = self.create_subscription(UInt16, "/bluerov2/rc/camera_pan", lambda msg: self.rc_callback(msg, 7), 10)
+        self.rc_camera_tilt_sub = self.create_subscription(UInt16, "/bluerov2/rc/camera_tilt", lambda msg: self.rc_callback(msg, 8), 10)
+        self.rc_lights_sub      = self.create_subscription(UInt16, "/bluerov2/rc/lights", lambda msg: self.rc_callback(msg, 9), 10)
 
         self.arm_sub            = self.create_subscription(Bool, "/bluerov2/arm", self.arm_callback, 10)
         
@@ -211,17 +211,17 @@ class Controller(Node):
 
         self.mav.rc_channels_override_send(*self.target, *rc_channel_values)        
 
-    def rc_callback(self, msg, info):
-        match info.get_rmw_message_info().publisher_gid[0].exchange:
-            case "/bluerov2/rc/pitch": self.pitch = msg.data
-            case "/bluerov2/rc/roll": self.roll = msg.data
-            case "/bluerov2/rc/throttle": self.throttle = msg.data
-            case "/bluerov2/rc/yaw": self.yaw = msg.data
-            case "/bluerov2/rc/forward": self.forward = msg.data
-            case "/bluerov2/rc/lateral": self.lateral = msg.data
-            case "/bluerov2/rc/camera_pan": self.camera_pan = msg.data
-            case "/bluerov2/rc/camera_tilt": self.camera_tilt = msg.data
-            case "/bluerov2/rc/lights": self.lights = msg.data
+    def rc_callback(self, msg, topic):
+        match topic:
+            case 1: self.pitch          = msg.data
+            case 2: self.roll           = msg.data
+            case 3: self.throttle       = msg.data
+            case 4: self.yaw            = msg.data
+            case 5: self.forward        = msg.data
+            case 6: self.lateral        = msg.data
+            case 7: self.camera_pan     = msg.data
+            case 8: self.camera_tilt    = msg.data
+            case 9: self.lights         = msg.data
 
     def arm_callback(self, msg):
         if msg.data:

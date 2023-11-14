@@ -6,7 +6,6 @@ import bluerov2_controller.pid as pid
 
 from bluerov2_interfaces.msg import Bar30, PID
 from std_msgs.msg import UInt16, Float64, Bool, String
-from std_srvs.srv import Trigger
 
 class Controller(Node):
 

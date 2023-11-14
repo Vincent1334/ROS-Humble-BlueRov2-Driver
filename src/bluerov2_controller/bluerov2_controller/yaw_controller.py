@@ -6,7 +6,6 @@ import bluerov2_controller.pid as pid
 
 from bluerov2_interfaces.msg import Attitude, PID
 from std_msgs.msg import UInt16, Float64, Bool, String
-from std_srvs.srv import Trigger
 
 class Contyawer(Node):
 
@@ -39,6 +38,8 @@ class Contyawer(Node):
         # Create publisher
         self.yaw_pub           = self.create_publisher(UInt16, "/bluerov2/rc/yaw", 10)
         self.status_pub        = self.create_publisher(String, '/settings/yaw/status', 10)      
+
+        self.get_logger().info('controller has been successfully configured!')
 
         # Start update loop
         self.create_timer(0.04, self.calculate_pwm)    
@@ -77,7 +78,7 @@ class Contyawer(Node):
         ------------        
         float64 data
         """       
-        self.yaw_desired = msg.data
+        self.yaw_desired = round(msg.data)     
 
     def callback_set_enable(self, msg):
         """Read data from '/settings/pitch/set_enable'
@@ -102,7 +103,7 @@ class Contyawer(Node):
         msg.data = json.dumps(data)
         self.status_pub.publish(msg)
 
-    def control(self, yaw, yawspeed):               
+    def control(self, yaw, yawspeed):                       
         return self.KP*pid.sawtooth(yaw-pid.deg2rad(self.yaw_desired)) + self.KD*yawspeed   
     
     def calculate_pwm(self): 
@@ -112,7 +113,8 @@ class Contyawer(Node):
             yaw = self.attitude[2]
             yawspeed = self.attitude[5]
             u = self.control(yaw, yawspeed)
-            pwm = self.pwm_neutral - u
+            pwm = self.pwm_neutral - u            
+
             pwm = pid.saturation(pwm, self.pwm_neutral, self.pwm_max)
             
             msg.data = pwm

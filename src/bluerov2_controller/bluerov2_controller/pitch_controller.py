@@ -4,8 +4,7 @@ import json
 from rclpy.node import Node
 import bluerov2_controller.pid as pid
 from bluerov2_interfaces.msg import Attitude, PID
-from std_srvs.srv import Trigger
-from std_msgs.msg import UInt16, Float64, Bool
+from std_msgs.msg import UInt16, Float64, Bool, String
 
 class Controller(Node):
 
@@ -37,9 +36,9 @@ class Controller(Node):
 
         # Create publisher
         self.pitch_pub          = self.create_publisher(UInt16, "/bluerov2/rc/pitch", 10)
+        self.status_pub        = self.create_publisher(String, '/settings/pitch/status', 10)
 
-        # Create service
-        self.status_srv = self.create_service(Trigger, '/services/pitch/status', self.callback_status)
+        self.get_logger().info('controller has been successfully configured!')
 
         # Start update loop
         self.create_timer(0.04, self.calculate_pwm)    
@@ -78,7 +77,7 @@ class Controller(Node):
         ------------        
         float64 data
         """       
-        self.pitch_desired = pid.deg2rad(msg.data)    
+        self.pitch_desired = round(msg.data)    
 
     def callback_set_enable(self, msg):
         """Read data from '/settings/pitch/set_enable'
@@ -89,9 +88,10 @@ class Controller(Node):
         """
         self.enable = msg.data
 
-    def callback_status(self, request, response):
-        request
+    def update_status(self):
+        msg = String()
         data = {}
+        data["type"]            = "pitch_controller"
         data["enable"]          = self.enable
         data["kp"]              = self.KP        
         data["kd"]              = self.KD
@@ -99,13 +99,11 @@ class Controller(Node):
         data["pwm_neutral"]     = self.pwm_neutral
         data["pitch_desired"]   = self.pitch_desired
 
-        response.success = True
-        response.message = json.dumps(data)
-
-        return response    
+        msg.data = json.dumps(data)
+        self.status_pub.publish(msg)        
 
     def control(self, pitch, pitchspeed):        
-        return self.KP*pid.sawtooth(pitch-self.pitch_desired) + self.KD*pitchspeed        
+        return self.KP*pid.sawtooth(pitch-pid.deg2rad(self.pitch_desired)) + self.KD*pitchspeed        
    
     def calculate_pwm(self): 
         msg = UInt16()
@@ -123,6 +121,7 @@ class Controller(Node):
 
         msg.data = 1750
         self.pitch_pub.publish(msg)
+        self.update_status()
 
 def main(args=None):
     rclpy.init(args=args)    

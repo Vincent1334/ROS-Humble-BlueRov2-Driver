@@ -1,0 +1,21 @@
+[3.280s] Invoking command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/src/tritech_micron': PYTHONPATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron/prefix_override:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/tritech_micron build --build-base /home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron/build install --record /home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron/install.log --single-version-externally-managed
+[4.101s] running egg_info
+[4.102s] writing ../../build/tritech_micron/tritech_micron.egg-info/PKG-INFO
+[4.102s] writing dependency_links to ../../build/tritech_micron/tritech_micron.egg-info/dependency_links.txt
+[4.102s] writing entry points to ../../build/tritech_micron/tritech_micron.egg-info/entry_points.txt
+[4.104s] writing requirements to ../../build/tritech_micron/tritech_micron.egg-info/requires.txt
+[4.104s] writing top-level names to ../../build/tritech_micron/tritech_micron.egg-info/top_level.txt
+[4.107s] reading manifest file '../../build/tritech_micron/tritech_micron.egg-info/SOURCES.txt'
+[4.110s] writing manifest file '../../build/tritech_micron/tritech_micron.egg-info/SOURCES.txt'
+[4.116s] running build
+[4.117s] running build_py
+[4.117s] running install
+[4.117s] running install_lib
+[4.117s] running install_data
+[4.119s] running install_egg_info
+[4.136s] removing '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron/lib/python3.10/site-packages/tritech_micron-0.0.0-py3.10.egg-info' (and everything under it)
+[4.139s] Copying ../../build/tritech_micron/tritech_micron.egg-info to /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron/lib/python3.10/site-packages/tritech_micron-0.0.0-py3.10.egg-info
+[4.139s] running install_scripts
+[4.182s] Installing scan script to /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron/lib/tritech_micron
+[4.183s] writing list of installed files to '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron/install.log'
+[4.389s] Invoked command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/src/tritech_micron' returned '0': PYTHONPATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron/prefix_override:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/tritech_micron build --build-base /home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron/build install --record /home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron/install.log --single-version-externally-managed

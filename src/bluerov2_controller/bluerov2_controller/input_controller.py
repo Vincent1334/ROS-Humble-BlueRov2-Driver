@@ -51,15 +51,14 @@ class Controller(Node):
         self.lights_pub             = self.create_publisher(UInt16, "/bluerov2/rc/lights", 10)
         self.camera_tilt_pub        = self.create_publisher(UInt16, "/bluerov2/rc/camera_tilt", 10)
         self.forward_pub            = self.create_publisher(UInt16, "/bluerov2/rc/forward", 10)
-        self.lateral_pub            = self.create_publisher(UInt16, "/bluerov2/rc/lateral", 10)
-        self.yaw_pub                = self.create_publisher(UInt16, "/bluerov2/rc/yaw", 10) 
+        self.lateral_pub            = self.create_publisher(UInt16, "/bluerov2/rc/lateral", 10)        
         self.arm_pub                = self.create_publisher(Bool, "/bluerov2/arm", 10)
-        self.depth_pub              = self.create_publisher(Float64, "/settings/depth/set_depth", 10)
-        self.yaw_pub                = self.create_publisher(Float64, "/settings/yaw/set_yaw", 10)
-        #self.yaw_conf_pub           = self.create_publisher(SetYaw, "/settings/yaw/set_yaw", 10)               
+        self.depth_controller_pub   = self.create_publisher(Float64, "/settings/depth/set_depth", 10)
+        self.yaw_controller_pub     = self.create_publisher(Float64, "/settings/yaw/set_yaw", 10)              
 
         # Create subscriber
-        self.depth_status_sub       = self.create_subscription(String, "/settings/depth/status", self.callback_node_status, 10)         
+        self.depth_status_sub       = self.create_subscription(String, "/settings/depth/status", self.callback_node_status, 10)   
+        self.yaw_status_sub         = self.create_subscription(String, "/settings/yaw/status", self.callback_node_status, 10)               
 
         # Clear BlueRov status
         lights = UInt16()
@@ -91,30 +90,33 @@ class Controller(Node):
         
 
     def update_input(self):
-        for event in pygame.event.get():            
-            # Check if a joystick button was pressed
-            if event.type == JOYBUTTONDOWN:
-                if event.button == 4:       # Left Bumper (LB)
-                    self.adjust_lights("down")  
-                elif event.button == 5:     # Right Bumper (RB)
-                    self.adjust_lights("up")  
-                elif event.button == 7:     # Start Button
-                    self.arm_disarm()   
-                elif event.button == 3:     # Y Button
-                    self.dive_up()  
-                elif event.button == 0:     # A Button
-                    self.dive_down()  
+        if self.depth_status is None and self.yaw_status is not None:
+            for event in pygame.event.get():            
+                # Check if a joystick button was pressed
+                if event.type == JOYBUTTONDOWN:
+                    if event.button == 4:       # Left Bumper (LB)
+                        self.adjust_lights("down")  
+                    elif event.button == 5:     # Right Bumper (RB)
+                        self.adjust_lights("up")  
+                    elif event.button == 7:     # Start Button
+                        self.arm_disarm()   
+                    elif event.button == 3:     # Y Button
+                        self.dive_up()  
+                    elif event.button == 0:     # A Button
+                        self.dive_down()  
 
-            # Check if a joystick axis motion event occurs
-            elif event.type == JOYAXISMOTION:                
-                if event.axis == 3:                         # Right Joystick horizontal motion
-                    self.rotation_event(event.value)  
-                elif event.axis == 0 or event.axis == 1:    # Left Joystick motion
-                    self.move_event(event)  
+                # Check if a joystick axis motion event occurs
+                elif event.type == JOYAXISMOTION:                
+                    if event.axis == 3:                         # Right Joystick horizontal motion
+                        self.rotation_event(event.value)  
+                    elif event.axis == 0 or event.axis == 1:    # Left Joystick motion
+                        self.move_event(event)  
 
-            # Check if a joystick hat motion event occurs
-            elif event.type == JOYHATMOTION:
-                self.camera_tilt_event(event.value)         # D-Pad Up-Down motion
+                # Check if a joystick hat motion event occurs
+                elif event.type == JOYHATMOTION:
+                    self.camera_tilt_event(event.value)         # D-Pad Up-Down motion
+        else:
+            self.get_logger().error("Attempt to establish a connection to the controllers failed.") 
 
     
 
@@ -145,36 +147,16 @@ class Controller(Node):
         self.camera_tilt_pub.publish(msg)
 
     def rotation_event(self, value):
-        enable_controller = SetYaw()
-        
-        if self.calculate_pwm(value) == 0:
-            self.yaw_enable = True
-            yaw_target = Float64()
-            yaw_target.data = self.attitude[2]
-            self.yaw_pub.publish(yaw_target)
-
-            enable_controller.enable_yaw_ctrl = True
-        else:
-            self.yaw_enable = False
-            enable_controller.enable_yaw_ctrl = False
-
-        self.yaw_conf_pub.publish(enable_controller)
-        msg = UInt16()        
-        msg.data = self.calculate_pwm(value)     
-        self.yaw_pub.publish(msg) 
+        value = max(-1, min(1, round(value, 1) * self.gain_yaw))        
+        new_yaw = (self.yaw_status["yaw_desired"] + value) % 360
+        msg = Float64()        
+        msg.data = float(new_yaw) 
+        self.yaw_controller_pub.publish(msg)    
+        self.get_logger().info(f"Desired yaw is now {new_yaw}")    
 
     def move_event(self, event):
         u = event.value
-        pwm = UInt16(data=self.calculate_pwm(u))
-
-        if self.yaw_enable:
-            yaw_target = Float64()
-            yaw_target.data = self.attitude[2]            
-            self.yaw_pub.publish(yaw_target)
-
-            enable_controller = SetYaw()
-            enable_controller.enable_yaw_ctrl = True
-            self.yaw_conf_pub.publish(enable_controller)
+        pwm = UInt16(data=self.calculate_pwm(u))        
 
         if event.axis == 0:
             self.forward_pub.publish(pwm)
@@ -182,14 +164,8 @@ class Controller(Node):
            self.lateral_pub.publish(pwm)        
 
     def calculate_pwm(self, value):
-        gain = self.pwm_max - self.pwm_neutral
-        if -0.01 < value < 0.01:
-            value = 0
-        elif value > 1:
-            value = 1
-        elif value < -1:
-            value = -1
-        return int(self.pwm_neutral + value * gain)    
+        value = max(-1, min(1, value))
+        return int(self.pwm_neutral + value * (self.pwm_max - self.pwm_neutral))
     
     def arm_disarm(self):
         self.arm = not self.arm
@@ -207,7 +183,7 @@ class Controller(Node):
         if new_depth <= 0:            
             msg = Float64()
             msg.data = new_depth
-            self.depth_pub.publish(msg)
+            self.depth_controller_pub.publish(msg)
             self.get_logger().info(f"Desired depth is now {new_depth}")
 
 
@@ -217,7 +193,7 @@ class Controller(Node):
         if new_depth > -200:            
             msg = Float64()
             msg.data = new_depth
-            self.depth_pub.publish(msg)
+            self.depth_controller_pub.publish(msg)
             self.get_logger().info(f"Desired depth is now {new_depth}")
 
     def callback_node_status(self, msg):        

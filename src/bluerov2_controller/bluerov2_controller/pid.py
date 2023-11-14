@@ -12,6 +12,8 @@ def deg2rad(deg):
         return (deg * np.pi) / 180 
     if deg in range(181,361):
         return ((deg - 360) * np.pi) / 180
+    
+    print(f"Der Fehler ist {deg}")
 
 def sawtooth (x):
     """Deal with 2*PI modulo
