@@ -31,7 +31,7 @@ class Contyawer(Node):
 
         # Create subscriber
         self.attitude_sub       = self.create_subscription(Attitude, "/bluerov2/attitude", self.callback_att, 10) 
-        self.setYaw_sub         = self.create_subscription(Float64, "/settings/yaw/set_yaw", self.callback_set_yaw, 10)
+        self.setYaw_sub         = self.create_subscription(UInt16, "/settings/yaw/set_yaw", self.callback_set_yaw, 10)
         self.setPID_sub         = self.create_subscription(PID, "/settings/yaw/set_pid", self.callback_set_pid, 10) 
         self.setEnable_sub      = self.create_subscription(Bool, "/settings/yaw/set_enable", self.callback_set_enable, 10) 
 
@@ -76,9 +76,9 @@ class Contyawer(Node):
 
         ROS message:
         ------------        
-        float64 data
+        UInt16 data
         """       
-        self.yaw_desired = round(msg.data)     
+        self.yaw_desired = msg.data   
 
     def callback_set_enable(self, msg):
         """Read data from '/settings/pitch/set_enable'

@@ -30,7 +30,7 @@ class Controller(Node):
 
         # Create subscriber
         self.attitude_sub       = self.create_subscription(Attitude, "/bluerov2/attitude", self.callback_att, 10) 
-        self.setPitch_sub       = self.create_subscription(Float64, "/settings/pitch/set_pitch", self.callback_set_pitch, 10)
+        self.setPitch_sub       = self.create_subscription(UInt16, "/settings/pitch/set_pitch", self.callback_set_pitch, 10)
         self.setPID_sub         = self.create_subscription(PID, "/settings/pitch/set_pid", self.callback_set_pid, 10)        
         self.setEnable_sub      = self.create_subscription(Bool, "/settings/pitch/set_enable", self.callback_set_enable, 10) 
 
@@ -75,9 +75,9 @@ class Controller(Node):
 
         ROS message:
         ------------        
-        float64 data
+        UInt16 data
         """       
-        self.pitch_desired = round(msg.data)    
+        self.pitch_desired = msg.data
 
     def callback_set_enable(self, msg):
         """Read data from '/settings/pitch/set_enable'

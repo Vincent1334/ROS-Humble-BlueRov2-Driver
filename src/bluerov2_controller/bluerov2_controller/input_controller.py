@@ -54,7 +54,7 @@ class Controller(Node):
         self.lateral_pub            = self.create_publisher(UInt16, "/bluerov2/rc/lateral", 10)        
         self.arm_pub                = self.create_publisher(Bool, "/bluerov2/arm", 10)
         self.depth_controller_pub   = self.create_publisher(Float64, "/settings/depth/set_depth", 10)
-        self.yaw_controller_pub     = self.create_publisher(Float64, "/settings/yaw/set_yaw", 10)              
+        self.yaw_controller_pub     = self.create_publisher(UInt16, "/settings/yaw/set_yaw", 10)              
 
         # Create subscriber
         self.depth_status_sub       = self.create_subscription(String, "/settings/depth/status", self.callback_node_status, 10)   
@@ -149,8 +149,8 @@ class Controller(Node):
     def rotation_event(self, value):
         value = max(-1, min(1, round(value, 1) * self.gain_yaw))        
         new_yaw = (self.yaw_status["yaw_desired"] + value) % 360
-        msg = Float64()        
-        msg.data = float(new_yaw) 
+        msg = UInt16()        
+        msg.data = round(new_yaw) 
         self.yaw_controller_pub.publish(msg)    
         self.get_logger().info(f"Desired yaw is now {new_yaw}")    
 
