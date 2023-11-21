@@ -26,7 +26,7 @@ class Controller(Node):
         self.declare_parameter("gain_depth", 0.2)
         self.declare_parameter("gain_yaw", 3)
         self.declare_parameter("arm_status", True)
-        self.declare_parameter("debug", True)
+        self.declare_parameter("debug", False)
 
         self.pwm_min                = self.get_parameter("pwm_min").value 
         self.pwm_max                = self.get_parameter("pwm_max").value
@@ -120,26 +120,7 @@ class Controller(Node):
             # Update rotation event with right joystick motion data
             self.rotation_event(pygame.joystick.Joystick(0).get_axis(3))    
         else:
-            self.get_logger().error("Attempt to establish a connection to the controllers failed.") 
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            print(pygame.joystick.Joystick(0).get_axis(3))
-
-
-
-
-              
-
-    
+            self.get_logger().error("Attempt to establish a connection to the controllers failed.")     
 
     def adjust_lights(self, direction):
         msg = UInt16()
