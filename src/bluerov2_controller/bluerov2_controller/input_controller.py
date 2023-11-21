@@ -26,6 +26,7 @@ class Controller(Node):
         self.declare_parameter("gain_depth", 0.2)
         self.declare_parameter("gain_yaw", 3)
         self.declare_parameter("arm_status", True)
+        self.declare_parameter("debug", True)
 
         self.pwm_min                = self.get_parameter("pwm_min").value 
         self.pwm_max                = self.get_parameter("pwm_max").value
@@ -42,6 +43,8 @@ class Controller(Node):
 
         self.lights_value           = self.get_parameter("pwm_lights_min").value
         self.arm                    = self.get_parameter("arm_status").value    
+
+        self.debug                  = self.get_parameter("debug").value   
 
         # Node status
         self.depth_status           = None
@@ -90,7 +93,7 @@ class Controller(Node):
         
 
     def update_input(self):
-        if self.depth_status is None and self.yaw_status is not None:
+        if (self.depth_status is None and self.yaw_status is not None) or self.debug:
             for event in pygame.event.get():            
                 # Check if a joystick button was pressed
                 if event.type == JOYBUTTONDOWN:
@@ -105,18 +108,36 @@ class Controller(Node):
                     elif event.button == 0:     # A Button
                         self.dive_down()  
 
-                # Check if a joystick axis motion event occurs
-                elif event.type == JOYAXISMOTION:                
-                    if event.axis == 3:                         # Right Joystick horizontal motion
-                        self.rotation_event(event.value)  
-                    elif event.axis == 0 or event.axis == 1:    # Left Joystick motion
+                 # Check if a joystick axis motion event occurs
+                elif event.type == JOYAXISMOTION:                     
+                    if event.axis == 0 or event.axis == 1:    # Left Joystick motion
                         self.move_event(event)  
 
                 # Check if a joystick hat motion event occurs
                 elif event.type == JOYHATMOTION:
                     self.camera_tilt_event(event.value)         # D-Pad Up-Down motion
+
+            # Update rotation event with right joystick motion data
+            self.rotation_event(pygame.joystick.Joystick(0).get_axis(3))    
         else:
             self.get_logger().error("Attempt to establish a connection to the controllers failed.") 
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            print(pygame.joystick.Joystick(0).get_axis(3))
+
+
+
+
+              
 
     
 
