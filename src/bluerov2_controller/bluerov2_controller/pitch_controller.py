@@ -118,8 +118,7 @@ class Controller(Node):
             msg.data = pwm
         else:
             msg.data = self.pwm_neutral
-
-        msg.data = 1750
+        
         self.pitch_pub.publish(msg)
         self.update_status()
 
