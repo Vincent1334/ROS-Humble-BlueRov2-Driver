@@ -32,7 +32,7 @@ def generate_launch_description():
         parameters=[
             {"pwm_max": pwm_max},
             {"pwm_min": pwm_min},     
-            {"enable": False},          
+            {"enable": True},          
         ],
     )
 
@@ -62,12 +62,12 @@ def generate_launch_description():
         parameters=[
             {"pwm_max": pwm_max},
             {"pwm_min": pwm_min},    
-            {"enable": False},              
+            {"enable": True},              
         ],
     )
 
     ld.add_action(controller_node)
-    ld.add_action(video_node)
+    #ld.add_action(video_node)
     ld.add_action(input_node)
     ld.add_action(depth_node)
     ld.add_action(pitch_node)

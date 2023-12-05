@@ -49,13 +49,10 @@ class Controller(Node):
         self.throttle_pub   = self.create_publisher(UInt16, "/bluerov2/rc/throttle", 10)  
         self.status_pub     = self.create_publisher(String, '/settings/depth/status', 10)
 
-       
-        
+        self.get_logger().info('controller has been successfully configured!')        
 
         # Start update loop
-        self.create_timer(0.04, self.calculate_pwm)
-
-        self.get_logger().info('controller has been successfully configured!')
+        self.create_timer(0.04, self.calculate_pwm)        
 
     def callback_bar30(self, msg):
         """Read data from '/BlueRov2/bar30'

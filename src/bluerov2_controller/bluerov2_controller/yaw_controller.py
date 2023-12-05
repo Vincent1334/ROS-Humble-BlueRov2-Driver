@@ -78,8 +78,7 @@ class Contyawer(Node):
         ------------        
         UInt16 data
         """       
-        self.yaw_desired = msg.data   
-        self.get_logger().warning(f"Yaw ist {self.yaw_desired}")
+        self.yaw_desired = msg.data           
 
     def callback_set_enable(self, msg):
         """Read data from '/settings/pitch/set_enable'

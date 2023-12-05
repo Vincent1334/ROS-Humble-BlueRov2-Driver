@@ -93,7 +93,7 @@ class Controller(Node):
         
 
     def update_input(self):
-        if (self.depth_status is None and self.yaw_status is not None) or self.debug:
+        if (self.depth_status is not None and self.yaw_status is not None) or self.debug:
             for event in pygame.event.get():            
                 # Check if a joystick button was pressed
                 if event.type == JOYBUTTONDOWN:
@@ -153,8 +153,7 @@ class Controller(Node):
         new_yaw = (self.yaw_status["yaw_desired"] + value) % 360
         msg = UInt16()        
         msg.data = round(new_yaw) 
-        self.yaw_controller_pub.publish(msg)    
-        self.get_logger().info(f"Desired yaw is now {new_yaw}")    
+        self.yaw_controller_pub.publish(msg)            
 
     def move_event(self, event):
         u = event.value
