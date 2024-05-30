@@ -9,32 +9,39 @@ import bitstring
 from tritech_micron.replies import Reply
 from tritech_micron.messages import Message
 from tritech_micron.commands import Command
-from tritech_micron.exceptions import PacketIncomplete
+from tritech_micron.exceptions import PacketIncomplete, PacketCorrupted
 from tritech_micron.serial_readline import SerialReadline
 
-__author__ = "Anass Al-Wohoush, Jana Pavlasek, Malcolm Watt"
-
+__author__ = "Anass Al-Wohoush, Jana Pavlasek, Malcolm Watt, Vincent Schiller"
 
 class Socket(object):
-
     """Serial communication socket.
 
     Attributes:
         conn: Serial connection.
+        readConn: SerialReadline object for efficient line reading.
     """
 
-    def __init__(self, port):
+    def __init__(self, port, node):
         """Constructs Socket object.
 
         Args:
             port: Serial port.
         """
-        self.conn = serial.Serial(port=port, baudrate=115200)   
-        self.readConn = SerialReadline(self.conn)         
+        self.conn = serial.Serial(
+            port='/dev/ttyUSB0',
+            baudrate=115200,  
+            parity=serial.PARITY_NONE,
+            stopbits=serial.STOPBITS_ONE,
+            bytesize=serial.EIGHTBITS,
+            timeout=1
+        )
+        self.readConn = SerialReadline(self.conn, node)
+        self.node = node
 
     def open(self):
         """Opens serial connection."""
-        self.conn.open()            
+        self.conn.open()
 
     def close(self):
         """Closes serial connection."""
@@ -44,19 +51,12 @@ class Socket(object):
         """Formats message and payload into packet and sends it to device.
 
         Args:
-            command: Command to send.
+            message: Command message to send.
             payload: Additional payload to send in packet.
         """
-
         if message != Message.HEAD_COMMAND:
-            cmd = Command(message, payload)        
-            self.conn.write(cmd.serialize()) 
-        else:
-            hex_string = "40303034434c00ff02471380021d8323029999990266666605a3703d06703d0a0928003c000100ff18510854545a007d0019108d005a00e803970340060100000050510908545400005a007d00000000000a"
-            self.conn.write(bytearray.fromhex(hex_string))
-        
-        readHex = " ".join(["{:02x}".format(x) for x in cmd.serialize()])
-        print(readHex)  
+            cmd = Command(message, payload)
+            self.conn.write(cmd.serialize())
 
     def get_reply(self):
         """Waits for and returns Reply.
@@ -68,35 +68,33 @@ class Socket(object):
         Raises:
             PacketCorrupted: Packet is corrupt.
         """
-        try:            
-            # Wait for the '@' character.
-            while not self.conn.read() == bytes("@", 'utf-8'):              
-                pass
-
-            # Read one line at a time until packet is complete and parsed.
-            packet = bitstring.BitStream("0x40")
+        try:
             while True:
-                # Read until new line.
-                current_line = self.readConn.readline()                
-                for char in current_line:                    
-                    packet.append("0x{:02X}".format(char))
+                # Read until new line using the readConn's readline method.
+                current_line = self.readConn.readline()
+                if current_line is None:
+                    continue                
 
-                # Try to parse.
+                # Try to parse the packet.
                 try:
-                    reply = Reply(packet)                    
+                    reply = Reply(current_line)
                     break
                 except PacketIncomplete:
-                    # Keep looking.
+                    # Keep looking for a complete packet.
                     continue
-            
+
+            self.node.get_logger().debug(f"Received {reply.name}: {reply.payload}")
             return reply
         except select.error as code:
-            # Set SIGINT as KeyboardInterrupt correctly, because pyserial has
-            # problems.
+            # Handle EINTR as KeyboardInterrupt.
             if code == errno.EINTR:
                 raise KeyboardInterrupt()
 
-            # Otherwise, reraise.
+            # Otherwise, re-raise the exception.
             raise
-
-    
+        except PacketCorrupted as e:
+            self.node.get_logger().error(f"Packet corrupted: {e}")
+            raise
+        except Exception as e:
+            self.node.get_logger().error(f"Unexpected error: {e}")
+            raise

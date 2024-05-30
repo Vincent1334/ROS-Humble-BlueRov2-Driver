@@ -34,10 +34,8 @@ class Controller(Node):
         self.port    = self.get_parameter("port").value
 
         with TritechMicron(port=self.port, node=self) as self.sonar:
-            try:
-                # Scan.
-                #self.sonar.scan(callback=self.publish)
-                pass
+            try:                
+                self.sonar.scan(callback=self.publish)
             except KeyboardInterrupt:
                 self.sonar.preempt()
 
