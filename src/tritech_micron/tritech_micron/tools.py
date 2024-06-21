@@ -3,12 +3,12 @@
 """Tritech Micron sonar tools."""
 
 import math
+import numpy as np
 from tritech_micron_interfaces.msg import TritechMicronConfig
-from tritech_micron.transformations import quaternion_from_euler
 from sensor_msgs.msg import ChannelFloat32, PointCloud
 from geometry_msgs.msg import Point32, Pose, PoseStamped, Quaternion
 
-__author__ = "Anass Al-Wohoush"
+__author__ = "Anass Al-Wohoush, Vincent Schiller"
 
 
 def to_sonar_angles(rad):
@@ -67,7 +67,7 @@ class ScanSlice(object):
         timestamp: ROS timestamp.
     """
 
-    def __init__(self, heading, bins, config, timestamp):
+    def __init__(self, heading, bins, config, node):
         """Constructs ScanSlice instance.
 
         Args:
@@ -79,7 +79,7 @@ class ScanSlice(object):
         self.bins = bins
         self.config = config
         self.range = config["range"]
-        self.timestamp = timestamp
+        self.timestamp = node.get_clock().now().to_msg()
 
     def to_config(self, frame):
         """Returns a TritechMicronConfig message corresponding to slice
@@ -120,15 +120,15 @@ class ScanSlice(object):
         cloud.points = [
             Point32(x=x_unit * r, y=y_unit * r, z=0.00)
             for r in range(1, nbins + 1)
-        ]
-
+        ]  
+               
         # Set intensity channel.
         channel = ChannelFloat32()
         channel.name = "intensity"
-        channel.values = self.bins
+        channel.values = [float(val) for val in self.bins]
         cloud.channels = [channel]
 
-        return cloud
+        return cloud    
 
     def to_posestamped(self, frame):
         """Returns a PoseStamped message corresponding to slice heading.
@@ -144,11 +144,39 @@ class ScanSlice(object):
         posestamped.header.frame_id = frame
         posestamped.header.stamp = self.timestamp
 
-        # Convert to quaternion.
-        q = Quaternion(*quaternion_from_euler(0, 0, self.heading))
+        # Convert to quaternion.     
+        npQ = self.quaternion_from_euler(0, 0, self.heading)   
+        q = Quaternion()
+        q.x = npQ[0]
+        q.y = npQ[1]
+        q.z = npQ[2]
+        q.w = npQ[3]        
 
         # Make Pose message.
         pose = Pose(orientation=q)
         posestamped.pose = pose
 
         return posestamped
+    
+    def quaternion_from_euler(self, ai, aj, ak):
+        ai /= 2.0
+        aj /= 2.0
+        ak /= 2.0
+        ci = math.cos(ai)
+        si = math.sin(ai)
+        cj = math.cos(aj)
+        sj = math.sin(aj)
+        ck = math.cos(ak)
+        sk = math.sin(ak)
+        cc = ci*ck
+        cs = ci*sk
+        sc = si*ck
+        ss = si*sk
+
+        q = np.empty((4, ))
+        q[0] = cj*sc - sj*cs
+        q[1] = cj*ss + sj*cc
+        q[2] = cj*cs - sj*sc
+        q[3] = cj*cc + sj*ss
+
+        return q

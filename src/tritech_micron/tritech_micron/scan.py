@@ -31,36 +31,13 @@ class Controller(Node):
         self.declare_parameter("port", "/dev/ttyUSB0")
 
         self.frame   = self.get_parameter("frame").value
-        self.port    = self.get_parameter("port").value
-
+        self.port    = self.get_parameter("port").value        
+        
         with TritechMicron(port=self.port, node=self) as self.sonar:
             try:                
-                self.sonar.scan(callback=self.publish)
+                self.sonar.scan(callback=self.publish)        
             except KeyboardInterrupt:
                 self.sonar.preempt()
-
-
-    def reconfigure(self, config, level):
-        """Reconfigures sonar dynamically.
-
-        Args:
-            config: New configuration.
-            level: Level bitmask.
-
-        Returns:
-            Configuration.
-        """
-        self.get_logger().info("Reconfiguring sonar")
-        self.get_logger().debug("Configuration requested: %r, %r", config, level)
-
-        # Remove additional keys.
-        if "groups" in config:
-            config.pop("groups")
-
-        # Set parameters.
-        self.sonar.set(**config)
-        return config
-
 
     def publish(self, sonar, slice):
         """Publishes PointCloud, PoseStamped and TritechMicronConfig of current
@@ -78,18 +55,16 @@ class Controller(Node):
         # Publish data as PointCloud.
         cloud = slice.to_pointcloud(self.frame)
         self.scan_pub.publish(cloud)
-
+       
         # Publish data as TritechMicronConfig.
         config = slice.to_config(self.frame)
-        self.conf_pub.publish(config)
+        self.conf_pub.publish(config)   
 
 def main(args=None):
     rclpy.init(args=args)    
     node = Controller()
-    rclpy.spin(node)    
+    rclpy.spin(node)   
 
-    node.clear_motion()
-    node.disarm()
     node.destroy_node()
 
     rclpy.shutdown()

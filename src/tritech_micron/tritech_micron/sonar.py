@@ -1,17 +1,16 @@
 #!/usr/bin/env python3
 """Tritech Micron sonar."""
 
-from rclpy.node import Node
+import rclpy
 import datetime
 import bitstring
-import time
 import tritech_micron.exceptions 
-from tritech_micron.exceptions import PacketCorrupted, PacketIncomplete, SonarNotConfigured, TimeoutError
+from tritech_micron.exceptions import SonarNotConfigured, TimeoutError
 from tritech_micron.socket import Socket
 from tritech_micron.messages import Message
 from tritech_micron.tools import ScanSlice, to_radians, to_sonar_angles
 
-__author__ = "Anass Al-Wohoush"
+__author__ = "Anass Al-Wohoush, Vincent Schiller"
 
 
 class TritechMicron(object):
@@ -59,31 +58,30 @@ class TritechMicron(object):
         step: Mechanical resolution (Resolution enumeration).
     """
 
-    def __init__(self, port="/dev/sonar", node=Node, **kwargs):
+    def __init__(self, port="/dev/sonar", node=None, **kwargs):
         """Constructs Sonar object.
 
         Args:
             port: Serial port (default: /dev/sonar).
             kwargs: Key-word arguments to pass to set() on initialization.
         """
-
-        # ROS node
-        self.node = node
         # Parameter defaults.
+        self.node = node
         self.ad_high = 80.0
         self.ad_low = 0.00
         self.adc8on = True
         self.continuous = True
         self.gain = 0.50
-        self.inverted = False
-        self.left_limit = to_radians(2400)
+        self.inverted = True
+        self.left_limit = to_radians(360)
         self.mo_time = 250
         self.nbins = 400
         self.range = 10.00
         self.right_limit = to_radians(4000)
         self.scanright = True
         self.speed = 1500.0
-        self.step = Resolution.LOW        
+        self.step = Resolution.LOW
+        self.dynamic_reconfigure_started = False        
 
         # Connection properties.
         self.port = port
@@ -101,9 +99,7 @@ class TritechMicron(object):
         self.recentering = False
         self.scanning = False
 
-        # Additional properties.
-        self.clock = datetime.timedelta(0)
-        self._time_offset = datetime.timedelta(0)
+        # Additional properties.        
         self.preempted = False
 
     def __enter__(self):
@@ -111,7 +107,7 @@ class TritechMicron(object):
 
         Raises:
             SonarNotFound: Sonar port could not be opened.
-        """        
+        """
         self.open()
         return self
 
@@ -120,7 +116,11 @@ class TritechMicron(object):
         self.close()
 
     def open(self):
-        """Initializes sonar connection and sets default properties."""
+        """Initializes sonar connection and sets default properties.
+
+        Raises:
+            SonarNotFound: Sonar port could not be opened.
+        """
         if not self.conn:
             try:
                 self.conn = Socket(self.port, self.node)
@@ -131,26 +131,26 @@ class TritechMicron(object):
         self.node.get_logger().info(f"Initializing sonar on {self.port}")
         self.initialized = True
 
-        # Reboot to make sure the sonar is clean.
-        self.send(Message.REBOOT)
-        time.sleep(2) 
-        self.update()
-
-        # Set default properties.
-        self.set(force=True)
-
+        # Reboot to make sure the sonar is clean. 
+        self.send(Message.REBOOT)        
+        self.wait_for_clean_package()
+        self.update()              
+        
         # Wait for settings to go through.
-        while not self.has_cfg or self.no_params:
-            self.node.get_logger().info(
-                f"Waiting for configuration: (HAS CFG: {self.has_cfg}, NO PARAMS: {self.no_params})"
-            )
-            self.update()
+        while self.no_params:     
+            attempts = 0        
+            # Set default properties.
+            self.set(force=True)
+            while self.no_params and attempts < 10:
+                self.node.get_logger().info(f"Waiting for configuration: (HAS CFG: {self.has_cfg}, NO PARAMS: {self.no_params})")
+                self.update()
+                attempts += 1
 
-        self.node.get_logger().info("Sonar is ready for use")
+        self.node.get_logger().warning("Sonar is ready for use")             
 
     def close(self):
         """Closes sonar connection."""
-        # Reboot first to clear sonar of all parameters.
+        #Reboot first to clear sonar of all parameters.
         self.send(Message.REBOOT)
         self.conn.close()
         self.initialized = False
@@ -173,23 +173,25 @@ class TritechMicron(object):
         """
         # Verify sonar is initialized.
         if not self.initialized:
-            raise tritech_micron.exceptions.SonarNotInitialized
+            raise tritech_micron.exceptions.SonarNotInitialized      
 
         expected_name = None
         if message:
             expected_name = Message.to_string(message)
-            self.node.get_logger().debug("Waiting for " +  expected_name + " message")
-
+            self.node.get_logger().debug("Waiting for " +  expected_name + " message")        
         # Determine end time.
         end = datetime.datetime.now() + datetime.timedelta(seconds=wait)
 
         # Wait until received if a specific message ID is requested, otherwise
         # wait forever.
         while message is None or datetime.datetime.now() < end:
-            try:
-                reply = self.conn.get_reply()
+            try:                
+                reply = self.conn.get_reply()        
 
-                # Update state if mtAlive.
+                if reply is None:
+                    return None
+
+                # Update state if mtAlive.               
                 if reply.id == Message.ALIVE:
                     self.__update_state(reply)
 
@@ -206,13 +208,11 @@ class TritechMicron(object):
                         "Received unexpected " + reply.name + " message")
             except tritech_micron.exceptions.PacketCorrupted:
                 # Keep trying.
-                continue
+                continue       
 
         # Timeout.
-        self.node.get_logger().error("Timed out before receiving message: " + expected_name)
+        self.node.get_logger().error(f"Timed out before receiving message: {expected_name}")
         raise TimeoutError
-
-
 
     def send(self, command, payload=None):
         """Sends command and returns reply.
@@ -228,22 +228,10 @@ class TritechMicron(object):
 
         self.conn.send(command, payload)
 
-    def set(self,
-            adc8on=None,
-            continuous=None,
-            scanright=None,
-            step=None,
-            ad_low=None,
-            ad_high=None,
-            left_limit=None,
-            right_limit=None,
-            mo_time=None,
-            range=None,
-            nbins=None,
-            gain=None,
-            speed=None,
-            inverted=None,
-            force=False):
+    def set(self, adc8on=None, continuous=None, scanright=None, step=None,
+            ad_low=None, ad_high=None, left_limit=None, right_limit=None,
+            mo_time=None, range=None, nbins=None, gain=None, speed=None,
+            inverted=None, force=False):
         """Sends Sonar head command with new properties if needed.
 
         Only the parameters specified will be modified.
@@ -275,21 +263,11 @@ class TritechMicron(object):
             raise tritech_micron.exceptions.SonarNotInitialized()
 
         self.__set_parameters(
-            adc8on=adc8on,
-            continuous=continuous,
-            scanright=scanright,
-            step=step,
-            ad_low=ad_low,
-            ad_high=ad_high,
-            left_limit=left_limit,
-            right_limit=right_limit,
-            mo_time=mo_time,
-            range=range,
-            nbins=nbins,
-            gain=gain,
-            speed=speed,
-            inverted=inverted,
-            force=force)
+            adc8on=adc8on, continuous=continuous, scanright=scanright,
+            step=step, ad_low=ad_low, ad_high=ad_high, left_limit=left_limit,
+            right_limit=right_limit, mo_time=mo_time, range=range, nbins=nbins,
+            gain=gain, speed=speed, inverted=inverted, force=force
+        )
 
     def __set_parameters(self, force, **kwargs):
         """Sends Sonar head command to set sonar properties.
@@ -441,17 +419,20 @@ class TritechMicron(object):
         # Special devices setting. Should be left blank.
         scanz = bitstring.pack("uint:8, uint:8", 0, 0)
 
+        # Slope ch setting is N/A to DST: fill 8 bytes with zeroes.
+        slope_ch = bitstring.BitStream(64)
+
         # Order and construct bitstream.
         bitstream = (v3b, hd_ctrl, hd_type, tx_rx, range_scale, left_limit,
                      right_limit, ad_span, ad_low, gain, slope, mo_time, step,
                      ad_interval, nbins, max_ad_buf, lockout, minor_axis,
-                     major_axis, ctl2, scanz)
+                     major_axis, ctl2, scanz, slope_ch)
         payload = bitstring.BitStream()
         for chunk in bitstream:
             payload.append(chunk)
 
         self.send(Message.HEAD_COMMAND, payload)
-        self.node.get_logger().warning("Parameters are sent")
+        self.node.get_logger().warning("Parameters are sent")        
 
     def reverse(self):
         """Instantaneously reverses scan direction."""
@@ -460,79 +441,226 @@ class TritechMicron(object):
         self.scanright = not self.scanright
 
     def _ping(self):
-        """Commands the sonar to ping once."""
-        # Get current time in milliseconds.
-        now = datetime.datetime.now()
-        current_time = datetime.timedelta(
-            hours=now.hour,
-            minutes=now.minute,
-            seconds=now.second,
-            microseconds=0)
-        payload = bitstring.pack("uintle:32",
-                                 current_time.total_seconds() * 1000)
-
-        # Reset offset for up time.
-        self._time_offset = current_time - self.up_time
+        """Commands the sonar to ping once."""        
+        payload = bitstring.BitString(32)
 
         # Send command.
-        self.send(Message.SEND_DATA, payload)
+        self.send(Message.SEND_DATA, payload)        
 
     def __parse_head_data(self, data):
-        """Parses mtHeadData payload and returns parsed bins."""
+        """Parses mtHeadData payload and returns parsed bins.
+
+        Args:
+            data: mtHeadData bitstring.
+
+        Returns:
+            Bins.
+
+        Raise:
+            ValueError: If data could not be parsed.
+        """
+        # Any number of exceptions could occur here if the packet is corrupted,
+        # so a catch-all approach is used for safety.
         try:
-            # Assuming 'data' is a bytearray or bytes object
-            header_bytes = data[:13]  # Extract header bytes (up to byte 13)
-            data_bytes = data[14:]   # Extract data bytes (starting from byte 14)
+            # Get the total number of bytes.
+            count = data.read(16).uintle
+            self.node.get_logger().debug(f"Byte count is {count}")
 
-            # Extract relevant information from header_bytes (replace with actual parsing logic)
-            self.adc8on = header_bytes[1] & 0x01  # Example: Assuming adc8on is in bit 0 of byte 1
+            # The device type should be 0x11 for a DST Sonar.
+            device_type = data.read(8)
+            if device_type.uint != 0x11:
+                # Packet is likely corrupted, try again.
+                raise ValueError(
+                    "Unexpected device type: {}"
+                    .format(device_type.hex)
+                )
 
-            # Process data_bytes based on adc8on
+            # Get the head status byte:
+            #   Bit 0:  'HdPwrLoss'. Head is in Reset Condition.
+            #   Bit 1:  'MotErr'. Motor has lost sync, re-send Parameters.
+            #   Bit 2:  'PrfSyncErr'. Always 0.
+            #   Bit 3:  'PrfPingErr'. Always 0.
+            #   Bit 4:  Whether adc8on is enabled.
+            #   Bit 5:  RESERVED (ignore).
+            #   Bit 6:  RESERVED (ignore).
+            #   Bit 7:  Message appended after last packet data reply.
+            _head_status = data.read(8)
+            self.node.get_logger().debug(f"Head status byte is {_head_status}")
+            if _head_status[-1]:
+                self.node.get_logger().error("Head power loss detected")
+            if _head_status[-2]:
+                self.node.get_logger().error("Motor lost sync")
+                self.set(force=True)
+
+            # Get the sweep code. Its value should correspond to:
+            #   0: Scanning normal.
+            #   1: Scan at left limit.
+            #   2: Scan at right limit.
+            #   3: RESERVED (ignore).
+            #   4: RESERVED (ignore)
+            #   5: Scan at center position.
+            sweep = data.read(8).uint
+            self.node.get_logger().debug(f"Sweep code is {sweep}")
+            if sweep == 1:
+                self.node.get_logger().info("Reached left limit")
+            elif sweep == 2:
+                self.node.get_logger().info("Reached right limit")
+
+            # Get the HdCtrl bytes to control operation:
+            #   Bit 0:  adc8on          0: 4-bit        1: 8-bit
+            #   Bit 1:  cont            0: sector-scan  1: continuous
+            #   Bit 2:  scanright       0: left         1: right
+            #   Bit 3:  invert          0: upright      1: inverted
+            #   Bit 4:  motoff          0: on           1: off
+            #   Bit 5:  txoff           0: on           1: off (for testing)
+            #   Bit 6:  spare           0: default      1: N/A
+            #   Bit 7:  chan2           0: default      1: N/A
+            #   Bit 8:  raw             0: N/A          1: default
+            #   Bit 9:  hasmot          0: lol          1: has a motor (always)
+            #   Bit 10: applyoffset     0: default      1: heading offset
+            #   Bit 11: pingpong        0: default      1: side-scanning sonar
+            #   Bit 12: stareLLim       0: default      1: N/A
+            #   Bit 13: ReplyASL        0: N/A          1: default
+            #   Bit 14: ReplyThr        0: default      1: N/A
+            #   Bit 15: IgnoreSensor    0: default      1: emergencies
+            # Should be the same as what was sent.
+            hd_ctrl = data.read(16)
+            hd_ctrl.byteswap()  # Little endian please.
+            self.inverted, self.scanright, self.continuous, self.adc8on = (
+                hd_ctrl.unpack("pad:12, bool, bool, bool, bool")
+            )
+            self.node.get_logger().debug(f"Head control bytes are {hd_ctrl.bin}")
+            self.node.get_logger().debug(f"ADC8 mode {self.adc8on}")
+            self.node.get_logger().debug(f"Continuous mode {self.continuous}")
+            self.node.get_logger().debug(f"Scanning right {self.scanright}")
+
+            # Range scale.
+            # The lower 14 bits are the range scale * 10 units and the higher 2
+            # bits are coded units:
+            #   0: meters
+            #   1: feet
+            #   2: fathoms
+            #   3: yards
+            # Only the metric system is implemented for now, because it is
+            # better.
+            self.range = data.read(16).uintle / 10.0
+            self.node.get_logger().debug(f"Range scale is {self.range}")
+
+            # TX/RX transmitter constants: N/A to DST.
+            data.read(32)
+
+            # The gain ranges from 0 to 210.
+            self.gain = data.read(8).uintle / 210.0
+            self.node.get_logger().debug(f"Gain is {self.gain}")
+
+            # Slope setting is N/A to DST.
+            data.read(16)
+
+            # If the ADC is set to 8-bit, MAX = 255 else MAX = 15.
+            # ADLow = MAX * low / 80 where low is the desired minimum
+            #   amplitude.
+            # ADSpan = MAX * span / 80 where span is the desired amplitude
+            #   span.
+            # The full range is between ADLow and ADLow + ADSpan.
+            MAX_SIZE = 255 if self.adc8on else 15
+            ad_span = data.read(8).uintle
+            ad_low = data.read(8).uintle
+            self.ad_low = ad_low * 80.0 / MAX_SIZE
+            span_intensity = ad_span * 80.0 / MAX_SIZE
+            self.ad_high = self.ad_low + span_intensity
+            self.node.get_logger().debug(f"AD range is {self.ad_low:.2f} to {self.ad_high:.2f}")
+
+            # Heading offset is ignored.
+            heading_offset = to_radians(data.read(16).uint)
+            self.node.get_logger().debug(f"Heading offset is {heading_offset}")
+
+            # ADInterval defines the sampling interval of each bin and is in
+            # units of 640 nanoseconds.
+            ad_interval = data.read(16).uintle
+            self.node.get_logger().debug(f"AD interval is {ad_interval}")
+
+            # Left/right angles limits are in 1/16th of a gradian.
+            self.left_limit = to_radians(data.read(16).uintle)
+            self.right_limit = to_radians(data.read(16).uintle)
+            self.node.get_logger().debug(f"Limits are {self.left_limit:.2f} to {self.right_limit:.2f}")
+
+            # Step angle size.
+            self.step = to_radians(data.read(8).uint)
+            self.node.get_logger().debug(f"Step size is {self.step}")
+
+            # Heading is in units of 1/16th of a gradian.
+            self.heading = to_radians(data.read(16).uintle)
+            self.node.get_logger().info(f"Heading is now {self.heading}")
+
+            # Dbytes is the number of bytes with data to follow.
+            dbytes = data.read(16).uintle
             if self.adc8on:
-                bins = [int(b) for b in data_bytes]  # 8-bit bins
+                self.nbins = dbytes
+                bin_size = 8
             else:
-                bins = []
-                for i in range(0, len(data_bytes), 2):
-                    byte = data_bytes[i]
-                    bins.append(byte >> 4)   # High nibble
-                    bins.append(byte & 0x0F)  # Low nibble
+                self.nbins = dbytes * 2
+                bin_size = 4
+            self.node.get_logger().debug(f"DBytes is {dbytes}")
 
+            # Get bins.
+            bins = [data.read(bin_size).uint for i in range(self.nbins)]
         except Exception as e:
+            # Damn.
             raise ValueError(e)
 
         return bins
 
-
     def scan(self, callback):
-        """
-        Start a scan.
+        """Sends scan command.
+
+        This method is blocking but calls callback at every reply with the
+        heading and a new dataset.
+
+        To stop a scan, simply call the preempt() method. Otherwise, the scan
+        will run forever.
+
+        The intensity at every bin is an integer value ranging between 0 and
+        255.
 
         Args:
-            callback: A function to call when a scan slice is ready.
-                      The function should take two arguments: the sonar object and the scan slice.
+            callback: Callback for feedback.
+                Called with args=(sonar, slice)
+                where sonar is this sonar instance and slice is a SonarSlice
+                instance.
+
+        Raises:
+            SonarNotInitialized: Sonar is not initialized.
+            SonarNotConfigured: Sonar is not configured for scanning.
         """
         # Verify sonar is ready to scan.
         self.update()
         if self.no_params or not self.has_cfg:
             raise SonarNotConfigured(self.no_params, self.has_cfg)  
 
-        # Timeout count to keep track of how many failures in a row occurred.
+        # Timeout count to keep track of how many failures in a row occured.
         # This will then try to recover by resetting the sonar parameters.
         timeout_count = 0
         MAX_TIMEOUT_COUNT = 5
 
         # Scan until stopped.
         self.preempted = False
-        while not self.preempted:           
+        while not self.preempted:
+            # Preempt on ROS shutdown.
+            if not rclpy.ok():
+                self.preempt()
+                return
 
             # Ping the sonar.
-            self._ping()  # Use _ping() to trigger a scan
+            self._ping()
 
             # Get the scan data.
             try:
-                data = self.get(Message.HEAD_DATA, wait=1).payload
+                raw_data = self.get(Message.HEAD_DATA, wait=1)
+                if raw_data is None:
+                    continue
+                data = raw_data.payload
                 timeout_count = 0
-            except TimeoutError: 
+            except TimeoutError:
                 timeout_count += 1
                 self.node.get_logger().debug(f"Timeout count: {timeout_count}")
                 if timeout_count >= MAX_TIMEOUT_COUNT:
@@ -544,15 +672,26 @@ class TritechMicron(object):
 
             try:
                 bins = self.__parse_head_data(data)
+            except ValueError as e:
+                # Try again.
+                self.node.get_logger().error(f"Failed to parse head data: {e!r}")
+                continue
 
-                # Create ScanSlice after successfully parsing data
-                scan_slice = ScanSlice(self.heading, bins, self.get_config(), self.get_clock().to_msg())
-                callback(self, scan_slice)  # Pass the ScanSlice to the callback
+            # Generate configuration.
+            config = {
+                key: self.__getattribute__(key)
+                for key in (
+                    "inverted", "continuous", "scanright",
+                    "adc8on", "gain", "ad_low", "ad_high",
+                    "left_limit", "right_limit",
+                    "range", "nbins", "step"
+                )
+            }
 
-            except (ValueError, PacketCorrupted, PacketIncomplete) as e: # Removed bitstring.ReadError
-                self.node.get_logger().error(f"Error during scan: {e}. Retrying...")
-                
-
+            # Run callback.
+            slice = ScanSlice(self.heading, bins, config, self.node)
+            callback(self, slice)            
+           
     def preempt(self):
         """Preempts a scan in progress."""
         self.node.get_logger().warning("Preempting scan...")
@@ -568,7 +707,7 @@ class TritechMicron(object):
         self.send(Message.REBOOT)
         self.open()
 
-    def update (self):
+    def update(self):
         """Updates Sonar states from mtAlive message.
 
         Note: This is a blocking function.
@@ -577,15 +716,21 @@ class TritechMicron(object):
             SonarNotInitialized: Sonar is not initialized.
         """
         # Wait until successful no matter what.
-        attemps = 2
         while True:
             try:
-                self.get(Message.ALIVE)  
-                attemps -= 1             
-                if attemps == 0: return
-            except tritech_micron.exceptions.TimeoutError:
-                attemps = 2
+                self.get(Message.ALIVE)
+                return
+            except TimeoutError:
                 continue
+
+    def wait_for_clean_package(self):
+        attempts = 0
+        while attempts < 10:    
+            reply = self.get(Message.ALIVE)
+            if reply is not None:
+                attempts += 1
+            self.node.get_logger().info("Waiting for Reboot {} / 10".format(attempts))
+            
 
     def __update_state(self, alive):
         """Updates Sonar states from mtAlive message.
@@ -597,27 +742,24 @@ class TritechMicron(object):
         payload.bytepos = 1
 
         # Get current time and compute up time.
-        micros = payload.read(32).uintle * 1000
-        self.clock = datetime.timedelta(microseconds=micros)
-        if self._time_offset > self.clock:
-            self._time_offset = datetime.timedelta(0)
-        self.up_time = self.clock - self._time_offset
+        micros = payload.read(32).uintle * 1000        
 
         # Get heading.
         self.heading = to_radians(payload.read(16).uintle)
 
         # Decode HeadInf byte.
         head_inf = payload.read(8)
-        self.recentering = head_inf[0]
-        self.centred = head_inf[1]
-        self.motoring = head_inf[2]
-        self.motor_on = head_inf[3]
-        self.scanright = head_inf[4]
-        self.scanning = head_inf[5]
-        self.no_params = head_inf[6]
-        self.has_cfg = head_inf[7]
+        self.recentering = head_inf[7]
+        self.centred = head_inf[6]
+        self.motoring = head_inf[5]
+        self.motor_on = head_inf[4]
+        self.scanright = head_inf[3]
+        self.scanning = head_inf[2]
+        self.no_params = head_inf[1]        
+        self.has_cfg = True
 
-        self.node.get_logger().info(f"UP TIME:     {self.up_time}")
+
+        self.node.get_logger().debug(f"UP TIME:     {self.up_time}")
         self.node.get_logger().debug(f"RECENTERING: {self.recentering}")
         self.node.get_logger().debug(f"CENTRED:     {self.centred}")
         self.node.get_logger().debug(f"MOTORING:    {self.motoring}")

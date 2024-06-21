@@ -23,7 +23,7 @@ class Message(object):
     TIMEOUT = 15
     REBOOT = 16  # Reboots device.
     PERFORMANCE_DATA = 17
-    HEAD_COMMAND = 19  # Update parameters.
+    HEAD_COMMAND = 19 # Update parameters.
     ERASE_SECTOR = 20
     PROG_BLOCK = 21
     COPY_BOOT_BLK = 22

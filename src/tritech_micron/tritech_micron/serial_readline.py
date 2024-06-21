@@ -31,7 +31,7 @@ class SerialReadline:
         while True:
             try:
                 # Read at least 1 byte but up to 2048 bytes
-                data = self.serial_obj.read(max(1, min(2048, self.serial_obj.in_waiting)))
+                data = self.serial_obj.read(max(1, min(2048, self.serial_obj.in_waiting or 1)))
                 if not data:
                     continue  # If no data is read, continue the loop
 
@@ -41,6 +41,13 @@ class SerialReadline:
                     if start_index != -1:
                         self.reading_started = True
                         self.buf.extend(data[start_index:])
+                        if b'\n' in self.buf:
+                            self.reading_started = False
+                            i = self.buf.find(b'\n')
+                            result = self.buf[:i + 1]
+                            self.buf = self.buf[i + 1:]
+                            print(result.hex())
+                            return result
                     continue
 
                 # If already started reading, add data to buffer

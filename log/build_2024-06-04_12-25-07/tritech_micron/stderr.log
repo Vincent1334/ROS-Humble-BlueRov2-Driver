@@ -1,0 +1,5 @@
+  File "/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron/lib/python3.10/site-packages/tritech_micron/sonar.py", line 62
+    def __init__(self, port="/dev/sonar", node, **kwargs):
+                                          ^^^^
+SyntaxError: non-default argument follows default argument
+
