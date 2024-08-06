@@ -5,7 +5,7 @@ from rclpy.node import Node
 import bluerov2_controller.pid as pid
 
 from bluerov2_interfaces.msg import Attitude, PID
-from std_msgs.msg import UInt16, Float64, Bool,String
+from std_msgs.msg import UInt16, Bool,String
 
 class Controller(Node):
 
@@ -16,7 +16,7 @@ class Controller(Node):
         self.declare_parameter("roll_desired", 0) 
         self.declare_parameter("pwm_max", 1750) 
         self.declare_parameter("pwm_neutral", 1500)            
-        self.declare_parameter("kp", 550)    
+        self.declare_parameter("kp", 200)    
         self.declare_parameter("kd", 50)    
         self.declare_parameter("enable", True)  
 

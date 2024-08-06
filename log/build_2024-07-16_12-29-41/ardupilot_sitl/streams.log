@@ -1,0 +1,58 @@
+[0.019s] Invoking command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/ardupilot_sitl': AMENT_PREFIX_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/opt/ros/humble LD_LIBRARY_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/bluerov/ROS-Humble-BlueRov2-Driver/ardupilot/Tools/ros2/ardupilot_sitl -DCMAKE_INSTALL_PREFIX=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_sitl
+[0.121s] -- The C compiler identification is GNU 11.4.0
+[0.220s] -- The CXX compiler identification is GNU 11.4.0
+[0.243s] -- Detecting C compiler ABI info
+[0.342s] -- Detecting C compiler ABI info - done
+[0.357s] -- Check for working C compiler: /usr/lib/ccache/cc - skipped
+[0.357s] -- Detecting C compile features
+[0.358s] -- Detecting C compile features - done
+[0.364s] -- Detecting CXX compiler ABI info
+[0.498s] -- Detecting CXX compiler ABI info - done
+[0.510s] -- Check for working CXX compiler: /usr/lib/ccache/c++ - skipped
+[0.510s] -- Detecting CXX compile features
+[0.512s] -- Detecting CXX compile features - done
+[0.516s] -- Found ament_cmake: 1.3.9 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.215s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.421s] -- WAF_COMMAND: /home/bluerov/ROS-Humble-BlueRov2-Driver/ardupilot/waf
+[1.638s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.843s] -- Added test 'copyright' to check source files copyright and LICENSE
+[1.848s] -- Added test 'lint_cmake' to check CMake code style
+[1.849s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[1.854s] -- Added test 'xmllint' to check XML markup files
+[1.858s] -- Configuring done
+[1.870s] -- Generating done
+[1.873s] -- Build files have been written to: /home/bluerov/ROS-Humble-BlueRov2-Driver/build/ardupilot_sitl
+[1.884s] Invoked command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/ardupilot_sitl' returned '0': AMENT_PREFIX_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/opt/ros/humble LD_LIBRARY_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/bluerov/ROS-Humble-BlueRov2-Driver/ardupilot/Tools/ros2/ardupilot_sitl -DCMAKE_INSTALL_PREFIX=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_sitl
+[1.887s] Invoking command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/ardupilot_sitl': AMENT_PREFIX_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/opt/ros/humble LD_LIBRARY_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/bluerov/ROS-Humble-BlueRov2-Driver/build/ardupilot_sitl -- -j8 -l8
+[2.029s] Built target ament_cmake_python_copy_ardupilot_sitl
+[2.480s] [32m[0mSetting top to                           :[0m [0m[32m[32m/home/bluerov/ROS-Humble-BlueRov2-Driver/ardupilot[0m [0m
+[2.480s] [32m[0mSetting out to                           :[0m [0m[32m[32m/home/bluerov/ROS-Humble-BlueRov2-Driver/ardupilot/build[0m [0m
+[2.487s] [32m[0mAutoconfiguration                        :[0m [0m[32m[32menabled[0m [0m
+[2.487s] [32m[0mChecking for program 'python'            :[0m [0m[32m[32m/usr/bin/python3[0m [0m
+[2.497s] running egg_info
+[2.499s] creating ardupilot_sitl.egg-info
+[2.526s] writing ardupilot_sitl.egg-info/PKG-INFO
+[2.527s] writing dependency_links to ardupilot_sitl.egg-info/dependency_links.txt
+[2.528s] writing top-level names to ardupilot_sitl.egg-info/top_level.txt
+[2.528s] writing manifest file 'ardupilot_sitl.egg-info/SOURCES.txt'
+[2.609s] reading manifest file 'ardupilot_sitl.egg-info/SOURCES.txt'
+[2.610s] writing manifest file 'ardupilot_sitl.egg-info/SOURCES.txt'
+[2.671s] Built target ament_cmake_python_build_ardupilot_sitl_egg
+[2.991s] [32m[0mChecking for python version >= 3.6.9     :[0m [0m[32m[32m3.10.12[0m [0m
+[3.001s] [32m[0mSetting board to                         :[0m [0m[32m[32msitl[0m [0m
+[3.002s] [32m[0mUsing toolchain                          :[0m [0m[32m[32mnative[0m [0m
+[3.055s] [32m[0mChecking for 'g++' (C++ compiler)        :[0m [0m[32m[32m/usr/lib/ccache/g++[0m [0m
+[3.091s] [32m[0mChecking for 'gcc' (C compiler)          :[0m [0m[32m[32m/usr/lib/ccache/gcc[0m [0m
+[3.104s] [32m[0mChecking for c flags '-MMD'              :[0m [0m[32m[32myes[0m [0m
+[3.114s] [32m[0mChecking for cxx flags '-MMD'            :[0m [0m[32m[32myes[0m [0m
+[3.115s] [32m[0mCXX Compiler                             :[0m [0m[32m[32mg++ 11.4.0[0m [0m
+[3.182s] [32m[0mChecking for need to link with librt     :[0m [0m[32m[32mnot necessary[0m [0m
+[3.251s] [32m[0mChecking for feenableexcept              :[0m [0m[32m[32myes[0m [0m
+[3.252s] [32m[0mEnabling -Werror                         :[0m [0m[32m[32myes[0m [0m
+[3.277s] [32m[0mChecking for program 'microxrceddsgen'   :[0m [0m[32m[33mnot found[0m [0m
+[3.278s] [01;31mCould not find the program ['microxrceddsgen']
+[3.278s] (complete log in /home/bluerov/ROS-Humble-BlueRov2-Driver/ardupilot/build/config.log)[0m
+[3.322s] gmake[2]: *** [CMakeFiles/ardupilot_configure.dir/build.make:70: CMakeFiles/ardupilot_configure] Error 1
+[3.322s] gmake[1]: *** [CMakeFiles/Makefile2:142: CMakeFiles/ardupilot_configure.dir/all] Error 2
+[3.323s] gmake: *** [Makefile:146: all] Error 2
+[3.327s] Invoked command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/ardupilot_sitl' returned '2': AMENT_PREFIX_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/opt/ros/humble LD_LIBRARY_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/bluerov/ROS-Humble-BlueRov2-Driver/build/ardupilot_sitl -- -j8 -l8

@@ -3,7 +3,6 @@ import rclpy
 import json
 from rclpy.node import Node
 import bluerov2_controller.pid as pid
-
 from bluerov2_interfaces.msg import Bar30, PID
 from std_msgs.msg import UInt16, Float64, Bool, String
 
@@ -14,7 +13,7 @@ class Controller(Node):
     rho = 1000      # kg/m^3  water density
     
     def __init__(self):
-        super().__init__("depth_controller")    
+        super().__init__("depth_controller")
 
         # Setup default parameters
         self.declare_parameter("depth_desired", 0) 
@@ -149,7 +148,7 @@ class Controller(Node):
         else:
             D_depth = delta_depth/delta_t #derivative term 
 
-        self.I_depth = (self.depth_desired-depth)*delta_t #integrate term
+        self.I_depth = (self.depth_desired - depth) * delta_t
         u = self.KI*self.I_depth + self.KP*(self.depth_desired-depth) - self.KD*D_depth
         return u   
 

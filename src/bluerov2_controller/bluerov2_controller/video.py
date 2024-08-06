@@ -4,9 +4,10 @@ from rclpy.node import Node
 import cv2
 import gi
 import numpy as np
+import json
 
 from sensor_msgs.msg import BatteryState
-from bluerov2_interfaces.msg import SetDepth
+from std_msgs.msg import String
 from bluerov2_interfaces.msg import Bar30
 from bluerov2_interfaces.msg import Attitude
 
@@ -47,7 +48,7 @@ class Controller(Node):
 
         self.voltage            = 0.0
         self.depth              = 0.0
-        self.target_depth       = 0.0
+        self.depth_desired      = 0.0
         self.pitch              = 0.0
         self.yaw                = 0.0
         self.roll               = 0.0
@@ -57,7 +58,7 @@ class Controller(Node):
 
         # create subscriber
         self.battery_sub        = self.create_subscription(BatteryState, "/bluerov2/battery", self.battery_callback, 10) 
-        self.target_depth_sub   = self.create_subscription(SetDepth, "/settings/set_target", self.target_callback, 10)  
+        self.depth_desired_sub  = self.create_subscription(String, "/settings/depth/status", self.depth_desired_callback, 10)  
         self.bar30_sub          = self.create_subscription(Bar30, "/bluerov2/bar30", self.callback_bar30, 10)    
         self.attitude_sub       = self.create_subscription(Attitude, "/bluerov2/attitude", self.callback_att, 10) 
 
@@ -156,8 +157,9 @@ class Controller(Node):
     def battery_callback(self, msg):
         self.voltage = round(msg.voltage, 2)
 
-    def target_callback(self, msg):
-        self.target_depth = abs(msg.depth_desired)
+    def depth_desired_callback(self, msg):
+        data = json.loads(msg.data)
+        self.target_depth = abs(data['depth_desired'])
 
     def callback_bar30(self, msg):
         self.bar30_data = [ msg.time_boot_ms,

@@ -56,9 +56,9 @@ class Controller(Node):
         self.declare_parameter("port", 14550)
         self.declare_parameter("baudrate", 115200)         
 
-        self.bluerov_ip = self.get_parameter("ip").value
-        self.bluerov_port = self.get_parameter("port").value  
-        self.bluerov_baudrate = self.get_parameter("baudrate").value
+        self.bluerov_ip         = self.get_parameter("ip").value
+        self.bluerov_port       = self.get_parameter("port").value  
+        self.bluerov_baudrate   = self.get_parameter("baudrate").value
 
         self.get_logger().info("Controller for bluerov2 was started successfully!")
 

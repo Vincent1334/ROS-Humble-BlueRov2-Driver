@@ -1,0 +1,33 @@
+[1.750s] Invoking command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/src/tritech_micron': AMENT_PREFIX_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces LD_LIBRARY_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron/lib/python3.10/site-packages:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/tritech_micron build --build-base /home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron/build install --record /home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron/install.log --single-version-externally-managed install_data
+[2.192s] running egg_info
+[2.218s] writing ../../build/tritech_micron/tritech_micron.egg-info/PKG-INFO
+[2.219s] writing dependency_links to ../../build/tritech_micron/tritech_micron.egg-info/dependency_links.txt
+[2.219s] writing entry points to ../../build/tritech_micron/tritech_micron.egg-info/entry_points.txt
+[2.220s] writing requirements to ../../build/tritech_micron/tritech_micron.egg-info/requires.txt
+[2.220s] writing top-level names to ../../build/tritech_micron/tritech_micron.egg-info/top_level.txt
+[2.276s] reading manifest file '../../build/tritech_micron/tritech_micron.egg-info/SOURCES.txt'
+[2.279s] writing manifest file '../../build/tritech_micron/tritech_micron.egg-info/SOURCES.txt'
+[2.279s] running build
+[2.279s] running build_py
+[2.280s] copying tritech_micron/scan.py -> /home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron/build/lib/tritech_micron
+[2.280s] copying tritech_micron/exceptions.py -> /home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron/build/lib/tritech_micron
+[2.280s] copying tritech_micron/socket.py -> /home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron/build/lib/tritech_micron
+[2.281s] copying tritech_micron/__init__.py -> /home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron/build/lib/tritech_micron
+[2.281s] copying tritech_micron/serial_readline.py -> /home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron/build/lib/tritech_micron
+[2.282s] copying tritech_micron/commands.py -> /home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron/build/lib/tritech_micron
+[2.282s] copying tritech_micron/replies.py -> /home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron/build/lib/tritech_micron
+[2.282s] copying tritech_micron/sonar.py -> /home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron/build/lib/tritech_micron
+[2.283s] copying tritech_micron/tools.py -> /home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron/build/lib/tritech_micron
+[2.283s] copying tritech_micron/messages.py -> /home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron/build/lib/tritech_micron
+[2.283s] running install
+[2.292s] running install_lib
+[2.321s] running install_data
+[2.321s] copying resource/tritech_micron -> /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron/share/ament_index/resource_index/packages
+[2.321s] copying package.xml -> /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron/share/tritech_micron
+[2.322s] running install_egg_info
+[2.350s] removing '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron/lib/python3.10/site-packages/tritech_micron-0.0.0-py3.10.egg-info' (and everything under it)
+[2.351s] Copying ../../build/tritech_micron/tritech_micron.egg-info to /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron/lib/python3.10/site-packages/tritech_micron-0.0.0-py3.10.egg-info
+[2.354s] running install_scripts
+[2.600s] Installing scan script to /home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron/lib/tritech_micron
+[2.602s] writing list of installed files to '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron/install.log'
+[2.708s] Invoked command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/src/tritech_micron' returned '0': AMENT_PREFIX_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces LD_LIBRARY_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron/lib/python3.10/site-packages:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/tritech_micron build --build-base /home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron/build install --record /home/bluerov/ROS-Humble-BlueRov2-Driver/build/tritech_micron/install.log --single-version-externally-managed install_data

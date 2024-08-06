@@ -1,0 +1,310 @@
+[0.025s] Invoking command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/ardupilot_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/opt/ros/humble /usr/bin/cmake /home/bluerov/ROS-Humble-BlueRov2-Driver/ardupilot/Tools/ros2/ardupilot_msgs -DCMAKE_INSTALL_PREFIX=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs
+[0.275s] -- The C compiler identification is GNU 11.4.0
+[0.810s] -- The CXX compiler identification is GNU 11.4.0
+[0.898s] -- Detecting C compiler ABI info
+[1.500s] -- Detecting C compiler ABI info - done
+[1.551s] -- Check for working C compiler: /usr/lib/ccache/cc - skipped
+[1.552s] -- Detecting C compile features
+[1.563s] -- Detecting C compile features - done
+[1.572s] -- Detecting CXX compiler ABI info
+[2.158s] -- Detecting CXX compiler ABI info - done
+[2.184s] -- Check for working CXX compiler: /usr/lib/ccache/c++ - skipped
+[2.184s] -- Detecting CXX compile features
+[2.185s] -- Detecting CXX compile features - done
+[2.218s] -- Found ament_cmake: 1.3.9 (/opt/ros/humble/share/ament_cmake/cmake)
+[3.108s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[3.307s] -- Found geometry_msgs: 4.2.4 (/opt/ros/humble/share/geometry_msgs/cmake)
+[3.398s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[3.409s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[3.433s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[3.472s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[3.517s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[3.745s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[4.311s] -- Found ament_cmake_cppcheck: 0.12.11 (/opt/ros/humble/share/ament_cmake_cppcheck/cmake)
+[4.317s] -- Found ament_cmake_cpplint: 0.12.11 (/opt/ros/humble/share/ament_cmake_cpplint/cmake)
+[4.323s] -- Found ament_cmake_uncrustify: 0.12.11 (/opt/ros/humble/share/ament_cmake_uncrustify/cmake)
+[4.329s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[5.121s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[5.475s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[5.554s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+[5.560s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[5.634s] -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+[5.634s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[5.634s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[5.634s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[5.690s] -- Found PythonExtra: .so  
+[5.841s] -- Found ament_cmake_flake8: 0.12.11 (/opt/ros/humble/share/ament_cmake_flake8/cmake)
+[5.846s] -- Found ament_cmake_pep257: 0.12.11 (/opt/ros/humble/share/ament_cmake_pep257/cmake)
+[5.853s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[5.887s] -- Added test 'copyright' to check source files copyright and LICENSE
+[5.888s] -- Added test 'xmllint' to check XML markup files
+[5.893s] -- Configuring done
+[5.960s] -- Generating done
+[5.965s] -- Build files have been written to: /home/bluerov/ROS-Humble-BlueRov2-Driver/build/ardupilot_msgs
+[5.984s] Invoked command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/ardupilot_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/opt/ros/humble /usr/bin/cmake /home/bluerov/ROS-Humble-BlueRov2-Driver/ardupilot/Tools/ros2/ardupilot_msgs -DCMAKE_INSTALL_PREFIX=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs
+[5.986s] Invoking command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/ardupilot_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/opt/ros/humble /usr/bin/cmake --build /home/bluerov/ROS-Humble-BlueRov2-Driver/build/ardupilot_msgs -- -j8 -l8
+[6.064s] [  2%] [34m[1mGenerating C code for ROS interfaces[0m
+[6.085s] [  4%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[6.100s] [  4%] Built target ament_cmake_python_copy_ardupilot_msgs
+[6.571s] running egg_info
+[6.573s] creating ardupilot_msgs.egg-info
+[6.609s] writing ardupilot_msgs.egg-info/PKG-INFO
+[6.610s] writing dependency_links to ardupilot_msgs.egg-info/dependency_links.txt
+[6.611s] writing top-level names to ardupilot_msgs.egg-info/top_level.txt
+[6.611s] writing manifest file 'ardupilot_msgs.egg-info/SOURCES.txt'
+[6.708s] reading manifest file 'ardupilot_msgs.egg-info/SOURCES.txt'
+[6.709s] writing manifest file 'ardupilot_msgs.egg-info/SOURCES.txt'
+[6.789s] [  4%] Built target ament_cmake_python_build_ardupilot_msgs_egg
+[7.360s] [  4%] Built target ardupilot_msgs__cpp
+[7.376s] [  8%] [32mBuilding C object CMakeFiles/ardupilot_msgs__rosidl_generator_c.dir/rosidl_generator_c/ardupilot_msgs/srv/detail/arm_motors__functions.c.o[0m
+[7.376s] [  8%] [32mBuilding C object CMakeFiles/ardupilot_msgs__rosidl_generator_c.dir/rosidl_generator_c/ardupilot_msgs/msg/detail/global_position__functions.c.o[0m
+[7.384s] [ 10%] [32mBuilding C object CMakeFiles/ardupilot_msgs__rosidl_generator_c.dir/rosidl_generator_c/ardupilot_msgs/srv/detail/mode_switch__functions.c.o[0m
+[7.396s] [ 12%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[7.397s] [ 14%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[7.399s] [ 17%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[7.648s] [ 19%] [32m[1mLinking C shared library libardupilot_msgs__rosidl_generator_c.so[0m
+[7.728s] [ 19%] Built target ardupilot_msgs__rosidl_generator_c
+[7.748s] [ 23%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[7.748s] [ 23%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[7.750s] [ 25%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[8.525s] [ 27%] [32mBuilding CXX object CMakeFiles/ardupilot_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ardupilot_msgs/msg/global_position__type_support.cpp.o[0m
+[8.532s] [ 29%] [32mBuilding CXX object CMakeFiles/ardupilot_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ardupilot_msgs/srv/mode_switch__type_support.cpp.o[0m
+[8.556s] [ 31%] [32mBuilding CXX object CMakeFiles/ardupilot_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ardupilot_msgs/srv/arm_motors__type_support.cpp.o[0m
+[8.715s] [ 34%] [32mBuilding CXX object CMakeFiles/ardupilot_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/ardupilot_msgs/msg/detail/dds_fastrtps/global_position__type_support.cpp.o[0m
+[8.864s] [ 36%] [32mBuilding CXX object CMakeFiles/ardupilot_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/ardupilot_msgs/msg/detail/global_position__type_support.cpp.o[0m
+[8.882s] [ 38%] [32mBuilding CXX object CMakeFiles/ardupilot_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/ardupilot_msgs/msg/global_position__type_support.cpp.o[0m
+[9.070s] [ 40%] [32mBuilding CXX object CMakeFiles/ardupilot_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/ardupilot_msgs/srv/arm_motors__type_support.cpp.o[0m
+[9.088s] [ 42%] [32mBuilding C object CMakeFiles/ardupilot_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ardupilot_msgs/msg/detail/global_position__type_support.c.o[0m
+[9.173s] [ 44%] [32mBuilding CXX object CMakeFiles/ardupilot_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/ardupilot_msgs/msg/detail/global_position__type_support_c.cpp.o[0m
+[9.228s] [ 46%] [32mBuilding CXX object CMakeFiles/ardupilot_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/ardupilot_msgs/srv/mode_switch__type_support.cpp.o[0m
+[9.295s] [ 48%] [32mBuilding C object CMakeFiles/ardupilot_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ardupilot_msgs/srv/detail/arm_motors__type_support.c.o[0m
+[9.302s] [ 51%] [32mBuilding CXX object CMakeFiles/ardupilot_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/ardupilot_msgs/srv/detail/arm_motors__type_support.cpp.o[0m
+[9.322s] [ 53%] [32mBuilding C object CMakeFiles/ardupilot_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ardupilot_msgs/srv/detail/mode_switch__type_support.c.o[0m
+[9.349s] [ 55%] [32m[1mLinking CXX shared library libardupilot_msgs__rosidl_typesupport_c.so[0m
+[9.401s] [ 57%] [32m[1mLinking CXX shared library libardupilot_msgs__rosidl_typesupport_cpp.so[0m
+[9.444s] [ 59%] [32mBuilding CXX object CMakeFiles/ardupilot_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/ardupilot_msgs/srv/detail/dds_fastrtps/arm_motors__type_support.cpp.o[0m
+[9.463s] [ 61%] [32m[1mLinking C shared library libardupilot_msgs__rosidl_typesupport_introspection_c.so[0m
+[9.471s] [ 61%] Built target ardupilot_msgs__rosidl_typesupport_c
+[9.496s] [ 63%] [32mBuilding CXX object CMakeFiles/ardupilot_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/ardupilot_msgs/srv/detail/dds_fastrtps/mode_switch__type_support.cpp.o[0m
+[9.615s] [ 63%] Built target ardupilot_msgs__rosidl_typesupport_cpp
+[9.617s] [ 63%] Built target ardupilot_msgs__rosidl_typesupport_introspection_c
+[9.636s] [ 65%] [32mBuilding CXX object CMakeFiles/ardupilot_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/ardupilot_msgs/srv/detail/mode_switch__type_support_c.cpp.o[0m
+[9.653s] [ 68%] [32mBuilding CXX object CMakeFiles/ardupilot_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/ardupilot_msgs/srv/detail/arm_motors__type_support_c.cpp.o[0m
+[9.899s] [ 70%] [32mBuilding CXX object CMakeFiles/ardupilot_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/ardupilot_msgs/srv/detail/mode_switch__type_support.cpp.o[0m
+[10.547s] [ 72%] [32m[1mLinking CXX shared library libardupilot_msgs__rosidl_typesupport_fastrtps_cpp.so[0m
+[10.620s] [ 74%] [32m[1mLinking CXX shared library libardupilot_msgs__rosidl_typesupport_fastrtps_c.so[0m
+[10.779s] [ 74%] Built target ardupilot_msgs__rosidl_typesupport_fastrtps_cpp
+[10.832s] [ 74%] Built target ardupilot_msgs__rosidl_typesupport_fastrtps_c
+[10.843s] [ 76%] [32m[1mLinking CXX shared library libardupilot_msgs__rosidl_typesupport_introspection_cpp.so[0m
+[10.980s] [ 76%] Built target ardupilot_msgs__rosidl_typesupport_introspection_cpp
+[11.020s] [ 76%] Built target ardupilot_msgs
+[11.058s] [ 78%] [34m[1mGenerating Python code for ROS interfaces[0m
+[12.569s] [ 78%] Built target ardupilot_msgs__py
+[12.604s] [ 80%] [32mBuilding C object CMakeFiles/ardupilot_msgs__rosidl_generator_py.dir/rosidl_generator_py/ardupilot_msgs/srv/_arm_motors_s.c.o[0m
+[12.607s] [ 82%] [32mBuilding C object CMakeFiles/ardupilot_msgs__rosidl_generator_py.dir/rosidl_generator_py/ardupilot_msgs/msg/_global_position_s.c.o[0m
+[12.608s] [ 85%] [32mBuilding C object CMakeFiles/ardupilot_msgs__rosidl_generator_py.dir/rosidl_generator_py/ardupilot_msgs/srv/_mode_switch_s.c.o[0m
+[12.938s] [ 87%] [32m[1mLinking C shared library rosidl_generator_py/ardupilot_msgs/libardupilot_msgs__rosidl_generator_py.so[0m
+[13.014s] [ 87%] Built target ardupilot_msgs__rosidl_generator_py
+[13.046s] [ 91%] [32mBuilding C object CMakeFiles/ardupilot_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/ardupilot_msgs/_ardupilot_msgs_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[13.046s] [ 91%] [32mBuilding C object CMakeFiles/ardupilot_msgs__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/ardupilot_msgs/_ardupilot_msgs_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[13.048s] [ 93%] [32mBuilding C object CMakeFiles/ardupilot_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/ardupilot_msgs/_ardupilot_msgs_s.ep.rosidl_typesupport_c.c.o[0m
+[13.340s] [ 95%] [32m[1mLinking C shared library rosidl_generator_py/ardupilot_msgs/ardupilot_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so[0m
+[13.354s] [ 97%] [32m[1mLinking C shared library rosidl_generator_py/ardupilot_msgs/ardupilot_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so[0m
+[13.358s] [100%] [32m[1mLinking C shared library rosidl_generator_py/ardupilot_msgs/ardupilot_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so[0m
+[13.411s] [100%] Built target ardupilot_msgs__rosidl_typesupport_fastrtps_c__pyext
+[13.423s] [100%] Built target ardupilot_msgs__rosidl_typesupport_introspection_c__pyext
+[13.430s] [100%] Built target ardupilot_msgs__rosidl_typesupport_c__pyext
+[13.452s] Invoked command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/ardupilot_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/opt/ros/humble /usr/bin/cmake --build /home/bluerov/ROS-Humble-BlueRov2-Driver/build/ardupilot_msgs -- -j8 -l8
+[13.645s] Invoking command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/ardupilot_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/opt/ros/humble /usr/bin/cmake --install /home/bluerov/ROS-Humble-BlueRov2-Driver/build/ardupilot_msgs
+[13.657s] -- Install configuration: ""
+[13.658s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ament_index/resource_index/rosidl_interfaces/ardupilot_msgs
+[13.658s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs
+[13.658s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/srv
+[13.659s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/srv/detail
+[13.659s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/srv/detail/mode_switch__functions.h
+[13.659s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/srv/detail/arm_motors__struct.h
+[13.659s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/srv/detail/arm_motors__functions.h
+[13.659s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/srv/detail/mode_switch__type_support.h
+[13.660s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/srv/detail/mode_switch__functions.c
+[13.660s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/srv/detail/arm_motors__type_support.h
+[13.660s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/srv/detail/mode_switch__struct.h
+[13.660s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/srv/detail/arm_motors__functions.c
+[13.661s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/srv/mode_switch.h
+[13.661s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/srv/arm_motors.h
+[13.661s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/msg
+[13.661s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/msg/global_position.h
+[13.661s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/msg/rosidl_generator_c__visibility_control.h
+[13.662s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/msg/detail
+[13.662s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/msg/detail/global_position__functions.c
+[13.662s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/msg/detail/global_position__struct.h
+[13.662s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/msg/detail/global_position__type_support.h
+[13.662s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/msg/detail/global_position__functions.h
+[13.662s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/environment/library_path.sh
+[13.663s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/environment/library_path.dsv
+[13.663s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/lib/libardupilot_msgs__rosidl_generator_c.so
+[13.663s] -- Set runtime path of "/home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/lib/libardupilot_msgs__rosidl_generator_c.so" to ""
+[13.663s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs
+[13.663s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/srv
+[13.663s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/srv/detail
+[13.664s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/srv/detail/mode_switch__rosidl_typesupport_fastrtps_c.h
+[13.664s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/srv/detail/arm_motors__rosidl_typesupport_fastrtps_c.h
+[13.664s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/msg
+[13.664s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[13.664s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/msg/detail
+[13.665s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/msg/detail/global_position__rosidl_typesupport_fastrtps_c.h
+[13.665s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/lib/libardupilot_msgs__rosidl_typesupport_fastrtps_c.so
+[13.665s] -- Set runtime path of "/home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/lib/libardupilot_msgs__rosidl_typesupport_fastrtps_c.so" to ""
+[13.665s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs
+[13.666s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/srv
+[13.666s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/srv/arm_motors.hpp
+[13.666s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/srv/detail
+[13.666s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/srv/detail/arm_motors__traits.hpp
+[13.666s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/srv/detail/mode_switch__builder.hpp
+[13.667s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/srv/detail/mode_switch__traits.hpp
+[13.667s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/srv/detail/mode_switch__struct.hpp
+[13.667s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/srv/detail/arm_motors__builder.hpp
+[13.667s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/srv/detail/arm_motors__struct.hpp
+[13.667s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/srv/mode_switch.hpp
+[13.667s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/msg
+[13.668s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/msg/global_position.hpp
+[13.668s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/msg/detail
+[13.668s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/msg/detail/global_position__builder.hpp
+[13.668s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/msg/detail/global_position__struct.hpp
+[13.668s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/msg/detail/global_position__traits.hpp
+[13.668s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs
+[13.668s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/srv
+[13.669s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/srv/detail
+[13.669s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/srv/detail/arm_motors__rosidl_typesupport_fastrtps_cpp.hpp
+[13.669s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/srv/detail/mode_switch__rosidl_typesupport_fastrtps_cpp.hpp
+[13.669s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/srv/detail/dds_fastrtps
+[13.669s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/msg
+[13.670s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[13.670s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/msg/detail
+[13.670s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/msg/detail/dds_fastrtps
+[13.670s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/msg/detail/global_position__rosidl_typesupport_fastrtps_cpp.hpp
+[13.670s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/lib/libardupilot_msgs__rosidl_typesupport_fastrtps_cpp.so
+[13.670s] -- Set runtime path of "/home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/lib/libardupilot_msgs__rosidl_typesupport_fastrtps_cpp.so" to ""
+[13.670s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs
+[13.670s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/srv
+[13.671s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/srv/detail
+[13.671s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/srv/detail/arm_motors__rosidl_typesupport_introspection_c.h
+[13.671s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/srv/detail/mode_switch__type_support.c
+[13.671s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/srv/detail/mode_switch__rosidl_typesupport_introspection_c.h
+[13.671s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/srv/detail/arm_motors__type_support.c
+[13.671s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/msg
+[13.672s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[13.672s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/msg/detail
+[13.672s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/msg/detail/global_position__rosidl_typesupport_introspection_c.h
+[13.672s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/msg/detail/global_position__type_support.c
+[13.672s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/lib/libardupilot_msgs__rosidl_typesupport_introspection_c.so
+[13.672s] -- Set runtime path of "/home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/lib/libardupilot_msgs__rosidl_typesupport_introspection_c.so" to ""
+[13.672s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/lib/libardupilot_msgs__rosidl_typesupport_c.so
+[13.672s] -- Set runtime path of "/home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/lib/libardupilot_msgs__rosidl_typesupport_c.so" to ""
+[13.673s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs
+[13.673s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/srv
+[13.673s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/srv/detail
+[13.673s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/srv/detail/mode_switch__rosidl_typesupport_introspection_cpp.hpp
+[13.673s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/srv/detail/mode_switch__type_support.cpp
+[13.673s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/srv/detail/arm_motors__type_support.cpp
+[13.673s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/srv/detail/arm_motors__rosidl_typesupport_introspection_cpp.hpp
+[13.674s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/msg
+[13.674s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/msg/detail
+[13.674s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/msg/detail/global_position__type_support.cpp
+[13.674s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/include/ardupilot_msgs/ardupilot_msgs/msg/detail/global_position__rosidl_typesupport_introspection_cpp.hpp
+[13.674s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/lib/libardupilot_msgs__rosidl_typesupport_introspection_cpp.so
+[13.674s] -- Set runtime path of "/home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/lib/libardupilot_msgs__rosidl_typesupport_introspection_cpp.so" to ""
+[13.674s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/lib/libardupilot_msgs__rosidl_typesupport_cpp.so
+[13.674s] -- Set runtime path of "/home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/lib/libardupilot_msgs__rosidl_typesupport_cpp.so" to ""
+[13.675s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/environment/pythonpath.sh
+[13.675s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/environment/pythonpath.dsv
+[13.675s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/local/lib/python3.10/dist-packages/ardupilot_msgs-0.0.0-py3.10.egg-info
+[13.675s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/local/lib/python3.10/dist-packages/ardupilot_msgs-0.0.0-py3.10.egg-info/SOURCES.txt
+[13.675s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/local/lib/python3.10/dist-packages/ardupilot_msgs-0.0.0-py3.10.egg-info/PKG-INFO
+[13.675s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/local/lib/python3.10/dist-packages/ardupilot_msgs-0.0.0-py3.10.egg-info/dependency_links.txt
+[13.675s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/local/lib/python3.10/dist-packages/ardupilot_msgs-0.0.0-py3.10.egg-info/top_level.txt
+[13.676s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/local/lib/python3.10/dist-packages/ardupilot_msgs
+[13.676s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/local/lib/python3.10/dist-packages/ardupilot_msgs/_ardupilot_msgs_s.ep.rosidl_typesupport_c.c
+[13.676s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/local/lib/python3.10/dist-packages/ardupilot_msgs/srv
+[13.676s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/local/lib/python3.10/dist-packages/ardupilot_msgs/srv/_mode_switch.py
+[13.676s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/local/lib/python3.10/dist-packages/ardupilot_msgs/srv/_mode_switch_s.c
+[13.676s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/local/lib/python3.10/dist-packages/ardupilot_msgs/srv/__init__.py
+[13.676s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/local/lib/python3.10/dist-packages/ardupilot_msgs/srv/_arm_motors.py
+[13.677s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/local/lib/python3.10/dist-packages/ardupilot_msgs/srv/_arm_motors_s.c
+[13.677s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/local/lib/python3.10/dist-packages/ardupilot_msgs/__init__.py
+[13.677s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/local/lib/python3.10/dist-packages/ardupilot_msgs/ardupilot_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[13.677s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/local/lib/python3.10/dist-packages/ardupilot_msgs/ardupilot_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[13.678s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/local/lib/python3.10/dist-packages/ardupilot_msgs/_ardupilot_msgs_s.ep.rosidl_typesupport_introspection_c.c
+[13.678s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/local/lib/python3.10/dist-packages/ardupilot_msgs/msg
+[13.678s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/local/lib/python3.10/dist-packages/ardupilot_msgs/msg/__init__.py
+[13.678s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/local/lib/python3.10/dist-packages/ardupilot_msgs/msg/_global_position_s.c
+[13.679s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/local/lib/python3.10/dist-packages/ardupilot_msgs/msg/_global_position.py
+[13.679s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/local/lib/python3.10/dist-packages/ardupilot_msgs/libardupilot_msgs__rosidl_generator_py.so
+[13.679s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/local/lib/python3.10/dist-packages/ardupilot_msgs/_ardupilot_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+[13.680s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/local/lib/python3.10/dist-packages/ardupilot_msgs/ardupilot_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[13.737s] Listing '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/local/lib/python3.10/dist-packages/ardupilot_msgs'...
+[13.737s] Compiling '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/local/lib/python3.10/dist-packages/ardupilot_msgs/__init__.py'...
+[13.737s] Listing '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/local/lib/python3.10/dist-packages/ardupilot_msgs/msg'...
+[13.737s] Compiling '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/local/lib/python3.10/dist-packages/ardupilot_msgs/msg/__init__.py'...
+[13.738s] Compiling '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/local/lib/python3.10/dist-packages/ardupilot_msgs/msg/_global_position.py'...
+[13.738s] Listing '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/local/lib/python3.10/dist-packages/ardupilot_msgs/srv'...
+[13.738s] Compiling '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/local/lib/python3.10/dist-packages/ardupilot_msgs/srv/__init__.py'...
+[13.738s] Compiling '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/local/lib/python3.10/dist-packages/ardupilot_msgs/srv/_arm_motors.py'...
+[13.738s] Compiling '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/local/lib/python3.10/dist-packages/ardupilot_msgs/srv/_mode_switch.py'...
+[13.744s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/local/lib/python3.10/dist-packages/ardupilot_msgs/ardupilot_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[13.745s] -- Set runtime path of "/home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/local/lib/python3.10/dist-packages/ardupilot_msgs/ardupilot_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""
+[13.745s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/local/lib/python3.10/dist-packages/ardupilot_msgs/ardupilot_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[13.746s] -- Set runtime path of "/home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/local/lib/python3.10/dist-packages/ardupilot_msgs/ardupilot_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""
+[13.747s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/local/lib/python3.10/dist-packages/ardupilot_msgs/ardupilot_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[13.747s] -- Set runtime path of "/home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/local/lib/python3.10/dist-packages/ardupilot_msgs/ardupilot_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""
+[13.748s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/lib/libardupilot_msgs__rosidl_generator_py.so
+[13.749s] -- Set runtime path of "/home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/lib/libardupilot_msgs__rosidl_generator_py.so" to ""
+[13.749s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/msg/GlobalPosition.idl
+[13.749s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/srv/ArmMotors.idl
+[13.750s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/srv/ModeSwitch.idl
+[13.750s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/msg/GlobalPosition.msg
+[13.750s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/srv/ArmMotors.srv
+[13.751s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/srv/ArmMotors_Request.msg
+[13.751s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/srv/ArmMotors_Response.msg
+[13.752s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/srv/ModeSwitch.srv
+[13.752s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/srv/ModeSwitch_Request.msg
+[13.752s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/srv/ModeSwitch_Response.msg
+[13.753s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ament_index/resource_index/package_run_dependencies/ardupilot_msgs
+[13.753s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ament_index/resource_index/parent_prefix_path/ardupilot_msgs
+[13.754s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/environment/ament_prefix_path.sh
+[13.754s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/environment/ament_prefix_path.dsv
+[13.754s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/environment/path.sh
+[13.754s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/environment/path.dsv
+[13.755s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/local_setup.bash
+[13.755s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/local_setup.sh
+[13.755s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/local_setup.zsh
+[13.755s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/local_setup.dsv
+[13.756s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/package.dsv
+[13.756s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ament_index/resource_index/packages/ardupilot_msgs
+[13.756s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/cmake/export_ardupilot_msgs__rosidl_generator_cExport.cmake
+[13.757s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/cmake/export_ardupilot_msgs__rosidl_generator_cExport-noconfig.cmake
+[13.757s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/cmake/export_ardupilot_msgs__rosidl_typesupport_fastrtps_cExport.cmake
+[13.757s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/cmake/export_ardupilot_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[13.758s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/cmake/export_ardupilot_msgs__rosidl_generator_cppExport.cmake
+[13.758s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/cmake/export_ardupilot_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
+[13.758s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/cmake/export_ardupilot_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[13.759s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/cmake/ardupilot_msgs__rosidl_typesupport_introspection_cExport.cmake
+[13.759s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/cmake/ardupilot_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[13.759s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/cmake/ardupilot_msgs__rosidl_typesupport_cExport.cmake
+[13.759s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/cmake/ardupilot_msgs__rosidl_typesupport_cExport-noconfig.cmake
+[13.760s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/cmake/ardupilot_msgs__rosidl_typesupport_introspection_cppExport.cmake
+[13.760s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/cmake/ardupilot_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[13.760s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/cmake/ardupilot_msgs__rosidl_typesupport_cppExport.cmake
+[13.761s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/cmake/ardupilot_msgs__rosidl_typesupport_cppExport-noconfig.cmake
+[13.761s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/cmake/export_ardupilot_msgs__rosidl_generator_pyExport.cmake
+[13.761s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/cmake/export_ardupilot_msgs__rosidl_generator_pyExport-noconfig.cmake
+[13.762s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/cmake/rosidl_cmake-extras.cmake
+[13.762s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/cmake/ament_cmake_export_dependencies-extras.cmake
+[13.762s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/cmake/ament_cmake_export_include_directories-extras.cmake
+[13.762s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/cmake/ament_cmake_export_libraries-extras.cmake
+[13.763s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/cmake/ament_cmake_export_targets-extras.cmake
+[13.763s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[13.763s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[13.764s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/cmake/ardupilot_msgsConfig.cmake
+[13.764s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/cmake/ardupilot_msgsConfig-version.cmake
+[13.764s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/ardupilot_msgs/share/ardupilot_msgs/package.xml
+[13.769s] Invoked command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/ardupilot_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/tritech_micron:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/opt/ros/humble /usr/bin/cmake --install /home/bluerov/ROS-Humble-BlueRov2-Driver/build/ardupilot_msgs

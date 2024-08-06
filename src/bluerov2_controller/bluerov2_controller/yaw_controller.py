@@ -7,7 +7,7 @@ import bluerov2_controller.pid as pid
 from bluerov2_interfaces.msg import Attitude, PID
 from std_msgs.msg import UInt16, Float64, Bool, String
 
-class Contyawer(Node):
+class Controller(Node):
 
     def __init__(self):
         super().__init__("yaw_controller")
@@ -16,7 +16,7 @@ class Contyawer(Node):
         self.declare_parameter("yaw_desired", 0) 
         self.declare_parameter("pwm_max", 1750) 
         self.declare_parameter("pwm_neutral", 1500)            
-        self.declare_parameter("kp", 550)    
+        self.declare_parameter("kp", 200)    
         self.declare_parameter("kd", 50)    
         self.declare_parameter("enable", True)  
 
@@ -126,7 +126,7 @@ class Contyawer(Node):
 
 def main(args=None):
     rclpy.init(args=args)    
-    node = Contyawer()
+    node = Controller()
     rclpy.spin(node)        
     node.destroy_node()
     rclpy.shutdown()

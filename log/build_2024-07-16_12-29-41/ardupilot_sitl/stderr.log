@@ -1,0 +1,5 @@
+[01;31mCould not find the program ['microxrceddsgen']
+(complete log in /home/bluerov/ROS-Humble-BlueRov2-Driver/ardupilot/build/config.log)[0m
+gmake[2]: *** [CMakeFiles/ardupilot_configure.dir/build.make:70: CMakeFiles/ardupilot_configure] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:142: CMakeFiles/ardupilot_configure.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -80,7 +80,7 @@ class TritechMicron(object):
         self.right_limit = to_radians(4000)
         self.scanright = True
         self.speed = 1500.0
-        self.step = Resolution.LOW
+        self.step = Resolution.HIGH
         self.dynamic_reconfigure_started = False        
 
         # Connection properties.

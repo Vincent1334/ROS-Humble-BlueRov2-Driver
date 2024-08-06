@@ -1,0 +1,26 @@
+-- Install configuration: ""
+-- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/launch
+-- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/launch/gamepad.launch.py
+-- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/launch/sonar_config.launch.py
+-- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/launch/pitch_config.launch.py
+-- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/launch/roll_config.launch.py
+-- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/launch/depth_config.launch.py
+-- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/launch/yaw_config.launch.py
+-- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/launch/gamepad_dry.launch.py
+-- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/rviz
+-- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/rviz/bluerov2_dashboard.rviz
+-- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/ament_index/resource_index/package_run_dependencies/bluerov2_bringup
+-- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/ament_index/resource_index/parent_prefix_path/bluerov2_bringup
+-- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/environment/ament_prefix_path.sh
+-- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/environment/ament_prefix_path.dsv
+-- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/environment/path.sh
+-- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/environment/path.dsv
+-- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/local_setup.bash
+-- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/local_setup.sh
+-- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/local_setup.zsh
+-- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/local_setup.dsv
+-- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/package.dsv
+-- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/ament_index/resource_index/packages/bluerov2_bringup
+-- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/cmake/bluerov2_bringupConfig.cmake
+-- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/cmake/bluerov2_bringupConfig-version.cmake
+-- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/package.xml
