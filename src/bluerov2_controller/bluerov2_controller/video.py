@@ -159,7 +159,7 @@ class Controller(Node):
 
     def depth_desired_callback(self, msg):
         data = json.loads(msg.data)
-        self.target_depth = abs(data['depth_desired'])
+        self.depth_desired = abs(data['depth_desired'])
 
     def callback_bar30(self, msg):
         self.bar30_data = [ msg.time_boot_ms,
@@ -200,7 +200,7 @@ class Controller(Node):
 
         img = cv2.putText(img, f'{self.voltage}V', (205, height-70), self.font, 1.6, (255, 255, 250), 1, cv2.LINE_AA)
         img = cv2.putText(img, f'{self.depth}m', (205, height-45), self.font, 1.6, (255, 255, 250), 1, cv2.LINE_AA)
-        img = cv2.putText(img, f'{self.target_depth}m', (205, height-20), self.font, 1.6, (255, 255, 250), 1, cv2.LINE_AA)
+        img = cv2.putText(img, f'{self.depth_desired}m', (205, height-20), self.font, 1.6, (255, 255, 250), 1, cv2.LINE_AA)
 
         img = cv2.putText(img, 'Pitch:', (320, height-70), self.font, 1.6, (255, 255, 250), 1, cv2.LINE_AA)
         img = cv2.putText(img, 'Roll:', (320, height-45), self.font, 1.6, (255, 255, 250), 1, cv2.LINE_AA)
