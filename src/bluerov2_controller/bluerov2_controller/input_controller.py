@@ -3,10 +3,8 @@ import rclpy
 import pygame
 import json
 from pygame.locals import *
-from rclpy.node import Node, Client
-
+from rclpy.node import Node
 from std_msgs.msg import UInt16, Float64, Bool, String
-from std_srvs.srv import Trigger
 
 class Controller(Node):    
     
@@ -24,9 +22,8 @@ class Controller(Node):
         self.declare_parameter("gain_pwm_cam", 400)     
         self.declare_parameter("gain_pwm_lights", 50)
         self.declare_parameter("gain_depth", 0.2)
-        self.declare_parameter("gain_yaw", 3)
         self.declare_parameter("arm_status", True)
-        self.declare_parameter("debug", False)
+        self.declare_parameter("debug", True)
 
         self.pwm_min                = self.get_parameter("pwm_min").value 
         self.pwm_max                = self.get_parameter("pwm_max").value
@@ -36,8 +33,7 @@ class Controller(Node):
         self.pwm_lights_max         = self.get_parameter("pwm_lights_max").value 
         self.pwm_lights_min         = self.get_parameter("pwm_lights_min").value 
 
-        self.gain_depth             = self.get_parameter("gain_depth").value     
-        self.gain_yaw               = self.get_parameter("gain_yaw").value          
+        self.gain_depth             = self.get_parameter("gain_depth").value         
         self.gain_pwm_cam           = self.get_parameter("gain_pwm_cam").value 
         self.gain_pwm_lights        = self.get_parameter("gain_pwm_lights").value 
 
@@ -48,20 +44,18 @@ class Controller(Node):
 
         # Node status
         self.depth_status           = None
-        self.yaw_status             = None
 
         # Create publisher
         self.lights_pub             = self.create_publisher(UInt16, "/bluerov2/rc/lights", 10)
         self.camera_tilt_pub        = self.create_publisher(UInt16, "/bluerov2/rc/camera_tilt", 10)
         self.forward_pub            = self.create_publisher(UInt16, "/bluerov2/rc/forward", 10)
-        self.lateral_pub            = self.create_publisher(UInt16, "/bluerov2/rc/lateral", 10)        
+        self.lateral_pub            = self.create_publisher(UInt16, "/bluerov2/rc/lateral", 10)   
+        self.yaw_pub                = self.create_publisher(UInt16, "/bluerov2/rc/yaw", 10)     
         self.arm_pub                = self.create_publisher(Bool, "/bluerov2/arm", 10)
-        self.depth_controller_pub   = self.create_publisher(Float64, "/settings/depth/set_depth", 10)
-        self.yaw_controller_pub     = self.create_publisher(UInt16, "/settings/yaw/set_yaw", 10)              
+        self.depth_controller_pub   = self.create_publisher(Float64, "/settings/depth/set_depth", 10)        
 
         # Create subscriber
-        self.depth_status_sub       = self.create_subscription(String, "/settings/depth/status", self.callback_node_status, 10)   
-        self.yaw_status_sub         = self.create_subscription(String, "/settings/yaw/status", self.callback_node_status, 10)               
+        self.depth_status_sub       = self.create_subscription(String, "/settings/depth/status", self.callback_node_status, 10)                 
 
         # Clear BlueRov status
         lights = UInt16()
@@ -93,7 +87,7 @@ class Controller(Node):
         
 
     def update_input(self):
-        if (self.depth_status is not None and self.yaw_status is not None) or self.debug:
+        if (self.depth_status is not None) or self.debug:
             for event in pygame.event.get():            
                 # Check if a joystick button was pressed
                 if event.type == JOYBUTTONDOWN:
@@ -110,15 +104,14 @@ class Controller(Node):
 
                  # Check if a joystick axis motion event occurs
                 elif event.type == JOYAXISMOTION:                     
-                    if event.axis == 0 or event.axis == 1:    # Left Joystick motion
+                    if event.axis == 0 or event.axis == 1:      # Left Joystick motion
                         self.move_event(event)  
+                    elif event.axis == 2:                       # Right Joystick motion
+                        self.rotation_event(event)
 
                 # Check if a joystick hat motion event occurs
                 elif event.type == JOYHATMOTION:
                     self.camera_tilt_event(event.value)         # D-Pad Up-Down motion
-
-            # Update rotation event with right joystick motion data
-            #self.rotation_event(pygame.joystick.Joystick(0).get_axis(3))    
         else:
             self.get_logger().error("Attempt to establish a connection to the controllers failed.")     
 
@@ -148,12 +141,14 @@ class Controller(Node):
         
         self.camera_tilt_pub.publish(msg)
 
-    def rotation_event(self, value):
-        value = max(-1, min(1, round(value, 1) * self.gain_yaw))        
-        new_yaw = (self.yaw_status["yaw_desired"] + value) % 360
-        msg = UInt16()        
-        msg.data = round(new_yaw) 
-        self.yaw_controller_pub.publish(msg)            
+    def rotation_event(self, event):
+        u = event.value
+        pwm = UInt16(data=self.calculate_pwm(u))        
+
+        if event.axis == 0:
+            self.yaw_pub.publish(pwm)
+        else:
+           self.yaw_pub.publish(pwm)           
 
     def move_event(self, event):
         u = event.value

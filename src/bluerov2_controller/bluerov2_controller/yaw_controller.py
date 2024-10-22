@@ -5,7 +5,7 @@ from rclpy.node import Node
 import bluerov2_controller.pid as pid
 
 from bluerov2_interfaces.msg import Attitude, PID
-from std_msgs.msg import UInt16, Float64, Bool, String
+from std_msgs.msg import UInt16, Bool, String
 
 class Controller(Node):
 
