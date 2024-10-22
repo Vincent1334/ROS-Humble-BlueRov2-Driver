@@ -118,7 +118,7 @@ class Controller(Node):
                     self.camera_tilt_event(event.value)         # D-Pad Up-Down motion
 
             # Update rotation event with right joystick motion data
-            self.rotation_event(pygame.joystick.Joystick(0).get_axis(3))    
+            #self.rotation_event(pygame.joystick.Joystick(0).get_axis(3))    
         else:
             self.get_logger().error("Attempt to establish a connection to the controllers failed.")     
 
