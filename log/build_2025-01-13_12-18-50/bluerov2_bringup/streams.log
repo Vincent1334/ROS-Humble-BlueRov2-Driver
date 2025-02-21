@@ -1,0 +1,50 @@
+[0.019s] Invoking command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_bringup': AMENT_PREFIX_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/lib/python3.10/site-packages:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/bluerov/ROS-Humble-BlueRov2-Driver/src/bluerov2_bringup -DCMAKE_INSTALL_PREFIX=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup
+[0.115s] -- The C compiler identification is GNU 11.4.0
+[0.213s] -- The CXX compiler identification is GNU 11.4.0
+[0.231s] -- Detecting C compiler ABI info
+[0.342s] -- Detecting C compiler ABI info - done
+[0.368s] -- Check for working C compiler: /usr/lib/ccache/cc - skipped
+[0.368s] -- Detecting C compile features
+[0.369s] -- Detecting C compile features - done
+[0.378s] -- Detecting CXX compiler ABI info
+[0.486s] -- Detecting CXX compiler ABI info - done
+[0.497s] -- Check for working CXX compiler: /usr/lib/ccache/c++ - skipped
+[0.497s] -- Detecting CXX compile features
+[0.497s] -- Detecting CXX compile features - done
+[0.501s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.960s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.189s] -- Configuring done
+[1.197s] -- Generating done
+[1.202s] -- Build files have been written to: /home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_bringup
+[1.211s] Invoked command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_bringup' returned '0': AMENT_PREFIX_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/lib/python3.10/site-packages:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/bluerov/ROS-Humble-BlueRov2-Driver/src/bluerov2_bringup -DCMAKE_INSTALL_PREFIX=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup
+[1.214s] Invoking command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_bringup': AMENT_PREFIX_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/lib/python3.10/site-packages:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_bringup -- -j8 -l8
+[1.292s] Invoked command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_bringup' returned '0': AMENT_PREFIX_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/lib/python3.10/site-packages:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_bringup -- -j8 -l8
+[1.295s] Invoking command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_bringup': AMENT_PREFIX_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/lib/python3.10/site-packages:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_bringup
+[1.309s] -- Install configuration: ""
+[1.309s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/launch
+[1.309s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/launch/sonar_wakenitz.launch.py
+[1.310s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/launch/gamepad.launch.py
+[1.310s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/launch/sonar_config.launch.py
+[1.310s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/launch/pitch_config.launch.py
+[1.311s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/launch/roll_config.launch.py
+[1.311s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/launch/depth_config.launch.py
+[1.311s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/launch/yaw_config.launch.py
+[1.311s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/launch/gamepad_dry.launch.py
+[1.312s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/rviz
+[1.312s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/rviz/bluerov2_dashboard.rviz
+[1.312s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/ament_index/resource_index/package_run_dependencies/bluerov2_bringup
+[1.313s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/ament_index/resource_index/parent_prefix_path/bluerov2_bringup
+[1.313s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/environment/ament_prefix_path.sh
+[1.313s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/environment/ament_prefix_path.dsv
+[1.313s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/environment/path.sh
+[1.314s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/environment/path.dsv
+[1.314s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/local_setup.bash
+[1.314s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/local_setup.sh
+[1.314s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/local_setup.zsh
+[1.315s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/local_setup.dsv
+[1.315s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/package.dsv
+[1.318s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/ament_index/resource_index/packages/bluerov2_bringup
+[1.318s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/cmake/bluerov2_bringupConfig.cmake
+[1.319s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/cmake/bluerov2_bringupConfig-version.cmake
+[1.320s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_bringup/share/bluerov2_bringup/package.xml
+[1.321s] Invoked command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_bringup' returned '0': AMENT_PREFIX_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_controller/lib/python3.10/site-packages:/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_bringup

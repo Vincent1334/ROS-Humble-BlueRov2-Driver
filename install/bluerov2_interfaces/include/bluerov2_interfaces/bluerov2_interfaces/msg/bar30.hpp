@@ -7,5 +7,6 @@
 #include "bluerov2_interfaces/msg/detail/bar30__struct.hpp"
 #include "bluerov2_interfaces/msg/detail/bar30__builder.hpp"
 #include "bluerov2_interfaces/msg/detail/bar30__traits.hpp"
+#include "bluerov2_interfaces/msg/detail/bar30__type_support.hpp"
 
 #endif  // BLUEROV2_INTERFACES__MSG__BAR30_HPP_

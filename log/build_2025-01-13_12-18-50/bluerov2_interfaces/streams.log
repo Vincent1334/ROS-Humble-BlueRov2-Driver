@@ -1,0 +1,282 @@
+[0.019s] Invoking command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_interfaces': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/bluerov/ROS-Humble-BlueRov2-Driver/src/bluerov2_interfaces -DCMAKE_INSTALL_PREFIX=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces
+[0.183s] -- The C compiler identification is GNU 11.4.0
+[0.326s] -- The CXX compiler identification is GNU 11.4.0
+[0.351s] -- Detecting C compiler ABI info
+[0.452s] -- Detecting C compiler ABI info - done
+[0.464s] -- Check for working C compiler: /usr/lib/ccache/cc - skipped
+[0.464s] -- Detecting C compile features
+[0.465s] -- Detecting C compile features - done
+[0.472s] -- Detecting CXX compiler ABI info
+[0.595s] -- Detecting CXX compiler ABI info - done
+[0.609s] -- Check for working CXX compiler: /usr/lib/ccache/c++ - skipped
+[0.610s] -- Detecting CXX compile features
+[0.611s] -- Detecting CXX compile features - done
+[0.618s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.147s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.334s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[1.340s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.352s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.430s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.877s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[2.163s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.549s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.584s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+[2.587s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[2.633s] -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+[2.633s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[2.633s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[2.634s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[2.672s] -- Found PythonExtra: .so  
+[2.729s] -- Configuring done
+[2.776s] -- Generating done
+[2.790s] -- Build files have been written to: /home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_interfaces
+[2.799s] Invoked command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/bluerov/ROS-Humble-BlueRov2-Driver/src/bluerov2_interfaces -DCMAKE_INSTALL_PREFIX=/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces
+[2.803s] Invoking command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_interfaces': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_interfaces -- -j8 -l8
+[2.862s] [  2%] [34m[1mGenerating C code for ROS interfaces[0m
+[2.877s] [  4%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[2.892s] [  4%] Built target ament_cmake_python_copy_bluerov2_interfaces
+[3.216s] running egg_info
+[3.219s] creating bluerov2_interfaces.egg-info
+[3.241s] writing bluerov2_interfaces.egg-info/PKG-INFO
+[3.242s] writing dependency_links to bluerov2_interfaces.egg-info/dependency_links.txt
+[3.242s] writing top-level names to bluerov2_interfaces.egg-info/top_level.txt
+[3.242s] writing manifest file 'bluerov2_interfaces.egg-info/SOURCES.txt'
+[3.307s] reading manifest file 'bluerov2_interfaces.egg-info/SOURCES.txt'
+[3.308s] writing manifest file 'bluerov2_interfaces.egg-info/SOURCES.txt'
+[3.366s] [  4%] Built target ament_cmake_python_build_bluerov2_interfaces_egg
+[3.552s] [  4%] Built target bluerov2_interfaces__cpp
+[3.566s] [  6%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[3.568s] [ 10%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[3.569s] [ 10%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[3.730s] [ 14%] [32mBuilding C object CMakeFiles/bluerov2_interfaces__rosidl_generator_c.dir/rosidl_generator_c/bluerov2_interfaces/msg/detail/bar30__functions.c.o[0m
+[3.731s] [ 17%] [32mBuilding C object CMakeFiles/bluerov2_interfaces__rosidl_generator_c.dir/rosidl_generator_c/bluerov2_interfaces/msg/detail/attitude__functions.c.o[0m
+[3.732s] [ 17%] [32mBuilding C object CMakeFiles/bluerov2_interfaces__rosidl_generator_c.dir/rosidl_generator_c/bluerov2_interfaces/msg/detail/pid__functions.c.o[0m
+[3.911s] [ 19%] [32m[1mLinking C shared library libbluerov2_interfaces__rosidl_generator_c.so[0m
+[4.009s] [ 19%] Built target bluerov2_interfaces__rosidl_generator_c
+[4.035s] [ 21%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[4.049s] [ 23%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[4.053s] [ 25%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[4.358s] [ 27%] [32mBuilding CXX object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/bluerov2_interfaces/msg/bar30__type_support.cpp.o[0m
+[4.384s] [ 29%] [32mBuilding CXX object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/bluerov2_interfaces/msg/attitude__type_support.cpp.o[0m
+[4.433s] [ 31%] [32mBuilding CXX object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/bluerov2_interfaces/msg/pid__type_support.cpp.o[0m
+[4.469s] [ 34%] [32mBuilding CXX object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/bluerov2_interfaces/msg/detail/bar30__type_support.cpp.o[0m
+[4.537s] [ 36%] [32mBuilding CXX object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/bluerov2_interfaces/msg/detail/dds_fastrtps/bar30__type_support.cpp.o[0m
+[5.484s] [ 38%] [32mBuilding CXX object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/bluerov2_interfaces/msg/bar30__type_support.cpp.o[0m
+[5.505s] [ 40%] [32mBuilding C object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/bluerov2_interfaces/msg/detail/bar30__type_support.c.o[0m
+[5.507s] [ 42%] [32mBuilding CXX object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/bluerov2_interfaces/msg/detail/bar30__type_support_c.cpp.o[0m
+[5.677s] [ 44%] [32mBuilding CXX object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/bluerov2_interfaces/msg/attitude__type_support.cpp.o[0m
+[5.753s] [ 48%] [32mBuilding C object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/bluerov2_interfaces/msg/detail/pid__type_support.c.o[0m
+[5.754s] [ 48%] [32mBuilding C object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/bluerov2_interfaces/msg/detail/attitude__type_support.c.o[0m
+[5.845s] [ 51%] [32mBuilding CXX object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/bluerov2_interfaces/msg/pid__type_support.cpp.o[0m
+[5.856s] [ 53%] [32mBuilding CXX object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/bluerov2_interfaces/msg/detail/attitude__type_support_c.cpp.o[0m
+[5.901s] [ 55%] [32m[1mLinking CXX shared library libbluerov2_interfaces__rosidl_typesupport_cpp.so[0m
+[5.966s] [ 57%] [32mBuilding CXX object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/bluerov2_interfaces/msg/detail/pid__type_support_c.cpp.o[0m
+[6.005s] [ 61%] [32m[1mLinking CXX shared library libbluerov2_interfaces__rosidl_typesupport_c.so[0m
+[6.006s] [ 59%] [32m[1mLinking C shared library libbluerov2_interfaces__rosidl_typesupport_introspection_c.so[0m
+[6.081s] [ 61%] Built target bluerov2_interfaces__rosidl_typesupport_cpp
+[6.118s] [ 63%] [32mBuilding CXX object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/bluerov2_interfaces/msg/detail/dds_fastrtps/attitude__type_support.cpp.o[0m
+[6.147s] [ 63%] Built target bluerov2_interfaces__rosidl_typesupport_c
+[6.152s] [ 63%] Built target bluerov2_interfaces__rosidl_typesupport_introspection_c
+[6.180s] [ 65%] [32mBuilding CXX object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/bluerov2_interfaces/msg/detail/attitude__type_support.cpp.o[0m
+[6.180s] [ 68%] [32mBuilding CXX object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/bluerov2_interfaces/msg/detail/pid__type_support.cpp.o[0m
+[6.187s] [ 70%] [32mBuilding CXX object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/bluerov2_interfaces/msg/detail/dds_fastrtps/pid__type_support.cpp.o[0m
+[7.020s] [ 72%] [32m[1mLinking CXX shared library libbluerov2_interfaces__rosidl_typesupport_fastrtps_c.so[0m
+[7.201s] [ 74%] [32m[1mLinking CXX shared library libbluerov2_interfaces__rosidl_typesupport_introspection_cpp.so[0m
+[7.232s] [ 74%] Built target bluerov2_interfaces__rosidl_typesupport_fastrtps_c
+[7.270s] [ 74%] Built target bluerov2_interfaces__rosidl_typesupport_introspection_cpp
+[7.299s] [ 76%] [32m[1mLinking CXX shared library libbluerov2_interfaces__rosidl_typesupport_fastrtps_cpp.so[0m
+[7.429s] [ 76%] Built target bluerov2_interfaces__rosidl_typesupport_fastrtps_cpp
+[7.457s] [ 76%] Built target bluerov2_interfaces
+[7.492s] [ 78%] [34m[1mGenerating Python code for ROS interfaces[0m
+[8.189s] [ 78%] Built target bluerov2_interfaces__py
+[8.219s] [ 80%] [32mBuilding C object CMakeFiles/bluerov2_interfaces__rosidl_generator_py.dir/rosidl_generator_py/bluerov2_interfaces/msg/_attitude_s.c.o[0m
+[8.220s] [ 82%] [32mBuilding C object CMakeFiles/bluerov2_interfaces__rosidl_generator_py.dir/rosidl_generator_py/bluerov2_interfaces/msg/_pid_s.c.o[0m
+[8.222s] [ 85%] [32mBuilding C object CMakeFiles/bluerov2_interfaces__rosidl_generator_py.dir/rosidl_generator_py/bluerov2_interfaces/msg/_bar30_s.c.o[0m
+[8.471s] [ 87%] [32m[1mLinking C shared library rosidl_generator_py/bluerov2_interfaces/libbluerov2_interfaces__rosidl_generator_py.so[0m
+[8.536s] [ 87%] Built target bluerov2_interfaces__rosidl_generator_py
+[8.570s] [ 89%] [32mBuilding C object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/bluerov2_interfaces/_bluerov2_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[8.573s] [ 93%] [32mBuilding C object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/bluerov2_interfaces/_bluerov2_interfaces_s.ep.rosidl_typesupport_c.c.o[0m
+[8.573s] [ 93%] [32mBuilding C object CMakeFiles/bluerov2_interfaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/bluerov2_interfaces/_bluerov2_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[8.827s] [ 95%] [32m[1mLinking C shared library rosidl_generator_py/bluerov2_interfaces/bluerov2_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so[0m
+[8.877s] [ 97%] [32m[1mLinking C shared library rosidl_generator_py/bluerov2_interfaces/bluerov2_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so[0m
+[8.886s] [ 97%] Built target bluerov2_interfaces__rosidl_typesupport_c__pyext
+[8.889s] [100%] [32m[1mLinking C shared library rosidl_generator_py/bluerov2_interfaces/bluerov2_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so[0m
+[8.941s] [100%] Built target bluerov2_interfaces__rosidl_typesupport_fastrtps_c__pyext
+[8.946s] [100%] Built target bluerov2_interfaces__rosidl_typesupport_introspection_c__pyext
+[8.970s] Invoked command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_interfaces -- -j8 -l8
+[8.987s] Invoking command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_interfaces': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_interfaces
+[8.998s] -- Install configuration: ""
+[8.998s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/ament_index/resource_index/rosidl_interfaces/bluerov2_interfaces
+[8.998s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces
+[8.999s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg
+[8.999s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/bar30.h
+[8.999s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/rosidl_generator_c__visibility_control.h
+[8.999s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/attitude.h
+[8.999s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail
+[9.000s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/bar30__functions.h
+[9.000s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/pid__struct.h
+[9.000s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/pid__type_support.h
+[9.000s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/pid__functions.h
+[9.001s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/pid__functions.c
+[9.001s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/attitude__struct.h
+[9.001s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/attitude__functions.c
+[9.002s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/bar30__struct.h
+[9.002s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/bar30__type_support.h
+[9.002s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/bar30__functions.c
+[9.003s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/attitude__functions.h
+[9.003s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/attitude__type_support.h
+[9.004s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/pid.h
+[9.004s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/environment/library_path.sh
+[9.004s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/environment/library_path.dsv
+[9.004s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib/libbluerov2_interfaces__rosidl_generator_c.so
+[9.005s] -- Set runtime path of "/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib/libbluerov2_interfaces__rosidl_generator_c.so" to ""
+[9.005s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces
+[9.005s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg
+[9.005s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[9.006s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail
+[9.006s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/attitude__rosidl_typesupport_fastrtps_c.h
+[9.006s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/pid__rosidl_typesupport_fastrtps_c.h
+[9.006s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/bar30__rosidl_typesupport_fastrtps_c.h
+[9.006s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib/libbluerov2_interfaces__rosidl_typesupport_fastrtps_c.so
+[9.007s] -- Set runtime path of "/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib/libbluerov2_interfaces__rosidl_typesupport_fastrtps_c.so" to ""
+[9.007s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces
+[9.007s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg
+[9.007s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[9.008s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail
+[9.008s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/attitude__type_support.c
+[9.008s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/pid__rosidl_typesupport_introspection_c.h
+[9.008s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/attitude__rosidl_typesupport_introspection_c.h
+[9.008s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/pid__type_support.c
+[9.009s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/bar30__type_support.c
+[9.009s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/bar30__rosidl_typesupport_introspection_c.h
+[9.009s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib/libbluerov2_interfaces__rosidl_typesupport_introspection_c.so
+[9.010s] -- Set runtime path of "/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib/libbluerov2_interfaces__rosidl_typesupport_introspection_c.so" to ""
+[9.010s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib/libbluerov2_interfaces__rosidl_typesupport_c.so
+[9.010s] -- Set runtime path of "/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib/libbluerov2_interfaces__rosidl_typesupport_c.so" to ""
+[9.010s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces
+[9.010s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg
+[9.011s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/pid.hpp
+[9.011s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/bar30.hpp
+[9.011s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp
+[9.011s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail
+[9.011s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/attitude__builder.hpp
+[9.011s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/pid__traits.hpp
+[9.012s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/bar30__type_support.hpp
+[9.012s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/pid__struct.hpp
+[9.012s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/bar30__struct.hpp
+[9.012s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/attitude__type_support.hpp
+[9.012s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/pid__type_support.hpp
+[9.013s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/bar30__builder.hpp
+[9.013s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/attitude__traits.hpp
+[9.013s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/attitude__struct.hpp
+[9.013s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/bar30__traits.hpp
+[9.014s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/pid__builder.hpp
+[9.014s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/attitude.hpp
+[9.014s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces
+[9.014s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg
+[9.015s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[9.015s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail
+[9.015s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/pid__rosidl_typesupport_fastrtps_cpp.hpp
+[9.015s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/dds_fastrtps
+[9.015s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/bar30__rosidl_typesupport_fastrtps_cpp.hpp
+[9.016s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/attitude__rosidl_typesupport_fastrtps_cpp.hpp
+[9.017s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib/libbluerov2_interfaces__rosidl_typesupport_fastrtps_cpp.so
+[9.018s] -- Set runtime path of "/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib/libbluerov2_interfaces__rosidl_typesupport_fastrtps_cpp.so" to ""
+[9.018s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces
+[9.018s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg
+[9.018s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail
+[9.018s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/attitude__type_support.cpp
+[9.018s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/bar30__rosidl_typesupport_introspection_cpp.hpp
+[9.018s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/pid__type_support.cpp
+[9.019s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/attitude__rosidl_typesupport_introspection_cpp.hpp
+[9.019s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/pid__rosidl_typesupport_introspection_cpp.hpp
+[9.019s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/include/bluerov2_interfaces/bluerov2_interfaces/msg/detail/bar30__type_support.cpp
+[9.019s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib/libbluerov2_interfaces__rosidl_typesupport_introspection_cpp.so
+[9.019s] -- Set runtime path of "/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib/libbluerov2_interfaces__rosidl_typesupport_introspection_cpp.so" to ""
+[9.020s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib/libbluerov2_interfaces__rosidl_typesupport_cpp.so
+[9.022s] -- Set runtime path of "/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib/libbluerov2_interfaces__rosidl_typesupport_cpp.so" to ""
+[9.022s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/environment/pythonpath.sh
+[9.023s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/environment/pythonpath.dsv
+[9.023s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces-0.0.0-py3.10.egg-info
+[9.024s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces-0.0.0-py3.10.egg-info/SOURCES.txt
+[9.024s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces-0.0.0-py3.10.egg-info/PKG-INFO
+[9.024s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces-0.0.0-py3.10.egg-info/dependency_links.txt
+[9.024s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces-0.0.0-py3.10.egg-info/top_level.txt
+[9.024s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces
+[9.024s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/_bluerov2_interfaces_s.ep.rosidl_typesupport_introspection_c.c
+[9.024s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/_bluerov2_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+[9.025s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/__init__.py
+[9.025s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/bluerov2_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[9.025s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/libbluerov2_interfaces__rosidl_generator_py.so
+[9.025s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/msg
+[9.025s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/msg/_attitude.py
+[9.025s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/msg/__init__.py
+[9.025s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/msg/_pid.py
+[9.025s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/msg/_pid_s.c
+[9.025s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/msg/_bar30_s.c
+[9.025s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/msg/_bar30.py
+[9.026s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/msg/_attitude_s.c
+[9.026s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/bluerov2_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[9.026s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/_bluerov2_interfaces_s.ep.rosidl_typesupport_c.c
+[9.026s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/bluerov2_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[9.074s] Listing '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces'...
+[9.075s] Compiling '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/__init__.py'...
+[9.075s] Listing '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/msg'...
+[9.075s] Compiling '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/msg/__init__.py'...
+[9.075s] Compiling '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/msg/_attitude.py'...
+[9.076s] Compiling '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/msg/_bar30.py'...
+[9.076s] Compiling '/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/msg/_pid.py'...
+[9.082s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/bluerov2_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[9.083s] -- Set runtime path of "/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/bluerov2_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""
+[9.083s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/bluerov2_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[9.084s] -- Set runtime path of "/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/bluerov2_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""
+[9.084s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/bluerov2_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[9.085s] -- Set runtime path of "/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/local/lib/python3.10/dist-packages/bluerov2_interfaces/bluerov2_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""
+[9.085s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib/libbluerov2_interfaces__rosidl_generator_py.so
+[9.086s] -- Set runtime path of "/home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/lib/libbluerov2_interfaces__rosidl_generator_py.so" to ""
+[9.086s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/msg/Bar30.idl
+[9.086s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/msg/Attitude.idl
+[9.086s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/msg/PID.idl
+[9.087s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/msg/Bar30.msg
+[9.087s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/msg/Attitude.msg
+[9.087s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/msg/PID.msg
+[9.087s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/ament_index/resource_index/package_run_dependencies/bluerov2_interfaces
+[9.087s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/ament_index/resource_index/parent_prefix_path/bluerov2_interfaces
+[9.088s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/environment/ament_prefix_path.sh
+[9.088s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/environment/ament_prefix_path.dsv
+[9.088s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/environment/path.sh
+[9.089s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/environment/path.dsv
+[9.089s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/local_setup.bash
+[9.089s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/local_setup.sh
+[9.090s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/local_setup.zsh
+[9.090s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/local_setup.dsv
+[9.090s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/package.dsv
+[9.091s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/ament_index/resource_index/packages/bluerov2_interfaces
+[9.091s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/export_bluerov2_interfaces__rosidl_generator_cExport.cmake
+[9.092s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/export_bluerov2_interfaces__rosidl_generator_cExport-noconfig.cmake
+[9.092s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/export_bluerov2_interfaces__rosidl_typesupport_fastrtps_cExport.cmake
+[9.092s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/export_bluerov2_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[9.093s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/bluerov2_interfaces__rosidl_typesupport_introspection_cExport.cmake
+[9.093s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/bluerov2_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[9.094s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/bluerov2_interfaces__rosidl_typesupport_cExport.cmake
+[9.094s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/bluerov2_interfaces__rosidl_typesupport_cExport-noconfig.cmake
+[9.094s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/export_bluerov2_interfaces__rosidl_generator_cppExport.cmake
+[9.095s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/export_bluerov2_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake
+[9.095s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/export_bluerov2_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[9.096s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/bluerov2_interfaces__rosidl_typesupport_introspection_cppExport.cmake
+[9.096s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/bluerov2_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[9.096s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/bluerov2_interfaces__rosidl_typesupport_cppExport.cmake
+[9.097s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/bluerov2_interfaces__rosidl_typesupport_cppExport-noconfig.cmake
+[9.097s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/export_bluerov2_interfaces__rosidl_generator_pyExport.cmake
+[9.098s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/export_bluerov2_interfaces__rosidl_generator_pyExport-noconfig.cmake
+[9.098s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/rosidl_cmake-extras.cmake
+[9.098s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake
+[9.099s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/ament_cmake_export_libraries-extras.cmake
+[9.099s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/ament_cmake_export_targets-extras.cmake
+[9.099s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[9.100s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake
+[9.100s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[9.100s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/bluerov2_interfacesConfig.cmake
+[9.101s] -- Installing: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/cmake/bluerov2_interfacesConfig-version.cmake
+[9.101s] -- Up-to-date: /home/bluerov/ROS-Humble-BlueRov2-Driver/install/bluerov2_interfaces/share/bluerov2_interfaces/package.xml
+[9.105s] Invoked command in '/home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/bluerov/ROS-Humble-BlueRov2-Driver/build/bluerov2_interfaces

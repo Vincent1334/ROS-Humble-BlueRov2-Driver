@@ -65,42 +65,61 @@ class TritechMicron(object):
             port: Serial port (default: /dev/sonar).
             kwargs: Key-word arguments to pass to set() on initialization.
         """
-        # Parameter defaults.
         self.node = node
-        self.ad_high = 80.0
-        self.ad_low = 0.00
-        self.adc8on = True
-        self.continuous = True
-        self.gain = 0.50
-        self.inverted = True
-        self.left_limit = to_radians(360)
-        self.mo_time = 250
-        self.nbins = 400
-        self.range = 10.00
-        self.right_limit = to_radians(4000)
-        self.scanright = True
-        self.speed = 1500.0
-        self.step = Resolution.HIGH
-        self.dynamic_reconfigure_started = False        
+
+        # Load sonar params
+        node.declare_parameter('ad_high', 80.0)
+        node.declare_parameter("ad_low", 0.00)
+        node.declare_parameter("adc8on", True)
+        node.declare_parameter("continuous", True)
+        node.declare_parameter("gain", 0.50)
+        node.declare_parameter("inverted", True)
+        node.declare_parameter("left_limit", to_radians(360))
+        node.declare_parameter("mo_time", 250)
+        node.declare_parameter("nbins", 400)
+        node.declare_parameter("range", 10.00)
+        node.declare_parameter("right_limit", to_radians(4000))
+        node.declare_parameter("scanright", True)
+        node.declare_parameter("speed", 1500.0)
+        node.declare_parameter("step", Resolution.MEDIUM) 
+
+        # Set Parameter
+        
+        self.ad_high        = node.get_parameter("ad_high").value
+        self.ad_low         = node.get_parameter("ad_low").value
+        self.adc8on         = node.get_parameter("adc8on").value
+        self.continuous     = node.get_parameter("continuous").value
+        self.gain           = node.get_parameter("gain").value
+        self.inverted       = node.get_parameter("inverted").value
+        self.left_limit     = node.get_parameter("left_limit").value
+        self.mo_time        = node.get_parameter("mo_time").value
+        self.nbins          = node.get_parameter("nbins").value
+        self.range          = node.get_parameter("range").value
+        self.right_limit    = node.get_parameter("right_limit").value
+        self.scanright      = node.get_parameter("scanright").value
+        self.speed          = node.get_parameter("speed").value
+        self.step           = node.get_parameter("step").value
+
+        
 
         # Connection properties.
-        self.port = port
-        self.conn = None
-        self.initialized = False
+        self.port           = port
+        self.conn           = None
+        self.initialized    = False
 
         # Head info.
-        self.centred = False
-        self.has_cfg = False
-        self.heading = None
-        self.motor_on = False
-        self.motoring = False
-        self.no_params = True
-        self.up_time = datetime.timedelta(0)
-        self.recentering = False
-        self.scanning = False
+        self.centred        = False
+        self.has_cfg        = False
+        self.heading        = None
+        self.motor_on       = False
+        self.motoring       = False
+        self.no_params      = True
+        self.up_time        = datetime.timedelta(0)
+        self.recentering    = False
+        self.scanning       = False
 
         # Additional properties.        
-        self.preempted = False
+        self.preempted      = False
 
     def __enter__(self):
         """Initializes sonar for first use.

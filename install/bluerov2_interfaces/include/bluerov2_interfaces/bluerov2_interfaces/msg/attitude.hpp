@@ -7,5 +7,6 @@
 #include "bluerov2_interfaces/msg/detail/attitude__struct.hpp"
 #include "bluerov2_interfaces/msg/detail/attitude__builder.hpp"
 #include "bluerov2_interfaces/msg/detail/attitude__traits.hpp"
+#include "bluerov2_interfaces/msg/detail/attitude__type_support.hpp"
 
 #endif  // BLUEROV2_INTERFACES__MSG__ATTITUDE_HPP_
